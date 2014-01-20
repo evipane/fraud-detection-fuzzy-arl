@@ -9,7 +9,7 @@ public class CountPercentage {
 	//controller untuk menghitung persentase kesalahan
 	public Double countPercen(Double value, String name)
 	{
-		System.out.println("Masuk Sini !!!");
+		
 		if(name=="SkipS"||name=="wDutySec")
 		{
 			this.percentage = (value/fr.getMaxSkipSeq())*100;
@@ -23,7 +23,6 @@ public class CountPercentage {
 			this.percentage = (value/fr.getMaxTmax())*100;
 		}
 		else this.percentage=value;
-		System.out.println("Persen: "+percentage);
 		return this.percentage;
 	}
 

@@ -18,10 +18,7 @@ public class Fuzzy {
 	
 	public int dummyLength=0;
 	
-	//System.out.println(ffa.tableContent[0][0]+" -- "+ffa.tableModel.getColumnName(0));
-	
 	public Object[][] tableDummy;
-	//System.out.println("length: "+columnsName2.length);
 	public Object[][] tableFuzzy;
 
 	public Double fuzzyMin(Double value)
@@ -132,7 +129,6 @@ public class Fuzzy {
 				double percen = cp.countPercen(d, str2);
 				
 				tableDummy[i][j] =new Double(percen);
-				System.out.println("Tes :"+d+" -- Tos="+str2+" -- Persen: "+tableDummy[i][j]+" -- i:"+i+" -- "+j);
 			}
 		}
 		
@@ -163,16 +159,12 @@ public class Fuzzy {
 		PercenTabel();
 
 		tableFuzzy =  new Object[tableDummy.length][columnsName2.length];
-		
-		
-		
+	
 		for(int i=0;i<tableDummy.length;i++)
 		{
 			int k=0;
 			for(int j=0;j<columnsName2.length;j++)
 			{
-				System.out.println("i: "+i+" -- j: "+j);
-				//System.out.println(" -- Dummy: "+tableDummy[i][j]+"i:"+i+" -- "+j);
 				
 				if(j==columnsName2.length-1)
 				{
@@ -192,7 +184,6 @@ public class Fuzzy {
 					k++;
 				}
 				
-				//System.out.println(" -- Dummy: "+tableDummy[i][j]+"i:"+i+" -- "+j+" -- Fuzzy: "+tableFuzzy[i][j]);
 				
 			}
 		}
