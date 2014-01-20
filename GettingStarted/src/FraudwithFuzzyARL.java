@@ -96,6 +96,11 @@ public class FraudwithFuzzyARL {
 			context.getFutureResult(0).cancel(true);
 		}
 		
+		InteractionResult result4 = context.showConfiguration("Selection 1Itemsets", new CountARL().ARLTable());
+		if (result4.equals(InteractionResult.CANCEL)) {
+			context.getFutureResult(0).cancel(true);
+		}
+		
 		return  panel;
 	}
 
