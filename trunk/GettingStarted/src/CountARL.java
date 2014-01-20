@@ -12,6 +12,7 @@ public class CountARL {
 	public Object[] tableSupport ;
 	public String[] columnsNameS;
 	public String[] columnsNameS2;
+	public String[] columnsNameS3;
 	public Integer[] indexPass;
 	public Object[] tablePass;
 	Object[][] tabel ; 
@@ -42,6 +43,10 @@ public class CountARL {
 		else if(next==2)
 		{
 			countSupport2(columName1);
+		}
+		else if(next==3)
+		{
+			countSupport3(columName1);
 		}
 		
 		int k=1;
@@ -92,7 +97,6 @@ public class CountARL {
 	
 	public void setColumName(String[] columname)
 	{
-		System.out.println("panjang: "+columnsNameS.length);
 		int count=0;
 		columnsNameS2 = new String[combination(columname)];
 		//System.out.println("panjang: "+columnsNameS.length);
@@ -100,10 +104,8 @@ public class CountARL {
 		{
 			for(int j=i+1;j<columname.length;j++)
 			{
-				System.out.println("i: "+columnsNameS[i]+" -- j: "+columnsNameS[j]);
 				columnsNameS2[count] = columnsNameS[i]+"-"+columnsNameS[j]; 
 				count++;
-				//System.out.println("hasil: "+columnsNameS2[count]);
 			}
 		}
 	}
@@ -124,10 +126,69 @@ public class CountARL {
 				{
 					supp+=Math.min((Double)fuzzy.tableFuzzy[k][indexPass[i]],(Double)fuzzy.tableFuzzy[k][indexPass[j]]);
 				}
-				tableSupport[count]=supp;
+				tableSupport[count]=supp/20;
 				count++;
 			}
 			
+		}
+	}
+	
+	public void setColumnName2(String[] name1, String[] name2)
+	{
+		int result=1;
+		System.out.println("MASUK KE SINI!");
+		for(int i=0;i<name1.length;i++)
+		{
+			for(int j=i+1;j<name2.length;j++)
+			{
+				String[] str = name1[i].split("-");
+				String[] str1 = name2[j].split("-");
+				
+				if(str[1].equals(str1[0]))
+				{
+					result++;
+				}
+			}
+		}
+		int count=0;
+		columnsNameS3 = new String[result-1];
+		for(int i=0;i<name1.length;i++)
+		{
+			for(int j=i+1;j<name2.length;j++)
+			{
+				String[] str = name1[i].split("-");
+				String[] str1 = name2[j].split("-");
+				if(str[1].equals(str1[0]))
+				{
+					columnsNameS3[count]=str[0]+"-"+str[1]+"-"+str1[1];
+					System.out.println(columnsNameS3[count]);
+					count++;
+				}
+			}
+		}
+		
+		
+	}
+	
+	public void countSupport3(String[] columnName)
+	{
+		fuzzy.FuzzyTabel();
+		tableSupport = new Object[columnsNameS3.length];
+		
+		for(int i=0; i<columnsNameS3.length;i++)
+		{
+			double supp=0;
+			String[] str = columnsNameS3[i].split("-");
+			for(int k=0;k<fuzzy.tableFuzzy.length;k++)
+			{
+				int a = fuzzy.tableModelFuzzy.findColumn(str[0]);
+				int b = fuzzy.tableModelFuzzy.findColumn(str[1]);
+				int c = fuzzy.tableModelFuzzy.findColumn(str[2]);
+				System.out.println(a);
+				supp+=Math.min((Math.min((Double)fuzzy.tableFuzzy[k][a],(Double)fuzzy.tableFuzzy[k][b])),(Double)fuzzy.tableFuzzy[k][c]);
+			}
+			System.out.println("supp: "+supp);
+			tableSupport[i]=supp/20;
 		}
 	}
 	
@@ -145,8 +206,13 @@ public class CountARL {
 			setColumName(columnsNameS);
 			selection(arlp.parameter,columnsNameS2,next);
 		}
+		
+		next++;
+		setColumnName2(columnsNameS, columnsNameS);
+		selection(arlp.parameter,columnsNameS3,next);
+		
 		tabel = new Object[1][];
-		tableModelItems1 = new DefaultTableModel(tabel,columnsNameS2);
+		tableModelItems1 = new DefaultTableModel(tabel,columnsNameS);
 		
 		//isi tabel dengan nilai support
 		for(int i=0;i<tablePass.length;i++)
