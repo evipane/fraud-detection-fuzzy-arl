@@ -45,30 +45,29 @@
 	<classpathentry kind="lib" path="tests/libs-external/cobertura.jar"/>
 	<classpathentry kind="lib" path="tests/libs-external/junit-4.8.1.jar"/>
 	<classpathentry kind="lib" path="OpenXES.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/GettingStarted/lib/PetriNets.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/commons-collections-3.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/DataAwareReplayer.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/DataPetriNets.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/EfficientStorage.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/exp4j-0.3.8.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/GantzGraf-0.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/holub.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/jdom.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/kaon2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/lpsolve55j.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/MXMLib.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/PetriNets.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/PNetReplayer.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/ProM-Models.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/ProM-Plugins.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/slickerbox0.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/TaskSetUnit.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/testng-5.7-jdk15.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/trivialEstimator.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/trove-3.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/Widgets.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/wsml2reasoner-noncom-v0_5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/wsmo4j-0.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Fernandes Sinaga/Dropbox/Tugas Akhir/Library Tambahan/siap pindah/wsmo-api-0.6.1.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/DataAwareReplayer.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/DataPetriNets.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/EfficientStorage.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/exp4j-0.3.8.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/GantzGraf-0.9.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/holub.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/jdom.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/kaon2.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/lpsolve55j.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/MXMLib.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/PetriNets.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/PNetReplayer.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/ProM-Models.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/ProM-Plugins.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/slickerbox0.5.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/TaskSetUnit.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/testng-5.7-jdk15.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/trivialEstimator.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/trove-3.0.1.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/Widgets.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/wsml2reasoner-noncom-v0_5.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/wsmo4j-0.6.1.jar"/>
+	<classpathentry kind="lib" path="E:/Fernandes Sinaga/Tugas Akhir/GettingStarted/stdlib/wsmo-api-0.6.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
