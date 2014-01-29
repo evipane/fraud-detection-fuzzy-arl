@@ -13,23 +13,25 @@ package org.processmining.mining.semanticorganizationmining.ui;
  *                                                         *
  **********************************************************/
 
-import javax.swing.JSplitPane;
-import javax.swing.event.TableModelListener;
-import java.util.List;
-import org.processmining.framework.models.orgmodel.OrgModel;
-import org.processmining.framework.models.orgmodel.Resource;
-import javax.swing.JTable;
-import javax.swing.JScrollPane;
+import java.awt.BorderLayout;
 import java.awt.Dimension;
-import javax.swing.table.AbstractTableModel;
-import java.util.ArrayList;
-import org.processmining.framework.models.orgmodel.OrgEntity;
-import javax.swing.event.TableModelEvent;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.JTable;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.AbstractTableModel;
+
+import org.processmining.framework.models.orgmodel.OrgEntity;
+import org.processmining.framework.models.orgmodel.OrgModel;
+import org.processmining.framework.models.orgmodel.Resource;
 import org.processmining.mining.semanticorganizationmining.SemanticOrgMiningResult;
 
 /**

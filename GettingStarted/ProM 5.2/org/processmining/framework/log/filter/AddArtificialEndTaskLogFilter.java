@@ -29,9 +29,9 @@ import org.processmining.framework.log.LogStateMachine;
 import org.processmining.framework.log.LogSummary;
 import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.log.rfb.AuditTrailEntryImpl;
+import org.processmining.framework.ui.Message;
 import org.processmining.framework.util.ToolTipComboBox;
 import org.w3c.dom.Node;
-import org.processmining.framework.ui.Message;
 
 /**
  * <p>

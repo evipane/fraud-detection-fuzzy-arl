@@ -3,10 +3,13 @@
  */
 package org.processmining.framework.models.bpmn;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
-import org.processmining.framework.models.*;
+import org.processmining.framework.models.ModelGraph;
 
 /**
  * @author JianHong.YE, collaborate with LiJie.WEN and Feng

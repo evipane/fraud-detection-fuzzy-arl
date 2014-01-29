@@ -29,22 +29,19 @@ package org.processmining.analysis.performance.componentstate.model;
  * @version 1.0
  */
 
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.Arrays;
-import java.util.TreeSet;
-import java.awt.Color;
 
 import org.processmining.analysis.performance.componentstate.logutil.AbstractLogUnit;
 import org.processmining.analysis.performance.componentstate.logutil.LogUnitList;
+import org.processmining.analysis.performance.componentstate.ui.ComponentStatePanel;
 import org.processmining.framework.log.AuditTrailEntry;
-import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.log.LogReader;
-
-import org.processmining.analysis.performance.componentstate.ui.*;
+import org.processmining.framework.log.ProcessInstance;
 
 public class ComponentStateModel {
 

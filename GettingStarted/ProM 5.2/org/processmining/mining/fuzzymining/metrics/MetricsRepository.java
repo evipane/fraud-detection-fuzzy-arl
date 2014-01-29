@@ -57,9 +57,6 @@ import org.processmining.mining.fuzzymining.metrics.binary.ProximityCorrelationM
 import org.processmining.mining.fuzzymining.metrics.binary.SignificanceBinaryDerivateMetric;
 import org.processmining.mining.fuzzymining.metrics.binary.SignificanceBinaryLogMetric;
 import org.processmining.mining.fuzzymining.metrics.trace.TraceMetric;
-import org.processmining.mining.fuzzymining.metrics.trace.TraceScatterMetric;
-import org.processmining.mining.fuzzymining.metrics.trace.TraceSizeMetric;
-import org.processmining.mining.fuzzymining.metrics.trace.TraceVarietyMetric;
 import org.processmining.mining.fuzzymining.metrics.unary.AggregateUnaryMetric;
 import org.processmining.mining.fuzzymining.metrics.unary.FrequencySignificanceUnaryMetric;
 import org.processmining.mining.fuzzymining.metrics.unary.RoutingSignificanceMetric;

@@ -12,8 +12,7 @@
  **********************************************************/
 package org.processmining.framework.models.pdm;
 
-import java.util.*;
-import org.processmining.framework.models.pdm.*;
+import java.util.HashMap;
 
 /**
  * <p>

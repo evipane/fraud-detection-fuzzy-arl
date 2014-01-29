@@ -1,8 +1,13 @@
 package att.grappa.epc;
 
-import java.awt.*;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Shape;
 
-import att.grappa.*;
+import att.grappa.CustomRenderer;
+import att.grappa.Element;
+import att.grappa.GrappaPoint;
+import att.grappa.GrappaShape;
 
 /**
  * <p>

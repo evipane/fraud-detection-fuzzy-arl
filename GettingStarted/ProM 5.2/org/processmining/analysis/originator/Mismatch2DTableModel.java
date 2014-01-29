@@ -2,22 +2,15 @@ package org.processmining.analysis.originator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import javax.swing.table.AbstractTableModel;
 
 import org.processmining.analysis.orgsimilarity.SimilarityModel;
-import org.processmining.framework.log.AuditTrailEntry;
-import org.processmining.framework.log.LogReader;
-import org.processmining.framework.log.LogSummary;
-import org.processmining.framework.log.ProcessInstance;
-import org.processmining.framework.models.orgmodel.OrgModel;
 import org.processmining.framework.models.orgmodel.OrgEntity;
-import org.processmining.framework.models.orgmodel.Resource;
+import org.processmining.framework.models.orgmodel.OrgModel;
 import org.processmining.framework.ui.Message;
 
 import cern.colt.matrix.DoubleFactory2D;

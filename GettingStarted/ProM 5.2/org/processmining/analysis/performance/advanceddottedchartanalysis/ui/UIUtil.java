@@ -19,7 +19,6 @@ package org.processmining.analysis.performance.advanceddottedchartanalysis.ui;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.lang.Math;
 import java.text.DecimalFormat;
 
 /**

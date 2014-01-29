@@ -1,6 +1,6 @@
 package org.processmining.analysis.epc.similarity;
 
-import java.util.*;
+import java.util.Arrays;
 
 /**
  * <p>

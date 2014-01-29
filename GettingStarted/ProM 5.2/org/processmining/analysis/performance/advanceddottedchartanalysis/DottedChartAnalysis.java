@@ -14,11 +14,10 @@ import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 
 import org.processmining.analysis.performance.advanceddottedchartanalysis.model.DottedChartModel;
-import org.processmining.analysis.performance.advanceddottedchartanalysis.ui.DottedChartPanel;
 import org.processmining.analysis.performance.advanceddottedchartanalysis.ui.DottedChartOptionPanel;
+import org.processmining.analysis.performance.advanceddottedchartanalysis.ui.DottedChartPanel;
 import org.processmining.analysis.performance.advanceddottedchartanalysis.ui.OverviewPanel;
 import org.processmining.analysis.performance.advanceddottedchartanalysis.ui.SettingPanel;
-
 import org.processmining.framework.log.LogReader;
 
 /**

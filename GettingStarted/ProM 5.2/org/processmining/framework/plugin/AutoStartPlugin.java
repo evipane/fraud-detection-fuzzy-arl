@@ -13,7 +13,6 @@
 
 package org.processmining.framework.plugin;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**

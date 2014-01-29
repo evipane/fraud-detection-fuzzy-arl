@@ -1,6 +1,18 @@
 package org.processmining.framework.models.bpel.visit;
 
-import org.processmining.framework.models.bpel.*;
+import org.processmining.framework.models.bpel.BPELAssign;
+import org.processmining.framework.models.bpel.BPELEmpty;
+import org.processmining.framework.models.bpel.BPELFlow;
+import org.processmining.framework.models.bpel.BPELInvoke;
+import org.processmining.framework.models.bpel.BPELPick;
+import org.processmining.framework.models.bpel.BPELProcess;
+import org.processmining.framework.models.bpel.BPELReceive;
+import org.processmining.framework.models.bpel.BPELReply;
+import org.processmining.framework.models.bpel.BPELScope;
+import org.processmining.framework.models.bpel.BPELSequence;
+import org.processmining.framework.models.bpel.BPELSwitch;
+import org.processmining.framework.models.bpel.BPELWait;
+import org.processmining.framework.models.bpel.BPELWhile;
 
 /**
  * <p>

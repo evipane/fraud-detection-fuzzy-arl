@@ -23,12 +23,11 @@ import org.processmining.framework.models.epcpack.EPCObject;
 import org.processmining.framework.models.petrinet.PetriNet;
 import org.processmining.framework.models.petrinet.Place;
 import org.processmining.framework.models.petrinet.Transition;
+import org.processmining.framework.ui.CancelationComponent;
 import org.processmining.framework.ui.MainUI;
 import org.processmining.framework.ui.Message;
 import org.processmining.framework.ui.SwingWorker;
 import org.processmining.framework.util.CenterOnScreen;
-import org.processmining.framework.ui.Progress;
-import org.processmining.framework.ui.CancelationComponent;
 
 /**
  * <p>

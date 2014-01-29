@@ -1,8 +1,8 @@
 package org.processmining.mining.fsm;
 
-import java.util.TreeSet;
-import java.util.TreeMap;
 import java.util.Map;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 import org.processmining.framework.models.fsm.FSMPayload;
 

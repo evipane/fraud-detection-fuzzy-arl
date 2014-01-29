@@ -13,13 +13,23 @@
 
 package org.processmining.framework.models.petrinet.algorithms.logReplay;
 
-import java.util.*;
+import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.text.html.*;
+import javax.swing.BorderFactory;
+import javax.swing.JCheckBox;
+import javax.swing.JEditorPane;
+import javax.swing.JPanel;
+import javax.swing.text.html.HTMLEditorKit;
+
+import org.processmining.analysis.conformance.ConformanceAnalysisSettings;
 
 /**
  * A configuration object represents some unit or category within the respective

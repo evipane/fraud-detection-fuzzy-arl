@@ -5,7 +5,6 @@ package org.processmining.converting.erlangnet2erlang;
 
 import org.processmining.converting.ConvertingPlugin;
 import org.processmining.framework.models.erlangnet.ErlangNet;
-import org.processmining.framework.models.petrinet.PetriNet;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.mining.MiningResult;
 import org.processmining.mining.petrinetmining.PetriNetResult;

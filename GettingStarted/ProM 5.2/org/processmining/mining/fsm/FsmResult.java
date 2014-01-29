@@ -5,11 +5,10 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import org.processmining.framework.plugin.Provider;
-import org.processmining.framework.plugin.ProvidedObject;
-
-import org.processmining.framework.models.fsm.FSM;
 import org.processmining.framework.models.ModelGraphPanel;
+import org.processmining.framework.models.fsm.FSM;
+import org.processmining.framework.plugin.ProvidedObject;
+import org.processmining.framework.plugin.Provider;
 
 /**
  * <p>

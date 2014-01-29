@@ -39,9 +39,8 @@ import javax.swing.JComponent;
 import org.processmining.analysis.AnalysisInputItem;
 import org.processmining.analysis.AnalysisPlugin;
 import org.processmining.analysis.orgsimilarity.ui.SimilarityUI;
-import org.processmining.framework.log.LogReader;
-import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.models.orgmodel.OrgModel;
+import org.processmining.framework.plugin.ProvidedObject;
 
 /**
  * @author Minseok Song

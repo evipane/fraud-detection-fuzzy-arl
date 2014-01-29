@@ -6,12 +6,12 @@ import java.util.HashSet;
 import java.util.Iterator;
 
 import org.processmining.framework.log.LogReader;
+import org.processmining.framework.models.transitionsystem.TSConstants;
 import org.processmining.framework.models.transitionsystem.TransitionSystem;
 import org.processmining.framework.models.transitionsystem.TransitionSystemEdge;
 import org.processmining.framework.models.transitionsystem.TransitionSystemVertex;
 
 import att.grappa.Edge;
-import org.processmining.framework.models.transitionsystem.TSConstants;
 
 /**
  * @author Vladimir Rubin

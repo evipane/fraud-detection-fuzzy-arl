@@ -40,60 +40,31 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Iterator;
 import java.util.Map;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JComponent;
-import javax.swing.JEditorPane;
 import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 
-import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
 import org.deckfour.slickerbox.components.AutoFocusButton;
 import org.deckfour.slickerbox.components.HeaderBar;
 import org.deckfour.slickerbox.components.RoundedPanel;
 import org.deckfour.slickerbox.components.SlickTabbedPane;
-
-import org.processmining.analysis.performance.fsmanalysis.FSMPerformanceAnalysisUI;
 import org.processmining.analysis.performance.fsmanalysis.FSMStatistics;
-import org.processmining.framework.log.AuditTrailEntry;
-import org.processmining.framework.log.AuditTrailEntryList;
-import org.processmining.framework.log.DataSection;
 import org.processmining.framework.log.LogReader;
-import org.processmining.framework.log.LogReaderFactory;
-import org.processmining.framework.log.ProcessInstance;
-import org.processmining.framework.log.filter.DefaultLogFilter;
-import org.processmining.framework.models.ModelGraphEdge;
-import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.fsm.AcceptFSM;
-import org.processmining.framework.models.fsm.FSMState;
-import org.processmining.framework.models.fsm.FSMTransition;
-import org.processmining.framework.models.orgmodel.OrgModel;
-import org.processmining.framework.models.petrinet.PetriNet;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.plugin.Provider;
 import org.processmining.framework.ui.MainUI;
-import org.processmining.framework.ui.Message;
-import org.processmining.framework.ui.Progress;
 import org.processmining.framework.util.GUIPropertyListEnumeration;
 import org.processmining.framework.util.RuntimeUtils;
-import org.processmining.mining.fsm.FsmHorizonSettings;
-import org.processmining.mining.fsm.FsmMinerPayload;
-import org.processmining.mining.fsm.FsmSettings;
-
-import java.util.Iterator;
 
 /**
  * UI for the benchmark analysis plug-in.

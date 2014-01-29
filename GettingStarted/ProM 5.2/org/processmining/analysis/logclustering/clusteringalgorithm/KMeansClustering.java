@@ -1,5 +1,6 @@
 package org.processmining.analysis.logclustering.clusteringalgorithm;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -8,29 +9,28 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import org.processmining.analysis.logclustering.LogCluster;
 import org.processmining.analysis.logclustering.LogClusterSet;
+import org.processmining.analysis.logclustering.distancemeasure.CorrelationCoefficientDistanceMeasure;
+import org.processmining.analysis.logclustering.distancemeasure.DistanceMeasure;
+import org.processmining.analysis.logclustering.distancemeasure.EuclidianDistanceMeasure;
 import org.processmining.framework.models.DotFileWriter;
 import org.processmining.framework.util.Dot;
+import org.processmining.framework.util.GUIPropertyInteger;
+import org.processmining.framework.util.GUIPropertyListEnumeration;
 
 import att.grappa.Graph;
 import att.grappa.GrappaPanel;
 import cern.colt.matrix.DoubleFactory2D;
 import cern.colt.matrix.DoubleMatrix1D;
 import cern.colt.matrix.DoubleMatrix2D;
-import org.processmining.analysis.logclustering.distancemeasure.EuclidianDistanceMeasure;
-import java.util.Iterator;
-import org.processmining.analysis.logclustering.distancemeasure.DistanceMeasure;
-import org.processmining.framework.util.GUIPropertyListEnumeration;
-import org.processmining.analysis.logclustering.distancemeasure.CorrelationCoefficientDistanceMeasure;
-import java.awt.BorderLayout;
-import javax.swing.JScrollPane;
-import org.processmining.framework.util.GUIPropertyInteger;
 
 /**
  * @author Minseok Song

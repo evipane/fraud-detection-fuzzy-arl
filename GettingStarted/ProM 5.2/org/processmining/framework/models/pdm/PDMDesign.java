@@ -13,11 +13,10 @@
 
 package org.processmining.framework.models.pdm;
 
-import java.util.*;
-import java.lang.*;
-import java.math.*;
-import javax.swing.*;
-import org.processmining.framework.ui.Message;
+import java.math.BigDecimal;
+import java.util.HashMap;
+
+import javax.swing.JTable;
 
 /**
  * <p>

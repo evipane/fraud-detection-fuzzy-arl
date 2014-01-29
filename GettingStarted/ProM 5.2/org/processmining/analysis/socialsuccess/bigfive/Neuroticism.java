@@ -4,7 +4,8 @@
 package org.processmining.analysis.socialsuccess.bigfive;
 
 import org.processmining.analysis.socialsuccess.PersonalityData;
-import org.processmining.analysis.socialsuccess.bigfive.neuroticism.*;
+import org.processmining.analysis.socialsuccess.bigfive.neuroticism.IritatedEasily;
+import org.processmining.analysis.socialsuccess.bigfive.neuroticism.OverwhelmedByEmotions;
 
 /**
  * @author MvanWingerden

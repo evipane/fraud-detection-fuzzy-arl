@@ -35,7 +35,6 @@ package org.processmining.framework.models.recommendation.net;
 
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
-import java.util.Map;
 
 import org.processmining.lib.mxml.LogException;
 import org.processmining.lib.mxml.writing.persistency.LogPersistency;

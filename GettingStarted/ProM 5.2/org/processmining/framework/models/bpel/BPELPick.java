@@ -13,18 +13,17 @@
 
 package org.processmining.framework.models.bpel;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
-import org.w3c.dom.Element;
-
-import org.processmining.framework.models.bpel.visit.*;
+import org.processmining.framework.models.ModelGraphEdge;
+import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.bpel.util.Pair;
+import org.processmining.framework.models.bpel.visit.BPELVisitor;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import java.util.ArrayList;
-import org.processmining.framework.models.ModelGraphVertex;
-import java.util.HashSet;
-import org.processmining.framework.models.ModelGraphEdge;
 
 /**
  * <p>

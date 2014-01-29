@@ -13,13 +13,20 @@
 
 package org.processmining.framework.models.epcpack;
 
-import java.io.*;
-import java.util.*;
-
-import org.processmining.framework.log.*;
-import org.processmining.framework.models.*;
-import org.processmining.framework.ui.*;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.Writer;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.processmining.framework.log.AuditTrailEntry;
+import org.processmining.framework.log.LogEvent;
+import org.processmining.framework.models.ModelGraph;
+import org.processmining.framework.models.ModelGraphEdge;
+import org.processmining.framework.ui.Message;
 import org.processmining.framework.util.StringNormalizer;
 
 /**

@@ -13,8 +13,9 @@
 
 package org.processmining.framework.models;
 
-import att.grappa.Edge;
 import java.util.HashMap;
+
+import att.grappa.Edge;
 
 /**
  * <p>

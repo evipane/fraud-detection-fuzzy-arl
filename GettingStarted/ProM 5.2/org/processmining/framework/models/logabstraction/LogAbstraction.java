@@ -1,9 +1,9 @@
 package org.processmining.framework.models.logabstraction;
 
-import org.processmining.framework.models.recommendation.RecommendationResult;
-import org.processmining.framework.log.*;
-import java.util.Collection;
 import java.util.SortedSet;
+
+import org.processmining.framework.log.LogEvent;
+import org.processmining.framework.log.LogReader;
 import org.processmining.framework.models.recommendation.Recommendation;
 
 /**

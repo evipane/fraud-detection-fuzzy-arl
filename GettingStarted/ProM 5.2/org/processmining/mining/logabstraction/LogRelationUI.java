@@ -32,10 +32,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 
+import org.processmining.framework.log.LogStateMachine;
 import org.processmining.framework.log.LogSummary;
 import org.processmining.framework.ui.MainUI;
 import org.processmining.framework.util.CenterOnScreen;
-import org.processmining.framework.log.LogStateMachine;
 
 /**
  * @author Peter van den Brand

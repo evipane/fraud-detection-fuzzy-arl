@@ -13,8 +13,14 @@ import org.processmining.converting.protos.ProtosToPetriNet;
 import org.processmining.converting.protos.ProtosToProtos;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.models.ModelGraphVertex;
-import org.processmining.framework.models.yawl.YAWLTask;
-import org.processmining.framework.models.hlprocess.*;
+import org.processmining.framework.models.hlprocess.HLActivity;
+import org.processmining.framework.models.hlprocess.HLAttribute;
+import org.processmining.framework.models.hlprocess.HLChoice;
+import org.processmining.framework.models.hlprocess.HLCondition;
+import org.processmining.framework.models.hlprocess.HLGroup;
+import org.processmining.framework.models.hlprocess.HLResource;
+import org.processmining.framework.models.hlprocess.HLTypes;
+import org.processmining.framework.models.hlprocess.expr.HLDataExpression;
 import org.processmining.framework.models.hlprocess.hlmodel.HLPetriNet;
 import org.processmining.framework.models.hlprocess.hlmodel.HLProtos;
 import org.processmining.framework.models.petrinet.PetriNet;
@@ -22,12 +28,12 @@ import org.processmining.framework.models.petrinet.Place;
 import org.processmining.framework.models.petrinet.Transition;
 import org.processmining.framework.models.protos.ProtosFlowElement;
 import org.processmining.framework.models.protos.ProtosModel;
+import org.processmining.framework.models.yawl.YAWLTask;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.ui.Message;
 import org.processmining.mining.MiningResult;
 
 import att.grappa.Edge;
-import org.processmining.framework.models.hlprocess.expr.HLDataExpression;
 
 /**
  * This class converts a high-level Protos model (i.e., the Protos control flow

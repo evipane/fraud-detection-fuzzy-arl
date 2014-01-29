@@ -13,11 +13,19 @@
 
 package org.processmining.framework.models.petrinet.algorithms;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
-import org.processmining.framework.ui.*;
-import cern.colt.matrix.*;
-import cern.colt.matrix.linalg.*;
+import org.processmining.framework.ui.Message;
+
+import cern.colt.matrix.DoubleFactory1D;
+import cern.colt.matrix.DoubleFactory2D;
+import cern.colt.matrix.DoubleMatrix1D;
+import cern.colt.matrix.DoubleMatrix2D;
+import cern.colt.matrix.linalg.SeqBlas;
 
 /**
  * <p>

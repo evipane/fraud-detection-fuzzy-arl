@@ -1,8 +1,8 @@
 package org.processmining.framework.models.bpel4ws.type.activity;
 
 import org.processmining.framework.log.LogEvent;
-import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.ModelGraph;
+import org.processmining.framework.models.ModelGraphVertex;
 
 /**
  * @author Kristian Bisgaard Lassen

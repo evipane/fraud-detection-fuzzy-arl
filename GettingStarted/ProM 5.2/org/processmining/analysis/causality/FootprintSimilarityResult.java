@@ -1,15 +1,27 @@
 package org.processmining.analysis.causality;
 
-import java.io.*;
-import java.util.*;
-import javax.xml.parsers.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.util.List;
 
-import org.processmining.framework.models.causality.*;
-import org.processmining.framework.models.epcpack.*;
-import org.processmining.framework.ui.*;
-import org.w3c.dom.*;
+import javax.xml.parsers.DocumentBuilderFactory;
+
 import org.processmining.analysis.epc.similarity.Similarities;
+import org.processmining.framework.models.causality.CausalFootprint;
+import org.processmining.framework.models.causality.CausalityFootprintFactory;
+import org.processmining.framework.models.epcpack.ConfigurableEPC;
+import org.processmining.framework.ui.Message;
+import org.processmining.framework.ui.Progress;
 import org.processmining.framework.util.StringNormalizer;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
 
 /**
  * <p>

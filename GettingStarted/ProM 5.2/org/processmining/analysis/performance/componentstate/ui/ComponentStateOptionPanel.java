@@ -1,43 +1,33 @@
 package org.processmining.analysis.performance.componentstate.ui;
 
-import java.awt.Point;
-import javax.swing.JPanel;
-import javax.swing.JComboBox;
-import javax.swing.JSlider;
-import javax.swing.JLabel;
-import javax.swing.JCheckBox;
-
-import javax.swing.BoxLayout;
-import javax.swing.Box;
-import javax.swing.BorderFactory;
-import java.awt.Font;
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Hashtable;
-import javax.swing.event.ChangeListener;
-import org.processmining.framework.log.AuditTrailEntry;
+import java.util.Iterator;
 
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import org.processmining.framework.log.AuditTrailEntry;
+import org.processmining.framework.log.AuditTrailEntryList;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.log.ProcessInstance;
 // import org.processmining.analysis.performance.dottedchart.DottedChartAnalysis;
 // import org.processmining.analysis.performance.dottedchart.logutil.LogUnitList;
 // import org.processmining.analysis.performance.dottedchart.ui.DottedChartPanel;
-
 import org.processmining.analysis.performance.componentstate.ComponentStateAnalysis;
-import org.processmining.analysis.performance.componentstate.ui.ComponentStatePanel;
-import org.processmining.analysis.performance.componentstate.logutil.LogUnitList;
-
-import java.util.Iterator;
-import org.processmining.framework.log.ProcessInstance;
-import javax.swing.event.ChangeEvent;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemListener;
-import java.util.ArrayList;
-import java.awt.event.ItemEvent;
-import org.processmining.framework.log.LogReader;
-import java.util.Arrays;
-import java.util.HashSet;
-import org.processmining.framework.log.AuditTrailEntryList;
-import javax.swing.JButton;
-import java.awt.BorderLayout;
 
 public class ComponentStateOptionPanel extends JPanel implements ChangeListener {
 

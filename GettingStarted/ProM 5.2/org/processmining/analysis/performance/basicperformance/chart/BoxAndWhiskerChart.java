@@ -9,22 +9,20 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
-
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.labels.BoxAndWhiskerToolTipGenerator;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.renderer.category.BoxAndWhiskerRenderer;
 import org.jfree.data.statistics.DefaultBoxAndWhiskerCategoryDataset;
 import org.processmining.analysis.performance.basicperformance.BasicPerformanceAnalysisUI;
-import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance2D;
-import org.processmining.framework.util.GUIPropertyListEnumeration;
-import org.jfree.chart.labels.BoxAndWhiskerToolTipGenerator;
-
+import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
 import org.processmining.analysis.performance.basicperformance.model.instance.InstancePerformance;
+import org.processmining.framework.util.GUIPropertyListEnumeration;
 
 public class BoxAndWhiskerChart extends AbstractChart {
 	boolean bLegend = true;

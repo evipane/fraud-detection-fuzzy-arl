@@ -4,11 +4,11 @@ import java.util.Collection;
 import java.util.HashSet;
 
 import org.processmining.framework.models.transitionsystem.MultiSet;
+import org.processmining.framework.models.transitionsystem.TSConstants;
+import org.processmining.framework.models.transitionsystem.TransitionSystem;
 import org.processmining.framework.models.transitionsystem.TransitionSystemVertex;
 import org.processmining.framework.models.transitionsystem.TransitionSystemVertexBag;
 import org.processmining.framework.models.transitionsystem.TransitionSystemVertexSet;
-import org.processmining.framework.models.transitionsystem.TSConstants;
-import org.processmining.framework.models.transitionsystem.TransitionSystem;
 
 /**
  * @author Vladimir Rubin

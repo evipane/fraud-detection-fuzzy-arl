@@ -35,7 +35,6 @@ package org.processmining.mining.fuzzymining.vis.paint;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.GradientPaint;
 import java.awt.Graphics2D;
 import java.awt.geom.GeneralPath;
 import java.util.List;

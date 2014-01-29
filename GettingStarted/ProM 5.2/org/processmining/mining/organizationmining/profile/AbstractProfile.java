@@ -36,13 +36,12 @@ package org.processmining.mining.organizationmining.profile;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
 
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.ui.Progress;
 import org.processmining.mining.organizationmining.distance.DistanceMatrix;
 import org.processmining.mining.organizationmining.distance.DistanceMetric;
 import org.processmining.mining.organizationmining.util.EfficientSparseDoubleArray;
-import org.processmining.framework.log.LogReader;
-import org.processmining.framework.ui.Progress;
 
 /**
  * @author Minseok Song

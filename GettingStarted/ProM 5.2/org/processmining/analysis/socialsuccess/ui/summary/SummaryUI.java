@@ -2,7 +2,10 @@ package org.processmining.analysis.socialsuccess.ui.summary;
 
 import java.awt.Color;
 
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.JPanel;
+
 import org.deckfour.slickerbox.components.FlatTabbedPane;
 import org.processmining.analysis.socialsuccess.PersonalityData;
 import org.processmining.analysis.socialsuccess.ui.SettingsTab;

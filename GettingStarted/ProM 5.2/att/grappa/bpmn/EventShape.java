@@ -9,11 +9,9 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 
 import org.processmining.framework.models.bpmn.BpmnEvent;
-
 import org.processmining.framework.models.bpmn.BpmnEventTriggerType;
 import org.processmining.framework.models.bpmn.BpmnEventType;
 import org.processmining.framework.models.bpmn.BpmnGraphVertex;
-import org.processmining.framework.models.bpmn.BpmnObject;
 
 import att.grappa.CustomRenderer;
 import att.grappa.Element;

@@ -7,7 +7,11 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.Vector;
 
-import org.processmining.analysis.socialsuccess.bigfive.*;
+import org.processmining.analysis.socialsuccess.bigfive.Agreeableness;
+import org.processmining.analysis.socialsuccess.bigfive.Conscientiousness;
+import org.processmining.analysis.socialsuccess.bigfive.Extraversion;
+import org.processmining.analysis.socialsuccess.bigfive.Neuroticism;
+import org.processmining.analysis.socialsuccess.bigfive.Openness;
 import org.processmining.analysis.socialsuccess.clustering.KMeans5D;
 import org.processmining.framework.ui.Message;
 

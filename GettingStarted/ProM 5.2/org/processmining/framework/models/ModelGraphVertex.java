@@ -15,11 +15,11 @@ package org.processmining.framework.models;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 
 import att.grappa.Node;
-import java.util.HashMap;
 
 /**
  * @author not attributable

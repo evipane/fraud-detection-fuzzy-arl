@@ -1,7 +1,9 @@
 package org.processmining.analysis.socialsuccess.bigfive;
 
 import org.processmining.analysis.socialsuccess.PersonalityData;
-import org.processmining.analysis.socialsuccess.bigfive.extraversion.*;
+import org.processmining.analysis.socialsuccess.bigfive.extraversion.ModeratingGroups;
+import org.processmining.analysis.socialsuccess.bigfive.extraversion.PrivatePerson;
+import org.processmining.analysis.socialsuccess.bigfive.extraversion.StartConversations;
 
 public class Extraversion extends Trait {
 

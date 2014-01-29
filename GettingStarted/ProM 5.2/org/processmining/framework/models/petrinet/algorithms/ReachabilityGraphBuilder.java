@@ -13,11 +13,18 @@
 
 package org.processmining.framework.models.petrinet.algorithms;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
 
-import org.processmining.framework.models.*;
-import org.processmining.framework.models.petrinet.*;
+import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.fsm.FSMTransition;
+import org.processmining.framework.models.petrinet.Marking;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Place;
+import org.processmining.framework.models.petrinet.State;
+import org.processmining.framework.models.petrinet.StateSpace;
+import org.processmining.framework.models.petrinet.Token;
+import org.processmining.framework.models.petrinet.Transition;
 
 /**
  * <p>

@@ -13,7 +13,7 @@
 
 package org.processmining.framework.models.heuristics;
 
-import org.processmining.framework.log.*;
+import org.processmining.framework.log.ProcessInstance;
 
 /**
  * @author Peter van den Brand and Ana Karla A. de Medeiros

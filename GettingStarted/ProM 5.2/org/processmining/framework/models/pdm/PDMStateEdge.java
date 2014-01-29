@@ -13,17 +13,9 @@ package org.processmining.framework.models.pdm;
  * @version 1.0
  */
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.Writer;
 
-import javax.swing.*;
-
-import org.processmining.framework.log.*;
-import org.processmining.framework.models.pdm.*;
-import org.processmining.framework.models.recommendation.*;
-import org.processmining.framework.ui.*;
-import org.processmining.framework.models.*;
-import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.ModelGraphEdge;
 
 public class PDMStateEdge extends ModelGraphEdge {

@@ -4,9 +4,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.TreeSet;
 import java.util.Iterator;
-import org.processmining.analysis.socialsuccess.*;
+import java.util.TreeSet;
+
+import org.processmining.analysis.socialsuccess.BigFive;
+import org.processmining.analysis.socialsuccess.PersonalityData;
 import org.processmining.framework.log.DataSection;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.ProcessInstance;

@@ -1,6 +1,7 @@
 package org.processmining.analysis.logclustering.profiles;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 import org.processmining.analysis.logclustering.distancemeasure.DistanceMeasure;
 import org.processmining.framework.log.AuditTrailEntry;
@@ -9,7 +10,6 @@ import cern.colt.matrix.DoubleFactory1D;
 import cern.colt.matrix.DoubleFactory2D;
 import cern.colt.matrix.DoubleMatrix1D;
 import cern.colt.matrix.DoubleMatrix2D;
-import java.util.HashSet;
 
 /**
  * Abstract class defining the interface for a log profile that contains profile

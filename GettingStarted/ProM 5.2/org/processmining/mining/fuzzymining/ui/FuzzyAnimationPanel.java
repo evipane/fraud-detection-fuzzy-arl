@@ -69,7 +69,6 @@ import org.processmining.framework.log.filter.TimestampInjectionFilter;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.plugin.Provider;
 import org.processmining.framework.ui.MainUI;
-import org.processmining.framework.util.RuntimeUtils;
 import org.processmining.mining.fuzzymining.filter.FuzzyGraphProjectionFilter;
 import org.processmining.mining.fuzzymining.graph.FuzzyGraph;
 import org.processmining.mining.fuzzymining.vis.ui.AnimationFrame;

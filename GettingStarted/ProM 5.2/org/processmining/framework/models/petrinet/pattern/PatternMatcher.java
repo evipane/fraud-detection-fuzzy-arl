@@ -27,7 +27,6 @@ import org.processmining.framework.models.petrinet.PetriNetNavigation;
 import org.processmining.framework.models.petrinet.Place;
 import org.processmining.framework.models.petrinet.Transition;
 import org.processmining.framework.models.petrinet.algorithms.PnmlReader;
-import org.semanticweb.kaon2.server.rmi.a;
 
 import att.grappa.Node;
 

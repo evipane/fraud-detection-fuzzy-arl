@@ -13,24 +13,25 @@
 
 package org.processmining.converting;
 
-import org.processmining.framework.log.LogReader;
-import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.mining.epcmining.EPCResult;
-import org.processmining.framework.models.protos.ProtosModel;
-import org.processmining.framework.models.epcpack.ConfigurableEPC;
-import org.processmining.framework.models.protos.ProtosSubprocess;
-import org.processmining.framework.models.protos.ProtosFlowElement;
+import java.util.HashMap;
 import java.util.HashSet;
-import org.processmining.framework.models.epcpack.EPCFunction;
+import java.util.Iterator;
+
 import org.processmining.framework.log.LogEvent;
-import org.processmining.framework.models.yawl.YAWLTask;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.models.epcpack.ConfigurableEPC;
 import org.processmining.framework.models.epcpack.EPCConnector;
 import org.processmining.framework.models.epcpack.EPCEvent;
-import java.util.HashMap;
-import org.processmining.framework.models.protos.ProtosProcessArc;
+import org.processmining.framework.models.epcpack.EPCFunction;
 import org.processmining.framework.models.epcpack.algorithms.ConnectorStructureExtractor;
-import java.util.Iterator;
+import org.processmining.framework.models.protos.ProtosFlowElement;
+import org.processmining.framework.models.protos.ProtosModel;
+import org.processmining.framework.models.protos.ProtosProcessArc;
+import org.processmining.framework.models.protos.ProtosSubprocess;
+import org.processmining.framework.models.yawl.YAWLTask;
+import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.ui.Message;
+import org.processmining.mining.epcmining.EPCResult;
 
 /**
  * <p>

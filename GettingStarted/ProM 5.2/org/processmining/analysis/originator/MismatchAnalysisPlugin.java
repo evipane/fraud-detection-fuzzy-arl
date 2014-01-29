@@ -17,9 +17,8 @@ import javax.swing.JComponent;
 
 import org.processmining.analysis.AnalysisInputItem;
 import org.processmining.analysis.AnalysisPlugin;
-import org.processmining.framework.log.LogReader;
-import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.analysis.orgsimilarity.SimilarityModel;
+import org.processmining.framework.plugin.ProvidedObject;
 
 /**
  * 

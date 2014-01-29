@@ -1,25 +1,30 @@
 package org.processmining.analysis.performance.componentstate.ui;
 
-import java.util.*;
-
-import java.awt.*;
-
-import javax.swing.*;
-
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.event.MouseEvent;
-import org.processmining.analysis.performance.dottedchart.ui.ColorReference;
-import org.processmining.analysis.performance.dottedchart.ui.ShapeReference;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Iterator;
 
-import org.processmining.analysis.performance.componentstate.*;
-import org.processmining.analysis.performance.componentstate.model.*;
-import org.processmining.analysis.performance.componentstate.ui.ComponentStatePanel;
-import org.processmining.analysis.performance.componentstate.ui.ComponentStateOptionPanel;
+import javax.swing.JPanel;
+
+import org.processmining.analysis.performance.componentstate.ComponentStateAnalysis;
 import org.processmining.analysis.performance.componentstate.logutil.AbstractLogUnit;
 import org.processmining.analysis.performance.componentstate.logutil.LogUnitList;
-
-import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
+import org.processmining.analysis.performance.componentstate.model.ComponentStateModel;
+import org.processmining.analysis.performance.dottedchart.ui.ColorReference;
+import org.processmining.analysis.performance.dottedchart.ui.ShapeReference;
 
 /**
  * ComponentStatePanel.

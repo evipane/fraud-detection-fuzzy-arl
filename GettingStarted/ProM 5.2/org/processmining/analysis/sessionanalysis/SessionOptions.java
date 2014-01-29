@@ -1,18 +1,12 @@
 package org.processmining.analysis.sessionanalysis;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
 import org.apache.commons.math.stat.descriptive.SummaryStatistics;
-import org.processmining.framework.models.hlprocess.HLTypes.TimeUnit;
 import org.processmining.framework.util.GUIPropertyListEnumeration;
 import org.processmining.framework.util.GuiNotificationTarget;
-import org.processmining.framework.util.GuiUtilities;
 
 public class SessionOptions {
 

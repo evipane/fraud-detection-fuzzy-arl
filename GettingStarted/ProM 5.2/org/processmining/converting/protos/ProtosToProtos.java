@@ -5,13 +5,15 @@ package org.processmining.converting.protos;
  * (c) 2008 Technische Universiteit Eindhoven and STW
  */
 
-import org.processmining.converting.Converter;
-import org.processmining.framework.models.protos.*;
 import java.util.HashMap;
-import java.util.ArrayList;
-import org.processmining.mining.protosmining.ProtosResult;
-import org.processmining.converting.ConvertingPlugin;
+
+import org.processmining.converting.Converter;
+import org.processmining.framework.models.protos.ProtosFlowElement;
+import org.processmining.framework.models.protos.ProtosModel;
+import org.processmining.framework.models.protos.ProtosProcessArc;
+import org.processmining.framework.models.protos.ProtosSubprocess;
 import org.processmining.framework.ui.Message;
+import org.processmining.mining.protosmining.ProtosResult;
 
 public class ProtosToProtos {
 

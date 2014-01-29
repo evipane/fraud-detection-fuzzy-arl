@@ -1,16 +1,29 @@
 package org.processmining.analysis.pdm.recommendation;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeSet;
+import java.util.Vector;
 
-import javax.swing.*;
+import javax.swing.JComponent;
 
-import org.processmining.framework.log.*;
-import org.processmining.framework.models.pdm.*;
-import org.processmining.framework.models.recommendation.*;
-import org.processmining.framework.ui.*;
-import org.processmining.analysis.pdm.PDMAnalysisUI;
-import org.processmining.analysis.AnalysisInputItem;
+import org.processmining.framework.log.AuditTrailEntry;
+import org.processmining.framework.log.ProcessInstance;
+import org.processmining.framework.models.pdm.PDMDataElement;
+import org.processmining.framework.models.pdm.PDMModel;
+import org.processmining.framework.models.pdm.PDMOperation;
+import org.processmining.framework.models.pdm.PDMState;
+import org.processmining.framework.models.pdm.PDMStateSpace;
+import org.processmining.framework.models.recommendation.Recommendation;
+import org.processmining.framework.models.recommendation.RecommendationProvider;
+import org.processmining.framework.models.recommendation.RecommendationQuery;
+import org.processmining.framework.models.recommendation.RecommendationResult;
+import org.processmining.framework.ui.MainUI;
+import org.processmining.framework.ui.Message;
 
 /**
  * 

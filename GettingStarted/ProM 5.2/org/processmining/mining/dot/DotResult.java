@@ -1,13 +1,15 @@
 package org.processmining.mining.dot;
 
-import org.processmining.mining.MiningResult;
-import org.processmining.framework.log.LogReader;
-import javax.swing.JComponent;
 import java.awt.BorderLayout;
-import org.processmining.framework.models.dot.DotModel;
-import javax.swing.JScrollPane;
+
+import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
+import org.processmining.framework.log.LogReader;
 import org.processmining.framework.models.ModelGraphPanel;
+import org.processmining.framework.models.dot.DotModel;
+import org.processmining.mining.MiningResult;
 
 /**
  * <p>

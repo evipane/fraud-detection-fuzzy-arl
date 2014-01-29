@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.util.List;
+
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -12,12 +13,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
 import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
-
 import org.processmining.analysis.performance.basicperformance.BasicPerformanceAnalysisUI;
-import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance2D;
-
+import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
 import org.processmining.analysis.performance.basicperformance.model.instance.InstancePerformance;
 
 public class TableChart extends AbstractChart implements ActionListener {

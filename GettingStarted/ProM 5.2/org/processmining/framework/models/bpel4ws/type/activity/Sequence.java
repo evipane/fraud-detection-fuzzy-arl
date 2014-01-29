@@ -7,8 +7,8 @@ package org.processmining.framework.models.bpel4ws.type.activity;
 import java.util.List;
 import java.util.Vector;
 
-import org.processmining.framework.models.bpel4ws.type.BPEL4WSVisitor;
 import org.processmining.framework.models.bpel4ws.type.BPEL4WS;
+import org.processmining.framework.models.bpel4ws.type.BPEL4WSVisitor;
 
 /**
  * @author Kristian Bisgaard Lassen

@@ -7,16 +7,15 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import javax.swing.JComponent;
 
+import org.processmining.framework.log.ProcessInstance;
 import org.processmining.mining.organizationmining.model.Cluster;
 import org.processmining.mining.organizationmining.model.ClusterSet;
-import org.processmining.framework.log.ProcessInstance;
-
-import java.util.Iterator;
-import java.util.Random;
 
 /**
  * @author Minseok

@@ -3,9 +3,9 @@
  */
 package org.processmining.analysis.log.scale;
 
+import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.plugin.Plugin;
-import org.processmining.framework.log.LogReader;
 
 /**
  * <p>

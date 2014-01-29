@@ -34,6 +34,7 @@
 package org.processmining.mining.fuzzymining.metrics.binary;
 
 import java.util.Set;
+
 import org.processmining.framework.log.AuditTrailEntry;
 
 /**

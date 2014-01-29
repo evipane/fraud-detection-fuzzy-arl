@@ -17,13 +17,6 @@
 
 package org.processmining.analysis.performance.dottedchart.ui;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Iterator;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -34,6 +27,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 
 import javax.swing.JPanel;
 
@@ -42,8 +42,6 @@ import org.processmining.analysis.performance.dottedchart.DottedChartAnalysis;
 import org.processmining.analysis.performance.dottedchart.logutil.AbstractLogUnit;
 import org.processmining.analysis.performance.dottedchart.logutil.LogUnitList;
 import org.processmining.analysis.performance.dottedchart.model.DottedChartModel;
-import org.processmining.framework.ui.Message;
-import java.util.HashSet;
 
 /**
  * DottedChartPanel.

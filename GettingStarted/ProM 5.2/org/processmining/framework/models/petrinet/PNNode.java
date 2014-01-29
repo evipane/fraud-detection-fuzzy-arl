@@ -13,7 +13,7 @@
 
 package org.processmining.framework.models.petrinet;
 
-import org.processmining.framework.models.*;
+import org.processmining.framework.models.ModelGraphVertex;
 
 /**
  * <p>

@@ -1,12 +1,11 @@
 package org.processmining.analysis.performance.basicperformance.chart;
 
-import java.util.HashMap;
-import java.util.Date;
-import java.util.ArrayList;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -15,31 +14,30 @@ import javax.swing.JScrollPane;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
-import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYItemRenderer;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.chart.renderer.xy.XYStepRenderer;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.time.RegularTimePeriod;
-import org.jfree.data.time.Hour;
-import org.jfree.data.time.Day;
-import org.jfree.data.time.Minute;
-import org.jfree.data.time.TimeSeries;
-import org.jfree.data.time.TimeSeriesCollection;
-import org.jfree.data.time.SimpleTimePeriod;
 import org.jfree.data.gantt.Task;
 import org.jfree.data.gantt.TaskSeries;
+import org.jfree.data.time.Day;
+import org.jfree.data.time.Hour;
+import org.jfree.data.time.Minute;
+import org.jfree.data.time.RegularTimePeriod;
+import org.jfree.data.time.SimpleTimePeriod;
+import org.jfree.data.time.TimeSeries;
+import org.jfree.data.time.TimeSeriesCollection;
 import org.jfree.data.xy.XYDataset;
-
 import org.processmining.analysis.performance.basicperformance.BasicPerformanceAnalysisUI;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance2D;
 import org.processmining.analysis.performance.basicperformance.model.instance.InstancePerformance;
 import org.processmining.analysis.performance.basicperformance.model.task.InstOriTPerformance;
 import org.processmining.analysis.performance.basicperformance.model.task.InstanceTaskTPerformance;
 import org.processmining.framework.ui.Message;
-import org.processmining.framework.util.GUIPropertyListEnumeration;
 import org.processmining.framework.util.GUIPropertyInteger;
+import org.processmining.framework.util.GUIPropertyListEnumeration;
 
 public class XYBlockChart extends AbstractChart {
 

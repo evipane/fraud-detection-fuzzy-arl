@@ -13,11 +13,10 @@
 
 package org.processmining.framework.models.pdm;
 
-import java.io.*;
-import java.util.*;
-import javax.xml.parsers.*;
-import org.processmining.framework.models.*;
-import org.w3c.dom.*;
+import java.io.IOException;
+import java.io.Writer;
+
+import org.processmining.framework.models.ModelGraphVertex;
 
 /**
  * <p>

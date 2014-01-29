@@ -27,9 +27,9 @@ import org.processmining.framework.models.petrinet.PetriNet;
 import org.processmining.framework.models.petrinet.Place;
 import org.processmining.framework.models.petrinet.Transition;
 import org.processmining.framework.plugin.ProvidedObject;
+import org.processmining.framework.ui.Message;
 import org.processmining.mining.MiningResult;
 import org.processmining.mining.petrinetmining.PetriNetResult;
-import org.processmining.framework.ui.Message;
 
 /**
  * <p>

@@ -62,7 +62,6 @@ import org.processmining.framework.util.Dot;
 import att.grappa.Graph;
 import att.grappa.GrappaAdapter;
 import att.grappa.GrappaPanel;
-
 import cern.colt.matrix.DoubleMatrix2D;
 
 /**

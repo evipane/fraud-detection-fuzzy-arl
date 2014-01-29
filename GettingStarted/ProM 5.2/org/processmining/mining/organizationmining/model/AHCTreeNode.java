@@ -1,7 +1,8 @@
 package org.processmining.mining.organizationmining.model;
 
-import org.processmining.framework.log.LogReader;
 import java.util.Iterator;
+
+import org.processmining.framework.log.LogReader;
 
 /**
  * <p>

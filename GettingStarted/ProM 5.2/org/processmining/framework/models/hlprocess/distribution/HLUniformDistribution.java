@@ -5,6 +5,7 @@ import java.io.Writer;
 
 import javax.swing.JOptionPane;
 
+import org.processmining.framework.models.hlprocess.gui.att.dist.HLUniformDistributionGui;
 import org.processmining.framework.ui.MainUI;
 
 /**

@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -46,7 +47,6 @@ import org.processmining.importing.LogReaderConnection;
 import org.processmining.mining.MiningPlugin;
 import org.processmining.mining.MiningResult;
 import org.processmining.mining.logabstraction.LogRelationBasedAlgorithm;
-import javax.swing.JCheckBox;
 
 /**
  * @author Peter van den Brand

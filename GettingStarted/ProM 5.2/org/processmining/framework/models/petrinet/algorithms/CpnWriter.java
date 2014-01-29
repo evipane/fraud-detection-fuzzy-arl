@@ -13,11 +13,22 @@
 
 package org.processmining.framework.models.petrinet.algorithms;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Iterator;
 
-import org.processmining.framework.models.petrinet.*;
-import att.grappa.*;
+import org.processmining.exporting.petrinet.CpnExport;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Place;
+import org.processmining.framework.models.petrinet.Transition;
+
+import att.grappa.Edge;
+import att.grappa.Element;
+import att.grappa.Grappa;
+import att.grappa.Node;
+import att.grappa.Subgraph;
 
 /**
  * Exports a given low-level Petri net to a coloured Petri net representation

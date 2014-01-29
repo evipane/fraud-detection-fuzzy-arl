@@ -1,14 +1,14 @@
 package org.processmining.framework.util;
 
 import java.awt.Dimension;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.awt.event.KeyListener;
-import java.awt.event.KeyEvent;
 
 /**
  * An integer property that can be readily displayed as it maintains its own GUI

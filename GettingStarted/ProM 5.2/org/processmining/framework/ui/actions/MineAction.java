@@ -34,7 +34,6 @@
 package org.processmining.framework.ui.actions;
 
 import java.awt.event.ActionEvent;
-import java.beans.PropertyVetoException;
 
 import javax.swing.AbstractAction;
 import javax.swing.JInternalFrame;

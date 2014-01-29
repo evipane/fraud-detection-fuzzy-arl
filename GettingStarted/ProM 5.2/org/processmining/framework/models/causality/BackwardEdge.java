@@ -1,13 +1,12 @@
 package org.processmining.framework.models.causality;
 
-import org.processmining.framework.models.ModelGraphVertex;
-import java.util.HashSet;
-import java.io.Serializable;
-import java.io.IOException;
 import java.io.BufferedWriter;
-import org.w3c.dom.Node;
-import org.processmining.framework.models.ModelGraph;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
+
+import org.processmining.framework.models.ModelGraphVertex;
+import org.w3c.dom.Node;
 
 /**
  * <p>

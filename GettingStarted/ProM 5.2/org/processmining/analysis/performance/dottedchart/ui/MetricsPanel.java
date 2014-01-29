@@ -18,29 +18,25 @@
 package org.processmining.analysis.performance.dottedchart.ui;
 
 import java.awt.BorderLayout;
-import java.awt.Font;
-import java.awt.Dimension;
 import java.awt.Color;
-import java.awt.event.ActionListener;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
-
-import javax.swing.JTable;
-import javax.swing.BorderFactory;
-import javax.swing.JPanel;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.BoxLayout;
-import javax.swing.Box;
-import javax.swing.JLabel;
-import javax.swing.JComboBox;
-
+import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import java.text.DateFormat;
-import java.text.DecimalFormat;
-import java.text.DateFormat;
-import java.text.DecimalFormat;
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableCellRenderer;
 
 import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
 import org.processmining.analysis.performance.dottedchart.model.DottedChartModel;

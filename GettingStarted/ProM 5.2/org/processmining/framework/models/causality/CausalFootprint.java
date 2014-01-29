@@ -1,20 +1,21 @@
 package org.processmining.framework.models.causality;
 
-import java.util.*;
-
-import org.processmining.framework.models.*;
-
-import java.io.IOException;
-import java.io.Writer;
-import org.processmining.framework.ui.Message;
-import org.processmining.framework.ui.CancelationComponent;
-import java.io.Serializable;
-import java.io.OutputStream;
-import org.processmining.framework.log.LogFilter;
-import org.w3c.dom.Node;
-import org.processmining.framework.log.filter.LogFilterCollection;
 import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.Serializable;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+
+import org.processmining.framework.models.ModelGraph;
+import org.processmining.framework.models.ModelGraphVertex;
+import org.processmining.framework.ui.CancelationComponent;
+import org.processmining.framework.ui.Message;
 import org.processmining.framework.util.StringNormalizer;
+import org.w3c.dom.Node;
 
 /**
  * <p>

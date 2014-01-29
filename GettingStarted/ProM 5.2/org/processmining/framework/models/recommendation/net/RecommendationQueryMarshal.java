@@ -47,6 +47,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import org.processmining.framework.log.AuditTrailEntry;
+import org.processmining.framework.log.LogEvent;
 import org.processmining.framework.log.rfb.AuditTrailEntryImpl;
 import org.processmining.framework.log.rfb.XmlUtils;
 import org.processmining.framework.models.recommendation.RecommendationQuery;
@@ -58,7 +59,6 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
-import org.processmining.framework.log.LogEvent;
 
 /**
  * @author Christian W. Guenther (christian@deckfour.org)

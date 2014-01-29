@@ -13,11 +13,13 @@
 
 package org.processmining.framework.models.petrinet.algorithms.logReplay;
 
-import java.util.*;
+import java.util.Set;
 
-import javax.swing.*;
+import javax.swing.JPanel;
 
-import org.processmining.framework.plugin.*;
+import org.processmining.analysis.conformance.ConformanceAnalysisResults;
+import org.processmining.framework.plugin.ProvidedObject;
+import org.processmining.framework.plugin.Provider;
 
 /**
  * This class can be used to create the resulting content for some analysis. As

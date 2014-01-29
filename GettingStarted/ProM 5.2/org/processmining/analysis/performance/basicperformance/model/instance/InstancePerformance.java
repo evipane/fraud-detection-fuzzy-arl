@@ -2,15 +2,11 @@ package org.processmining.analysis.performance.basicperformance.model.instance;
 
 import java.util.ArrayList;
 
-import javax.swing.JPanel;
-
 import org.jfree.data.gantt.TaskSeries;
-import org.processmining.framework.log.LogReader;
-import org.processmining.framework.log.ProcessInstance;
-import org.processmining.framework.ui.slicker.ProgressPanel;
-
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance;
 import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.log.ProcessInstance;
 
 public class InstancePerformance extends AbstractPerformance {
 

@@ -13,14 +13,26 @@
 
 package org.processmining.framework.models.petrinet.algorithms;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.util.Enumeration;
+import java.util.Iterator;
 
 import org.processmining.framework.models.ModelGraphPanel;
-import org.processmining.framework.models.petrinet.*;
-import org.processmining.framework.ui.*;
-import att.grappa.*;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Place;
+import org.processmining.framework.models.petrinet.Transition;
+import org.processmining.framework.models.petrinet.TransitionCluster;
+import org.processmining.framework.ui.About;
 import org.processmining.framework.util.StringNormalizer;
+
+import att.grappa.Edge;
+import att.grappa.Element;
+import att.grappa.Grappa;
+import att.grappa.GrappaLine;
+import att.grappa.GrappaPoint;
+import att.grappa.Node;
+import att.grappa.Subgraph;
 
 /**
  * Writes a PetriNet to a PNML file. Tokens are not stored in the PNML file.

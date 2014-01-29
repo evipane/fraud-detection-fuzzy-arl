@@ -26,11 +26,11 @@ import java.util.Iterator;
 import javax.swing.JPanel;
 
 import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
+import org.processmining.analysis.performance.advanceddottedchartanalysis.model.guimap.GuiMapModel;
+import org.processmining.analysis.performance.advanceddottedchartanalysis.ui.DottedChartOptionPanel;
 import org.processmining.framework.log.AuditTrailEntry;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.ProcessInstance;
-import org.processmining.analysis.performance.advanceddottedchartanalysis.model.guimap.GuiMapModel;
-import org.processmining.analysis.performance.advanceddottedchartanalysis.ui.DottedChartOptionPanel;
 
 public class DottedChartModel {
 

@@ -13,12 +13,6 @@
 
 package org.processmining.framework.models.orgmodel.algorithms;
 
-import java.io.*;
-import java.util.*;
-
-import org.processmining.framework.models.petrinet.*;
-import org.processmining.framework.ui.*;
-import att.grappa.*;
 
 /**
  * Writes a Organizational Model to a OMML file.

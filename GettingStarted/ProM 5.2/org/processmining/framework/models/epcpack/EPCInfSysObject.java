@@ -13,7 +13,8 @@
 
 package org.processmining.framework.models.epcpack;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.HashMap;
 
 /**

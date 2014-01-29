@@ -5,8 +5,8 @@ import org.processmining.framework.models.hlprocess.HLAttribute;
 import org.processmining.framework.models.hlprocess.HLID;
 import org.processmining.framework.models.hlprocess.HLProcess;
 import org.processmining.framework.models.hlprocess.HLTypes.AttributeType;
-import org.processmining.framework.models.hlprocess.distribution.HLGeneralDistribution;
 import org.processmining.framework.models.hlprocess.distribution.HLDistribution.DistributionEnum;
+import org.processmining.framework.models.hlprocess.distribution.HLGeneralDistribution;
 import org.processmining.framework.ui.Message;
 
 public class HLAttributeManager {

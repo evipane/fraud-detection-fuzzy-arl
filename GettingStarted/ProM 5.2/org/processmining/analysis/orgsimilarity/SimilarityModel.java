@@ -1,19 +1,18 @@
 package org.processmining.analysis.orgsimilarity;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 
-import cern.colt.matrix.DoubleFactory2D;
-import cern.colt.matrix.DoubleMatrix2D;
-import org.processmining.analysis.orgsimilarity.SimilarityItem;
-import org.processmining.analysis.orgsimilarity.SimilarityResultTableModel;
 import org.processmining.analysis.orgsimilarity.ui.SimilarityUI;
 import org.processmining.framework.models.orgmodel.OrgEntity;
 import org.processmining.framework.models.orgmodel.OrgModel;
 import org.processmining.framework.models.orgmodel.Resource;
+
+import cern.colt.matrix.DoubleFactory2D;
+import cern.colt.matrix.DoubleMatrix2D;
 
 public class SimilarityModel {
 

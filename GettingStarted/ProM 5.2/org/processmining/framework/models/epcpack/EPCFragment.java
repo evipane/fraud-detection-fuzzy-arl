@@ -1,7 +1,8 @@
 package org.processmining.framework.models.epcpack;
 
-import java.util.*;
-import org.processmining.framework.models.epcpack.algorithms.ConnectorStructureExtractor;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * <p>

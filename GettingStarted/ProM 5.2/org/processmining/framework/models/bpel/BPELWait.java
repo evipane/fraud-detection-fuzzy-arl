@@ -13,9 +13,8 @@
 
 package org.processmining.framework.models.bpel;
 
+import org.processmining.framework.models.bpel.visit.BPELVisitor;
 import org.w3c.dom.Element;
-
-import org.processmining.framework.models.bpel.visit.*;
 
 /**
  * <p>

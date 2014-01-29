@@ -1,14 +1,8 @@
 package org.processmining.analysis.epcmerge;
 
-import java.util.Iterator;
-
 import org.processmining.analysis.conformance.ConformanceAnalysisConfiguration;
 import org.processmining.analysis.conformance.ConformanceAnalysisSettings;
-import org.processmining.analysis.conformance.ThreadNotificationTarget;
 import org.processmining.framework.models.epcpack.ConfigurableEPC;
-import org.processmining.framework.models.petrinet.algorithms.logReplay.AnalysisConfiguration;
-import org.processmining.framework.models.petrinet.algorithms.logReplay.AnalysisMethod;
-import org.processmining.framework.models.petrinet.algorithms.logReplay.AnalysisResult;
 
 public class EPCMergeExecutionThread extends Thread {
 	private EPCMergeMethod myMethod;

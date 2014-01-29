@@ -1,9 +1,11 @@
 package org.processmining.framework.models.orgmodel;
 
-import java.util.*;
-import org.processmining.framework.ui.Message;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.HashSet;
+import java.util.Iterator;
+
+import org.processmining.framework.ui.Message;
 
 public class Resource implements Cloneable {
 

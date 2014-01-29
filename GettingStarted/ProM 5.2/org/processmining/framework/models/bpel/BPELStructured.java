@@ -15,7 +15,6 @@ package org.processmining.framework.models.bpel;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

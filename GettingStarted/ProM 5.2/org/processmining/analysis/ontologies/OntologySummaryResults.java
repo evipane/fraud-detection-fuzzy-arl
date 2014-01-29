@@ -26,7 +26,6 @@ import org.processmining.framework.models.ontology.OntologyModel;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.plugin.Provider;
 import org.processmining.framework.ui.DoubleClickTable;
-import org.processmining.framework.ui.Progress;
 
 /**
  * @author Ana Karla A. de Medeiros

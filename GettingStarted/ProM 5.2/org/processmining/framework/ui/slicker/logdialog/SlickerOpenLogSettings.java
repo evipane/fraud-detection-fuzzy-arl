@@ -58,7 +58,6 @@ import org.processmining.framework.log.LogReaderFactory;
 import org.processmining.framework.log.LogSummary;
 import org.processmining.framework.log.filter.DefaultLogFilter;
 import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.framework.ui.MainUI;
 import org.processmining.framework.ui.Message;
 import org.processmining.framework.ui.OpenLogSettings;
 import org.processmining.framework.ui.SwingWorker;

@@ -1,20 +1,21 @@
 package org.processmining.exporting.petrinet;
 
-import org.processmining.exporting.ExportPlugin;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.framework.models.petrinet.PetriNet;
-import org.processmining.framework.ui.Message;
-import java.io.OutputStream;
 import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.StringTokenizer;
-import org.processmining.framework.models.petrinet.oWFNet;
+
+import org.processmining.exporting.ExportPlugin;
+import org.processmining.framework.models.ModelGraphEdge;
+import org.processmining.framework.models.petrinet.PetriNet;
 import org.processmining.framework.models.petrinet.Place;
 import org.processmining.framework.models.petrinet.Transition;
-import org.processmining.framework.models.ModelGraphEdge;
-import java.util.Iterator;
-import java.util.HashMap;
+import org.processmining.framework.models.petrinet.oWFNet;
+import org.processmining.framework.plugin.ProvidedObject;
+import org.processmining.framework.ui.Message;
 
 /**
  * <p>

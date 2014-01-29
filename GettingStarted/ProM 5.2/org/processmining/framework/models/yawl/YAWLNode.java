@@ -13,7 +13,8 @@
 
 package org.processmining.framework.models.yawl;
 
-import org.processmining.framework.models.*;
+import org.processmining.framework.models.ModelGraph;
+import org.processmining.framework.models.ModelGraphVertex;
 
 /**
  * <p>

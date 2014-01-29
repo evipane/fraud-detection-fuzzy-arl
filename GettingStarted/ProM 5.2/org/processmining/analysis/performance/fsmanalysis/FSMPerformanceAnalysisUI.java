@@ -17,26 +17,25 @@
 
 package org.processmining.analysis.performance.fsmanalysis;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.HashSet;
-import java.text.NumberFormat;
-import java.text.DecimalFormat;
+import java.util.Iterator;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
 import org.deckfour.slickerbox.components.AutoFocusButton;
-import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.ModelGraphEdge;
+import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.fsm.AcceptFSM;
 import org.processmining.framework.models.fsm.FSMState;
 import org.processmining.framework.plugin.ProvidedObject;

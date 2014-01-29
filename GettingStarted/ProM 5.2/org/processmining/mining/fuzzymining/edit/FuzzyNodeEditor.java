@@ -54,8 +54,8 @@ import javax.swing.event.ChangeListener;
 
 import org.deckfour.gantzgraf.model.GGNode;
 import org.deckfour.slickerbox.components.NiceDoubleSlider;
-import org.deckfour.slickerbox.components.SlickerButton;
 import org.deckfour.slickerbox.components.NiceSlider.Orientation;
+import org.deckfour.slickerbox.components.SlickerButton;
 import org.processmining.mining.fuzzymining.graph.ClusterNode;
 import org.processmining.mining.fuzzymining.graph.GGAdapter;
 import org.processmining.mining.fuzzymining.graph.MutableFuzzyGraph;

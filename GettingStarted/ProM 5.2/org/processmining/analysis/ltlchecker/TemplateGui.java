@@ -67,7 +67,6 @@ import org.processmining.framework.log.AuditTrailEntryList;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.log.rfb.BufferedLogReader;
-import org.processmining.framework.models.ontology.OntologyCollection;
 import org.processmining.framework.ui.MainUI;
 import org.processmining.framework.ui.Message;
 import org.processmining.framework.ui.Progress;

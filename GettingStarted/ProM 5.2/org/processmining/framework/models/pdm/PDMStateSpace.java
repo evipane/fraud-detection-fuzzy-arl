@@ -13,16 +13,13 @@ package org.processmining.framework.models.pdm;
  * @version 1.0
  */
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Vector;
 
-import javax.swing.*;
-
-import org.processmining.framework.log.*;
-import org.processmining.framework.models.pdm.*;
-import org.processmining.framework.models.recommendation.*;
-import org.processmining.framework.ui.*;
-import org.processmining.framework.models.*;
+import org.processmining.framework.models.ModelGraph;
 
 public class PDMStateSpace extends ModelGraph {
 

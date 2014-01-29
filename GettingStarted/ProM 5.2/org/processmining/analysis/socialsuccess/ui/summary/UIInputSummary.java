@@ -2,7 +2,14 @@ package org.processmining.analysis.socialsuccess.ui.summary;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import javax.swing.*;
+
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
+
 import org.deckfour.slickerbox.components.RoundedPanel;
 import org.deckfour.slickerbox.ui.SlickerScrollBarUI;
 import org.processmining.framework.log.LogFilter;

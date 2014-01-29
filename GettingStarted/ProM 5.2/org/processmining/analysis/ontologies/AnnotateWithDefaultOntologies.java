@@ -11,7 +11,6 @@ import org.processmining.framework.log.LogReaderFactory;
 import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.models.ontology.ConceptModel;
 import org.processmining.framework.models.ontology.InvalidModelException;
-import org.processmining.framework.models.ontology.OntologyCollection;
 import org.processmining.framework.models.ontology.OntologyModel;
 import org.processmining.framework.ui.Progress;
 

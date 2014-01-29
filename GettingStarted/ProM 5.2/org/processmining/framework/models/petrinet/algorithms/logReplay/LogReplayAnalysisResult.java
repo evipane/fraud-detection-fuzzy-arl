@@ -13,8 +13,8 @@
 
 package org.processmining.framework.models.petrinet.algorithms.logReplay;
 
-import org.processmining.framework.log.*;
-import org.processmining.framework.models.petrinet.*;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.models.petrinet.PetriNet;
 
 /**
  * Contains all the results obtained during log replay analysis. Can be used to

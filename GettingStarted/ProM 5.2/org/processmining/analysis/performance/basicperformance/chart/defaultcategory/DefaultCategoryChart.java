@@ -7,9 +7,9 @@ import java.util.List;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.processmining.analysis.performance.basicperformance.BasicPerformanceAnalysisUI;
 import org.processmining.analysis.performance.basicperformance.chart.AbstractChart;
-import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance2D;
+import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
 import org.processmining.framework.util.GUIPropertyListEnumeration;
 
 public class DefaultCategoryChart extends AbstractChart {

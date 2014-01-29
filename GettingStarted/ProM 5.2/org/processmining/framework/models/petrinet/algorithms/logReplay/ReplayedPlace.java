@@ -13,9 +13,11 @@
 
 package org.processmining.framework.models.petrinet.algorithms.logReplay;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
 
-import org.processmining.framework.models.petrinet.*;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Place;
 
 /**
  * A place involved in the log replay analysis method.

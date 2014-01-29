@@ -1,7 +1,7 @@
 package org.processmining.mining.fsm;
 
-import java.util.HashSet;
 import java.util.Collection;
+import java.util.HashSet;
 
 /**
  * <p>

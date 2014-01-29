@@ -20,10 +20,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import org.processmining.framework.models.orgmodel.OrgModel;
+import org.processmining.framework.models.orgmodel.OrgModelConcept;
 import org.processmining.framework.util.GUIPropertyBoolean;
 import org.processmining.framework.util.GuiNotificationTarget;
-import org.processmining.framework.models.orgmodel.OrgModelConcept;
 
 public class OrgModelGrahp extends JPanel implements GuiNotificationTarget {
 

@@ -19,7 +19,10 @@ package org.processmining.mining.dmcscanning.ui;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Hashtable;
+import java.util.Iterator;
 
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
@@ -27,7 +30,6 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.BorderFactory;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
 import javax.swing.event.ChangeEvent;
@@ -37,9 +39,6 @@ import org.processmining.framework.log.LogSummary;
 import org.processmining.mining.dmcscanning.DmcMiner;
 import org.processmining.mining.dmcscanning.aggregation.AggregationMethod;
 import org.processmining.mining.dmcscanning.equivalence.ObjectEquivalence;
-
-import java.util.Hashtable;
-import java.util.Iterator;
 
 /**
  * @author Christian W. Guenther (christian at deckfour dot org)

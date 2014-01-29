@@ -23,18 +23,11 @@ import javax.swing.JScrollPane;
 
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.models.ModelGraphPanel;
-import org.processmining.framework.models.pdm.PDMModel;
+import org.processmining.framework.models.pdm.PDMStateSpace;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.plugin.Provider;
 import org.processmining.importing.LogReaderConnection;
 import org.processmining.mining.MiningResult;
-import org.processmining.framework.models.pdm.PDMStateSpace;
-
-import att.grappa.Element;
-import att.grappa.GrappaAdapter;
-import att.grappa.GrappaPanel;
-import att.grappa.GrappaPoint;
-import att.grappa.Subgraph;
 
 /**
  * <p>

@@ -4,7 +4,9 @@
 package org.processmining.analysis.socialsuccess.bigfive;
 
 import org.processmining.analysis.socialsuccess.PersonalityData;
-import org.processmining.analysis.socialsuccess.bigfive.agreeableness.*;
+import org.processmining.analysis.socialsuccess.bigfive.agreeableness.InterestedInOthers;
+import org.processmining.analysis.socialsuccess.bigfive.agreeableness.OnGoodTerms;
+import org.processmining.analysis.socialsuccess.bigfive.agreeableness.ShowGratitude;
 
 /**
  * @author MvanWingerden

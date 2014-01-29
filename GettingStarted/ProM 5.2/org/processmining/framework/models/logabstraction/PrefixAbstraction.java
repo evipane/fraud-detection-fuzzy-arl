@@ -1,16 +1,15 @@
 package org.processmining.framework.models.logabstraction;
 
-import org.processmining.framework.models.recommendation.RecommendationResult;
-import org.processmining.analysis.log.scale.ProcessInstanceScale;
-import org.processmining.framework.log.ProcessInstance;
-import java.io.*;
-import org.processmining.framework.ui.Message;
-import org.processmining.framework.models.recommendation.Recommendation;
-import org.processmining.framework.log.AuditTrailEntry;
-import org.processmining.framework.log.LogReader;
+import java.io.IOException;
 import java.util.SortedSet;
-import org.processmining.framework.log.LogEvent;
 import java.util.TreeSet;
+
+import org.processmining.analysis.log.scale.ProcessInstanceScale;
+import org.processmining.framework.log.AuditTrailEntry;
+import org.processmining.framework.log.LogEvent;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.log.ProcessInstance;
+import org.processmining.framework.ui.Message;
 
 /**
  * <p>

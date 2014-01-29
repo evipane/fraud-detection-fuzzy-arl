@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Stack;
 import java.util.StringTokenizer;
 import java.util.Vector;
@@ -23,15 +24,13 @@ import org.processmining.converting.epc2transitionsystem.EpcToTransitionSystem;
 import org.processmining.framework.models.ModelGraphEdge;
 import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.epcpack.ConfigurableEPC;
+import org.processmining.framework.models.epcpack.EPCEdge;
+import org.processmining.framework.models.epcpack.EPCEvent;
 import org.processmining.framework.models.transitionsystem.TransitionSystem;
+import org.processmining.framework.models.transitionsystem.TransitionSystemEdge;
 import org.processmining.framework.models.transitionsystem.TransitionSystemVertexSet;
 import org.processmining.framework.ui.MainUI;
-import org.processmining.framework.ui.Message;
 import org.processmining.framework.util.CenterOnScreen;
-import org.processmining.framework.models.transitionsystem.TransitionSystemEdge;
-import org.processmining.framework.models.epcpack.EPCEdge;
-import java.util.List;
-import org.processmining.framework.models.epcpack.EPCEvent;
 
 /**
  * <p>

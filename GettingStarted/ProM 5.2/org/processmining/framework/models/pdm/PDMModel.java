@@ -13,13 +13,13 @@
 
 package org.processmining.framework.models.pdm;
 
-import java.io.*;
-import java.util.*;
-import javax.xml.parsers.*;
-import org.processmining.framework.models.*;
-import org.w3c.dom.*;
-import org.processmining.framework.models.pdm.*;
-import org.processmining.framework.log.AuditTrailEntry;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+
+import org.processmining.framework.models.ModelGraph;
 import org.processmining.framework.ui.Message;
 
 /**

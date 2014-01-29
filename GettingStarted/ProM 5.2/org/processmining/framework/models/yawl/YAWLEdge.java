@@ -13,10 +13,7 @@
 
 package org.processmining.framework.models.yawl;
 
-import java.io.*;
-
-import org.processmining.framework.models.*;
-import java.util.HashMap;
+import org.processmining.framework.models.ModelGraphEdge;
 
 /**
  * <p>

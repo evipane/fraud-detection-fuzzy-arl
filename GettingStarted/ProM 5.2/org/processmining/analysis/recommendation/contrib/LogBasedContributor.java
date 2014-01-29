@@ -3,21 +3,16 @@
  */
 package org.processmining.analysis.recommendation.contrib;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.SortedSet;
+
+import org.processmining.framework.log.LogEvent;
 import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.models.logabstraction.LogAbstraction;
-import org.processmining.framework.models.recommendation.NotEqualRecommendationException;
 import org.processmining.framework.models.recommendation.Recommendation;
 import org.processmining.framework.models.recommendation.RecommendationQuery;
 import org.processmining.framework.models.recommendation.RecommendationResult;
-import org.processmining.framework.ui.Message;
-
-import java.util.SortedSet;
-import org.processmining.framework.log.LogEvent;
-import java.util.HashMap;
-import java.util.TreeSet;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.HashSet;
 
 /**
  * This abstract class may be used as a starting point for contributor

@@ -42,7 +42,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -52,7 +51,6 @@ import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 
 import org.deckfour.slickerbox.util.FullScreenView;
-import org.deckfour.slickerbox.util.GraphicsUtilities;
 import org.processmining.framework.ui.About;
 import org.processmining.framework.ui.MDIDesktopPane;
 import org.processmining.framework.ui.MainUI;

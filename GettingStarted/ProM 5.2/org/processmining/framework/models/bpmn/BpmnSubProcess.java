@@ -1,7 +1,7 @@
 //@author JianHong.YE, collaborate with LiJie.WEN and Feng
 package org.processmining.framework.models.bpmn;
 
-import org.w3c.dom.*;
+import org.w3c.dom.Element;
 
 public class BpmnSubProcess extends BpmnTask {
 	protected boolean adHoc;

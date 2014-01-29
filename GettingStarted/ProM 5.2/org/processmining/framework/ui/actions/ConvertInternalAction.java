@@ -44,10 +44,10 @@ import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.plugin.Provider;
 import org.processmining.framework.ui.MainUI;
 import org.processmining.framework.ui.Message;
-import org.processmining.framework.util.RuntimeUtils;
-import org.processmining.mining.MiningResult;
 import org.processmining.framework.ui.SwingWorker;
+import org.processmining.framework.util.RuntimeUtils;
 import org.processmining.framework.util.StopWatch;
+import org.processmining.mining.MiningResult;
 
 /**
  * @author christian

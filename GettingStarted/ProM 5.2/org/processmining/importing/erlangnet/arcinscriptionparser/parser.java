@@ -5,11 +5,25 @@
 
 package org.processmining.importing.erlangnet.arcinscriptionparser;
 
-import java.util.*;
-import java_cup.runtime.*;
-import org.processmining.framework.models.erlangnet.inscription.*;
-import org.processmining.framework.models.erlangnet.statement.*;
-import org.processmining.framework.models.erlangnet.expression.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.processmining.framework.models.erlangnet.expression.BooleanExpression;
+import org.processmining.framework.models.erlangnet.expression.Expression;
+import org.processmining.framework.models.erlangnet.expression.FunctionCallExpression;
+import org.processmining.framework.models.erlangnet.expression.IdentifierExpression;
+import org.processmining.framework.models.erlangnet.expression.IntegerExpression;
+import org.processmining.framework.models.erlangnet.expression.StringExpression;
+import org.processmining.framework.models.erlangnet.expression.ValueExpression;
+import org.processmining.framework.models.erlangnet.inscription.ArcInscription;
+import org.processmining.framework.models.erlangnet.inscription.ReceiveMessageInscription;
+import org.processmining.framework.models.erlangnet.inscription.RouteInscription;
+import org.processmining.framework.models.erlangnet.inscription.SendMessageInscription;
+import org.processmining.framework.models.erlangnet.statement.AssignmentStatement;
+import org.processmining.framework.models.erlangnet.statement.NoOperationStatement;
+import org.processmining.framework.models.erlangnet.statement.ReceiveSenderAndValueStatement;
+import org.processmining.framework.models.erlangnet.statement.ReceiveSenderStatement;
+import org.processmining.framework.models.erlangnet.statement.Statement;
 
 /**
  * CUP v0.11a beta 20060608 generated parser.

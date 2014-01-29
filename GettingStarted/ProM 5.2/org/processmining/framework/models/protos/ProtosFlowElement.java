@@ -13,15 +13,15 @@
 
 package org.processmining.framework.models.protos;
 
-import java.io.*;
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 
-import org.processmining.framework.models.*; //import org.processmining.framework.models.protos.ProtosStatisticalFunction;
-import org.processmining.framework.models.protos.*;
-
-import org.w3c.dom.*;
-import org.processmining.framework.log.*;
+import org.processmining.framework.log.LogEvent;
+import org.processmining.framework.models.ModelGraphVertex; //import org.processmining.framework.models.protos.ProtosStatisticalFunction;
 import org.processmining.framework.models.yawl.YAWLTask;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * <p>

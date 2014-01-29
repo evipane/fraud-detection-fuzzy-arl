@@ -31,6 +31,7 @@ import javax.swing.table.AbstractTableModel;
 import org.processmining.framework.models.ModelGraphEdge;
 import org.processmining.framework.models.ModelGraphPanel;
 import org.processmining.framework.models.RegionList;
+import org.processmining.framework.models.fsm.FSM;
 import org.processmining.framework.models.petrinet.Transition;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.plugin.Provider;
@@ -42,7 +43,6 @@ import att.grappa.GrappaAdapter;
 import att.grappa.GrappaPanel;
 import att.grappa.GrappaPoint;
 import att.grappa.Subgraph;
-import org.processmining.framework.models.fsm.FSM;
 
 /**
  * @author not attributable

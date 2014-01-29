@@ -3,6 +3,8 @@ package org.processmining.analysis.differences;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JComponent;
+
 import org.processmining.analysis.AnalysisInputItem;
 import org.processmining.analysis.AnalysisPlugin;
 import org.processmining.analysis.differences.processdifferences.ProcessAutomaton;
@@ -10,8 +12,6 @@ import org.processmining.framework.models.ModelGraph;
 import org.processmining.framework.models.epcpack.EPCHierarchy;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.util.PluginDocumentationLoader;
-
-import javax.swing.*;
 
 public class DifferencesPlugin implements AnalysisPlugin {
 	public static String FIRST_NET_LABEL = "Provided Behaviour";

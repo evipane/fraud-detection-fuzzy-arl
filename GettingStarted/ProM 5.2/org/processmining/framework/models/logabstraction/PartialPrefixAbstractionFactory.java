@@ -1,10 +1,12 @@
 package org.processmining.framework.models.logabstraction;
 
-import java.util.*;
-import org.processmining.framework.log.LogReader;
-import org.processmining.analysis.log.scale.ProcessInstanceScale;
-import org.processmining.framework.log.ProcessInstance;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.processmining.analysis.log.scale.ProcessInstanceScale;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.log.ProcessInstance;
 
 /**
  * <p>

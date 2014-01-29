@@ -1,17 +1,13 @@
 package org.processmining.analysis.performance.basicperformance.model;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Date;
-
-import javax.swing.JPanel;
 
 import org.jfree.data.gantt.Task;
 import org.jfree.data.gantt.TaskSeries;
 import org.jfree.data.time.SimpleTimePeriod;
-
 import org.processmining.framework.ui.Message;
-import org.processmining.framework.ui.slicker.ProgressPanel;
 
 /**
  * This class defines the interface for a performance, in which for a number of

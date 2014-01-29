@@ -7,13 +7,13 @@ import javax.swing.JPanel;
 
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.LogSummary;
+import org.processmining.framework.models.transitionsystem.TSConstants;
 import org.processmining.framework.models.transitionsystem.TransitionSystem;
 import org.processmining.framework.ui.Message;
 import org.processmining.framework.ui.UISettings;
 import org.processmining.mining.MiningPlugin;
 import org.processmining.mining.MiningResult;
 import org.processmining.mining.instancemining.ModelGraphResult;
-import org.processmining.framework.models.transitionsystem.TSConstants;
 
 /**
  * @author Vladimir Rubin

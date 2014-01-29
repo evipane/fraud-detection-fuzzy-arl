@@ -17,8 +17,8 @@
  */
 package org.processmining.mining.dmcscanning;
 
-import java.util.Iterator;
 import java.util.HashSet;
+import java.util.Iterator;
 
 import org.processmining.framework.log.ProcessInstance;
 

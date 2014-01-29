@@ -3,6 +3,8 @@ package org.processmining.framework.models.hlprocess.distribution;
 import java.io.IOException;
 import java.io.Writer;
 
+import org.processmining.framework.models.hlprocess.gui.att.dist.HLStudentDistributionGui;
+
 /**
  * Represents a student distribution.
  * 

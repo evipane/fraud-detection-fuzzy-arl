@@ -1,40 +1,39 @@
 package org.processmining.analysis.performance.basicperformance.chart;
 
+import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
-import java.awt.BasicStroke;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
 import javax.swing.JButton;
-
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import org.deckfour.slickerbox.components.SmoothPanel;
+import javax.swing.JTextField;
 
+import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
+import org.deckfour.slickerbox.components.SmoothPanel;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.DialShape;
 import org.jfree.chart.plot.MeterInterval;
 import org.jfree.chart.plot.MeterPlot;
-import org.jfree.chart.plot.DialShape;
 import org.jfree.data.Range;
 import org.jfree.data.general.DefaultValueDataset;
 import org.processmining.analysis.performance.basicperformance.BasicPerformanceAnalysisUI;
-import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance2D;
+import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
 import org.processmining.analysis.performance.basicperformance.model.instance.InstancePerformance;
 import org.processmining.framework.util.GUIPropertyListEnumeration;
-import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
 
 public class MeterChart extends AbstractChart implements ActionListener {
 

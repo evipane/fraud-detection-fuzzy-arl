@@ -1,8 +1,8 @@
 package org.processmining.analysis.socialsuccess.bigfive.extraversion;
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 
 import org.processmining.analysis.socialsuccess.PersonalityData;

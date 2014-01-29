@@ -1,13 +1,20 @@
 package org.processmining.mining.petrinetmining;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 
-import org.processmining.framework.log.*;
-import org.processmining.framework.models.transitionsystem.*;
-import org.processmining.mining.logabstraction.*;
-import cern.colt.matrix.*;
-import sun.reflect.generics.reflectiveObjects.*;
+import org.processmining.framework.log.LogEvents;
+import org.processmining.framework.models.transitionsystem.TransitionSystem;
+import org.processmining.framework.models.transitionsystem.TransitionSystemEdge;
+import org.processmining.mining.logabstraction.LogAbstraction;
+
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import cern.colt.matrix.DoubleFactory1D;
+import cern.colt.matrix.DoubleFactory2D;
+import cern.colt.matrix.DoubleMatrix1D;
+import cern.colt.matrix.DoubleMatrix2D;
 
 /**
  * <p>

@@ -18,7 +18,12 @@ import org.processmining.analysis.performance.basicperformance.model.AbstractPer
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance2D;
 import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
 import org.processmining.analysis.performance.basicperformance.model.instance.InstancePerformance;
-import org.processmining.analysis.performance.basicperformance.model.task.*;
+import org.processmining.analysis.performance.basicperformance.model.task.InstOriTPerformance;
+import org.processmining.analysis.performance.basicperformance.model.task.InstanceTPerformance;
+import org.processmining.analysis.performance.basicperformance.model.task.InstanceTaskTPerformance;
+import org.processmining.analysis.performance.basicperformance.model.task.OriginatorTPerformance;
+import org.processmining.analysis.performance.basicperformance.model.task.TaskOriginatorTPerformance;
+import org.processmining.analysis.performance.basicperformance.model.task.TaskTPerformance;
 import org.processmining.framework.util.GUIPropertyListEnumeration;
 import org.processmining.framework.util.GuiNotificationTarget;
 

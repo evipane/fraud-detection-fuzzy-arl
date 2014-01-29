@@ -4,8 +4,8 @@ import java.util.Collection;
 import java.util.Iterator;
 
 import org.processmining.framework.log.LogReader;
-import org.processmining.framework.models.transitionsystem.TransitionSystem;
 import org.processmining.framework.models.transitionsystem.TSConstants;
+import org.processmining.framework.models.transitionsystem.TransitionSystem;
 
 /**
  * @author Vladimir Rubin

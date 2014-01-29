@@ -3,11 +3,8 @@ package org.processmining.analysis.performance.basicperformance.model.task;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import javax.swing.JPanel;
-
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance2D;
 import org.processmining.framework.log.LogReader;
-import org.processmining.framework.ui.slicker.ProgressPanel;
 
 public class TaskOriginatorTPerformance extends AbstractPerformance2D {
 

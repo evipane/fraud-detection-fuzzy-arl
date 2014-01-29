@@ -15,22 +15,33 @@ package org.processmining.converting.bpmn2yawl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 
+import org.processmining.converting.ConvertingPlugin;
 import org.processmining.framework.log.LogReader;
-import org.processmining.framework.models.ModelGraphVertex;
-import org.processmining.framework.models.bpmn.*;
+import org.processmining.framework.models.bpmn.BpmnEdge;
+import org.processmining.framework.models.bpmn.BpmnEvent;
+import org.processmining.framework.models.bpmn.BpmnEventTriggerType;
+import org.processmining.framework.models.bpmn.BpmnEventType;
+import org.processmining.framework.models.bpmn.BpmnGateway;
+import org.processmining.framework.models.bpmn.BpmnGatewayType;
+import org.processmining.framework.models.bpmn.BpmnGraph;
+import org.processmining.framework.models.bpmn.BpmnObject;
+import org.processmining.framework.models.bpmn.BpmnProcessModel;
+import org.processmining.framework.models.bpmn.BpmnSubProcess;
+import org.processmining.framework.models.bpmn.BpmnSwimLane;
+import org.processmining.framework.models.bpmn.BpmnSwimPool;
+import org.processmining.framework.models.bpmn.BpmnTask;
+import org.processmining.framework.models.bpmn.BpmnXmlTags;
 import org.processmining.framework.models.yawl.YAWLCondition;
-import org.processmining.framework.models.yawl.bpmn.YAWLDecompositionBPMN;
 import org.processmining.framework.models.yawl.YAWLEdge;
 import org.processmining.framework.models.yawl.YAWLModel;
 import org.processmining.framework.models.yawl.YAWLNode;
 import org.processmining.framework.models.yawl.YAWLTask;
+import org.processmining.framework.models.yawl.bpmn.YAWLDecompositionBPMN;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.mining.MiningResult;
 import org.processmining.mining.yawlmining.YAWLResult;
-import org.processmining.converting.ConvertingPlugin;
 
 /**
  * <p>

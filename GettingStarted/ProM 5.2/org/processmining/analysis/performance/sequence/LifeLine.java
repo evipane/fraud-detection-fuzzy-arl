@@ -13,11 +13,11 @@
 
 package org.processmining.analysis.performance.sequence;
 
-import java.awt.Stroke;
-import java.awt.Graphics2D;
 import java.awt.BasicStroke;
-import java.awt.geom.Line2D;
 import java.awt.FontMetrics;
+import java.awt.Graphics2D;
+import java.awt.Stroke;
+import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
 
 /**

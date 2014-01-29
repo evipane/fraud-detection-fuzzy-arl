@@ -1,6 +1,5 @@
 package org.processmining.framework.models.fsm;
 
-import java.util.Comparator;
 
 /**
  * <p>

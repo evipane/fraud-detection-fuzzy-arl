@@ -13,12 +13,12 @@
 
 package org.processmining.framework.models.petrinet.algorithms;
 
-import java.io.*;
-import java.util.*;
+import java.util.Iterator;
 
-import org.processmining.framework.models.petrinet.*;
 import org.processmining.framework.models.ModelGraphEdge;
-import org.processmining.framework.ui.Message;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Place;
+import org.processmining.framework.models.petrinet.Transition;
 
 /**
  * <p>

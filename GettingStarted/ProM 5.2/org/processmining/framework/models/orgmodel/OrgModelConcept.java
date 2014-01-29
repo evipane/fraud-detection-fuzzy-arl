@@ -1,19 +1,22 @@
 package org.processmining.framework.models.orgmodel;
 
-import java.util.HashMap;
-import org.processmining.framework.util.Dot;
-import att.grappa.GrappaPanel;
-import java.io.FileWriter;
 import java.io.BufferedWriter;
-import att.grappa.GrappaAdapter;
-import javax.swing.JPanel;
-import java.io.PrintWriter;
-import java.io.IOException;
-import org.processmining.framework.ui.Message;
-import java.io.Writer;
-import att.grappa.Graph;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Writer;
 import java.text.NumberFormat;
+import java.util.HashMap;
+
+import javax.swing.JPanel;
+
+import org.processmining.framework.ui.Message;
+import org.processmining.framework.util.Dot;
+
+import att.grappa.Graph;
+import att.grappa.GrappaAdapter;
+import att.grappa.GrappaPanel;
 
 /**
  * <p>

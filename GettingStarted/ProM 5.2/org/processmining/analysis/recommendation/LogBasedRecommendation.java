@@ -1,13 +1,18 @@
 package org.processmining.analysis.recommendation;
 
-import java.io.*;
+import java.io.IOException;
 
-import javax.swing.*;
+import javax.swing.JComponent;
 
-import org.processmining.framework.log.*;
-import org.processmining.framework.log.rfb.*;
-import org.processmining.framework.models.recommendation.*;
-import org.processmining.framework.ui.*;
+import org.processmining.framework.log.ProcessInstance;
+import org.processmining.framework.log.rfb.BufferedLogReader;
+import org.processmining.framework.log.rfb.ProcessInstanceImpl;
+import org.processmining.framework.models.recommendation.Recommendation;
+import org.processmining.framework.models.recommendation.RecommendationProvider;
+import org.processmining.framework.models.recommendation.RecommendationQuery;
+import org.processmining.framework.models.recommendation.RecommendationResult;
+import org.processmining.framework.ui.MainUI;
+import org.processmining.framework.ui.Message;
 
 /**
  * <p>

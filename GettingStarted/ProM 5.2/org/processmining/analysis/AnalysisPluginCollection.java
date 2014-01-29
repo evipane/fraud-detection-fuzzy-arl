@@ -27,7 +27,6 @@ import org.processmining.framework.plugin.AnnotatedPlugin;
 import org.processmining.framework.plugin.Plugin;
 import org.processmining.framework.plugin.PluginCollection;
 import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.framework.ui.Message;
 
 /**
  * Collection of analysis plugins.

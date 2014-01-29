@@ -13,13 +13,13 @@
 
 package org.processmining.framework.models.protos;
 
-import java.io.*;
-import java.util.*;
+import java.util.HashSet;
 
-import org.processmining.framework.models.*;
-
-import att.grappa.Edge;
-import org.w3c.dom.*;
+import org.processmining.framework.models.ModelGraph;
+import org.processmining.framework.models.ModelGraphEdge;
+import org.processmining.framework.models.ModelGraphVertex;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * <p>

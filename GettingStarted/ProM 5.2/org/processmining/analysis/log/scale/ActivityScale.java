@@ -3,11 +3,12 @@
  */
 package org.processmining.analysis.log.scale;
 
-import org.processmining.framework.log.ProcessInstance;
-import org.processmining.framework.log.AuditTrailEntry;
 import java.util.Iterator;
-import org.processmining.framework.log.LogStateMachine;
+
+import org.processmining.framework.log.AuditTrailEntry;
 import org.processmining.framework.log.LogReader;
+import org.processmining.framework.log.LogStateMachine;
+import org.processmining.framework.log.ProcessInstance;
 
 /**
  * This class weighs a process instance based on the contained number of audit

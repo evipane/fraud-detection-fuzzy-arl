@@ -13,10 +13,9 @@
 
 package org.processmining.framework.models.yawl;
 
-import java.io.*;
-import java.util.*;
+import java.util.Iterator;
 
-import org.processmining.framework.models.*;
+import org.processmining.framework.models.ModelGraph;
 
 /**
  * <p>

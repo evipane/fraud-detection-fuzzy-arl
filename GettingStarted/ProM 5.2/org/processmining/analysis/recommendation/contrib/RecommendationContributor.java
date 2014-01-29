@@ -6,16 +6,16 @@ package org.processmining.analysis.recommendation.contrib;
 import java.util.List;
 
 import org.processmining.analysis.log.scale.ProcessInstanceScale;
+import org.processmining.framework.log.LogFilter;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.filter.AbstractLogFilter;
+import org.processmining.framework.log.filter.DefaultLogFilter;
 import org.processmining.framework.models.logabstraction.LogAbstraction;
 import org.processmining.framework.models.logabstraction.LogAbstractionFactory;
 import org.processmining.framework.models.recommendation.RecommendationQuery;
 import org.processmining.framework.models.recommendation.RecommendationResult;
 import org.processmining.framework.models.recommendation.compat.RecommendationQueryFilter;
 import org.processmining.framework.plugin.Plugin;
-import org.processmining.framework.log.filter.DefaultLogFilter;
-import org.processmining.framework.log.LogFilter;
 
 /**
  * An instance abstraction is an entity which, based on a specific subset of

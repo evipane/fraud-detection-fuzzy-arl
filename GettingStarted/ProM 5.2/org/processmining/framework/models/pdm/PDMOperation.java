@@ -13,10 +13,15 @@
 
 package org.processmining.framework.models.pdm;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
 
-import org.processmining.framework.models.*;
+import org.processmining.framework.models.ModelGraphEdge;
+import org.processmining.framework.models.ModelGraphVertex;
 
 /**
  * <p>

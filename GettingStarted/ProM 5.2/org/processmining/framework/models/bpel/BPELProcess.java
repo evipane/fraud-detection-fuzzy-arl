@@ -13,13 +13,13 @@
 
 package org.processmining.framework.models.bpel;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-
-import org.processmining.framework.models.bpel.visit.*;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
 import java.util.ArrayList;
+
+import org.processmining.framework.models.bpel.visit.BPELVisitable;
+import org.processmining.framework.models.bpel.visit.BPELVisitor;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * <p>

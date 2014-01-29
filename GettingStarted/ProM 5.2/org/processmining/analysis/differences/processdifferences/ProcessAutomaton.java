@@ -1,16 +1,20 @@
 package org.processmining.analysis.differences.processdifferences;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.Vector;
 import java.util.Map.Entry;
+import java.util.Set;
 
+import org.processmining.analysis.differences.fa.DFA;
+import org.processmining.analysis.differences.fa.IntegerSet;
+import org.processmining.analysis.differences.fa.NFA;
+import org.processmining.analysis.differences.relations.Relation;
+import org.processmining.converting.PetriNetReduction;
 import org.processmining.framework.models.ModelGraph;
 import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.epcpack.ConfigurableEPC;
@@ -19,17 +23,14 @@ import org.processmining.framework.models.epcpack.EPCFunction;
 import org.processmining.framework.models.epcpack.algorithms.EPCToPetriNetConverter;
 import org.processmining.framework.models.fsm.FSMState;
 import org.processmining.framework.models.fsm.FSMTransition;
+import org.processmining.framework.models.petrinet.Marking;
 import org.processmining.framework.models.petrinet.PetriNet;
 import org.processmining.framework.models.petrinet.Place;
 import org.processmining.framework.models.petrinet.State;
 import org.processmining.framework.models.petrinet.StateSpace;
 import org.processmining.framework.models.petrinet.Transition;
-import org.processmining.framework.models.petrinet.Marking;
 import org.processmining.framework.models.petrinet.algorithms.InitialPlaceMarker;
 import org.processmining.framework.models.petrinet.algorithms.ReachabilityGraphBuilder;
-import org.processmining.analysis.differences.fa.*;
-import org.processmining.analysis.differences.relations.*;
-import org.processmining.converting.PetriNetReduction;
 
 import att.grappa.Edge;
 

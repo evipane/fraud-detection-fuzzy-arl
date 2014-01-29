@@ -19,8 +19,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.processmining.framework.models.hlprocess.HLTypes.TransformationType;
-import org.processmining.framework.models.hlprocess.distribution.HLGeneralDistribution;
 import org.processmining.framework.models.hlprocess.distribution.HLDistribution;
+import org.processmining.framework.models.hlprocess.distribution.HLGeneralDistribution;
 
 /**
  * Holds information with respect to an activity in the process. <br>

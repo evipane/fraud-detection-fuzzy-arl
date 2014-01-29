@@ -53,8 +53,8 @@ import org.processmining.framework.log.AuditTrailEntryList;
 import org.processmining.framework.log.LogFilter;
 import org.processmining.framework.log.LogSummary;
 import org.processmining.framework.log.ProcessInstance;
-import org.w3c.dom.Node;
 import org.processmining.framework.ui.Message;
+import org.w3c.dom.Node;
 
 /**
  * Log filter for remapping log event names to replacement strings, based on the

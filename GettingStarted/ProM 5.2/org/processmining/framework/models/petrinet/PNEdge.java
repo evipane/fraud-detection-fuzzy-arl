@@ -13,8 +13,9 @@
 
 package org.processmining.framework.models.petrinet;
 
-import org.processmining.framework.models.*;
-import att.grappa.*;
+import org.processmining.framework.models.ModelGraphEdge;
+
+import att.grappa.Node;
 
 /**
  * Class representing a directed arc in a Petri net model. Petri nets are

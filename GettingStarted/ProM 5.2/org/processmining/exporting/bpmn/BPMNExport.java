@@ -1,15 +1,15 @@
 package org.processmining.exporting.bpmn;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 import org.processmining.exporting.ExportPlugin;
-import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.models.bpmn.BpmnGraph;
-import java.io.OutputStreamWriter;
-import java.io.BufferedWriter;
+import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.ui.Message;
-import java.util.StringTokenizer;
 
 /**
  * <p>

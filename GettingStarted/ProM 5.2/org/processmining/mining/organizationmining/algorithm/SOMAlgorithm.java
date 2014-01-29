@@ -22,9 +22,6 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import org.deckfour.slickerbox.components.SmoothPanel;
-
-import cern.colt.matrix.DoubleMatrix2D;
-
 import org.processmining.framework.log.AuditTrailEntry;
 import org.processmining.framework.log.LogEvent;
 import org.processmining.framework.log.LogEvents;
@@ -35,17 +32,18 @@ import org.processmining.framework.models.orgmodel.OrgModel;
 import org.processmining.framework.models.orgmodel.Resource;
 import org.processmining.framework.models.orgmodel.Task;
 import org.processmining.framework.ui.slicker.ProgressPanel;
-import org.processmining.framework.util.GUIPropertyListEnumeration;
 import org.processmining.framework.util.GUIPropertyBoolean;
 import org.processmining.framework.util.GUIPropertyInteger;
+import org.processmining.framework.util.GUIPropertyListEnumeration;
 import org.processmining.framework.util.GuiNotificationTarget;
-
 import org.processmining.mining.organizationmining.distance.DistanceMetric;
 import org.processmining.mining.organizationmining.model.Cluster;
 import org.processmining.mining.organizationmining.model.ClusterSet;
 import org.processmining.mining.organizationmining.model.InstancePoint;
 import org.processmining.mining.organizationmining.profile.AggregateProfile;
 import org.processmining.mining.organizationmining.ui.hierarchicalui.SOMUI;
+
+import cern.colt.matrix.DoubleMatrix2D;
 
 /**
  * <p>

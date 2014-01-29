@@ -47,8 +47,6 @@ import org.processmining.mining.partialordermining.PartialOrderAggregationPlugin
 import org.processmining.mining.partialordermining.PartialOrderGeneratorPlugin;
 import org.processmining.mining.partialordermining.PartialOrderMiningResult;
 
-import att.grappa.Edge;
-
 public class EPCMergeMethod {
 
 	private static final long serialVersionUID = 8186397348144508216L;

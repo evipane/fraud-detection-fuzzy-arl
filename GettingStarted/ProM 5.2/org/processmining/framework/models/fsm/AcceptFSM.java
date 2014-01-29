@@ -1,10 +1,9 @@
 package org.processmining.framework.models.fsm;
 
 import java.util.HashSet;
-import org.processmining.framework.models.ModelGraphVertex;
-import java.io.IOException;
-import java.io.Writer;
+
 import org.processmining.framework.models.ModelGraphEdge;
+import org.processmining.framework.models.ModelGraphVertex;
 
 /**
  * <p>

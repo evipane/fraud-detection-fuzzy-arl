@@ -24,6 +24,7 @@ import javax.swing.JScrollPane;
 import org.processmining.framework.models.ModelGraph;
 import org.processmining.framework.models.ModelGraphPanel;
 import org.processmining.framework.models.ModelGraphVertex;
+import org.processmining.framework.models.hlprocess.hlmodel.HLModel;
 import org.processmining.framework.util.GuiDisplayable;
 
 import att.grappa.Edge;
