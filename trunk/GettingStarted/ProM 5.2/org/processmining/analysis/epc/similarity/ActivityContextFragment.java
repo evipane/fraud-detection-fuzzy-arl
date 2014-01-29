@@ -1,8 +1,8 @@
 package org.processmining.analysis.epc.similarity;
 
-import java.util.*;
+import java.util.Vector;
 
-import org.processmining.framework.util.*;
+import org.processmining.framework.util.StringNormalizer;
 
 /**
  * <p>

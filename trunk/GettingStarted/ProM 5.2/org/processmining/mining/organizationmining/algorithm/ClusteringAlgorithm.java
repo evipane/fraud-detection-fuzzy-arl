@@ -36,9 +36,9 @@ package org.processmining.mining.organizationmining.algorithm;
 import javax.swing.JComponent;
 
 import org.processmining.framework.log.LogReader;
+import org.processmining.framework.models.orgmodel.OrgModel;
 import org.processmining.mining.MiningResult;
 import org.processmining.mining.organizationmining.model.ClusterSet;
-import org.processmining.framework.models.orgmodel.OrgModel;
 
 /**
  * Base class for log / trace clustering algorithms in the trace clustering

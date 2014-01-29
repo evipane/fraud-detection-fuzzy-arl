@@ -13,10 +13,14 @@
 
 package org.processmining.framework.models.heuristics;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.Random;
 
-import org.processmining.framework.log.*;
-import cern.colt.matrix.*;
+import org.processmining.framework.log.AuditTrailEntry;
+import org.processmining.framework.log.LogEvents;
+import org.processmining.framework.log.ProcessInstance;
+
+import cern.colt.matrix.DoubleMatrix2D;
 
 /**
  * <p>

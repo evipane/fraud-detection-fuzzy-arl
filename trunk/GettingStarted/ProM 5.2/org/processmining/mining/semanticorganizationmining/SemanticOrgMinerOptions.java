@@ -19,12 +19,12 @@ import java.awt.Insets;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import org.processmining.framework.util.GUIPropertyBoolean;
 import org.processmining.framework.util.GuiNotificationTarget;
 import org.processmining.framework.util.GuiPropertyListRadio;
-import org.processmining.framework.util.GUIPropertyBoolean;
-import javax.swing.JLabel;
 
 /**
  * @author Minseok Song

@@ -1,14 +1,14 @@
 package org.processmining.framework.models.orgmodel.algorithms;
 
-import org.processmining.framework.models.orgmodel.OrgModel;
+import java.util.ArrayList;
 import java.util.HashMap;
-import org.processmining.framework.models.orgmodel.OrgEntity;
-import org.processmining.framework.models.orgmodel.Resource;
-import org.processmining.framework.models.orgmodel.Task;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.ArrayList;
-import org.processmining.framework.ui.Message;
+
+import org.processmining.framework.models.orgmodel.OrgEntity;
+import org.processmining.framework.models.orgmodel.OrgModel;
+import org.processmining.framework.models.orgmodel.Resource;
+import org.processmining.framework.models.orgmodel.Task;
 
 /**
  * <p>

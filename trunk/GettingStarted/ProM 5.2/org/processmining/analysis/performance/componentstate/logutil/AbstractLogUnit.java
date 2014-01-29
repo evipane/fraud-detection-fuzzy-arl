@@ -1,9 +1,10 @@
 package org.processmining.analysis.performance.componentstate.logutil;
 
 import java.util.Date;
+import java.util.Map;
+
 import org.processmining.framework.log.AuditTrailEntry;
 import org.processmining.framework.log.ProcessInstance;
-import java.util.Map;
 
 /**
  * @author Minseok Song

@@ -29,7 +29,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import org.deckfour.slickerbox.components.AutoFocusButton;
-import org.deckfour.slickerbox.components.GradientPanel;
 import org.deckfour.slickerbox.components.SlickerButton;
 import org.deckfour.slickerbox.util.SlickerSwingUtils;
 import org.processmining.analysis.AnalysisInputItem;

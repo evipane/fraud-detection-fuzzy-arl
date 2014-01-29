@@ -13,39 +13,35 @@
 
 package org.processmining.mining.semanticorganizationmining;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
-import javax.swing.JComponent;
 import javax.swing.JPanel;
 
+import org.processmining.analysis.originator.SemanticOTMatrix2DTableModel;
 import org.processmining.framework.log.AuditTrailEntry;
-import org.processmining.framework.log.LogEvent;
-import org.processmining.framework.log.LogEvents;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.LogSummary;
 import org.processmining.framework.log.ProcessInstance;
+import org.processmining.framework.models.ontology.ConceptModel;
+import org.processmining.framework.models.ontology.OntologyCollection;
+import org.processmining.framework.models.ontology.OntologyModel;
 import org.processmining.framework.models.orgmodel.OrgEntity;
-import org.processmining.framework.models.orgmodel.OrgModel;
+import org.processmining.framework.models.orgmodel.OrgModelConcept;
 import org.processmining.framework.models.orgmodel.Resource;
-import org.processmining.framework.models.orgmodel.Task;
+import org.processmining.framework.models.orgmodel.ResourceConcept;
+import org.processmining.framework.models.orgmodel.TaskConcept;
 import org.processmining.framework.ui.Message;
 import org.processmining.mining.MiningPlugin;
 import org.processmining.mining.MiningResult;
 import org.processmining.mining.snamining.miningoperation.BasicOperation;
-import org.processmining.mining.snamining.miningoperation.OperationFactory;
-import org.processmining.mining.snamining.model.SocialNetworkMatrix;
-import cern.colt.matrix.DoubleMatrix2D;
-import cern.colt.matrix.DoubleFactory2D;
-import java.util.*;
 import org.processmining.mining.snamining.miningoperation.UtilOperation;
-import org.processmining.framework.models.ontology.OntologyCollection;
-import org.processmining.analysis.originator.OriginatorUI;
-import org.processmining.analysis.originator.SemanticOTMatrix2DTableModel;
-import org.processmining.framework.models.ontology.ConceptModel;
-import org.processmining.framework.models.ontology.OntologyModel;
-import org.processmining.framework.models.orgmodel.ResourceConcept;
-import org.processmining.framework.models.orgmodel.TaskConcept;
-import org.processmining.framework.models.orgmodel.OrgModelConcept;
+import org.processmining.mining.snamining.model.SocialNetworkMatrix;
+
+import cern.colt.matrix.DoubleMatrix2D;
 
 /**
  * <p>

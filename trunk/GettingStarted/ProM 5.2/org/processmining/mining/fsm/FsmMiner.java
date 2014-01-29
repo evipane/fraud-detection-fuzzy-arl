@@ -2,20 +2,18 @@ package org.processmining.mining.fsm;
 
 import javax.swing.JComponent;
 
-import org.processmining.framework.log.LogReader;
-import org.processmining.framework.log.ProcessInstance;
+import org.processmining.converting.fsm.FsmModificationConvertor;
+import org.processmining.converting.fsm.FsmModificationSettings;
 import org.processmining.framework.log.AuditTrailEntry;
 import org.processmining.framework.log.AuditTrailEntryList;
 import org.processmining.framework.log.DataSection;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.log.ProcessInstance;
+import org.processmining.framework.models.fsm.AcceptFSM;
+import org.processmining.framework.models.fsm.FSMState;
 import org.processmining.framework.ui.Message;
 import org.processmining.framework.ui.Progress;
-import org.processmining.framework.models.fsm.FSM;
-import org.processmining.framework.models.fsm.FSMState;
-
 import org.processmining.mining.Miner;
-import org.processmining.framework.models.fsm.AcceptFSM;
-import org.processmining.converting.fsm.FsmModificationSettings;
-import org.processmining.converting.fsm.FsmModificationConvertor;
 
 /**
  * <p>

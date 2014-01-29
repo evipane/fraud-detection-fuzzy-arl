@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
+
 import org.processmining.analysis.socialsuccess.PersonalityData;
 import org.processmining.analysis.socialsuccess.bigfive.Behaviour;
 import org.processmining.analysis.socialsuccess.bigfive.Trait;

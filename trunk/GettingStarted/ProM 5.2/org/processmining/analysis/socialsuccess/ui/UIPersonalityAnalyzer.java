@@ -3,9 +3,11 @@ package org.processmining.analysis.socialsuccess.ui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+
 import org.deckfour.slickerbox.components.GradientPanel;
 import org.deckfour.slickerbox.components.HeaderBar;
 import org.deckfour.slickerbox.components.IconVerticalTabbedPane;

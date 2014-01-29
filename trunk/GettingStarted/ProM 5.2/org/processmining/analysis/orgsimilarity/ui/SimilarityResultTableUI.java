@@ -13,28 +13,20 @@
 
 package org.processmining.analysis.orgsimilarity.ui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.util.HashMap;
 
 import javax.swing.BorderFactory;
-import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 
 import org.deckfour.slickerbox.components.RoundedPanel;
-import org.processmining.framework.log.LogReader;
-import org.processmining.framework.models.orgmodel.OrgEntity;
-import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.framework.plugin.Provider;
-import org.processmining.framework.ui.Message;
 import org.processmining.analysis.orgsimilarity.SimilarityResultTableModel;
-import org.processmining.analysis.orgsimilarity.SimilarityModel;
+import org.processmining.framework.models.orgmodel.OrgEntity;
 
 /**
  * On the panel originator by task matrix is shown. The matrix show how frequent

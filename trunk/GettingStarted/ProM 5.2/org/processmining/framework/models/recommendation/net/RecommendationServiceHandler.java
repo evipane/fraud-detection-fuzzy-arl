@@ -14,10 +14,9 @@ import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.models.recommendation.RecommendationProvider;
 import org.processmining.framework.models.recommendation.RecommendationQuery;
 import org.processmining.framework.models.recommendation.RecommendationResult;
+import org.processmining.framework.models.recommendation.net.client.RestartRequest;
 import org.processmining.framework.remote.ServiceHandler;
 import org.processmining.framework.ui.Message;
-import org.processmining.framework.models.recommendation.net.client.RestartRequest;
-import org.processmining.framework.ui.MainUI;
 
 /**
  * @author Christian W. Guenther (christian@deckfour.org)

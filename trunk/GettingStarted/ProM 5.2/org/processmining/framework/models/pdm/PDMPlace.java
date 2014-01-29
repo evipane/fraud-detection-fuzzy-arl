@@ -1,9 +1,6 @@
 package org.processmining.framework.models.pdm;
 
-import org.processmining.framework.models.petrinet.*;
-import java.lang.*;
-import java.util.*;
-import java.io.*;
+import org.processmining.framework.models.petrinet.PetriNet;
 
 /**
  * <p>

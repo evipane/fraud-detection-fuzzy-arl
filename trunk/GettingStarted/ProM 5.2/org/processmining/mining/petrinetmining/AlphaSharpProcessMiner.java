@@ -13,16 +13,28 @@
 
 package org.processmining.mining.petrinetmining;
 
-import java.util.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Hashtable;
 
-import org.processmining.framework.log.*;
-import org.processmining.framework.models.petrinet.*;
-import org.processmining.framework.ui.*;
-import org.processmining.mining.*;
-import org.processmining.mining.logabstraction.*;
-import cern.colt.list.*;
-import cern.colt.matrix.*;
-import java.io.*;
+import org.processmining.framework.log.LogEvent;
+import org.processmining.framework.log.LogEvents;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Transition;
+import org.processmining.framework.ui.Progress;
+import org.processmining.mining.MiningResult;
+import org.processmining.mining.logabstraction.LogAbstraction;
+import org.processmining.mining.logabstraction.LogAbstractionImpl;
+import org.processmining.mining.logabstraction.LogRelationBasedAlgorithm;
+import org.processmining.mining.logabstraction.LogRelations;
+import org.processmining.mining.logabstraction.LogRelationsImpl;
+
+import cern.colt.list.IntArrayList;
+import cern.colt.matrix.DoubleFactory1D;
+import cern.colt.matrix.DoubleFactory2D;
+import cern.colt.matrix.DoubleMatrix1D;
+import cern.colt.matrix.DoubleMatrix2D;
 
 public class AlphaSharpProcessMiner
     extends LogRelationBasedAlgorithm

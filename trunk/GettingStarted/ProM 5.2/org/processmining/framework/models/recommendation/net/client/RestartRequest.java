@@ -1,7 +1,5 @@
 package org.processmining.framework.models.recommendation.net.client;
 
-import org.processmining.analysis.log.scale.ProcessInstanceScale;
-import org.processmining.analysis.recommendation.contrib.RecommendationContributor;
 
 /**
  * <p>

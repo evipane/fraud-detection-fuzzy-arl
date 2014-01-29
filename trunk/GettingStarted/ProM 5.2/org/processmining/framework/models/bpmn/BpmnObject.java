@@ -3,7 +3,7 @@
  */
 package org.processmining.framework.models.bpmn;
 
-import org.w3c.dom.*;
+import org.w3c.dom.Element;
 
 /**
  * @author JianHong.YE, collaborate with LiJie.WEN and Feng Base class of BPMN

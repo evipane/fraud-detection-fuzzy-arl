@@ -19,6 +19,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.util.Iterator;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -40,13 +41,12 @@ import org.processmining.framework.log.LogReaderFactory;
 import org.processmining.framework.log.LogStateMachine;
 import org.processmining.framework.log.LogSummary;
 import org.processmining.framework.log.filter.DefaultLogFilter;
+import org.processmining.framework.log.rfb.LogData;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.ui.slicker.ProgressPanel;
 import org.processmining.mining.DummyMiningPlugin;
 import org.processmining.mining.DummyMiningResult;
 import org.processmining.mining.MiningPlugin;
-import java.util.Iterator;
-import org.processmining.framework.log.rfb.LogData;
 
 /**
  * @author Peter van den Brand

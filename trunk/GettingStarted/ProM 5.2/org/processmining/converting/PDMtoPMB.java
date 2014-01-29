@@ -13,15 +13,20 @@
 
 package org.processmining.converting;
 
-import org.processmining.converting.*;
-import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.mining.MiningResult;
-import org.processmining.framework.models.petrinet.*;
-import java.util.*;
-import org.processmining.mining.petrinetmining.PetriNetResult;
-import org.processmining.framework.models.pdm.*;
+import java.util.HashMap;
+
 import org.processmining.framework.log.LogEvent;
+import org.processmining.framework.models.pdm.PDMDataElement;
+import org.processmining.framework.models.pdm.PDMModel;
+import org.processmining.framework.models.pdm.PDMOperation;
+import org.processmining.framework.models.petrinet.PNEdge;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Place;
+import org.processmining.framework.models.petrinet.Transition;
+import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.ui.Message;
+import org.processmining.mining.MiningResult;
+import org.processmining.mining.petrinetmining.PetriNetResult;
 
 /**
  * <p>

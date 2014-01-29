@@ -14,40 +14,17 @@
 package org.processmining.mining.organizationmining;
 
 import java.awt.BorderLayout;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
 
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import org.processmining.framework.log.LogEvent;
 import org.processmining.framework.log.LogReader;
-import org.processmining.framework.models.activitygraph.ActivityGraph;
-import org.processmining.framework.models.hlprocess.HLActivity;
-import org.processmining.framework.models.hlprocess.HLGroup;
-import org.processmining.framework.models.hlprocess.HLID;
-import org.processmining.framework.models.hlprocess.HLResource;
-import org.processmining.framework.models.hlprocess.HLTypes;
-import org.processmining.framework.models.hlprocess.HLTypes.Perspective;
-import org.processmining.framework.models.hlprocess.hlmodel.HLActivitySet;
-import org.processmining.framework.models.orgmodel.OrgEntity;
 import org.processmining.framework.models.orgmodel.OrgModel;
-import org.processmining.framework.models.orgmodel.Resource;
-import org.processmining.framework.models.orgmodel.Task;
 import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.framework.plugin.Provider;
-import org.processmining.importing.LogReaderConnection;
-import org.processmining.mining.MiningResult;
 import org.processmining.mining.organizationmining.algorithm.ClusteringAlgorithm;
-import org.processmining.mining.organizationmining.ui.OrgMiningResultPanel;
 import org.processmining.mining.organizationmining.ui.hierarchicalui.HierOrgModelGraph;
-import org.processmining.mining.snamining.model.SocialNetworkMatrix;
 
 /**
  * @author Minseok Song

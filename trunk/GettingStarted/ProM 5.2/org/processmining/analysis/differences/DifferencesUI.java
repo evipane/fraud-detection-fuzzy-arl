@@ -1,8 +1,8 @@
 package org.processmining.analysis.differences;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -10,14 +10,20 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Component;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 import org.processmining.analysis.differences.processdifferences.ProcessAutomaton;
 import org.processmining.analysis.differences.processdifferences.ProcessDifference;
@@ -28,7 +34,6 @@ import org.processmining.analysis.epc.similarity.Checker;
 import org.processmining.framework.models.ModelGraph;
 import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.petrinet.PetriNet;
-import org.processmining.framework.models.bpmn.BpmnProcessModel;
 import org.processmining.framework.ui.Message;
 import org.processmining.importing.pnml.PnmlImport;
 import org.processmining.mining.petrinetmining.PetriNetResult;

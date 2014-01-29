@@ -8,21 +8,25 @@ package org.processmining.framework.models.hlprocess.pattern;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import org.processmining.framework.models.petrinet.*;
 
-import att.grappa.Node;
-import org.processmining.framework.models.hlprocess.hlmodel.*;
+import org.processmining.converting.HLProtosToHLPetriNet;
 import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.hlprocess.HLActivity;
-import org.processmining.framework.models.hlprocess.HLChoice;
 import org.processmining.framework.models.hlprocess.HLAttribute;
-import java.util.Iterator;
-import org.processmining.framework.ui.Message;
-import org.processmining.framework.models.hlprocess.HLResource;
+import org.processmining.framework.models.hlprocess.HLChoice;
 import org.processmining.framework.models.hlprocess.HLGroup;
+import org.processmining.framework.models.hlprocess.HLResource;
 import org.processmining.framework.models.hlprocess.HLTypes;
+import org.processmining.framework.models.hlprocess.hlmodel.HLPetriNet;
+import org.processmining.framework.models.petrinet.PNNode;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Transition;
+import org.processmining.framework.ui.Message;
+
+import att.grappa.Node;
 
 /**
  * Defines the process part that is selected from a HLPetriNet for redesign. For

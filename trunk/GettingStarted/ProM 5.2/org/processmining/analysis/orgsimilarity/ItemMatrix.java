@@ -1,13 +1,12 @@
 package org.processmining.analysis.orgsimilarity;
 
-import cern.colt.matrix.DoubleFactory2D;
-import cern.colt.matrix.DoubleMatrix2D;
 import java.util.ArrayList;
-import java.util.HashSet;
-
-import org.processmining.framework.models.orgmodel.OrgModel;
 
 import org.processmining.framework.models.orgmodel.OrgEntity;
+import org.processmining.framework.models.orgmodel.OrgModel;
+
+import cern.colt.matrix.DoubleFactory2D;
+import cern.colt.matrix.DoubleMatrix2D;
 
 public class ItemMatrix {
 	private OrgModel orgModel;

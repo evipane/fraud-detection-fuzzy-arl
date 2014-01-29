@@ -1,19 +1,28 @@
 package org.processmining.analysis.recommendation;
 
-import java.io.*;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
 
-import org.processmining.analysis.*;
-import org.processmining.framework.log.*;
-import org.processmining.framework.log.filter.*;
-import org.processmining.framework.log.rfb.*;
-import org.processmining.framework.plugin.*;
-import org.processmining.framework.ui.*;
-import org.processmining.framework.ui.filters.*;
-import org.processmining.framework.util.*;
+import org.processmining.analysis.AnalysisInputItem;
+import org.processmining.analysis.AnalysisPlugin;
+import org.processmining.framework.log.LogFile;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.log.filter.DefaultLogFilter;
+import org.processmining.framework.log.rfb.BufferedLogReader;
+import org.processmining.framework.plugin.ProvidedObject;
+import org.processmining.framework.ui.MainUI;
+import org.processmining.framework.ui.Utils;
+import org.processmining.framework.ui.filters.GenericFileFilter;
+import org.processmining.framework.util.CenterOnScreen;
 
 /**
  * <p>

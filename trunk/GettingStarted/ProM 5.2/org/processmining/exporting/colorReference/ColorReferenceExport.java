@@ -18,8 +18,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
-import org.processmining.exporting.ExportPlugin;
 import org.processmining.analysis.performance.dottedchart.ui.ColorReference;
+import org.processmining.exporting.ExportPlugin;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.ui.Message;
 

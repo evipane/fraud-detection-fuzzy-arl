@@ -1,16 +1,20 @@
 package org.processmining.analysis.causality;
 
+import java.awt.BorderLayout;
+import java.awt.event.MouseEvent;
 import java.util.List;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.table.*;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.JTableHeader;
 
-import org.processmining.framework.models.epcpack.*;
-import org.processmining.framework.plugin.*;
-import org.processmining.framework.util.*;
 import org.processmining.analysis.epc.similarity.Similarities;
+import org.processmining.framework.models.epcpack.ConfigurableEPC;
+import org.processmining.framework.plugin.ProvidedObject;
+import org.processmining.framework.plugin.Provider;
+import org.processmining.framework.util.StringNormalizer;
 
 /**
  * <p>

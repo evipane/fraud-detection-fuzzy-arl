@@ -1,10 +1,11 @@
 package org.processmining.analysis.socialsuccess.bigfive.conscientiousness;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.ArrayList;
+
 import org.processmining.analysis.socialsuccess.PersonalityData;
 import org.processmining.analysis.socialsuccess.bigfive.Behaviour;
 import org.processmining.analysis.socialsuccess.bigfive.Trait;

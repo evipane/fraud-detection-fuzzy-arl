@@ -13,13 +13,12 @@
 
 package org.processmining.framework.models.protos.algorithms;
 
-import java.io.*;
-import javax.xml.parsers.*;
+import java.io.InputStream;
 
-import org.processmining.framework.models.*;
-import org.processmining.framework.models.protos.*;
+import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.w3c.dom.*;
+import org.processmining.framework.models.protos.ProtosModel;
+import org.w3c.dom.Document;
 
 /**
  * <p>

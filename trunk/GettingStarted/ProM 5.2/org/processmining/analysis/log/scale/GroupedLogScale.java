@@ -3,9 +3,9 @@
  */
 package org.processmining.analysis.log.scale;
 
+import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.util.MethodsForWorkflowLogDataStructures;
-import org.processmining.framework.log.LogReader;
 
 /**
  * This scale weighs a process instance based on the overall duration of

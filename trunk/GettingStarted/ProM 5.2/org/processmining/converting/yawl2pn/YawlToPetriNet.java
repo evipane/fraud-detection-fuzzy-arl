@@ -13,17 +13,28 @@
 
 package org.processmining.converting.yawl2pn;
 
-import org.processmining.framework.models.petrinet.*;
-import org.processmining.framework.models.yawl.*;
-import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.processmining.converting.Converter;
-import org.processmining.converting.yawl2yawl.*;
 import java.util.Collection;
-import org.processmining.mining.petrinetmining.PetriNetResult;
-import org.processmining.framework.log.LogEvent;
+import java.util.HashMap;
+import java.util.HashSet;
+
+import org.processmining.converting.Converter;
 import org.processmining.converting.PetriNetReduction;
+import org.processmining.converting.yawl2yawl.YawlToYawl;
+import org.processmining.converting.yawl2yawl.YawlToYawlSettings;
+import org.processmining.framework.log.LogEvent;
+import org.processmining.framework.models.petrinet.PNEdge;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Place;
+import org.processmining.framework.models.petrinet.Transition;
+import org.processmining.framework.models.petrinet.TransitionCluster;
+import org.processmining.framework.models.yawl.YAWLCondition;
+import org.processmining.framework.models.yawl.YAWLDecomposition;
+import org.processmining.framework.models.yawl.YAWLEdge;
+import org.processmining.framework.models.yawl.YAWLModel;
+import org.processmining.framework.models.yawl.YAWLNode;
+import org.processmining.framework.models.yawl.YAWLTask;
+import org.processmining.mining.petrinetmining.PetriNetResult;
 
 public class YawlToPetriNet {
 	/*

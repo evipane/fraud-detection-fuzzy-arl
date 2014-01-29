@@ -12,18 +12,6 @@ import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 
-import org.processmining.framework.log.LogEvent;
-import org.processmining.framework.models.epcpack.ConfigurableEPC;
-import org.processmining.framework.models.epcpack.EPCConnector;
-import org.processmining.framework.models.epcpack.EPCEdge;
-import org.processmining.framework.models.epcpack.EPCEvent;
-import org.processmining.framework.models.epcpack.EPCFunction;
-import org.processmining.framework.models.epcpack.EPCObject;
-import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.framework.plugin.Provider;
-import org.processmining.framework.ui.Message;
-import org.processmining.framework.ui.UISettings;
-
 import org.processmining.analysis.epc.epcmetrics.ControlFlow;
 import org.processmining.analysis.epc.epcmetrics.Coupling;
 import org.processmining.analysis.epc.epcmetrics.CrossConnectivity;
@@ -35,6 +23,17 @@ import org.processmining.analysis.epc.epcmetrics.NumberOfFunctions;
 import org.processmining.analysis.epc.epcmetrics.NumberOfORs;
 import org.processmining.analysis.epc.epcmetrics.NumberOfXORs;
 import org.processmining.analysis.epc.similarity.Checker;
+import org.processmining.framework.log.LogEvent;
+import org.processmining.framework.models.epcpack.ConfigurableEPC;
+import org.processmining.framework.models.epcpack.EPCConnector;
+import org.processmining.framework.models.epcpack.EPCEdge;
+import org.processmining.framework.models.epcpack.EPCEvent;
+import org.processmining.framework.models.epcpack.EPCFunction;
+import org.processmining.framework.models.epcpack.EPCObject;
+import org.processmining.framework.plugin.ProvidedObject;
+import org.processmining.framework.plugin.Provider;
+import org.processmining.framework.ui.Message;
+import org.processmining.framework.ui.UISettings;
 
 /**
  * <p>

@@ -13,13 +13,10 @@
 
 package org.processmining.framework.models.protos;
 
-import java.io.*;
-import java.util.*;
+import java.util.HashMap;
 
-import org.processmining.framework.models.*;
-import org.processmining.framework.models.protos.*;
-
-import org.w3c.dom.*;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * <p>

@@ -9,10 +9,10 @@ import javax.swing.JCheckBox;
 
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.processmining.analysis.performance.basicperformance.BasicPerformanceAnalysisUI;
-import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
+import org.processmining.analysis.performance.basicperformance.chart.defaultcategory.DefaultCategoryChart;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance2D;
-import org.processmining.analysis.performance.basicperformance.chart.defaultcategory.DefaultCategoryChart;
+import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
 
 public class DefaultCategoryListChart extends DefaultCategoryChart implements
 		ItemListener {

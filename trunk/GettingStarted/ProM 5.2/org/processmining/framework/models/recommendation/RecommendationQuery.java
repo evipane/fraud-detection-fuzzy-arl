@@ -13,10 +13,10 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 import org.processmining.framework.log.AuditTrailEntry;
+import org.processmining.framework.log.LogEvent;
 import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.log.classic.ProcessInstanceClassic;
 import org.processmining.framework.models.recommendation.net.RecommendationQueryMarshal;
-import org.processmining.framework.log.LogEvent;
 
 /**
  * Data structure for storing a query requesting recommendation for scheduling

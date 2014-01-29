@@ -18,8 +18,8 @@ import java.util.Set;
 
 import org.processmining.framework.models.hlprocess.HLTypes.Perspective;
 import org.processmining.framework.models.hlprocess.HLTypes.TimeUnit;
-import org.processmining.framework.models.hlprocess.distribution.HLGeneralDistribution;
 import org.processmining.framework.models.hlprocess.distribution.HLDistribution;
+import org.processmining.framework.models.hlprocess.distribution.HLGeneralDistribution;
 import org.processmining.framework.ui.Message;
 
 /**

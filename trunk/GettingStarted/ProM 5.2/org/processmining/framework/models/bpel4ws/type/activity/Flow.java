@@ -8,11 +8,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Vector;
 
+import org.processmining.framework.models.bpel4ws.type.BPEL4WS;
 import org.processmining.framework.models.bpel4ws.type.BPEL4WSVisitor;
 import org.processmining.framework.models.bpel4ws.unit.Pair;
-
-import java.io.*;
-import org.processmining.framework.models.bpel4ws.type.*;
 
 /**
  * @author Kristian Bisgaard Lassen

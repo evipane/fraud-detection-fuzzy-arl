@@ -13,9 +13,6 @@
 
 package org.processmining.framework.models.petrinet;
 
-import java.util.Iterator;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * <p>

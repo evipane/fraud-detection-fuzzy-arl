@@ -37,7 +37,6 @@ import java.util.ArrayList;
 
 import org.processmining.framework.log.LogEvent;
 import org.processmining.framework.log.LogEvents;
-import org.processmining.mining.fuzzymining.graph.FuzzyGraph;
 import org.processmining.mining.fuzzymining.graph.MutableFuzzyGraph;
 import org.processmining.mining.fuzzymining.metrics.binary.BinaryMetric;
 import org.processmining.mining.fuzzymining.metrics.unary.UnaryMetric;

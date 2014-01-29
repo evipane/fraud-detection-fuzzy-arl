@@ -1,7 +1,9 @@
 package org.processmining.analysis.socialsuccess.bigfive;
 
 import org.processmining.analysis.socialsuccess.PersonalityData;
-import org.processmining.analysis.socialsuccess.bigfive.conscientiousness.*;
+import org.processmining.analysis.socialsuccess.bigfive.conscientiousness.OrderAndRegularity;
+import org.processmining.analysis.socialsuccess.bigfive.conscientiousness.PayAttention;
+import org.processmining.analysis.socialsuccess.bigfive.conscientiousness.TidyUp;
 
 public class Conscientiousness extends Trait {
 

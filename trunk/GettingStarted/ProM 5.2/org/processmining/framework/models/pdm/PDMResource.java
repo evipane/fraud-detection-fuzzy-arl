@@ -13,10 +13,8 @@
 
 package org.processmining.framework.models.pdm;
 
-import java.io.*;
-import javax.xml.parsers.*;
-import org.processmining.framework.models.pdm.*;
-import org.w3c.dom.*;
+import java.io.IOException;
+import java.io.Writer;
 
 /**
  * <p>

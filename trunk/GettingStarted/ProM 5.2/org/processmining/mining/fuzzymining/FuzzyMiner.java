@@ -38,7 +38,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
@@ -65,8 +64,6 @@ import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.LogSummary;
 import org.processmining.framework.ui.MainUI;
 import org.processmining.framework.ui.Message;
-import org.processmining.framework.ui.Progress;
-import org.processmining.framework.ui.UISettings;
 import org.processmining.mining.MiningPlugin;
 import org.processmining.mining.MiningResult;
 import org.processmining.mining.fuzzymining.attenuation.Attenuation;

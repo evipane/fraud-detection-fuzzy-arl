@@ -35,25 +35,20 @@ package org.processmining.analysis.performance.dottedchart.ui;
  */
 
 import java.awt.Color;
-import java.util.HashMap;
-import java.util.Random;
-
 // added
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
-import org.jdom.*;
-import org.jdom.input.SAXBuilder;
-import org.processmining.framework.ui.Message;
 import java.io.InputStream;
-import org.processmining.framework.models.orgmodel.*;
-import org.processmining.framework.log.LogEvents;
-import org.processmining.framework.log.LogEvent;
-import java.io.OutputStreamWriter;
-import org.processmining.framework.plugin.ProvidedObject;
-import java.io.OutputStream;
-import java.io.BufferedWriter;
 import java.io.Writer;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
+import org.jdom.input.SAXBuilder;
 
 /**
  * ColorRepository.

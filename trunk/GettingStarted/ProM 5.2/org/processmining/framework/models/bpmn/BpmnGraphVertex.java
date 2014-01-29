@@ -3,13 +3,8 @@
  */
 package org.processmining.framework.models.bpmn;
 
-import java.io.IOException;
-import java.io.Writer;
-import java.util.HashMap;
-
 import org.processmining.framework.models.ModelGraph;
 import org.processmining.framework.models.ModelGraphVertex;
-import org.processmining.framework.models.yawl.YAWLModel;
 
 /**
  * @author JianHong.YE, collaborate with LiJie.WEN and Feng

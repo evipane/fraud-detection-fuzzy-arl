@@ -13,10 +13,13 @@
 
 package org.processmining.framework.models.petrinet.algorithms;
 
-import java.util.*;
+import java.util.Date;
+import java.util.Iterator;
 
-import org.processmining.framework.models.*;
-import org.processmining.framework.models.petrinet.*;
+import org.processmining.framework.models.Bag;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Place;
+import org.processmining.framework.models.petrinet.Token;
 
 /**
  * <p>

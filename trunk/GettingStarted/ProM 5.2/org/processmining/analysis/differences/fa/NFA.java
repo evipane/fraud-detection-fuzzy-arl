@@ -1,8 +1,8 @@
 package org.processmining.analysis.differences.fa;
 
+import org.processmining.framework.models.petrinet.Marking;
 import org.processmining.framework.models.petrinet.PetriNet;
 import org.processmining.framework.models.petrinet.Place;
-import org.processmining.framework.models.petrinet.Marking;
 
 /**
  * The NFA defines a non-deterministic finite automaton by extending the finite

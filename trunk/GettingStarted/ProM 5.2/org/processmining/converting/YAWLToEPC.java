@@ -31,8 +31,6 @@ import org.processmining.framework.models.yawl.YAWLTask;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.mining.MiningResult;
 import org.processmining.mining.epcmining.EPCResult;
-import org.processmining.framework.models.yawl.YAWLNode;
-import java.util.HashSet;
 
 /**
  * <p>

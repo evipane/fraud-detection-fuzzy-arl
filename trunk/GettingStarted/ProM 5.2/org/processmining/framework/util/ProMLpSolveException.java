@@ -1,6 +1,5 @@
 package org.processmining.framework.util;
 
-import lpsolve.LpSolveException;
 
 /**
  * <p>

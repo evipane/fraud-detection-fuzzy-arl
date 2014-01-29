@@ -6,9 +6,8 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 
-import org.processmining.framework.models.orgmodel.OrgModel;
-import org.processmining.mining.semanticorganizationmining.SemanticOrgMiningResult;
 import org.processmining.framework.models.orgmodel.OrgModelConcept;
+import org.processmining.mining.semanticorganizationmining.SemanticOrgMiningResult;
 
 /**
  * @author Minseok Song

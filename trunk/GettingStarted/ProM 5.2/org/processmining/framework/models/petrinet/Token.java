@@ -13,7 +13,7 @@
 
 package org.processmining.framework.models.petrinet;
 
-import java.util.*;
+import java.util.Date;
 
 /**
  * Token can be held by places. Since they are consumed and produced if a

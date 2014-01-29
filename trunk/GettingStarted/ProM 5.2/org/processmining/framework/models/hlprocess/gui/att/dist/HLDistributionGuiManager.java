@@ -6,6 +6,7 @@ import org.processmining.framework.models.hlprocess.distribution.HLChiSquareDist
 import org.processmining.framework.models.hlprocess.distribution.HLConstantDistribution;
 import org.processmining.framework.models.hlprocess.distribution.HLDiscreteDistribution;
 import org.processmining.framework.models.hlprocess.distribution.HLDistribution;
+import org.processmining.framework.models.hlprocess.distribution.HLDistribution.DistributionEnum;
 import org.processmining.framework.models.hlprocess.distribution.HLErlangDistribution;
 import org.processmining.framework.models.hlprocess.distribution.HLExponentialDistribution;
 import org.processmining.framework.models.hlprocess.distribution.HLGeneralDistribution;
@@ -13,7 +14,6 @@ import org.processmining.framework.models.hlprocess.distribution.HLNormalDistrib
 import org.processmining.framework.models.hlprocess.distribution.HLPoissonDistribution;
 import org.processmining.framework.models.hlprocess.distribution.HLStudentDistribution;
 import org.processmining.framework.models.hlprocess.distribution.HLUniformDistribution;
-import org.processmining.framework.models.hlprocess.distribution.HLDistribution.DistributionEnum;
 import org.processmining.framework.ui.Message;
 import org.processmining.framework.util.GuiNotificationTarget;
 

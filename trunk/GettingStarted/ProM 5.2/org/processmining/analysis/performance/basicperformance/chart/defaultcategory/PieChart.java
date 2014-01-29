@@ -3,8 +3,8 @@ package org.processmining.analysis.performance.basicperformance.chart.defaultcat
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -15,9 +15,8 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.MultiplePiePlot;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.util.TableOrder;
 import org.jfree.data.general.DefaultPieDataset;
-
+import org.jfree.util.TableOrder;
 import org.processmining.analysis.performance.basicperformance.BasicPerformanceAnalysisUI;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance2D;
 import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;

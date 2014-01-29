@@ -12,6 +12,8 @@ import javax.swing.JScrollPane;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.CategoryAxis;
+import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
@@ -19,8 +21,6 @@ import org.jfree.ui.RectangleInsets;
 import org.processmining.analysis.performance.basicperformance.BasicPerformanceAnalysisUI;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance2D;
 import org.processmining.framework.util.GUIPropertyListEnumeration;
-import org.jfree.chart.axis.CategoryAxis;
-import org.jfree.chart.axis.NumberAxis;
 
 public class BarListChart extends DefaultCategoryListChart {
 

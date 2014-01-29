@@ -1,10 +1,11 @@
 package org.processmining.importing.dot;
 
-import org.processmining.importing.ImportPlugin;
-import java.io.InputStream;
 import java.io.IOException;
-import org.processmining.framework.ui.filters.GenericFileFilter;
+import java.io.InputStream;
+
 import org.processmining.framework.models.dot.DotModel;
+import org.processmining.framework.ui.filters.GenericFileFilter;
+import org.processmining.importing.ImportPlugin;
 import org.processmining.mining.dot.DotResult;
 
 /**

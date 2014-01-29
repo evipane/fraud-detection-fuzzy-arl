@@ -12,7 +12,6 @@ import java.util.Iterator;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import javax.swing.SpringLayout;
 
 import org.processmining.framework.log.AuditTrailEntry;
 import org.processmining.framework.log.AuditTrailEntryList;

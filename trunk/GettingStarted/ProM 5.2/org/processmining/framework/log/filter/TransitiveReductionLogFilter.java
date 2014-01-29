@@ -1,6 +1,7 @@
 package org.processmining.framework.log.filter;
 
 import java.util.Arrays;
+
 import org.processmining.framework.log.LogFilter;
 
 /**

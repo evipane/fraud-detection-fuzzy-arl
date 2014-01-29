@@ -13,19 +13,20 @@
 
 package org.processmining.mining.semanticorganizationmining.ui;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 
-import java.awt.Dimension;
-import org.processmining.framework.models.orgmodel.Task;
-import org.processmining.framework.models.orgmodel.OrgModel;
 import org.processmining.framework.models.orgmodel.OrgEntity;
-import java.awt.event.ActionEvent;
-import java.awt.BorderLayout;
-import javax.swing.JOptionPane;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
+import org.processmining.framework.models.orgmodel.OrgModel;
+import org.processmining.framework.models.orgmodel.Task;
 import org.processmining.mining.semanticorganizationmining.SemanticOrgMiningResult;
 
 /**

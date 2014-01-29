@@ -13,8 +13,6 @@
 
 package org.processmining.analysis.epcmerge;
 
-import org.processmining.framework.log.LogEvent;
-import org.processmining.framework.models.LogEventProvider;
 import org.processmining.framework.models.epcpack.ConfigurableEPC;
 import org.processmining.framework.models.epcpack.EPCConnector;
 import org.processmining.framework.models.epcpack.EPCEvent;

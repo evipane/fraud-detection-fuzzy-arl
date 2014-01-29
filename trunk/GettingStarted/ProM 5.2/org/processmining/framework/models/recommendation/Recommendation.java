@@ -3,10 +3,10 @@
  */
 package org.processmining.framework.models.recommendation;
 
-import java.util.*;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
-import org.processmining.framework.log.*;
-import org.processmining.framework.ui.Message;
+import org.processmining.framework.log.LogEvent;
 
 /**
  * A simple data structure for storing recommendations, i.e. that a specific

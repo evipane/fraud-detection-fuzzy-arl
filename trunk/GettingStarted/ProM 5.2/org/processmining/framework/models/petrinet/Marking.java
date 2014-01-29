@@ -13,7 +13,9 @@
 
 package org.processmining.framework.models.petrinet;
 
-import java.util.*;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.TreeSet;
 
 /**
  * <p>

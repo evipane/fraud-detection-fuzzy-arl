@@ -2,6 +2,7 @@ package org.processmining.analysis.performance.fsmevaluator;
 
 import java.util.HashMap;
 import java.util.HashSet;
+
 import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
 import org.processmining.analysis.performance.fsmanalysis.FSMStatistics;
 import org.processmining.framework.log.AuditTrailEntry;
@@ -9,7 +10,6 @@ import org.processmining.framework.log.AuditTrailEntryList;
 import org.processmining.framework.log.DataSection;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.ProcessInstance;
-import org.processmining.framework.models.ModelGraphEdge;
 import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.fsm.AcceptFSM;
 import org.processmining.framework.models.fsm.FSMState;

@@ -19,9 +19,11 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JColorChooser;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 
 import org.processmining.analysis.performance.dottedchart.DottedChartAnalysis;
 import org.processmining.analysis.performance.dottedchart.model.DottedChartModel;
@@ -29,12 +31,8 @@ import org.processmining.analysis.performance.dottedchart.model.ExtendedLogTable
 import org.processmining.framework.log.LogEvents;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.ui.DoubleClickTable;
-import org.processmining.framework.util.GUIPropertyBoolean;
-import javax.swing.JTextField;
-import javax.swing.JFileChooser;
 import org.processmining.framework.ui.filters.GenericMultipleExtFilter;
 import org.processmining.framework.util.GUIPropertyInteger;
-import org.processmining.framework.util.GUIPropertyListEnumeration;
 
 /**
  * <p>

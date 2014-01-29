@@ -13,17 +13,19 @@
 
 package org.processmining.exporting.csv;
 
-import java.io.*;
-import java.text.DateFormat;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Map;
 
-import org.processmining.exporting.*;
-import org.processmining.framework.plugin.*;
+import org.processmining.exporting.ExportPlugin;
 import org.processmining.framework.log.AuditTrailEntry;
 import org.processmining.framework.log.AuditTrailEntryList;
 import org.processmining.framework.log.LogReader;
+import org.processmining.framework.plugin.ProvidedObject;
 
 /**
  * <p>

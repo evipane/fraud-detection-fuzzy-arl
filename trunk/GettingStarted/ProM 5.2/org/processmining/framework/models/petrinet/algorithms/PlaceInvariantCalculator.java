@@ -13,11 +13,14 @@
 
 package org.processmining.framework.models.petrinet.algorithms;
 
-import java.util.*;
+import java.util.ArrayList;
 
-import org.processmining.framework.models.*;
-import org.processmining.framework.models.petrinet.*;
-import cern.colt.matrix.*;
+import org.processmining.framework.models.Bag;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Place;
+import org.processmining.framework.models.petrinet.Transition;
+
+import cern.colt.matrix.DoubleMatrix2D;
 
 /**
  * <p>

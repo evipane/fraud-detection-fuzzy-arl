@@ -13,9 +13,13 @@
 
 package org.processmining.framework.models.heuristics;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Random;
+import java.util.TreeSet;
 
-import org.processmining.framework.util.*;
+import org.processmining.framework.util.MethodsToMakeDeepCopiesOfDataStructures;
 
 /**
  * <p>

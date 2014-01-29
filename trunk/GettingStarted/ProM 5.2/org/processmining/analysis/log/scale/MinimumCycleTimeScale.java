@@ -1,7 +1,7 @@
 package org.processmining.analysis.log.scale;
 
-import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.log.LogReader;
+import org.processmining.framework.log.ProcessInstance;
 
 public class MinimumCycleTimeScale implements ProcessInstanceScale {
 

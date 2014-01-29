@@ -23,11 +23,10 @@ import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 
-import org.processmining.framework.log.LogReader;
+import org.processmining.analysis.orgsimilarity.SimilarityModel;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.plugin.Provider;
 import org.processmining.framework.ui.Message;
-import org.processmining.analysis.orgsimilarity.SimilarityModel;
 
 /**
  * On the panel originator by task matrix is shown. The matrix show how frequent

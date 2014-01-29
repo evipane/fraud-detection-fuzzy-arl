@@ -1,6 +1,5 @@
 package org.processmining.framework.models.activitygraph;
 
-import org.processmining.framework.models.ModelGraphVertex;
 
 /**
  * An activity vertex is a node in an activity graph.

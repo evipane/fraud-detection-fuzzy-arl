@@ -1,11 +1,13 @@
 package org.processmining.framework.models.logabstraction;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.SortedSet;
 
-import org.processmining.analysis.log.scale.*;
-import org.processmining.framework.log.*;
-import org.processmining.framework.models.recommendation.*;
-import org.processmining.framework.ui.Message;
+import org.processmining.analysis.log.scale.ProcessInstanceScale;
+import org.processmining.framework.log.LogEvent;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.log.ProcessInstance;
+import org.processmining.framework.models.recommendation.Recommendation;
 
 /**
  * <p>

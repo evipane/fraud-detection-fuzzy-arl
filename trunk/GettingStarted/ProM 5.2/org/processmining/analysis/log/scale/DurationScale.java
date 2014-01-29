@@ -6,8 +6,8 @@ package org.processmining.analysis.log.scale;
 import java.io.IOException;
 import java.util.Date;
 
-import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.log.LogReader;
+import org.processmining.framework.log.ProcessInstance;
 
 /**
  * This scale weighs a process instance based on the overall duration of

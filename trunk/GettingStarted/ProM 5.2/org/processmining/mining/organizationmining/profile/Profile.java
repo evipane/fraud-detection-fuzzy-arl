@@ -33,15 +33,15 @@
  */
 package org.processmining.mining.organizationmining.profile;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.ui.Progress;
 import org.processmining.mining.organizationmining.distance.DistanceMatrix;
 import org.processmining.mining.organizationmining.distance.DistanceMetric;
 import org.processmining.mining.organizationmining.model.InstancePoint;
-import org.processmining.framework.log.LogReader;
-import org.processmining.framework.ui.Progress;
-import java.util.Random;
 
 /**
  * This class defines the interface for a profile, in which for a number of

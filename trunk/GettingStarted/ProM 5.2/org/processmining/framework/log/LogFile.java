@@ -15,6 +15,7 @@ package org.processmining.framework.log;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.zip.GZIPInputStream;
@@ -23,10 +24,9 @@ import java.util.zip.ZipFile;
 
 import javax.swing.JProgressBar;
 
+import org.processmining.framework.log.rfb.LogData;
 import org.processmining.framework.log.rfb.MonitorInputStream;
 import org.processmining.framework.ui.UISettings;
-import org.processmining.framework.log.rfb.LogData;
-import java.io.FileOutputStream;
 
 /**
  * Encapsulates a log file.

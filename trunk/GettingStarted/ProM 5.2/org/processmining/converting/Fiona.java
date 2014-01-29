@@ -1,35 +1,37 @@
 package org.processmining.converting;
 
-import org.processmining.framework.log.LogReader;
-import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.framework.models.petrinet.oWFNet;
-import org.processmining.mining.dot.DotResult;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.awt.event.ActionListener;
-import javax.swing.JDialog;
-import java.awt.GridBagConstraints;
-import org.processmining.framework.ui.MainUI;
-import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
 import java.awt.Checkbox;
-import javax.swing.JPanel;
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import org.processmining.framework.util.CenterOnScreen;
 import java.awt.TextArea;
-import javax.swing.JButton;
-import org.processmining.framework.ui.Message;
-import java.io.IOException;
-import java.io.StringWriter;
-import java.io.InputStream;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.FileInputStream;
-import org.processmining.exporting.petrinet.oWFNExport;
-import org.processmining.importing.dot.DotImport;
-import org.processmining.framework.models.dot.DotModel;
-import javax.swing.JRadioButton;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringWriter;
+
 import javax.swing.ButtonGroup;
-import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
+import org.processmining.exporting.petrinet.oWFNExport;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.models.dot.DotModel;
+import org.processmining.framework.models.petrinet.oWFNet;
+import org.processmining.framework.plugin.ProvidedObject;
+import org.processmining.framework.ui.MainUI;
+import org.processmining.framework.ui.Message;
+import org.processmining.framework.util.CenterOnScreen;
+import org.processmining.importing.dot.DotImport;
+import org.processmining.mining.dot.DotResult;
 
 /**
  * <p>

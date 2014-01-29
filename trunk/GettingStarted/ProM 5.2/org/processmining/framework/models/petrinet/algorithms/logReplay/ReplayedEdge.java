@@ -13,9 +13,11 @@
 
 package org.processmining.framework.models.petrinet.algorithms.logReplay;
 
-import java.util.*;
+import java.util.ArrayList;
 
-import org.processmining.framework.models.petrinet.*;
+import org.processmining.framework.models.petrinet.PNEdge;
+import org.processmining.framework.models.petrinet.Place;
+import org.processmining.framework.models.petrinet.Transition;
 
 /**
  * An edge involved in the log replay analysis method.

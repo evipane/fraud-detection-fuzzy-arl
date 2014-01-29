@@ -21,7 +21,7 @@ import java.io.Reader;
 import java.util.Enumeration;
 import java.util.Vector;
 
-import java_cup_grappa.runtime.*;
+import java_cup_grappa.runtime.Symbol;
 
 /** CUP v0.10j generated parser.
  * @version Wed May 08 21:20:09 EDT 2002

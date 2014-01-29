@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 
-import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.fsm.FSMTransition;
 
 /**

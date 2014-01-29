@@ -1,16 +1,15 @@
 package org.processmining.mining.fsm;
 
-import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
-import javax.swing.JList;
-import javax.swing.JComboBox;
-import javax.swing.JCheckBox;
-import javax.swing.JSpinner;
-
 import java.awt.BorderLayout;
-import javax.swing.border.TitledBorder;
+
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTabbedPane;
 import javax.swing.SpinnerListModel;
-import javax.swing.ComboBoxEditor;
+import javax.swing.border.TitledBorder;
 
 /**
  * <p>

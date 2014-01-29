@@ -1,16 +1,18 @@
 package org.processmining.analysis.petrinet.petrinetmetrics;
 
 import java.awt.BorderLayout;
+
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
+
 import org.processmining.framework.models.ModelGraphPanel;
 import org.processmining.framework.models.petrinet.PetriNet;
-import org.processmining.framework.ui.Message;
-import org.processmining.framework.plugin.Provider;
 import org.processmining.framework.plugin.ProvidedObject;
+import org.processmining.framework.plugin.Provider;
+import org.processmining.framework.ui.Message;
 
 public class PNComplexityCalculatorUI extends JPanel implements Provider {
 	private final static int MAINDIVIDERLOCATION = 320;

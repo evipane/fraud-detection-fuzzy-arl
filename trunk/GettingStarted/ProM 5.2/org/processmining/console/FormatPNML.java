@@ -13,10 +13,14 @@
 
 package org.processmining.console;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.InputStream;
 
-import org.processmining.framework.models.petrinet.*;
-import org.processmining.framework.models.petrinet.algorithms.*;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.algorithms.PnmlReader;
+import org.processmining.framework.models.petrinet.algorithms.PnmlWriter;
 
 /**
  * @author Peter van den Brand

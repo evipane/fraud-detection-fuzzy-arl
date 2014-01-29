@@ -1,11 +1,10 @@
 package org.processmining.framework.models.fsm;
 
-import org.processmining.framework.models.ModelGraph;
 import java.util.TreeMap;
-import org.processmining.framework.ui.Message;
+
+import org.processmining.framework.models.ModelGraph;
+
 import att.grappa.Edge;
-import java.util.List;
-import java.util.ArrayList;
 
 /**
  * <p>

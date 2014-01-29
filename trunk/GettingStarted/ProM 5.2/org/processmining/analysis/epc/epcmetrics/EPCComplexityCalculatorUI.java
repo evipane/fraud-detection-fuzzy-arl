@@ -1,18 +1,18 @@
 package org.processmining.analysis.epc.epcmetrics;
 
 import java.awt.BorderLayout;
-import java.util.ArrayList;
 
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
-import javax.swing.JPanel;
+
 import org.processmining.framework.models.ModelGraphPanel;
 import org.processmining.framework.models.epcpack.ConfigurableEPC;
 import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.framework.ui.Message;
 import org.processmining.framework.plugin.Provider;
+import org.processmining.framework.ui.Message;
 
 /**
  * <p>

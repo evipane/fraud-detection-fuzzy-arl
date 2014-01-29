@@ -4,8 +4,21 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.util.Iterator;
 import java.util.TreeSet;
-import javax.swing.*;
-import javax.swing.event.*;
+
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 import org.deckfour.slickerbox.components.FlatTabbedPane;
 import org.deckfour.slickerbox.components.RoundedPanel;

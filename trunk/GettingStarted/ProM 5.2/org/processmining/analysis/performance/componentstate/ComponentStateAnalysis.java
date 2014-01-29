@@ -1,29 +1,36 @@
 package org.processmining.analysis.performance.componentstate;
 
-import java.util.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.awt.event.AdjustmentEvent;
+import java.awt.event.AdjustmentListener;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.JTabbedPane;
 
-import javax.swing.*;
-
-import org.processmining.analysis.*;
-import org.processmining.framework.log.*;
-import org.processmining.framework.ui.*;
-import org.processmining.framework.plugin.Provider;
-import org.processmining.framework.plugin.ProvidedObject;
-
-//import org.processmining.analysis.performance.dottedchart.DottedChartPlugin;
-//import org.processmining.analysis.performance.dottedchart.ui.DottedChartPanel;
-import org.processmining.analysis.performance.dottedchart.ui.ColorReference; //import org.processmining.analysis.performance.dottedchart.ui.OverviewPanel;
+import org.processmining.analysis.AnalysisInputItem;
+import org.processmining.analysis.performance.componentstate.model.ComponentStateModel;
+import org.processmining.analysis.performance.componentstate.ui.ComponentStatePanel;
+import org.processmining.analysis.performance.componentstate.ui.OverviewPanel;
+import org.processmining.analysis.performance.componentstate.ui.SettingPanel;
 //import org.processmining.analysis.performance.dottedchart.model.*;
 import org.processmining.analysis.performance.dottedchart.ui.MetricsPanel; //import org.processmining.analysis.performance.dottedchart.ui.SettingPanel;
-
-import org.processmining.analysis.performance.componentstate.ComponentStatePlugin;
-import org.processmining.analysis.performance.componentstate.ui.ComponentStatePanel;
-import org.processmining.analysis.performance.componentstate.ui.SettingPanel;
-import org.processmining.analysis.performance.componentstate.ui.OverviewPanel;
-import org.processmining.analysis.performance.componentstate.model.*;
+import org.processmining.framework.log.LogEvents;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.log.LogReaderFactory;
+import org.processmining.framework.log.ProcessInstance;
+import org.processmining.framework.plugin.ProvidedObject;
+import org.processmining.framework.plugin.Provider;
+import org.processmining.framework.ui.DoubleClickTable;
+//import org.processmining.analysis.performance.dottedchart.DottedChartPlugin;
+//import org.processmining.analysis.performance.dottedchart.ui.DottedChartPanel;
+//import org.processmining.analysis.performance.dottedchart.ui.OverviewPanel;
 
 /*
  * @author 

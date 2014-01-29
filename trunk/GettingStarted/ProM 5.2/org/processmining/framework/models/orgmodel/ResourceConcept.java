@@ -1,10 +1,10 @@
 package org.processmining.framework.models.orgmodel;
 
-import org.processmining.framework.models.ontology.ConceptModel;
-import java.util.HashSet;
-import org.processmining.framework.ui.Message;
 import java.util.ArrayList;
+
+import org.processmining.framework.models.ontology.ConceptModel;
 import org.processmining.framework.models.ontology.OntologyModel;
+import org.processmining.framework.ui.Message;
 
 /**
  * <p>

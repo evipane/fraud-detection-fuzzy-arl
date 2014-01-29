@@ -13,10 +13,19 @@
 
 package org.processmining.framework.models.epcpack.algorithms;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
 
-import org.processmining.framework.models.epcpack.*;
-import att.grappa.Element;
+import org.processmining.framework.models.epcpack.ConfigurableEPC;
+import org.processmining.framework.models.epcpack.EPCConnector;
+import org.processmining.framework.models.epcpack.EPCDataObject;
+import org.processmining.framework.models.epcpack.EPCEdge;
+import org.processmining.framework.models.epcpack.EPCEvent;
+import org.processmining.framework.models.epcpack.EPCFunction;
+import org.processmining.framework.models.epcpack.EPCInfSysObject;
+import org.processmining.framework.models.epcpack.EPCObject;
+import org.processmining.framework.models.epcpack.EPCOrgObject;
+import org.processmining.framework.models.epcpack.EPCSubstFunction;
 
 /**
  * <p>

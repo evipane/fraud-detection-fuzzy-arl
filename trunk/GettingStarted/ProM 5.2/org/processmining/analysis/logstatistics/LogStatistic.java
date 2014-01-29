@@ -44,8 +44,8 @@ import org.processmining.analysis.logstatistics.OptionPanel.ResultConfiguration;
 import org.processmining.analysis.logstatistics.OptionPanel.ResultType;
 import org.processmining.analysis.logstatistics.OptionPanel.TextViewProperties;
 import org.processmining.analysis.logstatistics.OptionPanel.ViewMode;
-import org.processmining.framework.models.hlprocess.distribution.HLGeneralDistribution;
 import org.processmining.framework.models.hlprocess.distribution.HLDistribution;
+import org.processmining.framework.models.hlprocess.distribution.HLGeneralDistribution;
 import org.processmining.framework.ui.MainUI;
 
 /**

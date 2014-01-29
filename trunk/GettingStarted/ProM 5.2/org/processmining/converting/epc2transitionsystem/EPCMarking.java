@@ -28,7 +28,6 @@ import org.processmining.framework.models.epcpack.EPCFunction;
 import org.processmining.framework.models.epcpack.EPCObject;
 import org.processmining.framework.models.transitionsystem.TransitionSystem;
 import org.processmining.framework.models.transitionsystem.TransitionSystemVertexSet;
-import org.processmining.framework.ui.Message;
 
 /**
  * <p>

@@ -7,7 +7,6 @@ import org.processmining.analysis.AnalysisPlugin;
 import org.processmining.analysis.logstatistics.LogStatisticsResult;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.framework.util.PluginDocumentationLoader;
 
 public class PerformanceMetricsInOntologiesMacroPlugin implements
 		AnalysisPlugin {

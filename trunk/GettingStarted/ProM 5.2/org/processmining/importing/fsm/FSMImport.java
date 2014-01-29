@@ -17,13 +17,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 
+import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.transitionsystem.TransitionSystem;
 import org.processmining.framework.models.transitionsystem.TransitionSystemEdge;
 import org.processmining.framework.models.transitionsystem.TransitionSystemVertexSet;
 import org.processmining.framework.ui.filters.GenericFileFilter;
 import org.processmining.importing.LogReaderConnectionImportPlugin;
 import org.processmining.mining.instancemining.ModelGraphResult;
-import org.processmining.framework.models.ModelGraphVertex;
 
 /**
  * <p>

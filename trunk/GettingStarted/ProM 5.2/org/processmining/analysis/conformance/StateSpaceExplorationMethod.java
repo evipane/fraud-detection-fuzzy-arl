@@ -21,7 +21,6 @@ import java.util.Map.Entry;
 import org.processmining.framework.log.LogEvent;
 import org.processmining.framework.models.ModelGraphEdge;
 import org.processmining.framework.models.ModelGraphVertex;
-import org.processmining.framework.models.fsm.FSMState;
 import org.processmining.framework.models.petrinet.PetriNet;
 import org.processmining.framework.models.petrinet.State;
 import org.processmining.framework.models.petrinet.StateSpace;

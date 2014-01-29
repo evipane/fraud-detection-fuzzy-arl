@@ -12,8 +12,9 @@
  */
 package org.processmining.framework.models.yawl.bpmn;
 
-import org.processmining.framework.models.yawl.YAWLDecomposition;
 import java.util.ArrayList;
+
+import org.processmining.framework.models.yawl.YAWLDecomposition;
 
 public class YAWLDecompositionBPMN extends YAWLDecomposition {
 	// pools and lanes when YAWLModel converted to and from BPMN model

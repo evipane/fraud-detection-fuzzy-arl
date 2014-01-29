@@ -1,22 +1,20 @@
 package org.processmining.analysis.differences.fa;
 
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
-import java.util.Enumeration;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.swing.JOptionPane;
-
-import org.processmining.framework.models.petrinet.PetriNet;
-import org.processmining.framework.models.petrinet.Place;
 import org.processmining.analysis.differences.relations.Relation;
 import org.processmining.analysis.differences.relations.Tuple;
 import org.processmining.framework.models.petrinet.Marking;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Place;
 
 /**
  * The FA defines an abstract class for finite automatons. This class should be

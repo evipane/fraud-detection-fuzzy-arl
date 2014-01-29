@@ -13,12 +13,12 @@
 
 package org.processmining.framework.models.bpel;
 
-import org.w3c.dom.Element;
-
-import org.processmining.framework.models.bpel.visit.*;
-import org.processmining.framework.models.ModelGraphVertex;
-import org.processmining.framework.models.ModelGraphEdge;
 import java.util.HashSet;
+
+import org.processmining.framework.models.ModelGraphEdge;
+import org.processmining.framework.models.ModelGraphVertex;
+import org.processmining.framework.models.bpel.visit.BPELVisitor;
+import org.w3c.dom.Element;
 
 /**
  * <p>

@@ -7,8 +7,8 @@ import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
 import org.deckfour.slickerbox.util.SlickerSwingUtils;
-import org.processmining.framework.models.hlprocess.distribution.HLGeneralDistribution;
 import org.processmining.framework.models.hlprocess.distribution.HLDistribution.DistributionEnum;
+import org.processmining.framework.models.hlprocess.distribution.HLGeneralDistribution;
 import org.processmining.framework.util.GUIPropertyListEnumeration;
 import org.processmining.framework.util.GuiNotificationTarget;
 

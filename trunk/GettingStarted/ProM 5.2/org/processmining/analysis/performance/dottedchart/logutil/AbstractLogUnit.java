@@ -18,10 +18,11 @@
 package org.processmining.analysis.performance.dottedchart.logutil;
 
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Map;
+
 import org.processmining.framework.log.AuditTrailEntry;
 import org.processmining.framework.log.ProcessInstance;
-import java.util.Map;
-import java.util.Iterator;
 
 /**
  * @author Minseok Song

@@ -17,10 +17,9 @@ import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import org.processmining.framework.models.orgmodel.OrgModel;
+import org.processmining.framework.models.orgmodel.OrgModelConcept;
 import org.processmining.mining.semanticorganizationmining.SemanticOrgMiningResult;
 import org.processmining.mining.snamining.model.SocialNetworkMatrix;
-import org.processmining.framework.models.orgmodel.OrgModelConcept;
 
 /**
  * @author Minseok Song

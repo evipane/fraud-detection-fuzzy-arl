@@ -21,6 +21,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -31,21 +32,19 @@ import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.JCheckBox;
 
 import org.processmining.analysis.performance.dottedchart.DottedChartAnalysis;
+import org.processmining.analysis.performance.dottedchart.model.DottedChartModel;
 import org.processmining.framework.log.AuditTrailEntry;
 import org.processmining.framework.log.AuditTrailEntryList;
-import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.ProcessInstance;
-import java.awt.event.ItemEvent;
-import org.processmining.analysis.performance.dottedchart.model.DottedChartModel;
 
 public class DottedChartOptionPanel extends JPanel implements ChangeListener,
 		ItemListener {

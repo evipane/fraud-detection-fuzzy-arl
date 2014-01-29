@@ -1,13 +1,15 @@
 package org.processmining.analysis.performance.advanceddottedchartanalysis.ui;
 
-import javax.swing.JPanel;
-import org.processmining.analysis.performance.advanceddottedchartanalysis.DottedChartAnalysis;
-import java.awt.event.MouseEvent;
 import java.awt.Color;
-import java.awt.Point;
 import java.awt.Graphics;
-import java.awt.event.MouseMotionListener;
+import java.awt.Point;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+import javax.swing.JPanel;
+
+import org.processmining.analysis.performance.advanceddottedchartanalysis.DottedChartAnalysis;
 
 public class OverviewPanel extends JPanel implements MouseMotionListener,
 		MouseListener {

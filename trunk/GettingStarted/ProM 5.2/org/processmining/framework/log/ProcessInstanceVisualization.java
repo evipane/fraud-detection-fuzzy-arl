@@ -48,6 +48,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -55,7 +56,6 @@ import java.util.StringTokenizer;
 import org.processmining.framework.models.DotFileWriter;
 import org.processmining.framework.models.ModelGraph;
 import org.processmining.framework.models.ModelGraphPanel;
-import java.util.HashSet;
 
 /**
  * This class provides Dot and Grappa visualization for a process instance.

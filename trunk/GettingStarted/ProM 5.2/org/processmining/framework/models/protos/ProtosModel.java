@@ -13,13 +13,15 @@
 
 package org.processmining.framework.models.protos;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.HashSet;
+import java.util.Iterator;
 
-import org.processmining.framework.models.*;
-import org.processmining.framework.models.protos.*;
-
-import org.w3c.dom.*;
+import org.processmining.framework.models.ModelGraph;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * <p>

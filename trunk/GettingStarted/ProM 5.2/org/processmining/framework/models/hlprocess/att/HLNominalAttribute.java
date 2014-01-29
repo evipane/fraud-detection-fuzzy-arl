@@ -17,9 +17,9 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.processmining.framework.models.hlprocess.HLAttribute;
+import org.processmining.framework.models.hlprocess.HLID;
 import org.processmining.framework.models.hlprocess.HLProcess;
 import org.processmining.framework.models.hlprocess.HLTypes.AttributeType;
-import org.processmining.framework.models.hlprocess.HLID;
 
 /**
  * A nominal attribute is an enumeration of possible string values.

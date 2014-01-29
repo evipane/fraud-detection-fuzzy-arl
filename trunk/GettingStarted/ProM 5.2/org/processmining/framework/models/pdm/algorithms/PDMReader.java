@@ -13,11 +13,18 @@
 
 package org.processmining.framework.models.pdm.algorithms;
 
-import java.io.*;
-import javax.xml.parsers.*;
+import java.io.InputStream;
 
-import org.processmining.framework.models.pdm.*;
-import org.w3c.dom.*;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.processmining.framework.models.pdm.PDMCondition;
+import org.processmining.framework.models.pdm.PDMDataElement;
+import org.processmining.framework.models.pdm.PDMModel;
+import org.processmining.framework.models.pdm.PDMOperation;
+import org.processmining.framework.models.pdm.PDMResource;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * <p>

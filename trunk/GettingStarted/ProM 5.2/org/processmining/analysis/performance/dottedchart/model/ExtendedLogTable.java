@@ -1,8 +1,10 @@
 package org.processmining.analysis.performance.dottedchart.model;
 
-import javax.swing.table.AbstractTableModel;
-import org.processmining.framework.log.LogReader;
 import java.util.ArrayList;
+
+import javax.swing.table.AbstractTableModel;
+
+import org.processmining.framework.log.LogReader;
 
 /**
  * Data structure for ExtendedLogTable

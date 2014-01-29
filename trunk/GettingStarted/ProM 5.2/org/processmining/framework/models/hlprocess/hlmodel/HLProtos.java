@@ -7,36 +7,45 @@ package org.processmining.framework.models.hlprocess.hlmodel;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.hlprocess.HLActivity;
+import org.processmining.framework.models.hlprocess.HLAttribute;
 import org.processmining.framework.models.hlprocess.HLChoice;
 import org.processmining.framework.models.hlprocess.HLCondition;
 import org.processmining.framework.models.hlprocess.HLGroup;
-import org.processmining.framework.models.hlprocess.HLResource;
-import org.processmining.framework.models.hlprocess.HLAttribute;
-import org.processmining.framework.models.hlprocess.HLTypes;
-import org.processmining.framework.models.hlprocess.att.HLNominalAttribute;
-import org.processmining.framework.models.hlprocess.distribution.*;
-import org.processmining.framework.models.hlprocess.distribution.HLDistribution.DistributionEnum;
 import org.processmining.framework.models.hlprocess.HLID;
-import org.processmining.framework.models.hlprocess.HLTypes.Perspective;
-import org.processmining.framework.models.yawl.YAWLTask;
-import org.processmining.framework.models.protos.ProtosModel;
-import org.processmining.framework.models.protos.ProtosModelOptions;
-import org.processmining.framework.models.protos.ProtosSubprocess;
+import org.processmining.framework.models.hlprocess.HLResource;
+import org.processmining.framework.models.hlprocess.HLTypes;
+import org.processmining.framework.models.hlprocess.att.HLAttributeValue;
+import org.processmining.framework.models.hlprocess.att.HLBooleanValue;
+import org.processmining.framework.models.hlprocess.att.HLNominalAttribute;
+import org.processmining.framework.models.hlprocess.att.HLNominalValue;
+import org.processmining.framework.models.hlprocess.att.HLNumericValue;
+import org.processmining.framework.models.hlprocess.distribution.HLDistribution.DistributionEnum;
+import org.processmining.framework.models.hlprocess.distribution.HLGeneralDistribution;
+import org.processmining.framework.models.hlprocess.expr.HLDataExpression;
+import org.processmining.framework.models.hlprocess.expr.HLExpressionOperator;
+import org.processmining.framework.models.hlprocess.expr.operand.HLAttributeOperand;
+import org.processmining.framework.models.hlprocess.expr.operand.HLValueOperand;
+import org.processmining.framework.models.hlprocess.expr.operator.HLEqualOperator;
+import org.processmining.framework.models.hlprocess.expr.operator.HLGreaterEqualOperator;
+import org.processmining.framework.models.hlprocess.expr.operator.HLGreaterOperator;
+import org.processmining.framework.models.hlprocess.expr.operator.HLSmallerEqualOperator;
+import org.processmining.framework.models.hlprocess.expr.operator.HLSmallerOperator;
+import org.processmining.framework.models.protos.ProtosActivityData;
+import org.processmining.framework.models.protos.ProtosDataElement;
+import org.processmining.framework.models.protos.ProtosExpression;
 import org.processmining.framework.models.protos.ProtosFlowElement;
+import org.processmining.framework.models.protos.ProtosModel;
+import org.processmining.framework.models.protos.ProtosProcessArc;
 import org.processmining.framework.models.protos.ProtosRole;
 import org.processmining.framework.models.protos.ProtosStatisticalFunction;
-import org.processmining.framework.models.protos.ProtosDataElement;
-import org.processmining.framework.models.protos.ProtosActivityData;
-import org.processmining.framework.models.protos.ProtosProcessArc;
-import org.processmining.framework.models.protos.ProtosExpression;
-import att.grappa.Edge;
-import org.processmining.framework.models.hlprocess.expr.*;
-import org.processmining.framework.models.hlprocess.expr.operand.*;
-import org.processmining.framework.models.hlprocess.expr.operator.*;
-import org.processmining.framework.models.hlprocess.att.*;
+import org.processmining.framework.models.protos.ProtosSubprocess;
+import org.processmining.framework.models.yawl.YAWLTask;
 import org.processmining.framework.ui.Message;
+
+import att.grappa.Edge;
 
 /**
  * High-level process model implementation for Protos models. <br>

@@ -1,11 +1,11 @@
 package org.processmining.analysis.performance.componentstate;
 
-import javax.swing.*;
+import javax.swing.JComponent;
 
-import org.processmining.analysis.*;
-import org.processmining.framework.log.*;
-import org.processmining.framework.plugin.*;
-import org.processmining.framework.util.*;
+import org.processmining.analysis.AnalysisInputItem;
+import org.processmining.analysis.AnalysisPlugin;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.plugin.ProvidedObject;
 
 /**
  * The plugin provides a dotted chart

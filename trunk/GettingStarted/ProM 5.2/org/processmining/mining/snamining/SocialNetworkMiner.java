@@ -28,7 +28,6 @@ import org.processmining.mining.snamining.miningoperation.BasicOperation;
 import org.processmining.mining.snamining.miningoperation.OperationFactory;
 import org.processmining.mining.snamining.model.OriginatorsModel;
 import org.processmining.mining.snamining.model.SocialNetworkMatrix;
-import org.processmining.framework.util.PluginDocumentationLoader;
 
 /**
  * @author Minseok

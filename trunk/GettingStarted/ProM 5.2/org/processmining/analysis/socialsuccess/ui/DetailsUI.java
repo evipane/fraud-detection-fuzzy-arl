@@ -10,12 +10,13 @@ import javax.swing.JComponent;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
-import corejava.PrintfFormat;
 
 import org.deckfour.slickerbox.components.RoundedPanel;
 import org.deckfour.slickerbox.ui.SlickerScrollBarUI;
 import org.processmining.analysis.socialsuccess.BigFive;
 import org.processmining.analysis.socialsuccess.ui.summary.SummaryUI;
+
+import corejava.PrintfFormat;
 
 public class DetailsUI extends JComponent {
 	private static final long serialVersionUID = -7012931195422166004L;

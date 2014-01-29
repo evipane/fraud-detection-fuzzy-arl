@@ -1,18 +1,20 @@
 package org.processmining.converting.fsm;
 
-import org.processmining.converting.Converter;
-import javax.swing.JComponent;
-import org.processmining.framework.models.fsm.AcceptFSM;
-import org.processmining.framework.models.fsm.FSMTransition;
-import org.processmining.framework.models.fsm.FSMState;
 import java.util.HashMap;
-import java.util.HashSet;
-import org.processmining.framework.models.ModelGraphVertex;
-import att.grappa.Edge;
 import java.util.TreeMap;
 import java.util.TreeSet;
+
+import javax.swing.JComponent;
+
+import org.processmining.converting.Converter;
+import org.processmining.framework.models.ModelGraphVertex;
+import org.processmining.framework.models.fsm.AcceptFSM;
 import org.processmining.framework.models.fsm.FSMPayload;
+import org.processmining.framework.models.fsm.FSMState;
+import org.processmining.framework.models.fsm.FSMTransition;
 import org.processmining.framework.ui.Message;
+
+import att.grappa.Edge;
 
 /**
  * <p>

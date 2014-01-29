@@ -1,9 +1,10 @@
 package org.processmining.mining.snamining.miningoperation.similartask;
 
-import cern.colt.matrix.DoubleMatrix2D;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.LogSummary;
 import org.processmining.mining.snamining.miningoperation.UtilOperation;
+
+import cern.colt.matrix.DoubleMatrix2D;
 
 public class Similartask_CC extends SimilartaskBase {
 

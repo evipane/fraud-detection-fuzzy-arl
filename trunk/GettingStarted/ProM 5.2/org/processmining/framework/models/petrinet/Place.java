@@ -17,8 +17,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 
-import org.processmining.framework.models.ModelGraphVertex;
-
 /**
  * A place is node in a Petri net. It is the passive component in the Petri net
  * structure, and may hold zero to an arbitrary number of tokens. The marking of

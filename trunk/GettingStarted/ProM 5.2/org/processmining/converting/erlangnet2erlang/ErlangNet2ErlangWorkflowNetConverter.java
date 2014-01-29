@@ -4,7 +4,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.processmining.framework.models.erlang.Function;
-import org.processmining.framework.models.erlang.ReceiveStatement;
 import org.processmining.framework.models.erlangnet.ErlangNet;
 import org.processmining.framework.models.erlangnet.ErlangNetPlaceType;
 import org.processmining.framework.models.erlangnet.inscription.RouteInscription;

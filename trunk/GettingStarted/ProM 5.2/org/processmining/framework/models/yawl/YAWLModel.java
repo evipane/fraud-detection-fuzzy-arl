@@ -13,10 +13,13 @@
 
 package org.processmining.framework.models.yawl;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
 
-import org.processmining.framework.models.*;
+import org.processmining.framework.models.ModelGraph;
 import org.processmining.framework.ui.Message;
 
 /**

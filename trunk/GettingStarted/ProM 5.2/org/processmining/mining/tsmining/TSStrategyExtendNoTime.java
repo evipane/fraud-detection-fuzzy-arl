@@ -9,9 +9,9 @@ import org.processmining.framework.log.AuditTrailEntry;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.models.transitionsystem.PetrifyConstants;
+import org.processmining.framework.models.transitionsystem.TSConstants;
 import org.processmining.framework.models.transitionsystem.TransitionSystem;
 import org.processmining.framework.models.transitionsystem.TransitionSystemVertex;
-import org.processmining.framework.models.transitionsystem.TSConstants;
 
 /**
  * @author Vladimir Rubin

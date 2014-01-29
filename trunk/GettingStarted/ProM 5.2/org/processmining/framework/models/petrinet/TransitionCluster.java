@@ -13,7 +13,8 @@
 
 package org.processmining.framework.models.petrinet;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * A transition cluster is a group of transitions in a Petri net that are

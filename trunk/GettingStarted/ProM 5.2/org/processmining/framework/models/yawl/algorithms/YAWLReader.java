@@ -13,12 +13,17 @@
 
 package org.processmining.framework.models.yawl.algorithms;
 
-import java.io.*;
-import javax.xml.parsers.*;
+import java.io.InputStream;
 
-import org.processmining.framework.models.yawl.*;
-import org.w3c.dom.*;
+import javax.xml.parsers.DocumentBuilderFactory;
+
 import org.processmining.framework.log.LogEvent;
+import org.processmining.framework.models.yawl.YAWLDecomposition;
+import org.processmining.framework.models.yawl.YAWLModel;
+import org.processmining.framework.models.yawl.YAWLTask;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * <p>

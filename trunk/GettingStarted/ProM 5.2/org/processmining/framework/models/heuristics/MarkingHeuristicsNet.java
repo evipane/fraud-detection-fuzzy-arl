@@ -13,11 +13,15 @@
 
 package org.processmining.framework.models.heuristics;
 
-import java.util.*;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Random;
 
-import org.processmining.framework.log.*;
-import org.processmining.framework.util.*;
-import java.io.*;
+import org.processmining.framework.log.AuditTrailEntry;
+import org.processmining.framework.log.AuditTrailEntryList;
+import org.processmining.framework.log.ProcessInstance;
+import org.processmining.framework.util.MethodsForWorkflowLogDataStructures;
 
 /**
  * <p>

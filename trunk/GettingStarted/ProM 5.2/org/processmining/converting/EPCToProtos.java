@@ -13,25 +13,26 @@
 
 package org.processmining.converting;
 
-import org.processmining.mining.protosmining.ProtosResult;
-import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.framework.models.protos.ProtosModel;
+import java.util.HashMap;
+import java.util.HashSet;
+
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.models.epcpack.ConfigurableEPC;
 import org.processmining.framework.models.epcpack.EPC;
-import org.processmining.mining.petrinetmining.PetriNetResult;
 import org.processmining.framework.models.petrinet.PetriNet;
 import org.processmining.framework.models.petrinet.WFNet;
-import org.processmining.framework.models.yawl.YAWLModel;
-import org.processmining.framework.models.yawl.YAWLDecomposition;
-import org.processmining.framework.models.yawl.YAWLNode;
-import org.processmining.framework.models.yawl.YAWLCondition;
-import org.processmining.framework.models.yawl.YAWLTask;
-import org.processmining.framework.models.protos.ProtosSubprocess;
 import org.processmining.framework.models.protos.ProtosFlowElement;
-import java.util.HashMap;
-import java.util.HashSet;
+import org.processmining.framework.models.protos.ProtosModel;
+import org.processmining.framework.models.protos.ProtosSubprocess;
+import org.processmining.framework.models.yawl.YAWLCondition;
+import org.processmining.framework.models.yawl.YAWLDecomposition;
+import org.processmining.framework.models.yawl.YAWLModel;
+import org.processmining.framework.models.yawl.YAWLNode;
+import org.processmining.framework.models.yawl.YAWLTask;
+import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.ui.Message;
+import org.processmining.mining.petrinetmining.PetriNetResult;
+import org.processmining.mining.protosmining.ProtosResult;
 
 /**
  * <p>

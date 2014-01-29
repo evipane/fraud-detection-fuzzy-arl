@@ -5,16 +5,24 @@ package org.processmining.converting.protos;
  * (c) 2008 Technische Universiteit Eindhoven and STW
  */
 
-import org.processmining.framework.models.petrinet.*;
-import org.processmining.framework.models.protos.*;
 import java.util.HashMap;
 import java.util.HashSet;
+
 import org.processmining.converting.Converter;
 import org.processmining.framework.log.LogEvent;
-import org.processmining.mining.petrinetmining.PetriNetResult;
-import org.processmining.framework.ui.Message;
-import org.processmining.framework.models.yawl.YAWLTask;
 import org.processmining.framework.models.ModelGraphVertex;
+import org.processmining.framework.models.petrinet.PNEdge;
+import org.processmining.framework.models.petrinet.PNNode;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Place;
+import org.processmining.framework.models.petrinet.Transition;
+import org.processmining.framework.models.protos.ProtosFlowElement;
+import org.processmining.framework.models.protos.ProtosModel;
+import org.processmining.framework.models.protos.ProtosProcessArc;
+import org.processmining.framework.models.protos.ProtosSubprocess;
+import org.processmining.framework.models.yawl.YAWLTask;
+import org.processmining.framework.ui.Message;
+import org.processmining.mining.petrinetmining.PetriNetResult;
 
 public class ProtosToPetriNet {
 	/*

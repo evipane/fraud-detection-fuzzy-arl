@@ -13,31 +13,33 @@
 
 package org.processmining.converting;
 
-import org.processmining.mining.petrinetmining.PetriNetResult;
-import org.processmining.framework.log.LogReader;
-import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.framework.models.petrinet.PetriNet;
-import org.processmining.framework.ui.MainUI;
-import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
 import java.awt.Checkbox;
-import javax.swing.JPanel;
-import java.io.StringWriter;
-import java.awt.TextArea;
-import org.processmining.framework.util.CenterOnScreen;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
 import java.awt.GridBagConstraints;
-import java.io.InputStream;
-import javax.swing.JDialog;
-import java.io.IOException;
-import org.processmining.framework.ui.Message;
 import java.awt.GridBagLayout;
+import java.awt.TextArea;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringWriter;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+
 import org.processmining.exporting.petrinet.PnmlExport;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.plugin.ProvidedObject;
+import org.processmining.framework.ui.MainUI;
+import org.processmining.framework.ui.Message;
+import org.processmining.framework.util.CenterOnScreen;
 import org.processmining.importing.pnml.PnmlImport;
+import org.processmining.mining.petrinetmining.PetriNetResult;
 
 /**
  * <p>

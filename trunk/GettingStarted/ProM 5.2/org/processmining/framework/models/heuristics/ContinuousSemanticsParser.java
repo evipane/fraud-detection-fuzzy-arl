@@ -13,9 +13,12 @@
 
 package org.processmining.framework.models.heuristics;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.Random;
 
-import org.processmining.framework.log.*;
+import org.processmining.framework.log.AuditTrailEntry;
+import org.processmining.framework.log.LogEvents;
+import org.processmining.framework.log.ProcessInstance;
 
 /**
  * <p>

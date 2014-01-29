@@ -17,8 +17,8 @@ import org.processmining.framework.models.recommendation.RecommendationResult;
 import org.processmining.framework.models.recommendation.net.RecommendationCompletedTraceMarshal;
 import org.processmining.framework.models.recommendation.net.RecommendationQueryMarshal;
 import org.processmining.framework.models.recommendation.net.RecommendationQueryProtocol;
-import org.processmining.framework.models.recommendation.net.RecommendationResultMarshal;
 import org.processmining.framework.models.recommendation.net.RecommendationRestartMarshal;
+import org.processmining.framework.models.recommendation.net.RecommendationResultMarshal;
 
 /**
  * @author Christian W. Guenther (christian@deckfour.org)

@@ -1,11 +1,12 @@
 package org.processmining.exporting.causality;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.List;
 
-import org.processmining.analysis.causality.*;
-import org.processmining.exporting.*;
-import org.processmining.framework.models.epcpack.*;
+import org.processmining.analysis.causality.FootprintSimilarityResult;
+import org.processmining.exporting.Exporter;
+import org.processmining.framework.models.epcpack.ConfigurableEPC;
 
 /**
  * <p>

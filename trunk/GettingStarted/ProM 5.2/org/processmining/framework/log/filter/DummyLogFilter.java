@@ -1,10 +1,11 @@
 package org.processmining.framework.log.filter;
 
-import org.processmining.framework.log.LogFilter;
-import org.processmining.framework.log.ProcessInstance;
-import org.processmining.framework.log.LogSummary;
 import java.io.BufferedWriter;
 import java.io.IOException;
+
+import org.processmining.framework.log.LogFilter;
+import org.processmining.framework.log.LogSummary;
+import org.processmining.framework.log.ProcessInstance;
 import org.w3c.dom.Node;
 
 /**

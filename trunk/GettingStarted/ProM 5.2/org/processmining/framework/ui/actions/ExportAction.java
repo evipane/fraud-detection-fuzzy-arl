@@ -34,7 +34,6 @@
 package org.processmining.framework.ui.actions;
 
 import java.awt.event.ActionEvent;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 import javax.swing.AbstractAction;

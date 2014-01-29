@@ -13,10 +13,14 @@
 
 package org.processmining.framework.models.pdm;
 
-import org.processmining.framework.models.petrinet.*;
-import java.lang.*;
-import java.util.*;
-import java.io.*;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+
+import org.processmining.framework.models.petrinet.PetriNet;
+import org.processmining.framework.models.petrinet.Transition;
 
 /**
  * <p>

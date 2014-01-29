@@ -1,10 +1,13 @@
 package org.processmining.exporting.pdm;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 
-import org.processmining.exporting.*;
-import org.processmining.framework.models.pdm.*;
-import org.processmining.framework.plugin.*;
+import org.processmining.exporting.ExportPlugin;
+import org.processmining.framework.models.pdm.PDMModel;
+import org.processmining.framework.plugin.ProvidedObject;
 
 /**
  * <p>

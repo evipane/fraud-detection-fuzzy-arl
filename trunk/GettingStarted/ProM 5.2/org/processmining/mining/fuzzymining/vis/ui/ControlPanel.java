@@ -45,7 +45,6 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
@@ -54,7 +53,6 @@ import javax.swing.event.ChangeListener;
 
 import org.deckfour.slickerbox.components.InspectorButton;
 import org.deckfour.slickerbox.components.PlayButton;
-import org.deckfour.slickerbox.components.SlickerButton;
 import org.deckfour.slickerbox.ui.SlickerSliderUI;
 import org.processmining.mining.fuzzymining.vis.anim.AnimationListener;
 import org.processmining.mining.fuzzymining.vis.anim.AnimationTimer;

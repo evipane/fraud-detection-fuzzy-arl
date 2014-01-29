@@ -1,6 +1,6 @@
 package org.processmining.analysis.epc.similarity;
 
-import java.io.*;
+import java.io.File;
 
 /**
  * <p>

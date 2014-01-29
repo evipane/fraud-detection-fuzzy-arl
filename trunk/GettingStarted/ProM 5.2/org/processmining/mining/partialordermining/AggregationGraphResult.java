@@ -1,9 +1,9 @@
 package org.processmining.mining.partialordermining;
 
-import org.processmining.mining.instancemining.ModelGraphResult;
-import org.processmining.framework.models.ModelGraph;
 import org.processmining.framework.log.LogReader;
+import org.processmining.framework.models.ModelGraph;
 import org.processmining.framework.plugin.ProvidedObject;
+import org.processmining.mining.instancemining.ModelGraphResult;
 
 /**
  * <p>

@@ -1,16 +1,9 @@
 package org.processmining.analysis.pdm.recommendation;
 
-import java.util.*;
-
-import org.processmining.analysis.log.scale.*;
-import org.processmining.framework.log.*;
-import org.processmining.framework.log.filter.*;
-import org.processmining.framework.models.logabstraction.*;
-import org.processmining.framework.models.recommendation.*;
-import org.processmining.framework.models.recommendation.compat.*;
-import org.processmining.framework.plugin.*;
-import org.processmining.analysis.recommendation.*;
-import org.processmining.framework.models.pdm.*;
+import org.processmining.framework.models.pdm.PDMModel;
+import org.processmining.framework.models.recommendation.RecommendationQuery;
+import org.processmining.framework.models.recommendation.RecommendationResult;
+import org.processmining.framework.plugin.Plugin;
 
 /**
  * An instance abstraction is an entity which, based on a specific subset of

@@ -38,8 +38,6 @@ import java.util.Collection;
 import java.util.List;
 
 import org.processmining.framework.log.LogReader;
-import org.processmining.framework.log.LogReaderFactory;
-import org.processmining.framework.plugin.ProvidedObject;
 
 /**
  * @author Minseok

@@ -5,11 +5,25 @@
 
 package org.processmining.importing.coloredcontrolflownet.arcinscriptionparser;
 
-import java.util.*;
-import java_cup.runtime.*;
-import org.processmining.framework.models.coloredcontrolflownet.inscription.*;
-import org.processmining.framework.models.coloredcontrolflownet.statement.*;
-import org.processmining.framework.models.coloredcontrolflownet.expression.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.processmining.framework.models.coloredcontrolflownet.expression.BooleanExpression;
+import org.processmining.framework.models.coloredcontrolflownet.expression.Expression;
+import org.processmining.framework.models.coloredcontrolflownet.expression.FunctionCallExpression;
+import org.processmining.framework.models.coloredcontrolflownet.expression.IdentifierExpression;
+import org.processmining.framework.models.coloredcontrolflownet.expression.IntegerExpression;
+import org.processmining.framework.models.coloredcontrolflownet.expression.StringExpression;
+import org.processmining.framework.models.coloredcontrolflownet.expression.ValueExpression;
+import org.processmining.framework.models.coloredcontrolflownet.inscription.ArcInscription;
+import org.processmining.framework.models.coloredcontrolflownet.inscription.InitialConfigurationInscription;
+import org.processmining.framework.models.coloredcontrolflownet.inscription.RouteInscription;
+import org.processmining.framework.models.coloredcontrolflownet.inscription.StatementInscription;
+import org.processmining.framework.models.coloredcontrolflownet.inscription.TakeStateInscription;
+import org.processmining.framework.models.coloredcontrolflownet.statement.AssignStatement;
+import org.processmining.framework.models.coloredcontrolflownet.statement.NoOperationStatement;
+import org.processmining.framework.models.coloredcontrolflownet.statement.SequenceStatement;
+import org.processmining.framework.models.coloredcontrolflownet.statement.Statement;
 
 /**
  * CUP v0.11a beta 20060608 generated parser.

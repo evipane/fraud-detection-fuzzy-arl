@@ -14,35 +14,28 @@
 package org.processmining.analysis.pdm.recommendation;
 
 import java.awt.BorderLayout;
+import java.awt.Choice;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.awt.Choice;
-import java.util.HashMap;
-import java.util.Set;
-import java.util.Iterator;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Vector;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JCheckBox;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 import org.processmining.framework.models.ModelGraphPanel;
-import org.processmining.framework.models.pdm.*;
 import org.processmining.framework.models.pdm.PDMModel;
-import org.processmining.framework.models.pdm.*;
+import org.processmining.framework.models.pdm.PDMStateSpace;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.plugin.Provider;
-import org.processmining.framework.ui.Message;
-import org.processmining.framework.models.*;
-import java.util.Vector;
 
 /**
  * <p>

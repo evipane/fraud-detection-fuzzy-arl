@@ -2,31 +2,26 @@ package org.processmining.analysis.performance.basicperformance.chart;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.GradientPaint;
-import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import org.deckfour.slickerbox.components.SmoothPanel;
 
+import org.deckfour.slickerbox.components.SmoothPanel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.NumberAxis;
-import org.jfree.chart.plot.MultiplePiePlot;
-import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.xy.MatrixSeriesCollection;
 import org.jfree.data.xy.NormalizedMatrixSeries;
-import org.jfree.util.TableOrder;
 import org.processmining.analysis.performance.basicperformance.BasicPerformanceAnalysisUI;
-import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance2D;
+import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
 
 public class BubblesChart extends AbstractChart {
 

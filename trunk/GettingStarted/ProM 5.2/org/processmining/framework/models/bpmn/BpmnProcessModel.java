@@ -3,7 +3,6 @@
  */
 package org.processmining.framework.models.bpmn;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.w3c.dom.Element;

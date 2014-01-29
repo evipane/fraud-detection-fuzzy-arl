@@ -13,7 +13,7 @@
 
 package org.processmining.framework.models.epcpack;
 
-import org.processmining.framework.models.*;
+import org.processmining.framework.models.ModelGraphEdge;
 
 /**
  * <p>

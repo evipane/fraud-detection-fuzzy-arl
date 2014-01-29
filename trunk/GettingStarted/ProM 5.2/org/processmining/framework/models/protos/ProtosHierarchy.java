@@ -13,7 +13,7 @@
 
 package org.processmining.framework.models.protos;
 
-import org.processmining.framework.models.*;
+import org.processmining.framework.models.ModelHierarchy;
 
 /**
  * <p>

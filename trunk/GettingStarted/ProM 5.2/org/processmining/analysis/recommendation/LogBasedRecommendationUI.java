@@ -6,6 +6,8 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -38,15 +40,13 @@ import org.processmining.framework.models.recommendation.RecommendationQuery;
 import org.processmining.framework.models.recommendation.RecommendationResult;
 import org.processmining.framework.models.recommendation.net.RecommendationServiceHandler;
 import org.processmining.framework.plugin.Plugin;
+import org.processmining.framework.plugin.ProvidedObject;
+import org.processmining.framework.plugin.Provider;
 import org.processmining.framework.remote.Service;
 import org.processmining.framework.ui.DoubleClickTable;
 import org.processmining.framework.ui.Message;
 import org.processmining.framework.ui.PluginComboItem;
 import org.processmining.framework.util.ToolTipComboBox;
-import org.processmining.framework.plugin.Provider;
-import org.processmining.framework.plugin.ProvidedObject;
-import java.awt.event.ComponentListener;
-import java.awt.event.ComponentEvent;
 
 /**
  * <p>

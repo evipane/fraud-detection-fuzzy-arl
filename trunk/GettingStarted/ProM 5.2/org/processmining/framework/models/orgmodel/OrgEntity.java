@@ -1,8 +1,9 @@
 package org.processmining.framework.models.orgmodel;
 
-import java.util.*;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class OrgEntity implements Cloneable {
 

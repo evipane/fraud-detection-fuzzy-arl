@@ -3,10 +3,6 @@ package org.processmining.analysis.performance.componentstate.logutil;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
-import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
-
-import org.processmining.framework.log.ProcessInstance;
-import java.util.TreeSet;
 
 /**
  * This class represents a Data Modification Cluster (LogUnitList). Data

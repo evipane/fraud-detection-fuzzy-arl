@@ -33,12 +33,12 @@
  */
 package org.processmining.mining.organizationmining.algorithm;
 
-import org.processmining.mining.organizationmining.distance.DistanceMatrix;
-import org.processmining.mining.organizationmining.distance.DistanceMetric;
-import org.processmining.mining.organizationmining.profile.Profile;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.ui.Progress;
 import org.processmining.framework.ui.ProgressDummy;
+import org.processmining.mining.organizationmining.distance.DistanceMatrix;
+import org.processmining.mining.organizationmining.distance.DistanceMetric;
+import org.processmining.mining.organizationmining.profile.Profile;
 
 /**
  * @author christian

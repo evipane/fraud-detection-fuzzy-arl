@@ -13,11 +13,14 @@
 
 package org.processmining.framework.models.epcpack;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-import org.processmining.framework.log.*;
-import org.processmining.framework.models.*;
+import org.processmining.framework.log.LogEvent;
+import org.processmining.framework.models.LogEventProvider;
+import org.processmining.framework.models.ModelGraphVertex;
 
 /**
  * <p>

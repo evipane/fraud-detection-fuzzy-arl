@@ -1,31 +1,25 @@
 package org.processmining.mining.fsm;
 
-import java.util.TreeSet;
-import java.util.HashSet;
-import java.util.HashMap;
-
 import java.awt.BorderLayout;
+import java.util.HashMap;
+import java.util.HashSet;
 
-import javax.swing.JPanel;
 import javax.swing.JCheckBox;
 import javax.swing.JList;
+import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.JTree;
-import javax.swing.JScrollPane;
-import javax.swing.tree.DefaultTreeModel;
+import javax.swing.border.TitledBorder;
 
-import org.processmining.framework.log.ProcessInstance;
-import org.processmining.framework.log.LogEvent;
+import org.processmining.converting.fsm.FsmModificationGui;
 import org.processmining.framework.log.AuditTrailEntry;
 import org.processmining.framework.log.AuditTrailEntryList;
 import org.processmining.framework.log.DataSection;
+import org.processmining.framework.log.LogEvent;
 import org.processmining.framework.log.LogEvents;
 import org.processmining.framework.log.LogSummary;
+import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.ui.Message;
-import org.processmining.converting.fsm.FsmModificationGui;
-import javax.swing.border.TitledBorder;
-import javax.swing.tree.DefaultTreeCellRenderer;
 
 /**
  * <p>Title: FSMUI</p>

@@ -13,8 +13,9 @@
 
 package org.processmining.framework.models.petrinet.algorithms.logReplay;
 
-import org.processmining.framework.log.*;
-import org.processmining.framework.models.petrinet.*;
+import org.processmining.framework.log.AuditTrailEntry;
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.models.petrinet.PetriNet;
 
 /**
  * Statelesss strategy object determining which kind of measurements should be

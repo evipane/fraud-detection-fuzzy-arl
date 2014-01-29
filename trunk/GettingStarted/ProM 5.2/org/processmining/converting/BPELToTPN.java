@@ -13,19 +13,19 @@
 
 package org.processmining.converting;
 
+import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Label;
+import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
-
 import java.util.HashSet;
 
 import javax.swing.JButton;
@@ -44,8 +44,6 @@ import org.processmining.framework.ui.Message;
 import org.processmining.framework.util.CenterOnScreen;
 import org.processmining.importing.tpn.TpnImport;
 import org.processmining.mining.petrinetmining.PetriNetResult;
-import java.awt.TextArea;
-import java.awt.BorderLayout;
 
 /**
  * <p>

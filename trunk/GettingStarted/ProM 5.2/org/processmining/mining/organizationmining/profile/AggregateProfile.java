@@ -40,12 +40,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.processmining.framework.log.LogReader;
+import org.processmining.framework.ui.Progress;
 import org.processmining.mining.organizationmining.distance.DistanceMatrix;
 import org.processmining.mining.organizationmining.distance.DistanceMetric;
 import org.processmining.mining.organizationmining.distance.DoubleDistanceMatrix;
 import org.processmining.mining.organizationmining.distance.FloatDistanceMatrix;
-import org.processmining.framework.log.LogReader;
-import org.processmining.framework.ui.Progress;
 
 /**
  * @author Christian W. Guenther (christian@deckfour.org)

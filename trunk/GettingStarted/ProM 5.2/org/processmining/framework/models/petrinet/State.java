@@ -13,9 +13,8 @@
 
 package org.processmining.framework.models.petrinet;
 
-import java.util.*;
+import java.util.Iterator;
 
-import org.processmining.framework.models.*;
 import org.processmining.framework.models.fsm.FSMState;
 
 /**

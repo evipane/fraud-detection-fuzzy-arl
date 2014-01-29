@@ -13,15 +13,13 @@
 
 package org.processmining.framework.models.bpel;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.processmining.framework.models.ModelGraph;
 import org.processmining.framework.ui.Message;
 import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.Document;
 
 /**
  * <p>

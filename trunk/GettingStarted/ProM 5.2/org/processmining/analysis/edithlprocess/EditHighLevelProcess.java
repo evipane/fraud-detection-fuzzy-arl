@@ -7,12 +7,11 @@ import org.processmining.analysis.AnalysisPlugin;
 import org.processmining.framework.models.hlprocess.HLProcess;
 import org.processmining.framework.models.hlprocess.hlmodel.HLModel;
 import org.processmining.framework.models.hlprocess.hlmodel.HLPetriNet;
-import org.processmining.framework.models.hlprocess.hlmodel.HLYAWL;
 import org.processmining.framework.models.hlprocess.hlmodel.HLProtos;
+import org.processmining.framework.models.hlprocess.hlmodel.HLYAWL;
 import org.processmining.framework.models.petrinet.PetriNet;
-import org.processmining.framework.models.yawl.YAWLModel;
 import org.processmining.framework.models.protos.ProtosModel;
-import org.processmining.framework.models.protos.ProtosSubprocess;
+import org.processmining.framework.models.yawl.YAWLModel;
 import org.processmining.framework.plugin.ProvidedObject;
 
 /**

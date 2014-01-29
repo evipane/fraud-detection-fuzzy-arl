@@ -15,14 +15,21 @@ package org.processmining.framework.models.orgmodel.algorithms;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
-import org.jdom.*;
-import org.jdom.input.SAXBuilder;
-import org.processmining.framework.ui.Message;
 import java.io.InputStream;
-import org.processmining.framework.models.orgmodel.*;
-import org.processmining.framework.log.LogEvents;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
+import org.jdom.input.SAXBuilder;
 import org.processmining.framework.log.LogEvent;
+import org.processmining.framework.models.orgmodel.OrgEntity;
+import org.processmining.framework.models.orgmodel.OrgModel;
+import org.processmining.framework.models.orgmodel.Resource;
+import org.processmining.framework.models.orgmodel.Task;
+import org.processmining.framework.ui.Message;
 
 /**
  * Reads a Organizational Model from a OMML (Organizational Model Markup

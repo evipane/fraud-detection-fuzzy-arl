@@ -6,16 +6,10 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Rectangle2D;
 
-import org.processmining.framework.models.bpmn.BpmnEvent;
-import org.processmining.framework.models.bpmn.BpmnEventTriggerType;
-import org.processmining.framework.models.bpmn.BpmnEventType;
 import org.processmining.framework.models.bpmn.BpmnGateway;
 import org.processmining.framework.models.bpmn.BpmnGatewayType;
 import org.processmining.framework.models.bpmn.BpmnGraphVertex;
-import org.processmining.framework.models.bpmn.BpmnObject;
-import org.processmining.framework.models.bpmn.BpmnTask;
 
 import att.grappa.CustomRenderer;
 import att.grappa.Element;

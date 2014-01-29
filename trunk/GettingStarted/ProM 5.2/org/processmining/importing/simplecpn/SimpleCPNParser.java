@@ -15,7 +15,6 @@ import java_cup.runtime.Symbol;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
-import org.processmining.framework.models.erlangnet.ErlangNetPlaceType;
 import org.processmining.framework.models.petrinet.AnnotatedPetriNet;
 import org.processmining.framework.models.petrinet.PNEdge;
 import org.processmining.framework.models.petrinet.Place;

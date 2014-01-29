@@ -1,8 +1,9 @@
 package org.processmining.framework.models.dot;
 
-import org.processmining.framework.models.ModelGraph;
 import java.io.IOException;
 import java.io.Writer;
+
+import org.processmining.framework.models.ModelGraph;
 
 /**
  * <p>

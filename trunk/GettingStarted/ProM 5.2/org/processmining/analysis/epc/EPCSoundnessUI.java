@@ -1,19 +1,19 @@
 package org.processmining.analysis.epc;
 
-import org.processmining.framework.models.epcpack.ConfigurableEPC;
+import java.awt.BorderLayout;
+
+import javax.swing.JComponent;
+import javax.swing.JEditorPane;
 import javax.swing.JPanel;
-import org.processmining.framework.models.transitionsystem.TransitionSystem;
+import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import org.processmining.framework.plugin.Provider;
+
+import org.processmining.framework.models.epcpack.ConfigurableEPC;
+import org.processmining.framework.models.transitionsystem.TransitionSystem;
 import org.processmining.framework.plugin.ProvidedObject;
-import java.awt.BorderLayout;
-import javax.swing.JTextPane;
+import org.processmining.framework.plugin.Provider;
 import org.processmining.framework.ui.ProMHTMLEditorKit;
-import javax.swing.JEditorPane;
-import javax.swing.JComponent;
 
 /**
  * <p>

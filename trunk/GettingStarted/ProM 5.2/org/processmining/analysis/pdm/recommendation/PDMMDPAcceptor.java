@@ -1,21 +1,12 @@
 package org.processmining.analysis.pdm.recommendation;
 
-import org.processmining.framework.ui.MainUI;
-import java.awt.event.ActionEvent;
-import org.processmining.analysis.AnalysisInputItem;
-import java.awt.Insets;
-import org.processmining.framework.util.CenterOnScreen;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import org.processmining.framework.log.LogReader;
-import java.awt.GridBagConstraints;
 import javax.swing.JComponent;
-import javax.swing.JDialog;
-import org.processmining.framework.plugin.ProvidedObject;
-import java.awt.GridBagLayout;
-import javax.swing.JLabel;
-import org.processmining.framework.models.pdm.*;
+
+import org.processmining.analysis.AnalysisInputItem;
 import org.processmining.analysis.AnalysisPlugin;
+import org.processmining.framework.models.pdm.PDMModel;
+import org.processmining.framework.models.pdm.PDMStateSpace;
+import org.processmining.framework.plugin.ProvidedObject;
 
 /**
  * <p>

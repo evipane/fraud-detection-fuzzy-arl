@@ -13,10 +13,16 @@
 
 package org.processmining.converting.yawl2yawl;
 
-import org.processmining.converting.Converter;
-import org.processmining.framework.models.yawl.*;
-import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.processmining.converting.Converter;
+import org.processmining.framework.models.yawl.YAWLCondition;
+import org.processmining.framework.models.yawl.YAWLDecomposition;
+import org.processmining.framework.models.yawl.YAWLEdge;
+import org.processmining.framework.models.yawl.YAWLModel;
+import org.processmining.framework.models.yawl.YAWLNode;
+import org.processmining.framework.models.yawl.YAWLTask;
 import org.processmining.mining.yawlmining.YAWLResult;
 
 public class YawlToYawl {

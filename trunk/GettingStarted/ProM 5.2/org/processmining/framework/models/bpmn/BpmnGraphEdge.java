@@ -3,11 +3,7 @@
  */
 package org.processmining.framework.models.bpmn;
 
-import java.io.IOException;
-import java.io.Writer;
-
 import org.processmining.framework.models.ModelGraphEdge;
-import org.processmining.framework.models.ModelGraphVertex;
 
 /**
  * @author JianHong.YE, collaborate with LiJie.WEN and Feng

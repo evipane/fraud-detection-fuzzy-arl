@@ -18,14 +18,12 @@
 
 package org.processmining.framework.models.protos;
 
-import java.io.*;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
 
-import org.processmining.framework.models.*;
-import org.processmining.framework.models.protos.ProtosRoleArc;
-import org.processmining.framework.models.protos.ProtosDrawing;
-
-import org.w3c.dom.*;
+import org.processmining.framework.models.ModelGraph;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * <p>

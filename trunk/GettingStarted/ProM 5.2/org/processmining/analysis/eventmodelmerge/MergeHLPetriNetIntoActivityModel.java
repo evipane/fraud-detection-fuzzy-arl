@@ -15,9 +15,8 @@ import org.processmining.framework.models.petrinet.PNEdge;
 import org.processmining.framework.models.petrinet.PetriNet;
 import org.processmining.framework.models.petrinet.Place;
 import org.processmining.framework.models.petrinet.Transition;
-import org.processmining.framework.ui.Message;
-
 import org.processmining.framework.models.petrinet.TransitionCluster;
+import org.processmining.framework.ui.Message;
 
 /**
  * For the provided HLPetriNet which is based on events, a new HLPetriNet with

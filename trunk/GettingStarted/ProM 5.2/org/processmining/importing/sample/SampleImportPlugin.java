@@ -5,10 +5,8 @@ import java.io.InputStream;
 
 import org.processmining.framework.models.ModelGraphPanel;
 import org.processmining.framework.models.dot.DotModel;
-import org.processmining.framework.models.petrinet.PetriNet;
 import org.processmining.importing.Importer;
 import org.processmining.importing.pnml.PnmlImport;
-import org.processmining.mining.epcmining.EPCResult;
 import org.processmining.mining.petrinetmining.PetriNetResult;
 
 public class SampleImportPlugin {

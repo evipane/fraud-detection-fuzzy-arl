@@ -29,7 +29,6 @@ import org.processmining.analysis.ltlchecker.parser.LTLParser;
 import org.processmining.framework.models.ontology.ConceptModel;
 import org.processmining.framework.models.ontology.OntologyCollection;
 import org.processmining.framework.models.ontology.OntologyModel;
-
 import org.processmining.framework.ui.MainUI;
 
 public class SemanticParamTable extends ParamTable {

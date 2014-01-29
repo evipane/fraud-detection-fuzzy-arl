@@ -1,25 +1,16 @@
 package org.processmining.framework.log.filter;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Iterator;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import org.processmining.framework.log.LogEvent;
-import org.processmining.framework.log.LogEvents;
 import org.processmining.framework.log.LogFilter;
 import org.processmining.framework.log.LogSummary;
 import org.processmining.framework.log.ProcessInstance;

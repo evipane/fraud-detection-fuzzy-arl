@@ -3,14 +3,11 @@ package org.processmining.analysis.performance.basicperformance.model.task;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import javax.swing.JPanel;
-
 import org.jfree.data.gantt.TaskSeries;
 import org.processmining.analysis.performance.basicperformance.model.AbstractPerformance2D;
 import org.processmining.analysis.performance.basicperformance.model.StatisticUnit;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.ProcessInstance;
-import org.processmining.framework.ui.slicker.ProgressPanel;
 
 public class InstOriTPerformance extends AbstractPerformance2D {
 	public InstOriTPerformance(LogReader inputLog) {

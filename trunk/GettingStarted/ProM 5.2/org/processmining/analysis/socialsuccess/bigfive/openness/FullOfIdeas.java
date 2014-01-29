@@ -7,7 +7,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import org.processmining.analysis.socialsuccess.PersonalityData;
-import org.processmining.analysis.socialsuccess.bigfive.*;
+import org.processmining.analysis.socialsuccess.bigfive.Behaviour;
+import org.processmining.analysis.socialsuccess.bigfive.Openness;
 import org.processmining.framework.log.DataSection;
 import org.processmining.framework.log.LogReader;
 import org.processmining.framework.log.ProcessInstance;

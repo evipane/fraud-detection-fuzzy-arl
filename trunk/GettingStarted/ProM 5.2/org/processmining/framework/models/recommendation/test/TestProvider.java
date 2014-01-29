@@ -1,9 +1,7 @@
 package org.processmining.framework.models.recommendation.test;
 
 import java.io.IOException;
-import java.util.Random;
 
-import org.processmining.framework.log.AuditTrailEntry;
 import org.processmining.framework.log.ProcessInstance;
 import org.processmining.framework.models.recommendation.Recommendation;
 import org.processmining.framework.models.recommendation.RecommendationProvider;

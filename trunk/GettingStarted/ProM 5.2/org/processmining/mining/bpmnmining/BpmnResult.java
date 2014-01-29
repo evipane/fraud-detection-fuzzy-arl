@@ -14,8 +14,6 @@
 package org.processmining.mining.bpmnmining;
 
 import java.awt.BorderLayout;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -29,7 +27,6 @@ import org.processmining.framework.models.bpmn.BpmnGraph;
 import org.processmining.framework.models.bpmn.BpmnNetHierarchy;
 import org.processmining.framework.plugin.ProvidedObject;
 import org.processmining.framework.plugin.Provider;
-import org.processmining.importing.LogReaderConnection;
 import org.processmining.mining.MiningResult;
 
 /**

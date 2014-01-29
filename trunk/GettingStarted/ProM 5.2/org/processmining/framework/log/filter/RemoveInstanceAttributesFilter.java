@@ -35,18 +35,12 @@ package org.processmining.framework.log.filter;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.util.Date;
-import java.util.Random;
 
 import javax.swing.JPanel;
 
-import org.processmining.framework.log.AuditTrailEntry;
-import org.processmining.framework.log.AuditTrailEntryList;
-import org.processmining.framework.log.DataSection;
 import org.processmining.framework.log.LogFilter;
 import org.processmining.framework.log.LogSummary;
 import org.processmining.framework.log.ProcessInstance;
-import org.processmining.framework.util.StringObfuscator;
 import org.w3c.dom.Node;
 
 /**

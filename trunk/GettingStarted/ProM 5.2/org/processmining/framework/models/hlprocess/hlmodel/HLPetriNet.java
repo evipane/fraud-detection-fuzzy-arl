@@ -14,8 +14,8 @@
 package org.processmining.framework.models.hlprocess.hlmodel;
 
 import java.util.ArrayList;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.processmining.framework.models.ModelGraphVertex;
 import org.processmining.framework.models.hlprocess.HLActivity;

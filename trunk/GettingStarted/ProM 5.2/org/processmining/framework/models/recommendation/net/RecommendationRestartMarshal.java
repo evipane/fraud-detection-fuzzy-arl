@@ -1,35 +1,21 @@
 package org.processmining.framework.models.recommendation.net;
 
-import org.processmining.framework.models.recommendation.RecommendationQuery;
-import org.processmining.framework.log.AuditTrailEntry;
-import org.xml.sax.Attributes;
-import java.util.Map;
-import java.text.SimpleDateFormat;
-import org.processmining.lib.mxml.EventType;
-import org.xml.sax.InputSource;
-import java.util.Date;
-import org.xml.sax.helpers.DefaultHandler;
-import javax.xml.parsers.SAXParser;
-import java.util.Arrays;
-import java.io.StringWriter;
-import org.xml.sax.SAXParseException;
-import org.processmining.framework.log.LogEvent;
-import java.util.Set;
-import java.nio.charset.Charset;
-import java.io.IOException;
-import org.processmining.framework.log.rfb.AuditTrailEntryImpl;
-import javax.xml.parsers.SAXParserFactory;
-import org.processmining.lib.xml.Document;
 import java.io.StringReader;
-import org.processmining.lib.xml.Tag;
-import org.xml.sax.SAXException;
-import org.processmining.framework.log.rfb.XmlUtils;
-import org.processmining.framework.ui.MainUI;
-import org.processmining.analysis.log.scale.ProcessInstanceScale;
-import org.processmining.analysis.log.scale.ScaleCollection;
-import org.processmining.analysis.recommendation.RecommendationCollection;
-import org.processmining.analysis.recommendation.contrib.RecommendationContributor;
+import java.io.StringWriter;
+import java.nio.charset.Charset;
+import java.text.SimpleDateFormat;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
 import org.processmining.framework.models.recommendation.net.client.RestartRequest;
+import org.processmining.lib.xml.Document;
+import org.processmining.lib.xml.Tag;
+import org.xml.sax.Attributes;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
+import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * <p>

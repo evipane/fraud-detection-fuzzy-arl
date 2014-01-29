@@ -13,8 +13,9 @@
 
 package org.processmining.framework.models.pdm;
 
-import java.util.*;
-import java.lang.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 
 /**
  * <p>

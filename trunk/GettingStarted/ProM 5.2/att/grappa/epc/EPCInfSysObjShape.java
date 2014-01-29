@@ -1,9 +1,14 @@
 package att.grappa.epc;
 
-import java.awt.*;
-import java.awt.geom.*;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.geom.GeneralPath;
 
-import att.grappa.*;
+import att.grappa.CustomRenderer;
+import att.grappa.Element;
+import att.grappa.Grappa;
+import att.grappa.GrappaShape;
 
 /**
  * <p>
