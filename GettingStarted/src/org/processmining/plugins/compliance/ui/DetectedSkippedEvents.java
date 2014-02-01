@@ -121,6 +121,7 @@ public class DetectedSkippedEvents {
 				case MREAL :
 					if (res.isReliable()) {
 						numReliableModelOnlyReal += caseIDSize;
+						
 					}
 					;
 					numModelOnlyReal += caseIDSize;
