@@ -40,7 +40,7 @@ public class FraudwithFuzzyARL2 {
 	
 	Object[][] tabel = new Object[25][];
 	String[] tabelName = {"Tabel Fraud"};
-	
+	public String[] simpan = new String[10];
 	public DefaultTableModel tableModel = new DefaultTableModel(tabel,columnsName);
 	//JTable tabel = new JTable(tableContent,columnsName);
 	
@@ -85,6 +85,30 @@ public class FraudwithFuzzyARL2 {
 			context.getFutureResult(0).cancel(true);
 		}
 		
+		InteractionResult result7 = context.showConfiguration("Input Kepentingan", new countFraud().InputKepentingan(simpan));
+		if (result7.equals(InteractionResult.CANCEL)) {
+			context.getFutureResult(0).cancel(true);
+		}
+		
+		InteractionResult result8 = context.showConfiguration("Daftar Kepentingan", new countFraud().DerajatKepentingan(simpan));
+		if (result8.equals(InteractionResult.CANCEL)) {
+			context.getFutureResult(0).cancel(true);
+		}
+		
+		InteractionResult result5 = context.showConfiguration("Fuzzy Table2", new countFraud().TabelFuzzyMADM());
+		if (result5.equals(InteractionResult.CANCEL)) {
+			context.getFutureResult(0).cancel(true);
+		}
+		
+		InteractionResult result9 = context.showConfiguration("Daftar Kepentingan", new countFraud().TabelBobotFraud(simpan));
+		if (result9.equals(InteractionResult.CANCEL)) {
+			context.getFutureResult(0).cancel(true);
+		}
+		
+		InteractionResult result10 = context.showConfiguration("Daftar Kepentingan", new countFraud().HasilBobotFraud(simpan));
+		if (result10.equals(InteractionResult.CANCEL)) {
+			context.getFutureResult(0).cancel(true);
+		}
 		
 		InteractionResult result3 = context.showConfiguration("ARL Parameter", new ARLParameter2().ARLParam());
 		if (result3.equals(InteractionResult.CANCEL)) {
