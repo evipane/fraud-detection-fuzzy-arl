@@ -1,0 +1,192 @@
+package org.processmining.pnml.controller;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.processmining.pnml.model.Arc;
+import org.processmining.pnml.model.PNML;
+import org.processmining.pnml.model.Place;
+import org.processmining.pnml.model.Transition;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+public class ReadPNML {
+	
+	private File fXmlFile;
+	private DocumentBuilderFactory dbFactory;
+	private Document doc;
+	private DocumentBuilder dBuilder;
+	
+	private List<Transition> OrderedTransitions;
+	
+	private List<Place> places;
+	private List<Transition> transitions;
+	private List<Arc> arcs;
+	
+	private PNML pnml;
+	
+	public ReadPNML(String file)
+	{
+		System.out.println("Masuk sini2");
+		try{
+			fXmlFile = new File(file);
+			
+			dbFactory = DocumentBuilderFactory.newInstance();
+			dBuilder = dbFactory.newDocumentBuilder();
+			
+			doc = dBuilder.parse(fXmlFile);
+			
+			places = new ArrayList<Place>();
+			transitions = new ArrayList<Transition>();
+			arcs = new ArrayList<Arc>();
+			
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+	}
+	
+	public void readPNML()
+	{
+		System.out.println("Masuk sini1");
+		try
+		{	
+			doc.getDocumentElement().normalize();
+			 
+			//System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+		 
+			getPlaces(doc.getElementsByTagName("place"));
+			getTransitions(doc.getElementsByTagName("transition"));
+			getArcs(doc.getElementsByTagName("arc"));
+			
+			//System.out.println(doc.getElementsByTagName("transition").getLength());
+			
+			pnml = new PNML(places, arcs, transitions);
+			pnml.setStartPlace();
+			
+			OrderedTransitions = pnml.orderTrans();
+			
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+	}
+	
+	public PNML getPNML() {
+		return pnml;
+	}
+	
+	private void getTransitions(NodeList nList)
+	{
+		try
+		{
+			for (int temp = 0; temp < nList.getLength(); temp++) {
+				 
+				Node nNode = nList.item(temp);
+		 
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+					Element eElement = (Element) nNode;
+					
+					Transition transition = new Transition();
+					transition.setName(eElement.getElementsByTagName("text").item(0).getTextContent());
+					transition.setId(eElement.getAttribute("id"));
+		 
+					transitions.add(transition);
+					
+					//System.out.println("Transition location: " + transition.getLink());
+				}
+			}
+
+			//System.out.println(transitions.size());
+		}
+		catch (Exception ex)
+		{
+			ex.getStackTrace();
+		}
+	}
+	
+	private void getPlaces(NodeList nList)
+	{
+		try
+		{
+			for (int temp = 0; temp < nList.getLength(); temp++) {
+				 
+				Node nNode = nList.item(temp);
+		 
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+		 
+					Element eElement = (Element) nNode;
+		 
+					Place place = new Place();
+					place.setName(eElement.getElementsByTagName("text").item(0).getTextContent());
+					place.setId(eElement.getAttribute("id"));
+					
+					places.add(place);
+				}
+			}
+			
+			//System.out.println(places.size());
+		}
+		catch (Exception ex)
+		{
+			ex.getStackTrace();
+		}
+	}
+	
+	private void getArcs(NodeList nList)
+	{
+		try
+		{
+			for (int temp = 0; temp < nList.getLength(); temp++) {
+				 
+				Node nNode = nList.item(temp);
+		 
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+		 
+					Element eElement = (Element) nNode;
+					
+					Arc arc = new Arc();
+					arc.setId(eElement.getAttribute("id"));
+					arc.setSource(eElement.getAttribute("source"));
+					arc.setTarget(eElement.getAttribute("target"));
+		 
+					arcs.add(arc);
+					
+					/*System.out.println("Arc id : " + arc.getId()
+							+ " source : " + arc.getSource()
+							+ " target : " + arc.getTarget());*/
+				}
+			}
+
+			//System.out.println(arcs.size());
+		}
+		catch (Exception ex)
+		{
+			ex.getStackTrace();
+		}
+	}
+	
+	private Transition getTransition(Transition trans) {
+		
+		for(int j=0; j<transitions.size(); j++)
+		{
+			String id = trans.getId();
+			Transition transition = transitions.get(j);
+			
+			if(id.matches(transition.getId())) {
+				return transition;
+			}
+		}
+		
+		return null;
+	}
+
+}
