@@ -1,5 +1,7 @@
 package org.processmining.plugins.compliance.ui;
 
+import java.awt.Dimension;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,10 +16,12 @@ import org.deckfour.xes.extension.std.XConceptExtension;
 import org.deckfour.xes.model.XLog;
 import org.processmining.framework.plugin.Progress;
 import org.processmining.framework.util.collection.AlphanumComparator;
+import org.processmining.framework.util.ui.widgets.ProMTable;
 import org.processmining.models.graphbased.directed.petrinet.PetrinetGraph;
 import org.processmining.models.graphbased.directed.petrinet.elements.Transition;
 import org.processmining.plugins.petrinet.replayresult.PNRepResult;
 import org.processmining.plugins.petrinet.replayresult.StepTypes;
+import org.processmining.plugins.petrinet.replayresult.visualization.ProcessInstanceConformanceView;
 import org.processmining.plugins.replayer.replayresult.SyncReplayResult;
 
 public class DetectedSkippedEvents {
@@ -51,11 +55,111 @@ public class DetectedSkippedEvents {
 	int numReliableCaseInvolved = 0; 
 	int real = 0;
 	int sync = 0;
-		
+	
+	int sumSkippedSeq = 0;
+	int sumSkippedDec = 0;
+	
+	public String[] columname = {"Transition","Jumlah"};
+	public String[] columname2 = {"Decision","Sequence"};
+	public Object[][] tableTransition;
+	public Object[][] tableTransition2;
+	public Object[][] tableTransition3;
+	public DefaultTableModel tableModelTransition ;
+	public List<String> decTransitions = new ArrayList<String>();
+	public List<String> seqTransitions = new ArrayList<String>();
 	
 	// total calculated values
 	Map<String, Double[]> calculations = new HashMap<String, Double[]>();
 	Map<String, Integer> skip = new HashMap<String, Integer>();
+	
+	public String skipResult;
+	
+	public void ModelTabel(PetrinetGraph net)
+	{
+		//JPanel panel = new JPanel();
+		
+		tableTransition = new Object[net.getTransitions().size()][columname.length];
+		Object[][] table = new Object[net.getTransitions().size()][];
+		tableModelTransition = new DefaultTableModel(table,columname2);
+		int c=0;
+		int temp;
+		boolean flag=false;
+		for(Transition t : net.getTransitions())
+		{
+			flag=false;
+			if(tableTransition.length==0)
+			{
+				tableTransition[c][0] = t.getLabel();
+				tableTransition[c][1] = 1;
+				c++;
+			}
+			else
+			{
+				for(int i=0;i<tableTransition.length;i++)
+				{
+					if(t.getLabel().equals(tableTransition[i][0]))
+					{
+						System.out.println("masuk sini");
+						temp = (Integer) tableTransition[i][1];
+						tableTransition[i][1]=temp+1;
+						flag=true;
+					}
+				}
+			}
+			if(flag==false)
+			{
+				tableTransition[c][0] = t.getLabel();
+				tableTransition[c][1] = 1;
+				c++;
+			}
+		}
+		
+		tableTransition2 = new Object[c][columname2.length];
+		tableTransition3 = new Object[c][columname2.length];
+		c=0;
+		int d=0;
+		for(int i=0;i<tableTransition2.length;i++)
+		{
+			String temp1 = (String)tableTransition[i][0];
+			String[] str = temp1.split(" ");
+			if((Integer)tableTransition[i][1]>1 && str[1].equals("Complete"))
+			{
+				System.out.println("masuk sini donk");
+				tableTransition2[c][0]=str[0];
+				decTransitions.add(str[0].toString());
+				c++;
+			}
+			else if((Integer)tableTransition[i][1]<2 && str[1].equals("Complete"))
+			{
+				tableTransition3[d][0]=str[0];
+				seqTransitions.add(str[0].toString());
+				d++;
+			}
+		}
+		
+		System.out.println("table2: "+c);
+		System.out.println("table3: "+d);
+		
+		for(int i=0;i<tableTransition2.length;i++)
+		{
+			tableModelTransition.setValueAt(tableTransition2[i][0], i, 0);
+		}
+		
+		for(int i=0;i<tableTransition3.length;i++)
+		{
+			tableModelTransition.setValueAt(tableTransition3[i][0], i, 1);
+		}
+				
+		ProMTable Ptabel = new ProMTable(tableModelTransition);
+		Ptabel.setPreferredSize(new Dimension(1000, 500));
+		Ptabel.setAutoResizeMode(0);
+		//panel.add(Ptabel);
+		//context.showConfiguration("Tabel Transisi",panel);
+		
+		//return panel;
+	}
+	
+	
 	final DefaultTableModel reliableCasesTModel = new DefaultTableModel() {
 		private static final long serialVersionUID = -4303950078200984098L;
 
@@ -65,15 +169,14 @@ public class DetectedSkippedEvents {
 		}
 	};
 
-
 	public Map<String, Integer> detect_skip(PetrinetGraph net, final XLog log, final PNRepResult logReplayResult,
 			Progress progress)
 	{
 
+	ModelTabel(net);
+		
 	for (SyncReplayResult res : logReplayResult) {
 		
-		
-
 		// reformat node instance list
 		List<Object> result = new LinkedList<Object>();
 		for (Object obj : res.getNodeInstance()) {
@@ -98,10 +201,12 @@ public class DetectedSkippedEvents {
 		}
 		int caseIDSize = caseIDSets.size();
 
-		
+		// ALIGNMENT PANEL
+		ProcessInstanceConformanceView alignmentPanel = new ProcessInstanceConformanceView("Alignment", result,
+				res.getStepTypes(),10);
 
 		// add conformance info
-		
+		int index = 0;
 		for (StepTypes stepType : res.getStepTypes()) {
 			switch (stepType) {
 				case L :
@@ -110,6 +215,7 @@ public class DetectedSkippedEvents {
 						numReliableLogOnly += caseIDSize;
 					}
 					;
+					System.out.println("L:" + res.getNodeInstance().get(index));
 					break;
 				case MINVI :
 					if (res.isReliable()) {
@@ -117,6 +223,7 @@ public class DetectedSkippedEvents {
 					}
 					;
 					numModelOnlyInvi += caseIDSize;
+					System.out.println("MINVI: " + res.getNodeInstance().get(index));
 					break;
 				case MREAL :
 					if (res.isReliable()) {
@@ -125,6 +232,18 @@ public class DetectedSkippedEvents {
 					}
 					;
 					numModelOnlyReal += caseIDSize;
+					String temp1 = res.getNodeInstance().get(index).toString();
+					String[] str = temp1.split(" ");
+					if(checkDecision(str[0]))
+					{
+						System.out.println("Skipped Decision: " + str[0]);
+						sumSkippedDec += caseIDSize;
+					}
+					else
+					{
+						System.out.println("Skipped Sequence: " + str[0]);
+						sumSkippedSeq += caseIDSize;
+					}
 					break;
 				case LMNOGOOD :
 				case LMREPLACED : 
@@ -134,6 +253,7 @@ public class DetectedSkippedEvents {
 					}
 					;
 					numViolations += caseIDSize;
+					System.out.println("Swapped: " + res.getNodeInstance().get(index));
 					break;
 				case LMGOOD :
 					if (res.isReliable()) {
@@ -141,10 +261,10 @@ public class DetectedSkippedEvents {
 					}
 					;
 					numSynchronized += caseIDSize;
+					System.out.println("Sync: " + res.getNodeInstance().get(index));
 			}
+			index++;
 		}
-		
-		
 
 		// to be shown in right side of case
 		Map<String, Double> mapInfo = res.getInfo();
@@ -157,7 +277,6 @@ public class DetectedSkippedEvents {
 		infoSingleTrace[propCounter++] = new Object[] { "Is Alignment Reliable?", res.isReliable() ? "Yes" : "No" };
 		for (String property : keySetMapInfo) {
 			
-
 			// use it to calculate property
 			Double[] oldValues = calculations.get(property);
 			if (oldValues == null) {
@@ -166,8 +285,6 @@ public class DetectedSkippedEvents {
 				calculations.put(property, oldValues);
 			}
 
-			
-			
 		}
 
 		numCaseInvolved += caseIDSize;
@@ -185,19 +302,26 @@ public class DetectedSkippedEvents {
 				return false;
 			}
 		};
-		
-		
+			
 		System.out.println("Case : "+res.getTraceIndex()+" -- Real :"+numModelOnlyReal+" -- Synchron :"+numSynchronized);
 		System.out.println("Case : "+res.getTraceIndex()+" -- Reals :"+real+" -- Synchrons :"+sync);
-		skip.put("Case "+res.getTraceIndex()+": ", ((numModelOnlyReal-real)-(numSynchronized-sync))/2);
+		//System.out.println(decTransitions.get(0));
+		//skip.put("Case "+res.getTraceIndex()+": ", ((numModelOnlyReal-real)-(numSynchronized-sync))/2);
+		skip.put("Case "+res.getTraceIndex()+": ", (sumSkippedDec)/2);
 		real = numModelOnlyReal;
 		sync = numSynchronized;
 	}
 
-		
-
 	return skip;
 	
 	}
-
+	
+	public boolean checkDecision(String Transition)
+	{
+		for(String str: decTransitions) {
+		    if(str.trim().contains(Transition))
+		       return true;
+		}
+		return false;
+	}
 }
