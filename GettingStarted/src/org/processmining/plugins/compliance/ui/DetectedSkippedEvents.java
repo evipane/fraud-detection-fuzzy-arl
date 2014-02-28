@@ -17,6 +17,7 @@ import org.deckfour.xes.model.XLog;
 import org.processmining.framework.plugin.Progress;
 import org.processmining.framework.util.collection.AlphanumComparator;
 import org.processmining.framework.util.ui.widgets.ProMTable;
+import org.processmining.fraud.model.fraud;
 import org.processmining.models.graphbased.directed.petrinet.PetrinetGraph;
 import org.processmining.models.graphbased.directed.petrinet.elements.Transition;
 import org.processmining.plugins.petrinet.replayresult.PNRepResult;
@@ -67,7 +68,13 @@ public class DetectedSkippedEvents {
 	public DefaultTableModel tableModelTransition ;
 	public List<String> decTransitions = new ArrayList<String>();
 	public List<String> seqTransitions = new ArrayList<String>();
-	
+	public List<String> skipped = new ArrayList<String>();
+	public List<String> SyncSTransitions = new ArrayList<String>();
+	public List<String> SyncDTransitions = new ArrayList<String>();
+	public List<String> SSTransitions = new ArrayList<String>();
+	public List<String> SDTransitions = new ArrayList<String>();
+	public fraud Fraud = new fraud();
+	public List<fraud>frauds = new ArrayList<fraud>();
 	// total calculated values
 	Map<String, Double[]> calculations = new HashMap<String, Double[]>();
 	Map<String, Integer> skip = new HashMap<String, Integer>();
@@ -159,6 +166,65 @@ public class DetectedSkippedEvents {
 		//return panel;
 	}
 	
+	public int countSkip(List<String>skip, List<String>sync)
+	{
+		skipped.clear();
+		String temps="";
+		String temps2="";
+		int result = 0;
+		for(int i=0;i<skip.size();i++)
+		{
+			boolean cek = false;
+			boolean lewat = false;
+			if(skipped.isEmpty())
+			{
+				skipped.add(skip.get(i));
+				temps = skip.get(i);
+			}
+			else
+			{
+				for(int k=0;k<skipped.size();k++)
+				{
+					if(skip.get(i).equals(skipped.get(k)))
+					{
+						lewat=true;
+						break;
+					}
+				}
+			}
+			if(lewat==true)
+			{
+				continue;
+			}
+			else 
+			{
+				skipped.add(skip.get(i));
+				temps = skip.get(i);
+			}
+			for(int j=0;j<sync.size();j++)
+			{
+				if(sync.get(j).equals(temps2))
+				{
+					continue;
+				}
+				else
+				{
+					temps2 = sync.get(j);
+				}
+				
+				if(temps.equals(temps2))
+				{
+					System.out.println("CEK!!");
+					cek=true;
+				}
+			}
+			if(cek==false)
+			{
+				result++;
+			}
+		}
+		return result;
+	}
 	
 	final DefaultTableModel reliableCasesTModel = new DefaultTableModel() {
 		private static final long serialVersionUID = -4303950078200984098L;
@@ -169,14 +235,19 @@ public class DetectedSkippedEvents {
 		}
 	};
 
-	public Map<String, Integer> detect_skip(PetrinetGraph net, final XLog log, final PNRepResult logReplayResult,
+	public List<fraud> detect_skip(PetrinetGraph net, final XLog log, final PNRepResult logReplayResult,
 			Progress progress)
 	{
 
 	ModelTabel(net);
-		
+	int count = 0;	
 	for (SyncReplayResult res : logReplayResult) {
 		
+		SSTransitions = new ArrayList<String>();
+		SDTransitions = new ArrayList<String>();
+		SyncDTransitions = new ArrayList<String>();
+		SyncSTransitions = new ArrayList<String>();
+		skipped = new ArrayList<String>();
 		// reformat node instance list
 		List<Object> result = new LinkedList<Object>();
 		for (Object obj : res.getNodeInstance()) {
@@ -192,12 +263,14 @@ public class DetectedSkippedEvents {
 		// create combobox
 		SortedSet<String> caseIDSets = new TreeSet<String>(new AlphanumComparator());
 		XConceptExtension ce = XConceptExtension.instance();
+		List<String>caseID = new ArrayList<String>();
 		for (int index : res.getTraceIndex()) {
 			String name = ce.extractName(log.get(index));
 			if (name == null) {
 				name = String.valueOf(index);
 			}
 			caseIDSets.add(name);
+			caseID.add(name);
 		}
 		int caseIDSize = caseIDSets.size();
 
@@ -207,7 +280,15 @@ public class DetectedSkippedEvents {
 
 		// add conformance info
 		int index = 0;
+		int skips = 0;
+		int noskip = 0;
+		int simpan = 0;
+		int swap = 0;
+		int skipDec =0;
+		int skipSeq = 0;
+		boolean tes = false;
 		for (StepTypes stepType : res.getStepTypes()) {
+			
 			switch (stepType) {
 				case L :
 					numLogOnly += caseIDSize;
@@ -237,12 +318,20 @@ public class DetectedSkippedEvents {
 					if(checkDecision(str[0]))
 					{
 						System.out.println("Skipped Decision: " + str[0]);
+						SDTransitions.add(str[0]);
 						sumSkippedDec += caseIDSize;
+						skips++;
+						noskip=0;
+						simpan=0;
 					}
 					else
 					{
 						System.out.println("Skipped Sequence: " + str[0]);
+						SSTransitions.add(str[0]);
 						sumSkippedSeq += caseIDSize;
+						skips++;
+						noskip=0;
+						simpan=0;
 					}
 					break;
 				case LMNOGOOD :
@@ -262,10 +351,38 @@ public class DetectedSkippedEvents {
 					;
 					numSynchronized += caseIDSize;
 					System.out.println("Sync: " + res.getNodeInstance().get(index));
+					String temp2 = res.getNodeInstance().get(index).toString();
+					String[] str2 = temp2.split(" ");
+					if(checkDecision(str2[0]))
+					{
+						SyncDTransitions.add(str2[0]);
+					}
+					else
+					{
+						SyncSTransitions.add(str2[0]);
+					}
+					
+					noskip++;
+					if(simpan==0)
+					{
+						simpan=skips;
+					}
+					skips=0;
+					if(simpan==2 && noskip==2)
+					{
+						tes=true;
+					}
 			}
 			index++;
+			if(tes==true && skips==1)
+			{
+				swap++;
+				skips=0;
+				noskip=0;
+				simpan=0;
+				tes=false;
+			}
 		}
-
 		// to be shown in right side of case
 		Map<String, Double> mapInfo = res.getInfo();
 		Set<String> keySetMapInfo = mapInfo.keySet();
@@ -286,7 +403,7 @@ public class DetectedSkippedEvents {
 			}
 
 		}
-
+		
 		numCaseInvolved += caseIDSize;
 		if (res.isReliable()) {
 			numReliableCaseInvolved += caseIDSize;
@@ -302,6 +419,16 @@ public class DetectedSkippedEvents {
 				return false;
 			}
 		};
+		
+		skipSeq=0;
+		skipDec=0;
+		
+		skipSeq = countSkip(SSTransitions, SyncSTransitions);
+		skipDec = countSkip(SDTransitions, SyncDTransitions);
+		
+		System.out.println("Jumlah case: "+caseID.size()+" -- count: "+count);
+		
+		System.out.println("Case: "+caseID.get(count)+"-- Swap: "+swap+" -- SkipS: "+skipSeq+" -- SkipD: "+skipDec);
 			
 		System.out.println("Case : "+res.getTraceIndex()+" -- Real :"+numModelOnlyReal+" -- Synchron :"+numSynchronized);
 		System.out.println("Case : "+res.getTraceIndex()+" -- Reals :"+real+" -- Synchrons :"+sync);
@@ -310,9 +437,12 @@ public class DetectedSkippedEvents {
 		skip.put("Case "+res.getTraceIndex()+": ", (sumSkippedDec)/2);
 		real = numModelOnlyReal;
 		sync = numSynchronized;
+		
+		Fraud = new fraud(caseID.get(count), skipSeq, skipDec, 0, 0, 0, 0, 0, 0, swap, 0, 0);
+		frauds.add(Fraud);
 	}
 
-	return skip;
+	return frauds;
 	
 	}
 	

@@ -26,14 +26,14 @@ public class ReadPNML {
 	private List<Transition> OrderedTransitions;
 	
 	private List<Place> places;
-	private List<Transition> transitions;
+	public List<Transition> transitions;
 	private List<Arc> arcs;
 	
 	private PNML pnml;
 	
 	public ReadPNML(String file)
 	{
-		System.out.println("Masuk sini2");
+		System.out.println("Masuk read constructor");
 		try{
 			fXmlFile = new File(file);
 			
@@ -55,7 +55,7 @@ public class ReadPNML {
 	
 	public void readPNML()
 	{
-		System.out.println("Masuk sini1");
+		System.out.println("Masuk fungsi read");
 		try
 		{	
 			doc.getDocumentElement().normalize();
@@ -86,23 +86,26 @@ public class ReadPNML {
 	
 	private void getTransitions(NodeList nList)
 	{
+		System.out.println("masuk get trans");
 		try
 		{
 			for (int temp = 0; temp < nList.getLength(); temp++) {
 				 
 				Node nNode = nList.item(temp);
-		 
+				
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 					Element eElement = (Element) nNode;
-					
+					System.out.println("masuk if");
 					Transition transition = new Transition();
 					transition.setName(eElement.getElementsByTagName("text").item(0).getTextContent());
 					transition.setId(eElement.getAttribute("id"));
-		 
+					transition.setRole(eElement.getElementsByTagName("transitionResource").item(0).getAttributes().getNamedItem("organizationalUnitName").getNodeValue());
+					transition.setResource(eElement.getElementsByTagName("transitionResource").item(0).getAttributes().getNamedItem("roleName").getNodeValue());
+					transition.setTime(Integer.parseInt(eElement.getElementsByTagName("time").item(0).getTextContent()));
 					transitions.add(transition);
-					
 					//System.out.println("Transition location: " + transition.getLink());
 				}
+				
 			}
 
 			//System.out.println(transitions.size());
@@ -112,6 +115,7 @@ public class ReadPNML {
 			ex.getStackTrace();
 		}
 	}
+	
 	
 	private void getPlaces(NodeList nList)
 	{

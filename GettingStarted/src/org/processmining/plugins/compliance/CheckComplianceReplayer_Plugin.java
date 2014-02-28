@@ -7,10 +7,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import org.deckfour.xes.classification.XEventClass;
 import org.deckfour.xes.extension.std.XConceptExtension;
@@ -21,6 +18,7 @@ import org.processmining.framework.connections.ConnectionCannotBeObtained;
 import org.processmining.framework.plugin.PluginContext;
 import org.processmining.framework.plugin.annotations.Plugin;
 import org.processmining.framework.plugin.annotations.PluginVariant;
+import org.processmining.fraud.model.InsertFraudData;
 import org.processmining.fraud.model.fraud;
 import org.processmining.models.connections.petrinets.behavioral.InitialMarkingConnection;
 import org.processmining.models.graphbased.directed.petrinet.PetrinetGraph;
@@ -41,18 +39,15 @@ import org.processmining.plugins.replayer.replayresult.SyncReplayResult;
  * 
  */
 @Plugin(name = "Check Compliance Using Conformance Checking",
-	returnLabels = { "Compliance Diagnostics", "Abstracted Log" },
-	returnTypes = { PNRepResult.class, XLog.class },
+	returnLabels = { "Compliance Diagnostics", "Abstracted Log","Fraud Data" },
+	returnTypes = { PNRepResult.class, XLog.class, InsertFraudData.class},
 	parameterLabels = {"Petri net", "Event Log" }, 
 	help = "Replay an event log on Petri net to get all manifest of patterns.", userAccessible = true
 	)
 public class CheckComplianceReplayer_Plugin extends PNLogReplayResultVisPanel{
-	
 	/**
 	 * 
 	 */
-	
-
 	@UITopiaVariant(
 			affiliation = UITopiaVariant.EHV,
 			author = "Dirk Fahland",
@@ -76,9 +71,8 @@ public class CheckComplianceReplayer_Plugin extends PNLogReplayResultVisPanel{
 		XLog log = (XLog)abstraction[0];
 		TransEvClassMapping mapping = (TransEvClassMapping)abstraction[1];
 		CheckConformanceValue check = new CheckConformanceValue();
-		Map<String, Integer> skipped = new HashMap<String, Integer>();
 		List<fraud>Fraud = new ArrayList<fraud>();
-		fraud frauds = null;
+		InsertFraudData ifd = new InsertFraudData();
 		Marking m_initial;
 		try {
 			m_initial = context.tryToFindOrConstructFirstObject(Marking.class, InitialMarkingConnection.class, InitialMarkingConnection.MARKING, net);
@@ -105,18 +99,11 @@ public class CheckComplianceReplayer_Plugin extends PNLogReplayResultVisPanel{
 		String logName = log.getAttributes().get("concept:name").toString()+" (abstracted @ "+timeString+")";
 		context.getFutureResult(1).setLabel(logName);
 		
-		skipped = check.visualization(context, res);
-		Set<String> mapinfo = skipped.keySet();
-		
-		for(String property : mapinfo)
-		{
-			frauds = new fraud(1, skipped.get(property),0,0,0,0,0, 0, 0, 0, 0, 0);
-			Fraud.add(frauds);
-		}
-		//Fraud.add(frauds);
-		System.out.println("Tabel Fraud: "+Fraud.get(0).getCase()+" -- "+Fraud.get(0).getSkipSeq());
-		System.out.println("Jumlah SKip: "+skipped);
-		return new Object[] { res, log };
+		ifd.insert(check.visualization(context, res));
+		System.out.println("Sizes: "+ifd.frauds.size());
+		//System.out.println("Tabel Fraud: "+Fraud.get(0).getCase()+" -- "+Fraud.get(0).getSkipSeq());
+		//System.out.println("Jumlah SKip: "+skipped);
+		return new Object[] { res, log,ifd };
 	}
 	
 /* --------------------------------------------------------------------------------

@@ -2,7 +2,7 @@ package org.processmining.fraud.model;
 
 //model untuk fraud
 public class fraud {
-	private int Case;
+	private String Case;
 	private int SkipSeq;
 	private int SkipDec;
 	private int Tmin;
@@ -14,8 +14,6 @@ public class fraud {
 	private int WDutyCom; 
 	private int wPattern; 
 	private int wDecision;
-	
-	
 	private int maxSkipSeq=16;
 	private int maxSkipDec=8;
 	private int maxTmin=24;
@@ -32,7 +30,10 @@ public class fraud {
 		super();
 	}
 
-	public fraud(int case1, int skipSeq, int skipDec, int tmin, int tmax, int wResource, int WDutySeq, int WDutyDec,int WDutyCom, int wPattern, int wDecision, int fraud) {
+	
+	
+	public fraud(String case1, int skipSeq, int skipDec, int tmin, int tmax, int wResource, int wDutySeq,
+			int wDutyDec, int wDutyCom, int wPattern, int wDecision, int fraud) {
 		super();
 		Case = case1;
 		SkipSeq = skipSeq;
@@ -41,11 +42,15 @@ public class fraud {
 		Tmax = tmax;
 		WResource = wResource;
 		Fraud = fraud;
+		WDutySeq = wDutySeq;
+		WDutyDec = wDutyDec;
+		WDutyCom = wDutyCom;
+		this.wPattern = wPattern;
+		this.wDecision = wDecision;
 	}
-	
-	
-	
-	
+
+
+
 	public int getMaxSkipSeq() {
 		return maxSkipSeq;
 	}
@@ -166,10 +171,10 @@ public class fraud {
 		this.wDecision = wDecision;
 	}
 
-	public int getCase() {
+	public String getCase() {
 		return Case;
 	}
-	public void setCase(int case1) {
+	public void setCase(String case1) {
 		Case = case1;
 	}
 	public int getSkipSeq() {
