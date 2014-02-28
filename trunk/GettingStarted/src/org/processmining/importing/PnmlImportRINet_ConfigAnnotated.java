@@ -21,12 +21,11 @@ import org.processmining.models.semantics.petrinet.Marking;
 import org.processmining.plugins.petrinet.configurable.CreateConfigurableNet_Plugin;
 import org.processmining.plugins.pnml.Pnml;
 import org.processmining.plugins.pnml.importing.PnmlImportUtils;
-import org.processmining.pnml.controller.ReadPNML;
 
 @Plugin(name = "Import Configurable Petri net from annotated PNML file", 
 		parameterLabels = { "Filename" }, 
 		returnLabels = { "Configurable Reset/Inhibitor Net" },
-		returnTypes = { ConfigurableResetInhibitorNet.class })
+		returnTypes = { ConfigurableResetInhibitorNet.class})
 @UIImportPlugin(description = "PNML Reset/Inhibitor net files (configuration annotated)", extensions = { "pnml" })
 public class PnmlImportRINet_ConfigAnnotated extends AbstractImportPlugin {
 	
@@ -38,14 +37,14 @@ public class PnmlImportRINet_ConfigAnnotated extends AbstractImportPlugin {
 		/*
 		 * Create a fresh marking.
 		 */
-		System.out.println("Masuk sini1");
+		
 		Marking marking = new Marking();
-
 		GraphLayoutConnection layout = new GraphLayoutConnection(net);
 		/*
 		 * Initialize the Petri net and marking from the PNML element.
 		 */
 		pnml.convertToNet(net, marking, layout);
+		
 		
 		/*
 		 * Return net, marking, and layout.
@@ -62,9 +61,6 @@ public class PnmlImportRINet_ConfigAnnotated extends AbstractImportPlugin {
 		PnmlImportUtils utils = new PnmlImportUtils();
 		System.out.println("Masuk sini0");
 		Pnml pnml = utils.importPnmlFromStream(context, input, filename, fileSizeInBytes);
-		System.out.println("Masuk sini1");
-		ReadPNML read = new ReadPNML(filename);
-		read.readPNML();
 		if (pnml == null) {
 			/*
 			 * No PNML found in file. Fail.

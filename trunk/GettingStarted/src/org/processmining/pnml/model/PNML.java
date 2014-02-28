@@ -55,6 +55,13 @@ public class PNML {
 	{
 		String from;
 		String to;
+		System.out.println("masuk ordertrans");
+		System.out.println("size: "+transitions.size());
+		for(int i=0;i<transitions.size();i++)
+		{
+			Transition transition = transitions.get(i);
+			System.out.println("Trans: "+transition.getName()+" -- role: "+transition.getRole()+" -- resource: "+transition.getResource()+" -- time: "+transition.getTime());
+		}
 		
 		for(int i=0;i<arces.size();i++)
 		{
@@ -91,6 +98,7 @@ public class PNML {
 	private Transition searchTransition(String id) {
 		for(int i=0;i<transitions.size();i++) {
 			Transition transition = transitions.get(i);
+			System.out.println("Trans: "+transition.getName()+" -- role: "+transition.getRole()+" -- resource: "+transition.getResource());
 			if(transition.getId().equals(id)) {
 				return transition;
 			}

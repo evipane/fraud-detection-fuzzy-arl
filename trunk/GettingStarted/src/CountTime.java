@@ -1,6 +1,8 @@
 import java.awt.Dimension;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -22,6 +24,7 @@ public class CountTime {
 	
 	public String[] columnsName = {"Case ID","Event Name","Duration","Resource","complete","SID","type","verification","overrate","decision","validation","plafond"};
 	public Object[][] tableTime;
+	public List<String>events = new ArrayList<String>();
 	
 	public DefaultTableModel tableModelTime ;
 	@Plugin(
@@ -44,6 +47,27 @@ public class CountTime {
 		long durasi;
 		System.out.println("masuk 1!");
 		int totalEvent=0;
+		
+		for(XAttribute att : log.getGlobalEventAttributes())
+		{
+			if(att.getKey().startsWith("concept:name")||att.getKey().startsWith("org:resource")||att.getKey().startsWith("lifecycle:transition")||att.getKey().startsWith("time:timestamp"))
+			{
+				continue;
+			}
+			else
+			{
+				events.add(att.getKey());
+			}
+				
+		}
+		
+		System.out.println("Atribut: "+events.size());
+		
+		for(int i=0;i<events.size();i++)
+		{
+			System.out.println("Event "+i+": "+events.get(i));
+		}
+		
 		for(XTrace trace : log)
 		{
 			for(XEvent event : trace)
@@ -59,9 +83,7 @@ public class CountTime {
 		for(XTrace trace : log)
 		{
 			System.out.println("masuk 2!");
-			
-			
-			
+
 			String temp = null ;
 			String name = null;
 			Date time = null;
@@ -101,7 +123,6 @@ public class CountTime {
 							System.out.println("Durasi: "+durasi);
 							
 						}
-						
 						//System.out.println("time: " +time);
 					}
 					
@@ -124,107 +145,26 @@ public class CountTime {
 						}
 						
 					}
-					
-					if(attribute.getKey().startsWith("complete")&&flag==false)
+					int j=4;
+					for(int i=3;i<events.size();i++)
 					{
-						if(((XAttributeLiteral)attribute).getValue()=="NOT_SET")
+						
+						if(attribute.getKey().startsWith(events.get(i))&&flag==false)
 						{
-							tableTime[index][4]="";
+							if(((XAttributeLiteral)attribute).getValue()=="NOT_SET")
+							{
+								tableTime[index][j]="";
+							}
+							else
+							{
+								tableTime[index][j]=((XAttributeLiteral)attribute).getValue();
+							}
 						}
-						else
-						{
-							tableTime[index][4]=((XAttributeLiteral)attribute).getValue();
-						}
+						j++;
 					}
 					
-					if(attribute.getKey().startsWith("SID")&&flag==false)
-					{
-						if(((XAttributeLiteral)attribute).getValue()=="NOT_SET")
-						{
-							tableTime[index][5]="";
-						}
-						else
-						{
-							tableTime[index][5]=((XAttributeLiteral)attribute).getValue();
-						}
-					}
-					
-					
-					if(attribute.getKey().startsWith("type")&&flag==false)
-					{
-						if(((XAttributeLiteral)attribute).getValue()=="NOT_SET")
-						{
-							tableTime[index][6]="";
-						}
-						else
-						{
-							tableTime[index][6]=((XAttributeLiteral)attribute).getValue();
-						}
-					}
-					
-					if(attribute.getKey().startsWith("verification")&&flag==false)
-					{
-						if(((XAttributeLiteral)attribute).getValue()=="NOT_SET")
-						{
-							tableTime[index][7]="";
-						}
-						else
-						{
-							tableTime[index][7]=((XAttributeLiteral)attribute).getValue();
-						}
-					}
-					
-					if(attribute.getKey().startsWith("overrate")&&flag==false)
-					{
-						if(((XAttributeLiteral)attribute).getValue()=="NOT_SET")
-						{
-							tableTime[index][8]="";
-						}
-						else
-						{
-							tableTime[index][8]=((XAttributeLiteral)attribute).getValue();
-						}
-					}
-					
-					if(attribute.getKey().startsWith("decision")&&flag==false)
-					{
-						if(((XAttributeLiteral)attribute).getValue()=="NOT_SET")
-						{
-							tableTime[index][9]="";
-						}
-						else
-						{
-							tableTime[index][9]=((XAttributeLiteral)attribute).getValue();
-						}
-					}
-					
-					if(attribute.getKey().startsWith("validation")&&flag==false)
-					{
-						if(((XAttributeLiteral)attribute).getValue()=="NOT_SET")
-						{
-							tableTime[index][10]="";
-						}
-						else
-						{
-							tableTime[index][10]=((XAttributeLiteral)attribute).getValue();
-						}
-					}
-					
-					if(attribute.getKey().startsWith("plafond")&&flag==false)
-					{
-						if(((XAttributeLiteral)attribute).getValue()=="NOT_SET")
-						{
-							tableTime[index][11]="";
-						}
-						else
-						{
-							tableTime[index][11]=((XAttributeLiteral)attribute).getValue();
-						}
-					}
 					
 					//System.out.println("temp: "+temp+" -- time: "+time+" -- flag: "+flag+" -- name: "+name);
-					
-					
 				}
 			}
 		}

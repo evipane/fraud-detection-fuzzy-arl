@@ -7,18 +7,22 @@ import org.processmining.contexts.uitopia.UIPluginContext;
 import org.processmining.contexts.uitopia.annotations.UITopiaVariant;
 import org.processmining.framework.plugin.annotations.Plugin;
 import org.processmining.framework.util.ui.widgets.ProMTable;
-import org.processmining.models.graphbased.directed.petrinet.PetrinetGraph;
-import org.processmining.models.graphbased.directed.petrinet.elements.Transition;
+import org.processmining.fraud.model.InsertFraudData;
 
 
 public class readPNML {
 	
 	public String[] columname = {"Transition","Jumlah"};
 	public String[] columname2 = {"Decision","Sequence"};
+	public String[] columname3 = {"Transition","Role","Resource","Time"};
+	public String[] columname4 = {"Case","SkipS","SkipD","Tmin","Tmax","WResource","WdutyS","WdutyD","WdutyC","WPattern","Wdecision","Fraud"};
 	public Object[][] tableTransition;
 	public Object[][] tableTransition2;
 	public Object[][] tableTransition3;
+	public Object[][] tableTransition4;
+	
 	public DefaultTableModel tableModelTransition ;
+	public DefaultTableModel tableModelTransition2 ;
 	@Plugin(
 			name="Read PNML File",
 			parameterLabels = {},
@@ -31,10 +35,39 @@ public class readPNML {
 			author = "Fernandes Sinaga",
 			email = "nandes.02@gmail.com"
 			)
-	public JPanel ModelTabel(final UIPluginContext context, PetrinetGraph net)
+	public JPanel ModelTabel(final UIPluginContext context, InsertFraudData fraud)
 	{
 		JPanel panel = new JPanel();
+		System.out.println("Size: "+fraud.frauds.size());
+		tableTransition = new Object[fraud.frauds.size()][columname4.length];
+		for(int i=0;i<tableTransition.length;i++)
+		{
+			tableTransition[i][0] = fraud.frauds.get(i).getCase();
+			tableTransition[i][1] = fraud.frauds.get(i).getSkipSeq();
+			tableTransition[i][2] = fraud.frauds.get(i).getSkipDec();
+			tableTransition[i][3] = fraud.frauds.get(i).getTmin();
+			tableTransition[i][4] = fraud.frauds.get(i).getTmax();
+			tableTransition[i][5] = fraud.frauds.get(i).getWResource();
+			tableTransition[i][6] = fraud.frauds.get(i).getWDutySeq();
+			tableTransition[i][7] = fraud.frauds.get(i).getWDutyDec();
+			tableTransition[i][8] = fraud.frauds.get(i).getWDutyCom();
+			tableTransition[i][9] = fraud.frauds.get(i).getwPattern();
+			tableTransition[i][10] = fraud.frauds.get(i).getwDecision();
+			tableTransition[i][11] = fraud.frauds.get(i).getFraud();
+			
+		}
+		Object[][] table = new Object[fraud.frauds.size()][];
+		tableModelTransition = new DefaultTableModel(table,columname4);
 		
+		for(int i=0;i<tableTransition.length;i++)
+		{
+			for(int j=0;j<tableModelTransition.getColumnCount();j++)
+			{
+				tableModelTransition.setValueAt(tableTransition[i][j], i, j);
+			}
+			
+		}
+		/*System.out.println("label: "+net.getLabel());
 		tableTransition = new Object[net.getTransitions().size()][columname.length];
 		Object[][] table = new Object[net.getTransitions().size()][];
 		tableModelTransition = new DefaultTableModel(table,columname2);
@@ -109,8 +142,15 @@ public class readPNML {
 		Ptabel.setAutoResizeMode(0);
 		panel.add(Ptabel);
 		context.showConfiguration("Tabel Transisi",panel);
+		*/
 		
+		ProMTable Ptabel = new ProMTable(tableModelTransition);
+		Ptabel.setPreferredSize(new Dimension(1000, 500));
+		Ptabel.setAutoResizeMode(0);
+		panel.add(Ptabel);
+		context.showConfiguration("Tabel Data Fraud",panel);
 		return panel;
 	}
+	
 
 }
