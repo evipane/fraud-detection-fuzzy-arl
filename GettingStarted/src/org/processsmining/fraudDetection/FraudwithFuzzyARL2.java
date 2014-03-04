@@ -40,8 +40,10 @@ public class FraudwithFuzzyARL2 {
 	
 	Object[][] tabel = new Object[25][];
 	String[] tabelName = {"Tabel Fraud"};
-	public String[] simpan = new String[10];
+	public String[][] simpan;
+	public Integer[] jumlahPakar;
 	public DefaultTableModel tableModel = new DefaultTableModel(tabel,columnsName);
+	public CountImportance CI = new CountImportance();
 	//JTable tabel = new JTable(tableContent,columnsName);
 	
 	@Plugin(
@@ -79,17 +81,38 @@ public class FraudwithFuzzyARL2 {
 		
 		context.showConfiguration("Tabel Fraud",panel);
 		
+		jumlahPakar = new Integer[1];
+		jumlahPakar[0]=0;
+		
+		InteractionResult result1 = context.showConfiguration("Input Jumlah Pakar", new countFraud().InputJumlahPakar(jumlahPakar));
+		if (result1.equals(InteractionResult.CANCEL)) {
+			context.getFutureResult(0).cancel(true);
+		}
+		
+		simpan = new String[jumlahPakar[0]][10];
+		
+		System.out.println("Pakar: "+jumlahPakar);
+		for(int i=0;i<jumlahPakar[0];i++)
+		{
+			System.out.println("Masuk lah");
+			InteractionResult result7 = context.showConfiguration("Input Kepentingan Pakar "+(i+1), new countFraud().InputKepentingan(simpan[i]));
+			if (result7.equals(InteractionResult.CANCEL)) {
+				context.getFutureResult(0).cancel(true);
+			}
+			
+			//System.out.println("C1: "+simpan[i][0]+" -- C2: "+simpan[i][1]+" -- C3: "+simpan[i][2]+" -- C4: "+simpan[i][3]+" -- C5: "+simpan[i][4]+" -- C6: "+simpan[i][5]+" -- C7: "+simpan[i][6]+" -- C8: "+simpan[i][7]+" -- C9: "+simpan[i][8]+" -- C10: "+simpan[i][9]);
+		}
+		
+		CI.countWeight(jumlahPakar[0], simpan);
+		CI.countProb(tableContent, columnsName);
+		CI.membership();
+		CI.countFraud();
 		
 		InteractionResult result2 = context.showConfiguration("Fuzzy Table", new newFuzzy().FuzzyTabel2());
 		if (result2.equals(InteractionResult.CANCEL)) {
 			context.getFutureResult(0).cancel(true);
 		}
-		
-		InteractionResult result7 = context.showConfiguration("Input Kepentingan", new countFraud().InputKepentingan(simpan));
-		if (result7.equals(InteractionResult.CANCEL)) {
-			context.getFutureResult(0).cancel(true);
-		}
-		
+		/*
 		InteractionResult result8 = context.showConfiguration("Daftar Kepentingan", new countFraud().DerajatKepentingan(simpan));
 		if (result8.equals(InteractionResult.CANCEL)) {
 			context.getFutureResult(0).cancel(true);
@@ -109,7 +132,7 @@ public class FraudwithFuzzyARL2 {
 		if (result10.equals(InteractionResult.CANCEL)) {
 			context.getFutureResult(0).cancel(true);
 		}
-		
+		*/
 		InteractionResult result3 = context.showConfiguration("ARL Parameter", new ARLParameter2().ARLParam());
 		if (result3.equals(InteractionResult.CANCEL)) {
 			context.getFutureResult(0).cancel(true);

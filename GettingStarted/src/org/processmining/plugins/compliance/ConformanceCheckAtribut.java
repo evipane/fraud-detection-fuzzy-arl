@@ -73,7 +73,7 @@ public class ConformanceCheckAtribut {
 	}
 	
 	
-	
+	//fungsi membaca event log
 	public void readLog(XLog log)
 	{
 		XConceptExtension conceptE = XConceptExtension.instance();
@@ -158,7 +158,7 @@ public class ConformanceCheckAtribut {
 			}
 		}
 	}
-	
+	//fungsi mendapatkan sequence dan decision event
 	public void readSeqDec(ReadPNML pnml)
 	{
 		int count=0;
@@ -210,7 +210,7 @@ public class ConformanceCheckAtribut {
 			}
 		}
 	}
-	
+	//fungsi membaca pnml extended
 	public void readPnml(ReadPNML pnml)
 	{
 		
@@ -250,7 +250,7 @@ public class ConformanceCheckAtribut {
 			}
 		}
 	}
-	
+	//fungsi conformance
 	public void checkTime(InsertFraudData fraud1)
 	{
 		int counter=0;
@@ -269,6 +269,7 @@ public class ConformanceCheckAtribut {
 		//System.out.println("Resource: "+tableRole[0][0]+" -- Role: "+tableRole[0][1]);
 		for(int j=0;j<tableLog.length-1;j++)
 		{
+			//fungsi mendapatkan role
 			for(int i=0;i<c+1;i++)
 			{
 				if(tableLog[j][3].equals(tableRole[i][0]))
@@ -278,6 +279,7 @@ public class ConformanceCheckAtribut {
 			}
 			dutyD=0;
 			dutyS=0;
+			//fungsi menghitung duty
 			for(int p=j;p<tableLog.length-1;p++)
 			{
 				if(tableLog[j][3].equals(tableLog[p][3]))
@@ -296,6 +298,7 @@ public class ConformanceCheckAtribut {
 			}
 			System.out.println("D: "+dutyD+" -- S: "+dutyS);
 			
+			//fungsi menghitung wrong duty
 			if(dutyS>0 && dutyD>0)
 			{
 				wDutyC++;
@@ -318,15 +321,17 @@ public class ConformanceCheckAtribut {
 				{
 					if(tableLog[j][1].equals(tableTransition[k][0]))
 					{
+						//fungsi menghitung tmin
 						if((Long)tableLog[j][2]<((Integer)tableTransition[k][3]-2))
 						{
 							tmin++;
 						}
+						//fungsi menghitung tmax
 						else if((Long)tableLog[j][2]>((Integer)tableTransition[k][3]+2))
 						{
 							tmax++;
 						}
-						
+						//fungsi menghitung wresource
 						if(role!=tableTransition[k][1])
 						{
 							wresource++;
@@ -343,15 +348,17 @@ public class ConformanceCheckAtribut {
 					{
 						if(tableLog[j][1].equals(tableTransition[k][0]))
 						{
+							//fungsi menghitung tmin
 							if((Long)tableLog[j][2]<((Integer)tableTransition[k][3]-2))
 							{
 								tmin++;
 							}
+							//fungsi menghitung tmax
 							else if((Long)tableLog[j][2]>((Integer)tableTransition[k][3]+2))
 							{
 								tmax++;
 							}
-
+							//fungsi menghitung wresource
 							if(role.compareTo((String)tableTransition[k][1])>0)
 							{
 								wresource++;
@@ -361,6 +368,7 @@ public class ConformanceCheckAtribut {
 				}
 				else
 				{
+					//fungsi menggabungkan data fraud
 					for(int z=0;z<fraud1.frauds.size();z++)
 					{
 						if(tableLog[j-1][0].equals(fraud1.frauds.get(z).getCase()))
@@ -382,6 +390,7 @@ public class ConformanceCheckAtribut {
 			}
 			CaseID = (String) tableLog[j][0];
 		}
+		//fungsi menggabungkan data fraud
 		for(int z=0;z<fraud1.frauds.size();z++)
 		{
 			if(CaseID.equals(fraud1.frauds.get(z).getCase()))
