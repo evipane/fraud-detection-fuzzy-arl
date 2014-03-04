@@ -5,12 +5,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.GroupLayout;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import org.processmining.framework.util.ui.widgets.ProMTable;
+
+import com.fluxicon.slickerbox.factory.SlickerFactory;
 
 public class countFraud {
 	
@@ -29,7 +33,7 @@ public class countFraud {
 	public DefaultTableModel tableModel = new DefaultTableModel(tabel3,columnsName1);
 	public DefaultTableModel tableModelKecocokan = new DefaultTableModel(tabel3,columnCocok);
 	public DefaultTableModel tableModelbobotFraud = new DefaultTableModel(tabel3,ffa.columnsName);
-	
+	public JTextField jTextField1 = new javax.swing.JTextField();
 	public JComboBox jComboBox1 = new javax.swing.JComboBox();
     public JComboBox jComboBox2 = new javax.swing.JComboBox();
     public JComboBox jComboBox3 = new javax.swing.JComboBox();
@@ -120,6 +124,48 @@ public class countFraud {
 		return panel;
 	}
 	
+	public JPanel InputJumlahPakar(final Integer[] jumlahPakar)
+	{
+		JPanel panel = new JPanel();
+		
+		JLabel jLabel1 = SlickerFactory.instance().createLabel("Jumlah Pakar: ");
+        JButton jButton1 = SlickerFactory.instance().createButton("Input");
+
+        GroupLayout layout = new GroupLayout(panel);
+        panel.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel1)
+                .addComponent(jButton1)
+                .addGap(32, 32, 32)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(142, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        
+        jButton1.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				jumlahPakar[0] = Integer.parseInt(jTextField1.getText());
+			}
+		});
+        
+        panel.setLayout(layout);
+		return panel;
+	}
+	
 	
 	public JPanel InputKepentingan(final String[] var)
 	{
@@ -160,34 +206,34 @@ public class countFraud {
 
         jLabel10.setText("Wrong Decision");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"", "Normal", "Penting", "Sangat Penting" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"", "Very Week", "Week", "Fair", "Important", "Very Important" }));
         jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "","Normal", "Penting", "Sangat Penting" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "","Very Week", "Week", "Fair", "Important", "Very Important" }));
         jComboBox2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"", "Normal", "Penting", "Sangat Penting" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"", "Very Week", "Week", "Fair", "Important", "Very Important" }));
         jComboBox3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"", "Normal", "Penting", "Sangat Penting" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"", "Very Week", "Week", "Fair", "Important", "Very Important" }));
         jComboBox4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"", "Normal", "Penting", "Sangat Penting" }));
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"", "Very Week", "Week", "Fair", "Important", "Very Important" }));
         jComboBox5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "","Normal", "Penting", "Sangat Penting" }));
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "","Very Week", "Week", "Fair", "Important", "Very Important" }));
         jComboBox6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"", "Normal", "Penting", "Sangat Penting" }));
+        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"", "Very Week", "Week", "Fair", "Important", "Very Important" }));
         jComboBox7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "","Normal", "Penting", "Sangat Penting" }));
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "","Very Week", "Week", "Fair", "Important", "Very Important" }));
         jComboBox8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "","Normal", "Penting", "Sangat Penting" }));
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "","Very Week", "Week", "Fair", "Important", "Very Important" }));
         jComboBox9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"", "Normal", "Penting", "Sangat Penting" }));
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"", "Very Week", "Week", "Fair", "Important", "Very Important" }));
         jComboBox10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel11.setText("Derajat Kepentingan");
