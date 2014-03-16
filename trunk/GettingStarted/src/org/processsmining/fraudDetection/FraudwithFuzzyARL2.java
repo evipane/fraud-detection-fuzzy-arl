@@ -39,12 +39,24 @@ public class FraudwithFuzzyARL2 {
 	};
 	
 	Object[][] tabel = new Object[25][];
+	Object[][] tabel2 = new Object[100][];
 	String[] tabelName = {"Tabel Fraud"};
 	public String[][] simpan;
 	public Integer[] jumlahPakar;
+	public String[] columnsName2 = {"SkipSL","SkipSM","SkipSH","SkipDL","SkipDM","SkipDH","TminL","TminM","TminH","TmaxL","TmaxM","TmaxH","wResourceL","wResourceM","wResourceH","wDutySecL","wDutySecM","wDutySecH","wDutyDecL","wDutyDecM","wDutyDecH","wDutyComL","wDutyComM","wDutyComH","wPatternL","wPatternM","wPatternH","wDecisionL","wDecisionM","wDecisionH","Fraud"};
+	public String[] aturan = {"Aturan","Support","Confidence"};
+	public Object[][] tableFuzzy ;
 	public DefaultTableModel tableModel = new DefaultTableModel(tabel,columnsName);
+	public DefaultTableModel tableModel2 = new DefaultTableModel(tabel2,aturan);
 	public CountImportance CI = new CountImportance();
+	public CountARL2 CA = new CountARL2();
+	public Double[] param;
+	
+	public Object[][] tableARL;
+	public int jumlahRole=0;
 	//JTable tabel = new JTable(tableContent,columnsName);
+	
+	
 	
 	@Plugin(
 			name="Fraud Detection with Fuzzy Association Rule Learning Plugin versi 2",
@@ -63,6 +75,7 @@ public class FraudwithFuzzyARL2 {
 	public JPanel FraudTabel(final UIPluginContext context)
 	{
 		JPanel panel = new JPanel();
+		JPanel panel2 = new JPanel();
 		
 		for(int i=0;i<tableContent.length;i++)
 		{
@@ -99,51 +112,110 @@ public class FraudwithFuzzyARL2 {
 			if (result7.equals(InteractionResult.CANCEL)) {
 				context.getFutureResult(0).cancel(true);
 			}
-			
-			//System.out.println("C1: "+simpan[i][0]+" -- C2: "+simpan[i][1]+" -- C3: "+simpan[i][2]+" -- C4: "+simpan[i][3]+" -- C5: "+simpan[i][4]+" -- C6: "+simpan[i][5]+" -- C7: "+simpan[i][6]+" -- C8: "+simpan[i][7]+" -- C9: "+simpan[i][8]+" -- C10: "+simpan[i][9]);
 		}
 		
+		countFraudMADM();
+		
+		
+		for(int i=0;i<tableContent.length;i++)
+		{
+			tableContent[i][columnsName.length-1] = CI.fraud[i];
+		}
+
+		for(int i=0;i<tableContent.length;i++)
+		{
+			for(int j=0;j<tableModel.getColumnCount();j++)
+			{
+				tableModel.setValueAt(tableContent[i][j], i, j);
+			}
+		}
+		//System.out.println(tableModel.getValueAt(0, 0));
+		
+		
+		ProMTable Ptabel2 = new ProMTable(tableModel);
+		Ptabel2.setPreferredSize(new Dimension(1000, 500));
+		Ptabel2.setAutoResizeMode(0);
+		panel.add(Ptabel2);
+		
+		context.showConfiguration("Tabel Fraud Baru",panel);
+		
+		tableFuzzy = new Object[tableContent.length][columnsName2.length];
+		
+		InteractionResult result2 = context.showConfiguration("Fuzzy Table", new Fuzzy().FuzzyTabel(tableContent,columnsName,tableFuzzy));
+		if (result2.equals(InteractionResult.CANCEL)) {
+			context.getFutureResult(0).cancel(true);
+		}
+		
+		param = new Double[1];
+		param[0] = 0.0;
+		boolean flag=true;
+		int count=1;
+		System.out.println("fuzzy: "+tableFuzzy[0][0]);
+		tableARL = new Object[100][aturan.length];
+		while(flag==true)
+		{
+			if(count==1)
+			{
+				CA.countSupport(tableFuzzy,columnsName2);
+				
+				InteractionResult result3 = context.showConfiguration("Threshold 1-itemset", new ARLParameter2().ARLParam(param));
+				if (result3.equals(InteractionResult.CANCEL)) {
+					context.getFutureResult(0).cancel(true);
+				}
+				
+				System.out.println("Param: "+param[0]);
+				jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,tableARL,jumlahRole,count);
+				count++;
+			}
+			else if(count==2)
+			{
+				InteractionResult result3 = context.showConfiguration("Threshold 2-itemsets", new ARLParameter2().ARLParam(param));
+				if (result3.equals(InteractionResult.CANCEL)) {
+					context.getFutureResult(0).cancel(true);
+				}
+				
+				System.out.println("Param: "+param[0]);
+				jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,tableARL,jumlahRole,count);
+				count++;
+				flag=false;
+			}
+		}
+		System.out.println("jumlah role: "+jumlahRole);
+		for(int i=0;i<jumlahRole;i++)
+		{
+			System.out.println("Aturan: "+tableARL[i][0]+" -- Supp: "+tableARL[i][1]+" -- Conf: "+tableARL[i][2]);
+		}
+		
+		
+		for(int i=0;i<tableARL.length;i++)
+		{
+			for(int j=0;j<tableModel2.getColumnCount();j++)
+			{
+				tableModel2.setValueAt(tableARL[i][j], i, j);
+			}
+		}
+		
+		ProMTable Ptabel3 = new ProMTable(tableModel2);
+		Ptabel3.setPreferredSize(new Dimension(1000, 500));
+		Ptabel3.setAutoResizeMode(0);
+		panel2.add(Ptabel3);
+		
+		context.showConfiguration("Aturan Asosiasi",panel2);
+		
+		return  panel;
+	}
+	
+	public FraudwithFuzzyARL2() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public void countFraudMADM()
+	{
 		CI.countWeight(jumlahPakar[0], simpan);
 		CI.countProb(tableContent, columnsName);
 		CI.membership();
 		CI.countFraud();
-		
-		InteractionResult result2 = context.showConfiguration("Fuzzy Table", new newFuzzy().FuzzyTabel2());
-		if (result2.equals(InteractionResult.CANCEL)) {
-			context.getFutureResult(0).cancel(true);
-		}
-		/*
-		InteractionResult result8 = context.showConfiguration("Daftar Kepentingan", new countFraud().DerajatKepentingan(simpan));
-		if (result8.equals(InteractionResult.CANCEL)) {
-			context.getFutureResult(0).cancel(true);
-		}
-		
-		InteractionResult result5 = context.showConfiguration("Fuzzy Table2", new countFraud().TabelFuzzyMADM());
-		if (result5.equals(InteractionResult.CANCEL)) {
-			context.getFutureResult(0).cancel(true);
-		}
-		
-		InteractionResult result9 = context.showConfiguration("Daftar Kepentingan", new countFraud().TabelBobotFraud(simpan));
-		if (result9.equals(InteractionResult.CANCEL)) {
-			context.getFutureResult(0).cancel(true);
-		}
-		
-		InteractionResult result10 = context.showConfiguration("Daftar Kepentingan", new countFraud().HasilBobotFraud(simpan));
-		if (result10.equals(InteractionResult.CANCEL)) {
-			context.getFutureResult(0).cancel(true);
-		}
-		*/
-		InteractionResult result3 = context.showConfiguration("ARL Parameter", new ARLParameter2().ARLParam());
-		if (result3.equals(InteractionResult.CANCEL)) {
-			context.getFutureResult(0).cancel(true);
-		}
-		
-		InteractionResult result4 = context.showConfiguration("Selection 1Itemsets", new CountARL2().ARLTable());
-		if (result4.equals(InteractionResult.CANCEL)) {
-			context.getFutureResult(0).cancel(true);
-		}
-		
-		return  panel;
 	}
 
 }

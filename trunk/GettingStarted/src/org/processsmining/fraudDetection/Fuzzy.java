@@ -1,5 +1,4 @@
 package org.processsmining.fraudDetection;
-
 import java.awt.Dimension;
 
 import javax.swing.JPanel;
@@ -8,42 +7,44 @@ import javax.swing.table.DefaultTableModel;
 import org.processmining.framework.util.ui.widgets.ProMTable;
 
 
-public class newFuzzy {
-	FraudwithFuzzyARL2 ffa = new FraudwithFuzzyARL2();
-	fuzzyAttribute fa = new fuzzyAttribute();
-	
+public class Fuzzy {
+	private CountPercentage cp = new CountPercentage();
 	public String[] columnsName2 = {"SkipSL","SkipSM","SkipSH","SkipDL","SkipDM","SkipDH","TminL","TminM","TminH","TmaxL","TmaxM","TmaxH","wResourceL","wResourceM","wResourceH","wDutySecL","wDutySecM","wDutySecH","wDutyDecL","wDutyDecM","wDutyDecH","wDutyComL","wDutyComM","wDutyComH","wPatternL","wPatternM","wPatternH","wDecisionL","wDecisionM","wDecisionH","Fraud"};
 	//fungsi fuzzy keanggotaan min
 	Object[][] tabel2 = new Object[25][];
 	Object[][] tabel3 = new Object[25][];
-	public DefaultTableModel tableModelPercent = new DefaultTableModel(tabel2,ffa.columnsName);
+	//public DefaultTableModel tableModelPercent = new DefaultTableModel(tabel2,ffa.columnsName);
 	public DefaultTableModel tableModelFuzzy = new DefaultTableModel(tabel2,columnsName2);
 	
 	public int dummyLength=0;
 	
 	public Object[][] tableDummy;
-	public Object[][] tableFuzzy;
 
 	public Double fuzzyMin(Double value)
 	{
-		double aMin = fa.getA();
-		double bMin = fa.getB();
-		double cMin = fa.getC();
+		double aMin = 0;
+		double bMin = 15;
+		double cMin = 25;
+		double dMin = 40;
 		double minValue = 0;
 		
 		if(value<aMin||value==aMin)
 		{
 			minValue=0;
 		}
-		else if(value>aMin && value<bMin||value==bMin)
+		else if(value>aMin && value<bMin)
+		{
+			minValue = (value-aMin)/(bMin-aMin);
+		}
+		else if((value>bMin && value<cMin)||value==bMin ||value==cMin)
 		{
 			minValue = 1;
 		}
-		else if(value>bMin && value <cMin)
+		else if(value>cMin && value <dMin)
 		{
-			minValue = (cMin-value)/(cMin-bMin);
+			minValue = (dMin-value)/(dMin-cMin);
 		}
-		else if(value==cMin ||value > cMin)
+		else if(value==dMin ||value > dMin)
 		{
 			minValue=0;
 		}
@@ -54,10 +55,10 @@ public class newFuzzy {
 	//fungsi fuzzy keanggotaan mid
 	public Double fuzzyMid(Double value)
 	{
-		double aMid = fa.getB();
-		double bMid = fa.getC();
-		double cMid = fa.getD();
-		double dMid = fa.getE();
+		double aMid = 35;
+		double bMid = 50;
+		double cMid = 60;
+		double dMid = 75;
 		double midValue = 0;
 		
 		if(value<aMid||value==aMid)
@@ -87,8 +88,8 @@ public class newFuzzy {
 	//fungsi fuzzy keanggotaan high
 	public Double fuzzyHigh(Double value)
 	{
-		double aHigh = fa.getD();
-		double bHigh = fa.getE();
+		double aHigh = 70;
+		double bHigh = 90;
 		double HighValue = 0;
 		
 		if(value<aHigh || value==aHigh)
@@ -107,56 +108,86 @@ public class newFuzzy {
 		return HighValue;
 	}
 	
+	@SuppressWarnings("null")
+	public void PercenTabel(Object[][] tableFraud, String[] columname)
+	{
+		JPanel panel2 = new JPanel();
+		
+		tableDummy = new Object[tableFraud.length][columname.length];
+		
+		//isi tabel dengan nilai persentase
+		for(int i=0;i<tableFraud.length;i++)
+		{
+			for(int j=0;j<columname.length;j++)
+			{
+				//tableDummy[i][j] = cp.countPercen((Double)ffa.tableContent[i][j], ffa.tableModel.getColumnName(j));
+				String str = tableFraud[i][j].toString(); 
+				String str2 = columname[j];
+				double d = Double.valueOf(str).doubleValue();
+				
+				double percen = cp.countPercen(d, str2);
+				
+				tableDummy[i][j] =new Double(percen);
+			}
+		}
+		/*
+		//isi tabel percent ke tabel model
+		for(int i=0;i<tableDummy.length;i++)
+		{
+			for(int j=0;j<tableModelPercent.getColumnCount();j++)
+			{
+				tableModelPercent.setValueAt(tableDummy[i][j], i, j);
+			}
+		}
+		*/
+		dummyLength=tableDummy.length;
+		/*
+		ProMTable Ptabel = new ProMTable(tableModelPercent);
+		Ptabel.setPreferredSize(new Dimension(1000, 500));
+		Ptabel.setAutoResizeMode(0);
+		panel2.add(Ptabel);
+		//context.showConfiguration("Tabel Fraud",panel2);
+		*/
+		//return panel2;
+	}
 	
-	public JPanel FuzzyTabel2(Object[][] tableFraud, String[] columname)
+	public JPanel FuzzyTabel(Object[][] tableFraud, String[] columname, Object[][] tableFuzzy)
 	{
 		JPanel panel3 = new JPanel();
 		
 		//isi tabel dengan nilai fuzzy
-		//PercenTabel();
+		PercenTabel(tableFraud,columname);
 
-		tableFuzzy =  new Object[tableFraud.length][columnsName2.length];
+		//tableFuzzy =  new Object[tableDummy.length][columnsName2.length];
 	
-		for(int i=0;i<tableFraud.length;i++)
+		for(int i=0;i<tableDummy.length;i++)
 		{
 			int k=0;
 			for(int j=0;j<columnsName2.length;j++)
 			{
-				if(columname[k]=="SkipS" || columname[k]=="wDutySec")
-				{
-					fa.fuzzySeq();
-				}
-				else if(columname[k]=="SkipD" || columname[k]=="wDutyDec"||columname[k]=="wDutyCom" || columname[k]=="wDecision")
-				{
-					fa.fuzzyDec();
-				}
-				else if(columname[k]=="Tmin"|| columname[k]=="Tmax"||columname[k]=="wResource" || columname[k]=="wPattern")
-				{
-					fa.fuzzyAll();
-				}
 				
 				if(j==columnsName2.length-1)
 				{
-					tableFuzzy[i][j] = tableFraud[i][k];
+					tableFuzzy[i][j] = tableDummy[i][k];
 				}
 				else if(j%3==0)
 				{
-					tableFuzzy[i][j] = fuzzyMin((Double)tableFraud[i][k]);
+					tableFuzzy[i][j] = fuzzyMin((Double)tableDummy[i][k]);
 				}
 				else if (j%3==1)
 				{
-					tableFuzzy[i][j] = fuzzyMid((Double)tableFraud[i][k]);
+					tableFuzzy[i][j] = fuzzyMid((Double)tableDummy[i][k]);
 				}
 				else if(j%3==2)
 				{
-					tableFuzzy[i][j] = fuzzyHigh((Double)tableFraud[i][k]);
+					tableFuzzy[i][j] = fuzzyHigh((Double)tableDummy[i][k]);
 					k++;
 				}
 				
 				
 			}
 		}
-		//isi tabel percent ke tabel model
+		//isi tabel fuzzy ke tabel model
 		for(int i=0;i<tableFuzzy.length;i++)
 		{
 			for(int j=0;j<tableModelFuzzy.getColumnCount();j++)

@@ -51,7 +51,7 @@ public class countFraud {
 		JPanel panel = new JPanel();
 		
 		tableDummy = new Object[ffa.tableContent.length][ffa.columnsName.length];
-		nf.FuzzyTabel2();
+		//nf.FuzzyTabel2();
 		
 		for(int i=0;i<ffa.tableContent.length;i++)
 		{

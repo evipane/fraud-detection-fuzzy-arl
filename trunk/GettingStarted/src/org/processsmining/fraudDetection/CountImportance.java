@@ -344,24 +344,15 @@ public double getA() {
 			}
 			else if(tableMember[index][i]=="null")
 			{
-				tableAtribut[i][0]=temp1;
-				tableAtribut[i][1]=temp1;
-				tableAtribut[i][2]=temp1;
-				tableAtribut[i][3]=temp1;
-				
+				for(int k=0;k<pakars;k++)
+				tableAtribut[i][k]=temp1;
 			}
-			System.out.println("Atribut -->C1: "+tableAtribut[i][0]+" -- C2: "+tableAtribut[i][1]+" -- C3: "+tableAtribut[i][2]+" -- C4: "+tableAtribut[i][3]);
 		}
 		membership2();
 		
 		for(int i=0;i<member.length;i++)
 		{
 			tableMember2[i][pakars] = member[i];
-		}
-		
-		for(int i=0;i<tableMember2.length;i++)
-		{
-			System.out.println("Member 2 --> C1: "+tableMember2[i][0]+" -- C2: "+tableMember2[i][1]+" -- C3: "+tableMember2[i][2]+" -- C4: "+tableMember2[i][3]+" -- C5: "+tableMember2[i][4]);
 		}
 		
 		for(int i=0;i<tableMember2.length;i++)
@@ -385,7 +376,6 @@ public double getA() {
 			tableViolation[i][1] = tempB/(pakars+1);
 			tableViolation[i][2] = tempC/(pakars+1);
 			tableViolation[i][3] = tempD/(pakars+1);
-			System.out.println("Pakar: "+(pakars+1)+" -- a: "+tableViolation[i][0]+" -- b: "+tableViolation[i][1]+" -- c: "+tableViolation[i][2]+" -- d: "+tableViolation[i][3]);
 		}
 		
 		countRating(index);
@@ -434,12 +424,10 @@ public double getA() {
 				tempB=0;
 				
 			}
-			
 			tableViolation[i][0] = tempA/(pakars+1);
 			tableViolation[i][1] = tempB/(pakars+1);
 			tableViolation[i][2] = tempC/(pakars+1);
 			tableViolation[i][3] = tempD/(pakars+1);
-			//System.out.println("a: "+tableViolation[i][0]+" -- b: "+tableViolation[i][1]+" -- c: "+tableViolation[i][2]+" -- d: "+tableViolation[i][3]);
 		}
 	
 		countRating(index);
