@@ -15,6 +15,30 @@ public class FraudwithFuzzyARL2 {
 	
 	public String[] columnsName = {"SkipS","SkipD","Tmin","Tmax","wResource","wDutySec","wDutyDec","wDutyCom","wPattern","wDecision","Fraud"};
 	public Object[][] tableContent = {
+			{new Double(2), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.25)},
+			{new Double(0), new Double(2),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.25)},
+			{new Double(0), new Double(0),new Double(4), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.25)},
+			{new Double(0), new Double(0),new Double(0), new Double(5),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.25)},
+			{new Double(0), new Double(0),new Double(0), new Double(0),new Double(3), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.25)},
+			{new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(2),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.25)},
+			{new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(2), new Double(0),new Double(0), new Double(0),new Double(0.5)},
+			{new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(1),new Double(0), new Double(0),new Double(0.5)},
+			{new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(3), new Double(0),new Double(0.75)},
+			{new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(2),new Double(0.75)},
+			{new Double(2), new Double(1),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.75)},
+			{new Double(3), new Double(0),new Double(3), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(1)},
+			{new Double(4), new Double(0),new Double(0), new Double(4),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(1)},
+			{new Double(4), new Double(0),new Double(0), new Double(0),new Double(2), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.75)},
+			{new Double(1), new Double(0),new Double(0), new Double(0),new Double(0), new Double(1),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.75)},
+			{new Double(2), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(1), new Double(0),new Double(0), new Double(0),new Double(1)},
+			{new Double(3), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(1),new Double(0), new Double(0),new Double(1)},
+			{new Double(1), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(2), new Double(0),new Double(1)},
+			{new Double(2), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(1),new Double(1)},
+			{new Double(0), new Double(5),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(1)}
+			
+	};
+	
+	public Object[][] tableContent2 = {
 			{new Double(2), new Double(0),new Double(2), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.25)},
 			{new Double(4), new Double(0),new Double(0), new Double(5),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.25)},
 			{new Double(9), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.25)},
@@ -76,6 +100,11 @@ public class FraudwithFuzzyARL2 {
 	{
 		JPanel panel = new JPanel();
 		JPanel panel2 = new JPanel();
+		JPanel panel3 = new JPanel();
+		JPanel panel4 = new JPanel();
+		JPanel panel5 = new JPanel();
+		JPanel panel6 = new JPanel();
+		JPanel panel7 = new JPanel();
 		
 		for(int i=0;i<tableContent.length;i++)
 		{
@@ -129,8 +158,6 @@ public class FraudwithFuzzyARL2 {
 				tableModel.setValueAt(tableContent[i][j], i, j);
 			}
 		}
-		//System.out.println(tableModel.getValueAt(0, 0));
-		
 		
 		ProMTable Ptabel2 = new ProMTable(tableModel);
 		Ptabel2.setPreferredSize(new Dimension(1000, 500));
@@ -152,11 +179,24 @@ public class FraudwithFuzzyARL2 {
 		int count=1;
 		System.out.println("fuzzy: "+tableFuzzy[0][0]);
 		tableARL = new Object[100][aturan.length];
+		
 		while(flag==true)
 		{
 			if(count==1)
 			{
 				CA.countSupport(tableFuzzy,columnsName2);
+				Object[][] tabel = new Object[1][];
+				DefaultTableModel tableModels = new DefaultTableModel(tabel,columnsName2);
+				for(int j=0;j<tableModels.getColumnCount();j++)
+				{
+					tableModels.setValueAt(CA.tableSupport[j], 0, j);
+				}
+				
+				ProMTable Ptabel4 = new ProMTable(tableModels);
+				Ptabel4.setPreferredSize(new Dimension(1000, 500));
+				Ptabel4.setAutoResizeMode(0);
+				panel3.add(Ptabel4);
+				context.showConfiguration("Support 1-itemset",panel3);
 				
 				InteractionResult result3 = context.showConfiguration("Threshold 1-itemset", new ARLParameter2().ARLParam(param));
 				if (result3.equals(InteractionResult.CANCEL)) {
@@ -169,17 +209,135 @@ public class FraudwithFuzzyARL2 {
 			}
 			else if(count==2)
 			{
-				InteractionResult result3 = context.showConfiguration("Threshold 2-itemsets", new ARLParameter2().ARLParam(param));
-				if (result3.equals(InteractionResult.CANCEL)) {
-					context.getFutureResult(0).cancel(true);
+				Object[][] tabel = new Object[1][];
+				DefaultTableModel tableModels = new DefaultTableModel(tabel,CA.columnsNameS2);
+				for(int j=0;j<tableModels.getColumnCount();j++)
+				{
+					tableModels.setValueAt(CA.tableSupport2[j], 0, j);
 				}
 				
-				System.out.println("Param: "+param[0]);
-				jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,tableARL,jumlahRole,count);
-				count++;
-				flag=false;
+				ProMTable Ptabel5 = new ProMTable(tableModels);
+				Ptabel5.setPreferredSize(new Dimension(1000, 500));
+				Ptabel5.setAutoResizeMode(0);
+				panel4.add(Ptabel5);
+				context.showConfiguration("Support 2-itemset",panel4);
+				
+				if(CA.columnsNameS2.length>0)
+				{
+					InteractionResult result3 = context.showConfiguration("Threshold 2-itemsets", new ARLParameter2().ARLParam(param));
+					if (result3.equals(InteractionResult.CANCEL)) {
+						context.getFutureResult(0).cancel(true);
+					}
+					
+					System.out.println("Param: "+param[0]);
+					jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,tableARL,jumlahRole,count);
+					count++;
+				}
+				else
+				{
+					flag=false;
+				}
+				//flag=false;
+			}
+			else if(count==3)
+			{
+				Object[][] tabel = new Object[1][];
+				DefaultTableModel tableModels = new DefaultTableModel(tabel,CA.columnsNameS3);
+				for(int j=0;j<tableModels.getColumnCount();j++)
+				{
+					tableModels.setValueAt(CA.tableSupport3[j], 0, j);
+				}
+				
+				ProMTable Ptabel5 = new ProMTable(tableModels);
+				Ptabel5.setPreferredSize(new Dimension(1000, 500));
+				Ptabel5.setAutoResizeMode(0);
+				panel5.add(Ptabel5);
+				context.showConfiguration("Support 3-itemset",panel5);
+				
+				if(CA.columnsNameS3.length>0)
+				{
+					InteractionResult result3 = context.showConfiguration("Threshold 3-itemsets", new ARLParameter2().ARLParam(param));
+					if (result3.equals(InteractionResult.CANCEL)) {
+						context.getFutureResult(0).cancel(true);
+					}
+					
+					
+					jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,tableARL,jumlahRole,count);
+					count++;
+				}
+				else
+				{
+					flag=false;
+				}
+				
+			}
+			
+			else if(count==4)
+			{
+				Object[][] tabel = new Object[1][];
+				DefaultTableModel tableModels = new DefaultTableModel(tabel,CA.columnsNameS4);
+				for(int j=0;j<tableModels.getColumnCount();j++)
+				{
+					tableModels.setValueAt(CA.tableSupport4[j], 0, j);
+				}
+				
+				ProMTable Ptabel5 = new ProMTable(tableModels);
+				Ptabel5.setPreferredSize(new Dimension(1000, 500));
+				Ptabel5.setAutoResizeMode(0);
+				panel6.add(Ptabel5);
+				context.showConfiguration("Support 4-itemset",panel6);
+				
+				if(CA.columnsNameS4.length>0)
+				{
+					InteractionResult result3 = context.showConfiguration("Threshold 4-itemsets", new ARLParameter2().ARLParam(param));
+					if (result3.equals(InteractionResult.CANCEL)) {
+						context.getFutureResult(0).cancel(true);
+					}
+					
+					
+					jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,tableARL,jumlahRole,count);
+					count++;
+				}
+				else
+				{
+					flag=false;
+				}
+				
+			}
+			else if(count==5)
+			{
+				Object[][] tabel = new Object[1][];
+				DefaultTableModel tableModels = new DefaultTableModel(tabel,CA.columnsNameS5);
+				for(int j=0;j<tableModels.getColumnCount();j++)
+				{
+					tableModels.setValueAt(CA.tableSupport5[j], 0, j);
+				}
+				
+				ProMTable Ptabel5 = new ProMTable(tableModels);
+				Ptabel5.setPreferredSize(new Dimension(1000, 500));
+				Ptabel5.setAutoResizeMode(0);
+				panel6.add(Ptabel5);
+				context.showConfiguration("Support 5-itemset",panel6);
+				
+				if(CA.columnsNameS5.length>0)
+				{
+					InteractionResult result3 = context.showConfiguration("Threshold 5-itemsets", new ARLParameter2().ARLParam(param));
+					if (result3.equals(InteractionResult.CANCEL)) {
+						context.getFutureResult(0).cancel(true);
+					}
+					
+					
+					jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,tableARL,jumlahRole,count);
+					count++;
+				}
+				else
+				{
+					flag=false;
+				}
+				
 			}
 		}
+		
 		System.out.println("jumlah role: "+jumlahRole);
 		for(int i=0;i<jumlahRole;i++)
 		{

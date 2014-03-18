@@ -333,6 +333,9 @@ public class DetectedSkippedEvents {
 						noskip=0;
 						simpan=0;
 					}
+					
+					
+					
 					break;
 				case LMNOGOOD :
 				case LMREPLACED : 
@@ -362,6 +365,11 @@ public class DetectedSkippedEvents {
 						SyncSTransitions.add(str2[0]);
 					}
 					
+					if(tes==true)
+					{
+						tes=false;
+					}
+					
 					noskip++;
 					if(simpan==0)
 					{
@@ -372,7 +380,9 @@ public class DetectedSkippedEvents {
 					{
 						tes=true;
 					}
+					
 			}
+			System.out.println("tes:"+tes+" -- skip: "+skips+" -- noskip: "+noskip);
 			index++;
 			if(tes==true && skips==1)
 			{
@@ -382,6 +392,7 @@ public class DetectedSkippedEvents {
 				simpan=0;
 				tes=false;
 			}
+			
 		}
 		// to be shown in right side of case
 		Map<String, Double> mapInfo = res.getInfo();

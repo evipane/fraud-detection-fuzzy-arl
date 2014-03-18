@@ -267,50 +267,66 @@ public class ConformanceCheckAtribut {
 		int wDutyC=0;
 		String CaseID="";
 		//System.out.println("Resource: "+tableRole[0][0]+" -- Role: "+tableRole[0][1]);
+		System.out.println("Total event: "+tableLog.length);
 		for(int j=0;j<tableLog.length-1;j++)
 		{
 			//fungsi mendapatkan role
+			boolean cek = false;
 			for(int i=0;i<c+1;i++)
 			{
 				if(tableLog[j][3].equals(tableRole[i][0]))
 				{
 					role=(String)tableRole[i][1];
+					//System.out.println("Resource1: "+tableLog[j][3]+" -- Resource2: "+tableRole[i][0]+" -- Role: "+role);
+					cek=true;
 				}
+				//System.out.println("Resource1: "+tableLog[j][3]+" -- Resource2: "+tableRole[i][0]+" -- Role: "+role);
+			}
+			if(cek==false)
+			{
+				role="Unidentified";
 			}
 			dutyD=0;
 			dutyS=0;
 			//fungsi menghitung duty
+			String simpan="";
+			boolean dec = checkDecision((String)tableLog[j][1]);
+			//fungsi menghitung wrong duty
 			for(int p=j;p<tableLog.length-1;p++)
 			{
-				if(tableLog[j][3].equals(tableLog[p][3]))
+				
+				if(simpan=="")
 				{
-					System.out.println("Resource: "+tableLog[p][3]);
-					if(checkDecision((String)tableLog[p][1]))
+					simpan=(String)tableLog[p][0];
+				}
+				System.out.println("case: "+simpan);
+				if(tableLog[p][0].equals(simpan))
+				{
+					if(tableLog[j][3].equals(tableLog[p][3])&&!(tableLog[j][1].equals(tableLog[p][1])))
 					{
-						dutyD++;
+						System.out.println("Resource1: "+tableLog[j][3]+" -- Resource2: "+tableLog[p][3]);
+						boolean dec2 = checkDecision((String)tableLog[p][1]);
+						if(dec2==true && dec==true)
+						{
+							wDutyD++;
+						}
+						else if((dec2==true && dec==false) || (dec2==false && dec==true))
+						{
+							wDutyC++;
+						}
+						else if(dec2==false && dec==false)
+						{
+							wDutyS++;
+						}
 					}
-					else
-					{
-						dutyS++;
-					}
+				}
+				else
+				{
+					break;
 				}
 						
 			}
-			System.out.println("D: "+dutyD+" -- S: "+dutyS);
-			
-			//fungsi menghitung wrong duty
-			if(dutyS>0 && dutyD>0)
-			{
-				wDutyC++;
-			}
-			else if(dutyS>1 && dutyD<1)
-			{
-				wDutyS++;
-			}
-			else if(dutyD>1 && dutyS<1)
-			{
-				wDutyD++;
-			}
+			//System.out.println("D: "+dutyD+" -- S: "+dutyS);
 			
 			if(temp=="")
 			{
@@ -332,7 +348,12 @@ public class ConformanceCheckAtribut {
 							tmax++;
 						}
 						//fungsi menghitung wresource
-						if(role!=tableTransition[k][1])
+						//System.out.println("Role1: "+role+" -- Role2: "+tableTransition[k][1]);
+						if(role.equals(tableTransition[k][1]))
+						{
+							continue;
+						}
+						else
 						{
 							wresource++;
 						}
@@ -359,12 +380,19 @@ public class ConformanceCheckAtribut {
 								tmax++;
 							}
 							//fungsi menghitung wresource
-							if(role.compareTo((String)tableTransition[k][1])>0)
+							//System.out.println("Role1: "+role+" -- Role2: "+tableTransition[k][1]);
+							if(role.equals(tableTransition[k][1]))
+							{
+								continue;
+							}
+							else
 							{
 								wresource++;
 							}
 						}
 					}
+					
+					
 				}
 				else
 				{
