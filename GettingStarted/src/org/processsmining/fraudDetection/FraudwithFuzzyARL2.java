@@ -10,11 +10,13 @@ import org.processmining.contexts.uitopia.UIPluginContext;
 import org.processmining.contexts.uitopia.annotations.UITopiaVariant;
 import org.processmining.framework.plugin.annotations.Plugin;
 import org.processmining.framework.util.ui.widgets.ProMTable;
+import org.processmining.fraud.model.InsertFraudData;
 
 public class FraudwithFuzzyARL2 {
 	
 	public String[] columnsName = {"SkipS","SkipD","Tmin","Tmax","wResource","wDutySec","wDutyDec","wDutyCom","wPattern","wDecision","Fraud"};
-	public Object[][] tableContent = {
+	public Object[][] tableContent;
+	/*public Object[][] tableContent = {
 			{new Double(2), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.25)},
 			{new Double(0), new Double(2),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.25)},
 			{new Double(0), new Double(0),new Double(4), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.25)},
@@ -61,7 +63,7 @@ public class FraudwithFuzzyARL2 {
 			{new Double(2), new Double(1),new Double(10), new Double(0),new Double(12), new Double(0),new Double(0), new Double(0),new Double(0), new Double(5),new Double(1)}
 			
 	};
-	
+	*/
 	Object[][] tabel = new Object[25][];
 	Object[][] tabel2 = new Object[100][];
 	String[] tabelName = {"Tabel Fraud"};
@@ -75,8 +77,8 @@ public class FraudwithFuzzyARL2 {
 	public CountImportance CI = new CountImportance();
 	public CountARL2 CA = new CountARL2();
 	public Double[] param;
+	public AssociationRule ARL = new AssociationRule();
 	
-	public Object[][] tableARL;
 	public int jumlahRole=0;
 	//JTable tabel = new JTable(tableContent,columnsName);
 	
@@ -86,7 +88,7 @@ public class FraudwithFuzzyARL2 {
 			name="Fraud Detection with Fuzzy Association Rule Learning Plugin versi 2",
 			parameterLabels = {},
 			returnLabels ={"Fraud Results"},
-			returnTypes = {JPanel.class},
+			returnTypes = {AssociationRule.class},
 			userAccessible = true
 			)
 	@UITopiaVariant(
@@ -96,7 +98,7 @@ public class FraudwithFuzzyARL2 {
 			)
 	
 	//UI untuk menampilkan tabel fraud
-	public JPanel FraudTabel(final UIPluginContext context)
+	public AssociationRule FraudTabel(final UIPluginContext context,InsertFraudData fraud)
 	{
 		JPanel panel = new JPanel();
 		JPanel panel2 = new JPanel();
@@ -105,6 +107,23 @@ public class FraudwithFuzzyARL2 {
 		JPanel panel5 = new JPanel();
 		JPanel panel6 = new JPanel();
 		JPanel panel7 = new JPanel();
+		
+		tableContent = new Object[fraud.frauds.size()][columnsName.length];
+		
+		for(int i=0;i<fraud.frauds.size();i++)
+		{
+			tableContent[i][0]= fraud.frauds.get(i).getSkipSeq();
+			tableContent[i][1]= fraud.frauds.get(i).getSkipDec();
+			tableContent[i][2]= fraud.frauds.get(i).getTmin();
+			tableContent[i][3]= fraud.frauds.get(i).getTmax();
+			tableContent[i][4]= fraud.frauds.get(i).getWResource();
+			tableContent[i][5]= fraud.frauds.get(i).getWDutySeq();
+			tableContent[i][6]= fraud.frauds.get(i).getWDutyDec();
+			tableContent[i][7]= fraud.frauds.get(i).getWDutyCom();
+			tableContent[i][8]= fraud.frauds.get(i).getwPattern();
+			tableContent[i][9]= fraud.frauds.get(i).getwDecision();
+			tableContent[i][10]= fraud.frauds.get(i).getFraud();
+		}
 		
 		for(int i=0;i<tableContent.length;i++)
 		{
@@ -143,6 +162,10 @@ public class FraudwithFuzzyARL2 {
 			}
 		}
 		
+		ARL.jumlahPakar=jumlahPakar[0];
+		ARL.inputPakar = new String[jumlahPakar[0]][10];
+		ARL.inputPakar=simpan;
+		
 		countFraudMADM();
 		
 		
@@ -178,7 +201,7 @@ public class FraudwithFuzzyARL2 {
 		boolean flag=true;
 		int count=1;
 		System.out.println("fuzzy: "+tableFuzzy[0][0]);
-		tableARL = new Object[100][aturan.length];
+		ARL.tableARL = new Object[100][aturan.length];
 		
 		while(flag==true)
 		{
@@ -204,7 +227,7 @@ public class FraudwithFuzzyARL2 {
 				}
 				
 				System.out.println("Param: "+param[0]);
-				jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,tableARL,jumlahRole,count);
+				jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,ARL.tableARL,jumlahRole,count);
 				count++;
 			}
 			else if(count==2)
@@ -230,7 +253,7 @@ public class FraudwithFuzzyARL2 {
 					}
 					
 					System.out.println("Param: "+param[0]);
-					jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,tableARL,jumlahRole,count);
+					jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,ARL.tableARL,jumlahRole,count);
 					count++;
 				}
 				else
@@ -262,7 +285,7 @@ public class FraudwithFuzzyARL2 {
 					}
 					
 					
-					jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,tableARL,jumlahRole,count);
+					jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,ARL.tableARL,jumlahRole,count);
 					count++;
 				}
 				else
@@ -295,7 +318,7 @@ public class FraudwithFuzzyARL2 {
 					}
 					
 					
-					jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,tableARL,jumlahRole,count);
+					jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,ARL.tableARL,jumlahRole,count);
 					count++;
 				}
 				else
@@ -327,7 +350,7 @@ public class FraudwithFuzzyARL2 {
 					}
 					
 					
-					jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,tableARL,jumlahRole,count);
+					jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,ARL.tableARL,jumlahRole,count);
 					count++;
 				}
 				else
@@ -337,19 +360,19 @@ public class FraudwithFuzzyARL2 {
 				
 			}
 		}
-		
+		ARL.jumlahRoles=jumlahRole;
 		System.out.println("jumlah role: "+jumlahRole);
 		for(int i=0;i<jumlahRole;i++)
 		{
-			System.out.println("Aturan: "+tableARL[i][0]+" -- Supp: "+tableARL[i][1]+" -- Conf: "+tableARL[i][2]);
+			System.out.println("Aturan: "+ARL.tableARL[i][0]+" -- Supp: "+ARL.tableARL[i][1]+" -- Conf: "+ARL.tableARL[i][2]);
 		}
 		
 		
-		for(int i=0;i<tableARL.length;i++)
+		for(int i=0;i<ARL.tableARL.length;i++)
 		{
 			for(int j=0;j<tableModel2.getColumnCount();j++)
 			{
-				tableModel2.setValueAt(tableARL[i][j], i, j);
+				tableModel2.setValueAt(ARL.tableARL[i][j], i, j);
 			}
 		}
 		
@@ -360,7 +383,7 @@ public class FraudwithFuzzyARL2 {
 		
 		context.showConfiguration("Aturan Asosiasi",panel2);
 		
-		return  panel;
+		return  ARL;
 	}
 	
 	public FraudwithFuzzyARL2() {
