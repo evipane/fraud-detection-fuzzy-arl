@@ -1,12 +1,18 @@
 package org.processmining.pnml.model;
 
+import java.util.List;
+
 public class Transition {
 
 	private String id;
 	private String name;
 	private String role;
 	private String resource;
+	private String coba;
+	private Decision decision = new Decision();
+	private List<Decision> decisions;
 	private int time;
+	
 	public String getId() {
 		return id;
 	}
@@ -38,5 +44,21 @@ public class Transition {
 		this.time = time;
 	}
 	
+	public void setDecision(String nextTransition, String attribute, String ruleDecision) {
+		this.decision.setNextTransition(nextTransition);
+		this.decision.setAttribute(attribute);
+		this.decision.setRuleDecision(ruleDecision);
+		this.decisions.add(decision);
+	}
+	
+	public List<Decision> getDecision() {
+		return decisions;
+	}
+	public void setCoba(String coba) {
+		this.coba = coba;
+	}
+	public String getCoba() {
+		return coba;
+	}
 	
 }
