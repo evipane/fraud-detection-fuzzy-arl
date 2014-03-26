@@ -1,0 +1,472 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY bc "http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#"
+    xml:base="http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128"
+	 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	 xmlns:owl="http://www.w3.org/2002/07/owl#"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	 xmlns:bc="http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#">
+	<owl:Ontology rdf:about="http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128"/>
+
+
+   <!--
+	///////////////////////////////////////////////////////////////////////////////////////
+	//
+	// Object Properties
+	//
+	///////////////////////////////////////////////////////////////////////////////////////
+	-->
+
+
+
+
+	<!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_event -->
+
+	<owl:ObjectProperty rdf:about="&bc;has_event"/>
+
+
+
+   <!--
+	///////////////////////////////////////////////////////////////////////////////////////
+	//
+	// Data Properties
+	//
+	///////////////////////////////////////////////////////////////////////////////////////
+	-->
+
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_name -->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_name"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_lifecycle:transition-->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_lifecycle:transition"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#done_by -->
+
+    <owl:DatatypeProperty rdf:about="&bc;done_by"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#done_at -->
+
+    <owl:DatatypeProperty rdf:about="&bc;done_at"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_duration -->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_duration"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_event_id-->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_event_id"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_activity-->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_activity"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_resource-->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_resource"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_complete-->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_complete"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_SID-->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_SID"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_type-->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_type"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_verification-->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_verification"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_overrate-->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_overrate"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_decision-->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_decision"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_validation-->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_validation"/>
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#has_plafond-->
+
+    <owl:DatatypeProperty rdf:about="&bc;has_plafond"/>
+
+
+   <!--
+	///////////////////////////////////////////////////////////////////////////////////////
+	//
+	// Classes
+	//
+	///////////////////////////////////////////////////////////////////////////////////////
+	-->
+
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#Case -->
+
+    <owl:Class rdf:about="&bc;Case">
+        <rdfs:subClassOf rdf:resource="&bc;EventLog"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#Event -->
+
+    <owl:Class rdf:about="&bc;Event">
+        <rdfs:subClassOf rdf:resource="&bc;Case"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#EventLog -->
+
+    <owl:Class rdf:about="&bc;EventLog"/>
+
+
+
+	<!--
+	///////////////////////////////////////////////////////////////////////////////////////
+	//
+	// Individuals
+	//
+	///////////////////////////////////////////////////////////////////////////////////////
+	-->
+
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#Case_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;Case_81">
+	   <rdf:type rdf:resource="&bc;Case"/>
+        <has_event rdf:resource="&bc;receive_application_81"/>
+        <has_event rdf:resource="&bc;check_completeness_81"/>
+        <has_event rdf:resource="&bc;check_SID_81"/>
+        <has_event rdf:resource="&bc;collateral_document_81"/>
+        <has_event rdf:resource="&bc;check_loan_type_81"/>
+        <has_event rdf:resource="&bc;collateral_verification_locate_81"/>
+        <has_event rdf:resource="&bc;collateral_local_goverment_81"/>
+        <has_event rdf:resource="&bc;collateral_goverment_81"/>
+        <has_event rdf:resource="&bc;complete_verification_81"/>
+        <has_event rdf:resource="&bc;plafond_estimation_81"/>
+        <has_event rdf:resource="&bc;document_validation_81"/>
+        <has_event rdf:resource="&bc;check_overrate_81"/>
+        <has_event rdf:resource="&bc;decision_director_81"/>
+        <has_event rdf:resource="&bc;loan_decision_81"/>
+        <has_event rdf:resource="&bc;document_verification_adm_81"/>
+        <has_event rdf:resource="&bc;plafond_estimation_adm_81"/>
+        <has_event rdf:resource="&bc;make_validation_81"/>
+        <has_event rdf:resource="&bc;check_plafond_81"/>
+        <has_event rdf:resource="&bc;director_otorization_81"/>
+        <has_event rdf:resource="&bc;loan_drowdone_81"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#receive_application_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;receive_application_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">receive_application</has_activity>
+        <done_by rdf:datatype="&xsd;string">dinda</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">1</has_event_id>
+        <done_at>1388279100000</done_at>
+        <has_duration>5</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#check_completeness_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;check_completeness_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">check_completeness</has_activity>
+        <done_by rdf:datatype="&xsd;string">bagus</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">2</has_event_id>
+        <has_complete rdf:datatype="&xsd;string">FALSE</has_complete>
+        <done_at>1388280300000</done_at>
+        <has_duration>20</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#check_SID_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;check_SID_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">check_SID</has_activity>
+        <done_by rdf:datatype="&xsd;string">galang</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">3</has_event_id>
+        <has_SID rdf:datatype="&xsd;string">FALSE</has_SID>
+        <done_at>1388280900000</done_at>
+        <has_duration>10</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#collateral_document_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;collateral_document_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">collateral_document</has_activity>
+        <done_by rdf:datatype="&xsd;string">galang</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">4</has_event_id>
+        <done_at>1388280900000</done_at>
+        <has_duration>10</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#check_loan_type_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;check_loan_type_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">check_loan_type</has_activity>
+        <done_by rdf:datatype="&xsd;string">dadang</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">5</has_event_id>
+        <has_type rdf:datatype="&xsd;string">general</has_type>
+        <done_at>1388283300000</done_at>
+        <has_duration>20</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#collateral_verification_locate_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;collateral_verification_locate_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">collateral_verification_locate</has_activity>
+        <done_by rdf:datatype="&xsd;string">bintang</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">6</has_event_id>
+        <done_at>1388285100000</done_at>
+        <has_duration>30</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#collateral_local_goverment_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;collateral_local_goverment_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">collateral_local_goverment</has_activity>
+        <done_by rdf:datatype="&xsd;string">beben</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">7</has_event_id>
+        <done_at>1388286900000</done_at>
+        <has_duration>30</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#collateral_goverment_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;collateral_goverment_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">collateral_goverment</has_activity>
+        <done_by rdf:datatype="&xsd;string">heru</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">8</has_event_id>
+        <done_at>1388288700000</done_at>
+        <has_duration>30</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#complete_verification_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;complete_verification_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">complete_verification</has_activity>
+        <done_by rdf:datatype="&xsd;string">almas</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">9</has_event_id>
+        <has_verification rdf:datatype="&xsd;string">TRUE</has_verification>
+        <done_at>1388290500000</done_at>
+        <has_duration>30</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#plafond_estimation_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;plafond_estimation_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_plafond rdf:datatype="&xsd;string">600,000,000</has_plafond>
+        <has_activity rdf:datatype="&xsd;string">plafond_estimation</has_activity>
+        <done_by rdf:datatype="&xsd;string">dian</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">10</has_event_id>
+        <done_at>1388291700000</done_at>
+        <has_duration>20</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#document_validation_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;document_validation_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">document_validation</has_activity>
+        <done_by rdf:datatype="&xsd;string">dina</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">11</has_event_id>
+        <done_at>1388292900000</done_at>
+        <has_duration>20</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#check_overrate_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;check_overrate_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_overrate rdf:datatype="&xsd;string">director</has_overrate>
+        <has_activity rdf:datatype="&xsd;string">check_overrate</has_activity>
+        <done_by rdf:datatype="&xsd;string">firman</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">12</has_event_id>
+        <done_at>1388293500000</done_at>
+        <has_duration>10</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#decision_director_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;decision_director_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">decision_director</has_activity>
+        <done_by rdf:datatype="&xsd;string">tegar</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">13</has_event_id>
+        <done_at>1388295300000</done_at>
+        <has_duration>30</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#loan_decision_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;loan_decision_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">loan_decision</has_activity>
+        <done_by rdf:datatype="&xsd;string">farid</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">14</has_event_id>
+        <has_decision rdf:datatype="&xsd;string">TRUE</has_decision>
+        <done_at>1388297100000</done_at>
+        <has_duration>30</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#document_verification_adm_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;document_verification_adm_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">document_verification_adm</has_activity>
+        <done_by rdf:datatype="&xsd;string">doni</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">15</has_event_id>
+        <done_at>1388298300000</done_at>
+        <has_duration>20</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#plafond_estimation_adm_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;plafond_estimation_adm_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">plafond_estimation_adm</has_activity>
+        <done_by rdf:datatype="&xsd;string">budi</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">16</has_event_id>
+        <done_at>1388299500000</done_at>
+        <has_duration>20</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#make_validation_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;make_validation_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">make_validation</has_activity>
+        <done_by rdf:datatype="&xsd;string">nandes</done_by>
+        <has_validation rdf:datatype="&xsd;string">TRUE</has_validation>
+        <has_event_id rdf:datatype="&xsd;integer">17</has_event_id>
+        <done_at>1388301300000</done_at>
+        <has_duration>30</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#check_plafond_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;check_plafond_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_plafond rdf:datatype="&xsd;string">600,000,000</has_plafond>
+        <has_activity rdf:datatype="&xsd;string">check_plafond</has_activity>
+        <done_by rdf:datatype="&xsd;string">andi</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">18</has_event_id>
+        <done_at>1388302500000</done_at>
+        <has_duration>20</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#director_otorization_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;director_otorization_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">director_otorization</has_activity>
+        <done_by rdf:datatype="&xsd;string">bambang</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">19</has_event_id>
+        <done_at>1388303700000</done_at>
+        <has_duration>20</has_duration>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#loan_drowdone_81 -->
+
+    <owl:NamedIndividual rdf:about="&bc;loan_drowdone_81">
+        <rdf:type rdf:resource="&bc;Event"/>
+        <has_activity rdf:datatype="&xsd;string">loan_drowdone</has_activity>
+        <done_by rdf:datatype="&xsd;string">ari</done_by>
+        <has_event_id rdf:datatype="&xsd;integer">20</has_event_id>
+        <done_at>1388304900000</done_at>
+        <has_duration>20</has_duration>
+    </owl:NamedIndividual>
+
+
+
+</rdf:RDF>

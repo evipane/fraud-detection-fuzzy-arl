@@ -10,61 +10,39 @@ import org.processmining.framework.util.ui.widgets.ProMTable;
 import org.processmining.pnml.controller.ReadPNML;
 
 
-public class TakeResource {
+public class TakeDecision {
 	
-	public String[] columname = {"Transition","Role","Resource","Time"};
+	public String[] columname = {"First Acitivity","Next Activity","Attribute","Type","Predicate","Value"};
 	public Object[][] tableTransition;
 	
 	public DefaultTableModel tableModelTransition2 ;
 	@Plugin(
-			name="Take Resource",
+			name="Take Decision",
 			parameterLabels = {},
 			returnLabels ={"Decision Event"},
 			returnTypes = {JPanel.class},
 			userAccessible = true
 			)
 	@UITopiaVariant(
-			affiliation = "Fernandes Sinaga",
-			author = "Fernandes Sinaga",
-			email = "nandes.02@gmail.com"
+			affiliation = "Farid Naufal",
+			author = "Farid Naufal",
+			email = "naufalfarid99@gmail.com"
 			)
 	public JPanel ModelTabel(final UIPluginContext context, ReadPNML pnml)
 	{
 		JPanel panel = new JPanel();
-		tableTransition = new Object[pnml.transitions.size()][columname.length];
+		tableTransition = new Object[pnml.decisions.size()][columname.length];
 		
-		Object[][] table = new Object[pnml.transitions.size()][];
+		Object[][] table = new Object[pnml.decisions.size()][];
 		int c=0;
-		for(int i=0;i<pnml.transitions.size();i++)
+		for(int i=0;i<pnml.decisions.size();i++)
 		{
-			boolean flag=false;
-			String [] str = pnml.transitions.get(i).getName().split(" ");
-			if(i==0)
-			{
-				tableTransition[c][0] = str[0];
-				tableTransition[c][1] = pnml.transitions.get(i).getRole();
-				tableTransition[c][2] = pnml.transitions.get(i).getResource();
-				tableTransition[c][3] = pnml.transitions.get(i).getTime(); 
-				continue;
-			}
-			else
-			{
-				for(int j=0;j<tableTransition.length;j++)
-				{
-					if(str[0].equals(tableTransition[j][0]))
-					{
-						flag=true;
-					}
-				}
-			}
-			if(flag==false)
-			{
-				c++;
-				tableTransition[c][0] = str[0];
-				tableTransition[c][1] = pnml.transitions.get(i).getRole();
-				tableTransition[c][2] = pnml.transitions.get(i).getResource();
-				tableTransition[c][3] = pnml.transitions.get(i).getTime();	
-			}
+			tableTransition[c][0] = pnml.decisions.get(i).getFirstTransition();
+			tableTransition[c][1] = pnml.decisions.get(i).getNextTransition();
+			tableTransition[c][2] = pnml.decisions.get(i).getAttribute();
+			tableTransition[c][3] = pnml.decisions.get(i).getTypeAttribyte();
+			tableTransition[c][4] = pnml.decisions.get(i).getPredicate();
+			tableTransition[c][5] = pnml.decisions.get(i).getValue();
 		}
 		
 		tableModelTransition2 = new DefaultTableModel(table,columname);

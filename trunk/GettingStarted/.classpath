@@ -67,5 +67,6 @@
 	<classpathentry kind="lib" path="stdlib/wsml2reasoner-noncom-v0_5.jar"/>
 	<classpathentry kind="lib" path="stdlib/wsmo-api-0.6.1.jar"/>
 	<classpathentry kind="lib" path="stdlib/wsmo4j-0.6.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JenaLibs"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

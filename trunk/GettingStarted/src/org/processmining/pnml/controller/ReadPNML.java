@@ -8,6 +8,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.processmining.pnml.model.Arc;
+import org.processmining.pnml.model.Decision;
 import org.processmining.pnml.model.PNML;
 import org.processmining.pnml.model.Place;
 import org.processmining.pnml.model.Transition;
@@ -28,6 +29,7 @@ public class ReadPNML {
 	private List<Place> places;
 	public List<Transition> transitions;
 	private List<Arc> arcs;
+	public List<Decision> decisions;
 	
 	private PNML pnml;
 	
@@ -45,6 +47,7 @@ public class ReadPNML {
 			places = new ArrayList<Place>();
 			transitions = new ArrayList<Transition>();
 			arcs = new ArrayList<Arc>();
+			decisions = new ArrayList<Decision>();
 			
 		}
 		catch(Exception ex)
@@ -65,6 +68,7 @@ public class ReadPNML {
 			getPlaces(doc.getElementsByTagName("place"));
 			getTransitions(doc.getElementsByTagName("transition"));
 			getArcs(doc.getElementsByTagName("arc"));
+			getDecisions(doc.getElementsByTagName("rule"));
 			
 			//System.out.println(doc.getElementsByTagName("transition").getLength());
 			
@@ -102,6 +106,8 @@ public class ReadPNML {
 					transition.setRole(eElement.getElementsByTagName("transitionResource").item(0).getAttributes().getNamedItem("organizationalUnitName").getNodeValue());
 					transition.setResource(eElement.getElementsByTagName("transitionResource").item(0).getAttributes().getNamedItem("roleName").getNodeValue());
 					transition.setTime(Integer.parseInt(eElement.getElementsByTagName("time").item(0).getTextContent()));
+					//transition.setCoba(eElement.getElementsByTagName("times").item(0).getTextContent());
+					//transition.setDecision(eElement.getElementsByTagName("nextElementRef").item(0).getAttributes().getNamedItem("id").getNodeValue(), eElement.getElementsByTagName("nextElementRef").item(0).getAttributes().getNamedItem("atr").getNodeValue(), eElement.getElementsByTagName("nextElementRef").item(0).getTextContent());
 					transitions.add(transition);
 					//System.out.println("Transition location: " + transition.getLink());
 				}
@@ -178,6 +184,35 @@ public class ReadPNML {
 		}
 	}
 	
+	private void getDecisions(NodeList nList)
+	{
+		System.out.println("masuk get Decs");
+		try
+		{
+			for (int temp = 0; temp < nList.getLength(); temp++) {
+				 
+				Node nNode = nList.item(temp);
+				
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+					Element eElement = (Element) nNode;
+					System.out.println("masuk if Decs");
+					Decision decision = new Decision();
+					decision.setFirstTransition(eElement.getElementsByTagName("firstActivity").item(0).getTextContent());
+					decision.setNextTransition(eElement.getElementsByTagName("nextActivity").item(0).getTextContent());
+					decision.setAttribute(eElement.getElementsByTagName("attribute").item(0).getTextContent());
+					decision.setPredicate(eElement.getElementsByTagName("predicate").item(0).getTextContent());
+					decision.setTypeAttribyte(eElement.getElementsByTagName("type").item(0).getTextContent());
+					decision.setValue(eElement.getElementsByTagName("value").item(0).getTextContent());
+					decisions.add(decision);
+				}
+			}
+		}
+		catch (Exception ex)
+		{
+			ex.getStackTrace();
+		}
+	}
+	
 	private Transition getTransition(Transition trans) {
 		
 		for(int j=0; j<transitions.size(); j++)
@@ -192,5 +227,4 @@ public class ReadPNML {
 		
 		return null;
 	}
-
 }
