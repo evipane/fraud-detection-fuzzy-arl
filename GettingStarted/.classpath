@@ -68,5 +68,24 @@
 	<classpathentry kind="lib" path="stdlib/wsmo-api-0.6.1.jar"/>
 	<classpathentry kind="lib" path="stdlib/wsmo4j-0.6.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JenaLibs"/>
+	<classpathentry kind="lib" path="stdlib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="stdlib/httpclient-4.2.3.jar"/>
+	<classpathentry kind="lib" path="stdlib/httpcore-4.2.2.jar"/>
+	<classpathentry kind="lib" path="stdlib/jcl-over-slf4j-1.6.4.jar"/>
+	<classpathentry kind="lib" path="stdlib/jena-arq-2.11.1-sources.jar"/>
+	<classpathentry kind="lib" path="stdlib/jena-arq-2.11.1.jar"/>
+	<classpathentry kind="lib" path="stdlib/jena-core-2.11.1-sources.jar"/>
+	<classpathentry kind="lib" path="stdlib/jena-core-2.11.1.jar"/>
+	<classpathentry kind="lib" path="stdlib/jena-iri-1.0.1-sources.jar"/>
+	<classpathentry kind="lib" path="stdlib/jena-iri-1.0.1.jar"/>
+	<classpathentry kind="lib" path="stdlib/jena-sdb-1.4.1-sources.jar"/>
+	<classpathentry kind="lib" path="stdlib/jena-sdb-1.4.1.jar"/>
+	<classpathentry kind="lib" path="stdlib/jena-tdb-1.0.1-sources.jar"/>
+	<classpathentry kind="lib" path="stdlib/jena-tdb-1.0.1.jar"/>
+	<classpathentry kind="lib" path="stdlib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="stdlib/slf4j-api-1.6.4.jar"/>
+	<classpathentry kind="lib" path="stdlib/slf4j-log4j12-1.6.4.jar"/>
+	<classpathentry kind="lib" path="stdlib/xercesImpl-2.11.0.jar"/>
+	<classpathentry kind="lib" path="stdlib/xml-apis-1.4.01.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
