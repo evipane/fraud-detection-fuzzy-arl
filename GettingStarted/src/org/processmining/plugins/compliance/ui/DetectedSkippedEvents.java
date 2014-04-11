@@ -214,7 +214,7 @@ public class DetectedSkippedEvents {
 				
 				if(temps.equals(temps2))
 				{
-					System.out.println("CEK!!");
+					//System.out.println("CEK!!");
 					cek=true;
 				}
 			}
@@ -222,6 +222,68 @@ public class DetectedSkippedEvents {
 			{
 				result++;
 			}
+		}
+		return result;
+	}
+	
+	public int countSkip2(List<String>skip, List<String>sync)
+	{
+		skipped.clear();
+		
+		int result = 0;
+		//System.out.println("skip: "+skip.size());
+		for(int i=0;i<skip.size();i++)
+		{
+			boolean cek = false;
+			boolean lewat = false;
+			String temps="";
+			String temps2="";
+			if(skipped.isEmpty())
+			{
+				skipped.add(skip.get(i));
+				temps = skip.get(i);
+			}
+			else
+			{
+				for(int k=0;k<skipped.size();k++)
+				{
+					if(skip.get(i).equals(skipped.get(k)))
+					{
+						lewat=true;
+						break;
+					}
+				}
+			}
+			if(lewat==true)
+			{
+				continue;
+			}
+			else 
+			{
+				skipped.add(skip.get(i));
+				temps = skip.get(i);
+			}
+			for(int j=0;j<sync.size();j++)
+			{
+				
+				temps2 = sync.get(j);
+				
+				
+				if(temps.equals(temps2))
+				{
+					//System.out.println("CEK!!");
+					//System.out.println("temp: "+temps+" -- temp2: "+temps2);
+					cek=true;
+				}
+				
+			}
+			if(cek==false)
+			{
+				//System.out.println("temp: "+temps);
+				result++;
+			}
+			
+			
 		}
 		return result;
 	}
@@ -283,6 +345,11 @@ public class DetectedSkippedEvents {
 		int skips = 0;
 		int noskip = 0;
 		int simpan = 0;
+		boolean k1=false;
+		boolean k2=false;
+		String tukar1="";
+		String tukar2="";
+		String temp="";
 		int swap = 0;
 		int skipDec =0;
 		int skipSeq = 0;
@@ -317,24 +384,38 @@ public class DetectedSkippedEvents {
 					String[] str = temp1.split(" ");
 					if(checkDecision(str[0]))
 					{
-						System.out.println("Skipped Decision: " + str[0]);
+						//System.out.println("Skipped Decision: " + str[0]);
 						SDTransitions.add(str[0]);
 						sumSkippedDec += caseIDSize;
 						skips++;
 						noskip=0;
 						simpan=0;
+						
+						temp = str[0];
 					}
 					else
 					{
-						System.out.println("Skipped Sequence: " + str[0]);
+						//System.out.println("Skipped Sequence: " + str[0]);
 						SSTransitions.add(str[0]);
 						sumSkippedSeq += caseIDSize;
 						skips++;
 						noskip=0;
 						simpan=0;
+						temp = str[0];
 					}
 					
+					if(skips>2)
+					{
+						skips=0;
+					}
 					
+					System.out.println("skip: "+skips+"noskip: "+noskip+" -- k1: "+k1+" -- k2: "+k2+" -- str: "+str[0]+" -- tukar2: "+tukar2);
+					if(skips==2 && k1==true && str[0].equals(tukar2))
+					{
+						System.out.println("Masuk3");
+						k2=true;
+						System.out.println("skip: "+skips+"noskip: "+noskip+" -- k1: "+k1+" -- k2: "+k2+" -- str: "+str[0]+" -- tukar2: "+tukar2);
+					}
 					
 					break;
 				case LMNOGOOD :
@@ -345,7 +426,7 @@ public class DetectedSkippedEvents {
 					}
 					;
 					numViolations += caseIDSize;
-					System.out.println("Swapped: " + res.getNodeInstance().get(index));
+					//System.out.println("Swapped: " + res.getNodeInstance().get(index));
 					break;
 				case LMGOOD :
 					if (res.isReliable()) {
@@ -353,7 +434,7 @@ public class DetectedSkippedEvents {
 					}
 					;
 					numSynchronized += caseIDSize;
-					System.out.println("Sync: " + res.getNodeInstance().get(index));
+					//System.out.println("Sync: " + res.getNodeInstance().get(index));
 					String temp2 = res.getNodeInstance().get(index).toString();
 					String[] str2 = temp2.split(" ");
 					if(checkDecision(str2[0]))
@@ -365,31 +446,62 @@ public class DetectedSkippedEvents {
 						SyncSTransitions.add(str2[0]);
 					}
 					
-					if(tes==true)
+					
+					noskip++;
+					
+					if(skips==2 && noskip==2 && k1==false && k2==false)
 					{
+						System.out.println("Masuk1");
+						
+						tukar1=temp;
+						tukar2=str2[0];
+						k1=true;
+						System.out.println("skip: "+skips+" -- noskip: "+noskip+" -- k1: "+k1+" -- k2: "+k2);
+						noskip=0;
+					}
+					System.out.println("noskip: "+noskip+" -- k1: "+k1+" -- str2: "+str2[0]+" -- tukar1: "+tukar1);
+					if(noskip==2 && k1==true && str2[0].equals(tukar1))
+					{
+						System.out.println("Masuk2");
+						System.out.println("noskip: "+noskip+" -- k1: "+k1+" -- str2: "+str2[0]+" -- tukar1: "+tukar1);
+						skips=0;
+						tes=true;
+					}
+					else if(noskip==2 && k1==true && tes==false)
+					{
+						noskip=0;
+						skips=0;
+						temp="";
+						k1=false;
+						k2=false;
+						tukar1="";
+						tukar2="";
 						tes=false;
 					}
 					
-					noskip++;
-					if(simpan==0)
-					{
-						simpan=skips;
-					}
-					skips=0;
-					if(simpan==2 && noskip==2)
-					{
-						tes=true;
-					}
 					
 			}
-			System.out.println("tes:"+tes+" -- skip: "+skips+" -- noskip: "+noskip);
+			//System.out.println("tes:"+tes+" -- skip: "+skips+" -- noskip: "+noskip);
 			index++;
-			if(tes==true && skips==1)
+			/*if(tes==true && skips==1)
 			{
 				swap++;
 				skips=0;
 				noskip=0;
 				simpan=0;
+				tes=false;
+			}*/
+			if(k1==true && k2==true)
+			{
+				System.out.println("Masuk4");
+				swap++;
+				noskip=0;
+				skips=0;
+				temp="";
+				k1=false;
+				k2=false;
+				tukar1="";
+				tukar2="";
 				tes=false;
 			}
 			
@@ -434,23 +546,30 @@ public class DetectedSkippedEvents {
 		skipSeq=0;
 		skipDec=0;
 		
-		skipSeq = countSkip(SSTransitions, SyncSTransitions);
-		skipDec = countSkip(SDTransitions, SyncDTransitions);
+		skipSeq = countSkip2(SSTransitions, SyncSTransitions);
+		skipDec = countSkip2(SDTransitions, SyncDTransitions);
 		
-		System.out.println("Jumlah case: "+caseID.size()+" -- count: "+count);
+		//System.out.println("Jumlah case: "+caseID.size()+" -- count: "+count);
 		
 		System.out.println("Case: "+caseID.get(count)+"-- Swap: "+swap+" -- SkipS: "+skipSeq+" -- SkipD: "+skipDec);
 			
-		System.out.println("Case : "+res.getTraceIndex()+" -- Real :"+numModelOnlyReal+" -- Synchron :"+numSynchronized);
-		System.out.println("Case : "+res.getTraceIndex()+" -- Reals :"+real+" -- Synchrons :"+sync);
-		//System.out.println(decTransitions.get(0));
+		//System.out.println("Case : "+res.getTraceIndex()+" -- Real :"+numModelOnlyReal+" -- Synchron :"+numSynchronized);
+		//System.out.println("Case : "+res.getTraceIndex()+" -- Reals :"+real+" -- Synchrons :"+sync);
+		
+		for (int index1 : res.getTraceIndex()) {
+			String name = ce.extractName(log.get(index1));
+			//System.out.println(name);
+			Fraud = new fraud(name, skipSeq, skipDec, 0, 0, 0, 0, 0, 0, swap, 0, 0);
+			frauds.add(Fraud);
+			}
+		
 		//skip.put("Case "+res.getTraceIndex()+": ", ((numModelOnlyReal-real)-(numSynchronized-sync))/2);
 		skip.put("Case "+res.getTraceIndex()+": ", (sumSkippedDec)/2);
 		real = numModelOnlyReal;
 		sync = numSynchronized;
 		
-		Fraud = new fraud(caseID.get(count), skipSeq, skipDec, 0, 0, 0, 0, 0, 0, swap, 0, 0);
-		frauds.add(Fraud);
+		
+		
 	}
 
 	return frauds;
