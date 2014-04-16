@@ -265,73 +265,118 @@ public class ConformanceCheckAtribut {
 		int wDutyS=0;
 		int wDutyD=0;
 		int wDutyC=0;
-		String CaseID="";
+		String CaseID = "";
+		String next = "";
+		List<String> checkedEvents = new ArrayList<String>();
 		//System.out.println("Resource: "+tableRole[0][0]+" -- Role: "+tableRole[0][1]);
+		
 		System.out.println("Total event: "+tableLog.length);
 		for(int j=0;j<tableLog.length-1;j++)
 		{
 			//fungsi mendapatkan role
 			boolean cek = false;
+			
 			for(int i=0;i<c+1;i++)
 			{
 				if(tableLog[j][3].equals(tableRole[i][0]))
 				{
 					role=(String)tableRole[i][1];
-					//System.out.println("Resource1: "+tableLog[j][3]+" -- Resource2: "+tableRole[i][0]+" -- Role: "+role);
+					System.out.println("Resource1: "+tableLog[j][3]+" -- Resource2: "+tableRole[i][0]+" -- Role: "+role);
 					cek=true;
 				}
 				//System.out.println("Resource1: "+tableLog[j][3]+" -- Resource2: "+tableRole[i][0]+" -- Role: "+role);
 			}
+			
 			if(cek==false)
 			{
 				role="Unidentified";
 			}
+			
 			dutyD=0;
 			dutyS=0;
-			//fungsi menghitung duty
+			
+			////////////////////////////////////////fungsi menghitung duty
+			
 			String simpan="";
-			boolean dec = checkDecision((String)tableLog[j][1]);
-			//fungsi menghitung wrong duty
-			for(int p=j;p<tableLog.length-1;p++)
+			System.out.println("case: " + simpan + " " + tableLog[j][3] + " " + tableLog[j][1]);
+			if(!checkedEvents.contains(tableLog[j][3]))
 			{
-				
-				if(simpan=="")
+				System.out.println("Durung Onok " + tableLog[j][3]);
+				//checkedEvents.add((String)tableLog[j][3]);
+				for(int i = 0; i < checkedEvents.size(); i++)
 				{
-					simpan=(String)tableLog[p][0];
+					System.out.print(checkedEvents.get(i) + " ");
 				}
-				System.out.println("case: "+simpan);
-				if(tableLog[p][0].equals(simpan))
+				System.out.println(" ");
+			//}
+				boolean dec = checkDecision((String)tableLog[j][1]);
+				int count = 0;
+				//System.out.println("case: " + simpan + " " + tableLog[j][3] + " " + tableLog[j][1]);
+				//fungsi menghitung wrong duty
+				for(int p=j;p<tableLog.length-1;p++)
 				{
-					if(tableLog[j][3].equals(tableLog[p][3])&&!(tableLog[j][1].equals(tableLog[p][1])))
+					count++;
+					if(simpan=="")
 					{
-						System.out.println("Resource1: "+tableLog[j][3]+" -- Resource2: "+tableLog[p][3]);
-						boolean dec2 = checkDecision((String)tableLog[p][1]);
-						if(dec2==true && dec==true)
+						simpan=(String)tableLog[p][0];
+						/*System.out.println("Case Saiki: " + next + " Next: " + simpan + " " + (String)tableLog[p+1][0]);
+						if(!next.equals(simpan) && !next.equals(""))
 						{
-							wDutyD++;
-						}
-						else if((dec2==true && dec==false) || (dec2==false && dec==true))
+							System.out.println("Ganti Case " + next + " dadi " + simpan);
+							checkedEvents.clear();
+						}*/
+						System.out.println("Ganti Event");
+						//next = simpan;
+					}
+					
+					System.out.println("---case: " + simpan + " - " + tableLog[p][0] + " " + tableLog[p][3] + " " + tableLog[p][1]);
+					
+					if(tableLog[p][0].equals(simpan))
+					{
+						if(tableLog[j][3].equals(tableLog[p][3])&&!(tableLog[j][1].equals(tableLog[p][1])))
 						{
-							wDutyC++;
-						}
-						else if(dec2==false && dec==false)
-						{
-							wDutyS++;
+							System.out.println("Resource1: "+tableLog[j][3]+" -- Resource2: "+tableLog[p][3]);
+							boolean dec2 = checkDecision((String)tableLog[p][1]);
+							
+							if(dec2==true && dec==true)
+							{
+								wDutyD++;
+								System.out.println("WdutyDec: " + wDutyD);
+							}
+							
+							else if((dec2==true && dec==false) || (dec2==false && dec==true))
+							{
+								wDutyC++;
+								System.out.println("WdutyCom: " + wDutyC);
+							}
+							
+							else if(dec2==false && dec==false)
+							{
+								wDutyS++;
+								System.out.println("WdutySeq: " + wDutyS);
+							}
 						}
 					}
+					else
+					{
+						break;
+					}
 				}
-				else
+				checkedEvents.add((String)tableLog[j][3]);
+				if(count == 2)
 				{
-					break;
+					System.out.println("Ganti Case");
+					checkedEvents.clear();
 				}
-						
 			}
+			else System.out.println("Wes Onok");
+			////////////////////////////////////////fungsi menghitung duty
 			//System.out.println("D: "+dutyD+" -- S: "+dutyS);
-			
+			System.out.println("temp: " + temp);
 			if(temp=="")
 			{
 				temp=(String) tableLog[j][0];
-				
+				System.out.println("Masuk temp == : " + temp);
 				
 				for(int k=0;k<tableTransition.length;k++)
 				{
@@ -356,6 +401,7 @@ public class ConformanceCheckAtribut {
 						else
 						{
 							wresource++;
+							System.out.println("WResource: " + role + " " + tableTransition[k][0] + " " + wresource);
 						}
 					}
 
@@ -363,7 +409,8 @@ public class ConformanceCheckAtribut {
 			}
 			else 
 			{
-				if(temp.equals(tableLog[j][0]))
+				System.out.println("Masuk else temp: " + temp + " [j][0]: " + tableLog[j][0]);
+				if(temp.equals(tableLog[j+1][0]))
 				{
 					for(int k=0;k<tableTransition.length;k++)
 					{
@@ -388,11 +435,10 @@ public class ConformanceCheckAtribut {
 							else
 							{
 								wresource++;
+								System.out.println("WResource: " + role + " " + tableTransition[k][1] + " " + wresource);
 							}
 						}
 					}
-					
-					
 				}
 				else
 				{
@@ -405,7 +451,7 @@ public class ConformanceCheckAtribut {
 						}
 					}
 					frauds.add(Fraud);
-					System.out.println("Tmin: "+tmin+" -- Tmax: "+tmax+" -- WR: "+wresource+" -- WDutyS: "+wDutyS+" -- WDutyD: "+wDutyD+" -- WDutyC: "+wDutyC);
+					System.out.println("//Tmin: "+tmin+" -- Tmax: "+tmax+" -- WR: "+wresource+" -- WDutyS: "+wDutyS+" -- WDutyD: "+wDutyD+" -- WDutyC: "+wDutyC);
 					temp="";
 					tmin=0;
 					tmax=0;
