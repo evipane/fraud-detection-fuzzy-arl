@@ -42,7 +42,7 @@ public class QueryFraudDetection {
 				"?y bc:has_"+ attribute +" ?c." +
 				"FILTER(?c "+ revPredicate + "\""+ Value +"\")." +
 				"?y bc:has_event_id ?z." +
-				"?x1 bc:has_event ?y1." +
+				"?x bc:has_event ?y1." +
 				"?y1 bc:has_event_id ?z1." +
 				"?y1 bc:has_activity ?a." +
 				"FILTER(?z1 = ?z+1)." +
