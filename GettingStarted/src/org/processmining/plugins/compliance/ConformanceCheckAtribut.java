@@ -281,7 +281,7 @@ public class ConformanceCheckAtribut {
 				if(tableLog[j][3].equals(tableRole[i][0]))
 				{
 					role=(String)tableRole[i][1];
-					System.out.println("Resource1: "+tableLog[j][3]+" -- Resource2: "+tableRole[i][0]+" -- Role: "+role);
+					//System.out.println("Resource1: "+tableLog[j][3]+" -- Resource2: "+tableRole[i][0]+" -- Role: "+role);
 					cek=true;
 				}
 				//System.out.println("Resource1: "+tableLog[j][3]+" -- Resource2: "+tableRole[i][0]+" -- Role: "+role);
@@ -298,16 +298,16 @@ public class ConformanceCheckAtribut {
 			////////////////////////////////////////fungsi menghitung duty
 			
 			String simpan="";
-			System.out.println("case: " + simpan + " " + tableLog[j][3] + " " + tableLog[j][1]);
+			System.out.println("case: " + tableLog[j][0] + " " + tableLog[j][3] + " " + tableLog[j][1]);
 			if(!checkedEvents.contains(tableLog[j][3]))
 			{
-				System.out.println("Durung Onok " + tableLog[j][3]);
+				//System.out.println("Durung Onok " + tableLog[j][3]);
 				//checkedEvents.add((String)tableLog[j][3]);
 				for(int i = 0; i < checkedEvents.size(); i++)
 				{
-					System.out.print(checkedEvents.get(i) + " ");
+					//System.out.print(checkedEvents.get(i) + " ");
 				}
-				System.out.println(" ");
+				//System.out.println(" ");
 			//}
 				boolean dec = checkDecision((String)tableLog[j][1]);
 				int count = 0;
@@ -325,35 +325,35 @@ public class ConformanceCheckAtribut {
 							System.out.println("Ganti Case " + next + " dadi " + simpan);
 							checkedEvents.clear();
 						}*/
-						System.out.println("Ganti Event");
+						//System.out.println("Ganti Event");
 						//next = simpan;
 					}
 					
-					System.out.println("---case: " + simpan + " - " + tableLog[p][0] + " " + tableLog[p][3] + " " + tableLog[p][1]);
+					//System.out.println("---case: " + simpan + " - " + tableLog[p][0] + " " + tableLog[p][3] + " " + tableLog[p][1]);
 					
 					if(tableLog[p][0].equals(simpan))
 					{
 						if(tableLog[j][3].equals(tableLog[p][3])&&!(tableLog[j][1].equals(tableLog[p][1])))
 						{
-							System.out.println("Resource1: "+tableLog[j][3]+" -- Resource2: "+tableLog[p][3]);
+							//System.out.println("Resource1: "+tableLog[j][3]+" -- Resource2: "+tableLog[p][3]);
 							boolean dec2 = checkDecision((String)tableLog[p][1]);
 							
 							if(dec2==true && dec==true)
 							{
 								wDutyD++;
-								System.out.println("WdutyDec: " + wDutyD);
+								//System.out.println("WdutyDec: " + wDutyD);
 							}
 							
 							else if((dec2==true && dec==false) || (dec2==false && dec==true))
 							{
 								wDutyC++;
-								System.out.println("WdutyCom: " + wDutyC);
+								//System.out.println("WdutyCom: " + wDutyC);
 							}
 							
 							else if(dec2==false && dec==false)
 							{
 								wDutyS++;
-								System.out.println("WdutySeq: " + wDutyS);
+								//System.out.println("WdutySeq: " + wDutyS);
 							}
 						}
 					}
@@ -372,7 +372,7 @@ public class ConformanceCheckAtribut {
 			else System.out.println("Wes Onok");
 			////////////////////////////////////////fungsi menghitung duty
 			//System.out.println("D: "+dutyD+" -- S: "+dutyS);
-			System.out.println("temp: " + temp);
+			//System.out.println("temp: " + temp);
 			if(temp=="")
 			{
 				temp=(String) tableLog[j][0];
@@ -383,6 +383,7 @@ public class ConformanceCheckAtribut {
 					if(tableLog[j][1].equals(tableTransition[k][0]))
 					{
 						//fungsi menghitung tmin
+						System.out.println("T1: "+(Long)tableLog[j][2]+" -- T2: "+(Integer)tableTransition[k][3]);
 						if((Long)tableLog[j][2]<((Integer)tableTransition[k][3]-2))
 						{
 							tmin++;
@@ -401,7 +402,7 @@ public class ConformanceCheckAtribut {
 						else
 						{
 							wresource++;
-							System.out.println("WResource: " + role + " " + tableTransition[k][0] + " " + wresource);
+							//System.out.println("WResource: " + role + " " + tableTransition[k][0] + " " + wresource);
 						}
 					}
 
@@ -410,13 +411,15 @@ public class ConformanceCheckAtribut {
 			else 
 			{
 				System.out.println("Masuk else temp: " + temp + " [j][0]: " + tableLog[j][0]);
-				if(temp.equals(tableLog[j+1][0]))
+				if(temp.equals(tableLog[j][0]))
 				{
 					for(int k=0;k<tableTransition.length;k++)
 					{
+						System.out.println("Log1: "+tableLog[j][1]+" -- Trans: "+tableTransition[k][0]);
 						if(tableLog[j][1].equals(tableTransition[k][0]))
 						{
 							//fungsi menghitung tmin
+							System.out.println("T1: "+(Long)tableLog[j][2]+" -- T2: "+(Integer)tableTransition[k][3]);
 							if((Long)tableLog[j][2]<((Integer)tableTransition[k][3]-2))
 							{
 								tmin++;
@@ -435,7 +438,7 @@ public class ConformanceCheckAtribut {
 							else
 							{
 								wresource++;
-								System.out.println("WResource: " + role + " " + tableTransition[k][1] + " " + wresource);
+								//System.out.println("WResource: " + role + " " + tableTransition[k][1] + " " + wresource);
 							}
 						}
 					}
@@ -451,7 +454,7 @@ public class ConformanceCheckAtribut {
 						}
 					}
 					frauds.add(Fraud);
-					System.out.println("//Tmin: "+tmin+" -- Tmax: "+tmax+" -- WR: "+wresource+" -- WDutyS: "+wDutyS+" -- WDutyD: "+wDutyD+" -- WDutyC: "+wDutyC);
+					//System.out.println("//Tmin: "+tmin+" -- Tmax: "+tmax+" -- WR: "+wresource+" -- WDutyS: "+wDutyS+" -- WDutyD: "+wDutyD+" -- WDutyC: "+wDutyC);
 					temp="";
 					tmin=0;
 					tmax=0;
