@@ -269,6 +269,14 @@ public class XEStoOWL {
 				boolean flag = false;
 				//tableTime[index][0] = traceID;
 				Collection<XAttribute> attributes = event.getAttributes().values();
+				String event_id = "";
+				for(XAttribute attribute : attributes)
+				{
+					if(attribute.getKey().startsWith("event_id") && time == null)
+					{
+						event_id = ((XAttributeLiteral)attribute).getValue();
+					}
+				}
 				for(XAttribute attribute : attributes)
 				{
 					if(attribute.getKey().startsWith("concept:name") && time == null)
@@ -276,9 +284,9 @@ public class XEStoOWL {
 						temp = ((XAttributeLiteral)attribute).getValue();
 						//tableTime[index][1]=temp;
 						//System.out.println(temp);
-						text = text + "        <has_event rdf:resource=\"&bc;" + temp + "_" + traceID +"\"/>\n";
+						text = text + "        <has_event rdf:resource=\"&bc;" + temp + "_" + traceID + "_" + event_id  + "\"/>\n";
 						textEvent += "    <!-- http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#" + temp + "_" + traceID + " -->\n\n" +
-									"    <owl:NamedIndividual rdf:about=\"&bc;" + temp + "_" + traceID + "\">\n" +
+									"    <owl:NamedIndividual rdf:about=\"&bc;" + temp + "_" + traceID + "_" + event_id  + "\">\n" +
 									"        <rdf:type rdf:resource=\"&bc;Event\"/>\n";
 					}
 					
