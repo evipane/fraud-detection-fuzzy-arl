@@ -101,7 +101,7 @@ public class CheckWrongDecision {
 		    	   System.out.println("One");
 		    	   if(Case.equals(fraud1.frauds.get(i).getCase()))
 		    	   {
-		    		   fraud1.frauds.get(i).setwDecision(countMapDec.get(Case).intValue());
+		    		   fraud1.frauds.get(i).setwDecision(countMapDec.get(Case).intValue() + fraud1.frauds.get(i).getSkipDec());
 		    		   flag = true;
 		    		   break;
 		    	   }
