@@ -110,19 +110,19 @@ public class QueryFraudDetection {
 		{
 			return "!=";
 		}
-		else if(Predicate.equals(">"))
+		else if(Predicate.equals("more than"))
 		{
 			return "<=";
 		}
-		else if(Predicate.equals("<"))
+		else if(Predicate.equals("less than"))
 		{
 			return ">=";
 		}
-		else if(Predicate.equals(">="))
+		else if(Predicate.equals("more than equals"))
 		{
 			return "<";
 		}
-		else if(Predicate.equals("<="))
+		else if(Predicate.equals("less than equals"))
 		{
 			return ">";
 		}
