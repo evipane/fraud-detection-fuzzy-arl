@@ -22,7 +22,11 @@ public class ConformanceCheckAtribut {
 	
 	public Object[][] tableTransition;
 	public Object[][] tableTransition2;
+	public Object[][] tableTransition3;
+	public Object[][] tableTransition4;
 	public String[] columname = {"Transition","Role","Resource","Time"};
+	public String[] columname4 = {"Transition","Role","Resource","Time","Sebelum","Status"};
+	public String[] columname5 = {"Transition","Role","Resource","Time","Sesudah","Status"};
 	public Object[][] tableLog;
 	public String[] columname2 = {"Case ID","Event Name","Duration","Resource"};
 	public String[] columname3 = {"Resource","Role"};
@@ -32,6 +36,8 @@ public class ConformanceCheckAtribut {
 	public InsertFraudData fraudData = new InsertFraudData();
 	public fraud Fraud = new fraud();
 	public List<fraud>frauds = new ArrayList<fraud>();
+	int c2=0;
+	int c3=0;
 	int c=0;
 	int jumlahCase=0;
 	@Plugin(
@@ -50,8 +56,12 @@ public class ConformanceCheckAtribut {
 	{
 		tableTransition = new Object[pnml.transitions.size()][columname.length];
 		tableTransition2 = new Object[pnml.transitions.size()][columname.length];
+		tableTransition3 = new Object[pnml.transitions.size()][columname4.length];
+		tableTransition4 = new Object[pnml.transitions.size()][columname5.length];
 		tableRole = new Object[pnml.transitions.size()][columname.length];
 		readPnml(pnml);
+		readPnml2(pnml);
+		readPnml3(pnml);
 		readSeqDec(pnml);
 		for(int i=0;i<c+1;i++)
 		{
@@ -210,6 +220,94 @@ public class ConformanceCheckAtribut {
 			}
 		}
 	}
+	
+	//fungsi membaca pnml untuk pattern sebelum
+	public void readPnml2(ReadPNML pnml)
+	{
+		
+		for(int i=0;i<pnml.transitions.size();i++)
+		{
+			boolean flag=false;
+			String [] str = pnml.transitions.get(i).getName().split(" ");
+			if(str[1].equals("Start"))
+			{
+				tableTransition3[c2][0] = str[0];
+				tableTransition3[c2][1] = pnml.transitions.get(i).getRole();
+				tableTransition3[c2][2] = pnml.transitions.get(i).getResource();
+				tableTransition3[c2][3] = pnml.transitions.get(i).getTime(); 
+				tableTransition3[c2][4] = pnml.transitions.get(i).getSebelum();
+				tableTransition3[c2][5] =str[1];
+				c2++;
+			}
+				
+			if(i>0)
+			{
+				for(int j=0;j<tableTransition3.length;j++)
+				{
+						//System.out.println("str1: "+str[1]);
+					if(str[0].equals(tableTransition3[j][0]) && str[1].equals(tableTransition3[c2][5]))
+					{
+						System.out.println("trans: "+tableTransition3[j][0]+" -- str1: "+str[1]);
+						tableTransition3[j][4] = tableTransition3[j][4]+"-"+pnml.transitions.get(i).getSebelum();
+						
+					}
+					
+				}
+			}
+			
+					
+		}
+		
+		for(int i=0;i<c2;i++)
+		{
+			//System.out.println("trans: "+tableTransition3[i][0]+" -- sebelum: "+tableTransition3[i][4]);
+		}
+	}
+	
+	//fungsi membaca pnml untuk pattern sesudah
+	public void readPnml3(ReadPNML pnml)
+	{
+		
+		for(int i=0;i<pnml.transitions.size();i++)
+		{
+			boolean flag=false;
+			String [] str = pnml.transitions.get(i).getName().split(" ");
+			if(str[1].equals("Complete"))
+			{
+				tableTransition4[c3][0] = str[0];
+				tableTransition4[c3][1] = pnml.transitions.get(i).getRole();
+				tableTransition4[c3][2] = pnml.transitions.get(i).getResource();
+				tableTransition4[c3][3] = pnml.transitions.get(i).getTime(); 
+				tableTransition4[c3][4] = pnml.transitions.get(i).getSesudah();
+				tableTransition4[c3][5] =str[1];
+				c3++;
+			}
+				
+			if(i>0)
+			{
+				for(int j=0;j<tableTransition4.length;j++)
+				{
+						//System.out.println("str1: "+str[1]);
+					if(str[0].equals(tableTransition4[j][0]) && str[1].equals(tableTransition4[c3][5]))
+					{
+						System.out.println("trans: "+tableTransition4[j][0]+" -- str1: "+str[1]);
+						tableTransition4[j][4] = tableTransition4[j][4]+"-"+pnml.transitions.get(i).getSebelum();
+						
+					}
+					
+				}
+			}
+			
+					
+		}
+		
+		for(int i=0;i<c3;i++)
+		{
+			System.out.println("trans: "+tableTransition4[i][0]+" -- sesudah: "+tableTransition4[i][4]);
+		}
+	}
+	
+	
 	//fungsi membaca pnml extended
 	public void readPnml(ReadPNML pnml)
 	{
@@ -265,6 +363,7 @@ public class ConformanceCheckAtribut {
 		int wDutyS=0;
 		int wDutyD=0;
 		int wDutyC=0;
+		int wPattern=0;
 		String CaseID = "";
 		String next = "";
 		List<String> checkedEvents = new ArrayList<String>();
@@ -298,7 +397,7 @@ public class ConformanceCheckAtribut {
 			////////////////////////////////////////fungsi menghitung duty
 			
 			String simpan="";
-			System.out.println("case: " + tableLog[j][0] + " " + tableLog[j][3] + " " + tableLog[j][1]);
+			//System.out.println("case: " + tableLog[j][0] + " " + tableLog[j][3] + " " + tableLog[j][1]);
 			if(!checkedEvents.contains(tableLog[j][3]))
 			{
 				//System.out.println("Durung Onok " + tableLog[j][3]);
@@ -376,14 +475,14 @@ public class ConformanceCheckAtribut {
 			if(temp=="")
 			{
 				temp=(String) tableLog[j][0];
-				System.out.println("Masuk temp == : " + temp);
+				//System.out.println("Masuk temp == : " + temp);
 				
 				for(int k=0;k<tableTransition.length;k++)
 				{
 					if(tableLog[j][1].equals(tableTransition[k][0]))
 					{
 						//fungsi menghitung tmin
-						System.out.println("T1: "+(Long)tableLog[j][2]+" -- T2: "+(Integer)tableTransition[k][3]);
+						//System.out.println("T1: "+(Long)tableLog[j][2]+" -- T2: "+(Integer)tableTransition[k][3]);
 						if((Long)tableLog[j][2]<((Integer)tableTransition[k][3]-2))
 						{
 							tmin++;
@@ -413,13 +512,60 @@ public class ConformanceCheckAtribut {
 				System.out.println("Masuk else temp: " + temp + " [j][0]: " + tableLog[j][0]);
 				if(temp.equals(tableLog[j][0]))
 				{
+					if(j<tableLog.length-2)
+					{
+						boolean cekPattern=false;
+						boolean cekPattern2=false;
+						boolean cekPattern3=false;
+						String[] belum = new String[5];
+						String[] sudah = new String[5];
+						int ss=0;
+						int sb=0;
+						//hitung wrong pattern
+						for(int x=0;x<c2;x++)
+						{
+							if(tableLog[j][1].equals(tableTransition3[x][0]))
+							{
+								belum[sb]=(String) tableTransition3[x][4];
+								if(tableLog[j-1][1].equals(tableTransition3[x][4]))
+								{
+									cekPattern=true;
+									
+									break;
+								}
+								
+							}
+						}
+						
+						for(int x=0;x<c3;x++)
+						{
+							if(tableLog[j][1].equals(tableTransition4[x][0]))
+							{
+								belum[ss]=(String) tableTransition4[x][4];
+								if(tableLog[j+1][1].equals(tableTransition4[x][4]))
+								{
+									cekPattern2=true;
+									break;
+								}
+								//System.out.println("Log: "+tableLog[j][1]+" -- Pola2: "+cekPattern2);
+							}
+						}
+						
+						System.out.println("Log: "+tableLog[j][1]+" -- Pola1: "+cekPattern+" -- Pola2: "+cekPattern2);
+						if(cekPattern==false)
+						{
+							wPattern++;
+						}
+					}
+					
+					
 					for(int k=0;k<tableTransition.length;k++)
 					{
-						System.out.println("Log1: "+tableLog[j][1]+" -- Trans: "+tableTransition[k][0]);
+						//System.out.println("Log1: "+tableLog[j][1]+" -- Trans: "+tableTransition[k][0]);
 						if(tableLog[j][1].equals(tableTransition[k][0]))
 						{
 							//fungsi menghitung tmin
-							System.out.println("T1: "+(Long)tableLog[j][2]+" -- T2: "+(Integer)tableTransition[k][3]);
+							//System.out.println("T1: "+(Long)tableLog[j][2]+" -- T2: "+(Integer)tableTransition[k][3]);
 							if((Long)tableLog[j][2]<((Integer)tableTransition[k][3]-2))
 							{
 								tmin++;
@@ -450,7 +596,8 @@ public class ConformanceCheckAtribut {
 					{
 						if(tableLog[j-1][0].equals(fraud1.frauds.get(z).getCase()))
 						{
-							Fraud = new fraud(fraud1.frauds.get(z).getCase(), fraud1.frauds.get(z).getSkipSeq(), fraud1.frauds.get(z).getSkipDec(), tmin, tmax, wresource, wDutyS, wDutyD, wDutyC, fraud1.frauds.get(z).getwPattern(), 0, 0);
+							Fraud = new fraud(fraud1.frauds.get(z).getCase(), fraud1.frauds.get(z).getSkipSeq(), fraud1.frauds.get(z).getSkipDec(), tmin, tmax, wresource, wDutyS, wDutyD, wDutyC, wPattern, 0, 0);
+							//Fraud = new fraud(fraud1.frauds.get(z).getCase(), fraud1.frauds.get(z).getSkipSeq(), fraud1.frauds.get(z).getSkipDec(), tmin, tmax, wresource, wDutyS, wDutyD, wDutyC, fraud1.frauds.get(z).getwPattern(), 0, 0);
 						}
 					}
 					frauds.add(Fraud);
@@ -463,6 +610,7 @@ public class ConformanceCheckAtribut {
 					wDutyD=0;
 					wDutyS=0;
 					counter++;
+					wPattern=0;
 				}
 			}
 			CaseID = (String) tableLog[j][0];
@@ -472,7 +620,8 @@ public class ConformanceCheckAtribut {
 		{
 			if(CaseID.equals(fraud1.frauds.get(z).getCase()))
 			{
-				Fraud = new fraud(fraud1.frauds.get(z).getCase(), fraud1.frauds.get(z).getSkipSeq(), fraud1.frauds.get(z).getSkipDec(), tmin, tmax, wresource, wDutyS, wDutyD, wDutyC, fraud1.frauds.get(z).getwPattern(), 0, 0);
+				Fraud = new fraud(fraud1.frauds.get(z).getCase(), fraud1.frauds.get(z).getSkipSeq(), fraud1.frauds.get(z).getSkipDec(), tmin, tmax, wresource, wDutyS, wDutyD, wDutyC, wPattern, 0, 0);
+				//Fraud = new fraud(fraud1.frauds.get(z).getCase(), fraud1.frauds.get(z).getSkipSeq(), fraud1.frauds.get(z).getSkipDec(), tmin, tmax, wresource, wDutyS, wDutyD, wDutyC, fraud1.frauds.get(z).getwPattern(), 0, 0);
 			}
 		}
 		frauds.add(Fraud);
@@ -484,6 +633,7 @@ public class ConformanceCheckAtribut {
 		wDutyC=0;
 		wDutyD=0;
 		wDutyS=0;
+		wPattern=0;
 	}
 	
 	public boolean checkDecision(String Transition)

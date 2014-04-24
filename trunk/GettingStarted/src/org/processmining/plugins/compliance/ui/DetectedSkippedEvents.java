@@ -555,7 +555,7 @@ public class DetectedSkippedEvents {
 			
 		//System.out.println("Case : "+res.getTraceIndex()+" -- Real :"+numModelOnlyReal+" -- Synchron :"+numSynchronized);
 		//System.out.println("Case : "+res.getTraceIndex()+" -- Reals :"+real+" -- Synchrons :"+sync);
-		
+		swap=0;
 		for (int index1 : res.getTraceIndex()) {
 			String name = ce.extractName(log.get(index1));
 			//System.out.println(name);
