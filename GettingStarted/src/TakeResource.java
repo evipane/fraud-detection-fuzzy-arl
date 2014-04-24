@@ -12,7 +12,7 @@ import org.processmining.pnml.controller.ReadPNML;
 
 public class TakeResource {
 	
-	public String[] columname = {"Transition","Role","Resource","Time"};
+	public String[] columname = {"Transition","Role","Resource","Time","Sebelum","Status"};
 	public Object[][] tableTransition;
 	
 	public DefaultTableModel tableModelTransition2 ;
@@ -39,32 +39,33 @@ public class TakeResource {
 		{
 			boolean flag=false;
 			String [] str = pnml.transitions.get(i).getName().split(" ");
-			if(i==0)
+			if(str[1].equals("Start"))
 			{
 				tableTransition[c][0] = str[0];
 				tableTransition[c][1] = pnml.transitions.get(i).getRole();
 				tableTransition[c][2] = pnml.transitions.get(i).getResource();
 				tableTransition[c][3] = pnml.transitions.get(i).getTime(); 
-				continue;
+				tableTransition[c][4] = pnml.transitions.get(i).getSebelum();
+				tableTransition[c][5] =str[1];
+				c++;
 			}
-			else
+				
+			if(i>0)
 			{
 				for(int j=0;j<tableTransition.length;j++)
 				{
-					if(str[0].equals(tableTransition[j][0]))
+						//System.out.println("str1: "+str[1]);
+					if(str[0].equals(tableTransition[j][0]) && str[1].equals(tableTransition[c][5]))
 					{
-						flag=true;
+						System.out.println("trans: "+tableTransition[j][0]+" -- str1: "+str[1]);
+						tableTransition[j][4] = tableTransition[j][4]+"-"+pnml.transitions.get(i).getSebelum();
+						
 					}
+					
 				}
 			}
-			if(flag==false)
-			{
-				c++;
-				tableTransition[c][0] = str[0];
-				tableTransition[c][1] = pnml.transitions.get(i).getRole();
-				tableTransition[c][2] = pnml.transitions.get(i).getResource();
-				tableTransition[c][3] = pnml.transitions.get(i).getTime();	
-			}
+			
+					
 		}
 		
 		tableModelTransition2 = new DefaultTableModel(table,columname);

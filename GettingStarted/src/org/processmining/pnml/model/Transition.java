@@ -9,10 +9,25 @@ public class Transition {
 	private String role;
 	private String resource;
 	private String coba;
+	private String sebelum;
+	private String sesudah;
 	private Decision decision = new Decision();
 	private List<Decision> decisions;
 	private int time;
 	
+	
+	public String getSebelum() {
+		return sebelum;
+	}
+	public void setSebelum(String sebelum) {
+		this.sebelum = sebelum;
+	}
+	public String getSesudah() {
+		return sesudah;
+	}
+	public void setSesudah(String sesudah) {
+		this.sesudah = sesudah;
+	}
 	public String getId() {
 		return id;
 	}

@@ -66,10 +66,11 @@ public class ReadPNML {
 			//System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 		 
 			getPlaces(doc.getElementsByTagName("place"));
-			getTransitions(doc.getElementsByTagName("transition"));
 			getArcs(doc.getElementsByTagName("arc"));
-			getDecisions(doc.getElementsByTagName("rule"));
+			getTransitions(doc.getElementsByTagName("transition"));
 			
+			getDecisions(doc.getElementsByTagName("rule"));
+			cariSebelumSesudah();
 			//System.out.println(doc.getElementsByTagName("transition").getLength());
 			
 			pnml = new PNML(places, arcs, transitions);
@@ -106,6 +107,7 @@ public class ReadPNML {
 					transition.setRole(eElement.getElementsByTagName("transitionResource").item(0).getAttributes().getNamedItem("organizationalUnitName").getNodeValue());
 					transition.setResource(eElement.getElementsByTagName("transitionResource").item(0).getAttributes().getNamedItem("roleName").getNodeValue());
 					transition.setTime(Integer.parseInt(eElement.getElementsByTagName("time").item(0).getTextContent()));
+					
 					//transition.setCoba(eElement.getElementsByTagName("times").item(0).getTextContent());
 					//transition.setDecision(eElement.getElementsByTagName("nextElementRef").item(0).getAttributes().getNamedItem("id").getNodeValue(), eElement.getElementsByTagName("nextElementRef").item(0).getAttributes().getNamedItem("atr").getNodeValue(), eElement.getElementsByTagName("nextElementRef").item(0).getTextContent());
 					transitions.add(transition);
@@ -122,6 +124,155 @@ public class ReadPNML {
 		}
 	}
 	
+	private void cariSebelumSesudah()
+	{
+		for(int i=0;i<transitions.size();i++)
+		{
+			transitions.get(i).setSebelum(cariSebelum(transitions.get(i).getId(),transitions.get(i).getName()));
+			transitions.get(i).setSesudah(cariSesudah(transitions.get(i).getId(),transitions.get(i).getName()));
+		}
+	}
+	
+	private String cariSebelum(String id, String trans)
+	{
+		String place="";
+		String temp="";
+		String transs="";
+		//System.out.println("Trans: "+trans);
+		for(int i=0;i<arcs.size();i++)
+		{
+			
+			if(arcs.get(i).getDestination().equals(id))
+			{
+				place=arcs.get(i).getSource();
+				//System.out.println("PLACE: "+place);
+			}
+		}
+		for(int i=0;i<arcs.size();i++)
+		{
+			if(arcs.get(i).getDestination().equals(place))
+			{
+				
+				temp=arcs.get(i).getSource();
+			}
+		}
+		
+		for(int i=0;i<transitions.size();i++)
+		{
+			if(transitions.get(i).getId().equals(temp))
+			{
+				transs=transitions.get(i).getName();
+			}
+		}
+		
+		String[] str = transs.split(" ");
+		String[] str2 = trans.split(" ");
+		//System.out.println("satu: "+str[0]+" -- dua: "+);
+		if(str[0].equals(str2[0]))
+		{
+			id=temp;
+			for(int i=0;i<arcs.size();i++)
+			{
+				
+				if(arcs.get(i).getDestination().equals(id))
+				{
+					
+					place=arcs.get(i).getSource();
+				}
+			}
+			for(int i=0;i<arcs.size();i++)
+			{
+				if(arcs.get(i).getDestination().equals(place))
+				{
+					
+					temp=arcs.get(i).getSource();
+				}
+			}
+			
+			for(int i=0;i<transitions.size();i++)
+			{
+				if(transitions.get(i).getId().equals(temp))
+				{
+					transs=transitions.get(i).getName();
+				}
+			}
+		}
+		
+		
+		str = transs.split(" ");
+		//System.out.println("place: "+place+" -- trans: "+transs);
+		return str[0];
+	}
+	
+	private String cariSesudah(String id, String trans)
+	{
+		String place="";
+		String temp="";
+		String transs="";
+		for(int i=0;i<arcs.size();i++)
+		{
+			
+			if(arcs.get(i).getSource().equals(id))
+			{
+				place=arcs.get(i).getDestination();
+				//System.out.println("PLACE: "+place);
+			}
+		}
+		for(int i=0;i<arcs.size();i++)
+		{
+			if(arcs.get(i).getSource().equals(place))
+			{
+				
+				temp=arcs.get(i).getDestination();
+			}
+		}
+		
+		for(int i=0;i<transitions.size();i++)
+		{
+			if(transitions.get(i).getId().equals(temp))
+			{
+				transs=transitions.get(i).getName();
+			}
+		}
+		
+		String[] str = transs.split(" ");
+		String[] str2 = trans.split(" ");
+		//System.out.println("satu: "+str[0]+" -- dua: "+);
+		if(str[0].equals(str2[0]))
+		{
+			id=temp;
+			for(int i=0;i<arcs.size();i++)
+			{
+				
+				if(arcs.get(i).getSource().equals(id))
+				{
+					place=arcs.get(i).getDestination();
+					//System.out.println("PLACE: "+place);
+				}
+			}
+			for(int i=0;i<arcs.size();i++)
+			{
+				if(arcs.get(i).getSource().equals(place))
+				{
+					
+					temp=arcs.get(i).getDestination();
+				}
+			}
+			
+			for(int i=0;i<transitions.size();i++)
+			{
+				if(transitions.get(i).getId().equals(temp))
+				{
+					transs=transitions.get(i).getName();
+				}
+			}
+		}
+		
+		
+		str = transs.split(" ");
+		//System.out.println("place: "+place+" -- trans: "+transs);
+		return str[0];
+	}
 	
 	private void getPlaces(NodeList nList)
 	{
@@ -153,6 +304,7 @@ public class ReadPNML {
 	
 	private void getArcs(NodeList nList)
 	{
+		System.out.println("masuk get arcs");
 		try
 		{
 			for (int temp = 0; temp < nList.getLength(); temp++) {
@@ -167,12 +319,12 @@ public class ReadPNML {
 					arc.setId(eElement.getAttribute("id"));
 					arc.setSource(eElement.getAttribute("source"));
 					arc.setTarget(eElement.getAttribute("target"));
-		 
+					
 					arcs.add(arc);
 					
 					/*System.out.println("Arc id : " + arc.getId()
 							+ " source : " + arc.getSource()
-							+ " target : " + arc.getTarget());*/
+							+ " target : " + arc.getDestination());*/
 				}
 			}
 
