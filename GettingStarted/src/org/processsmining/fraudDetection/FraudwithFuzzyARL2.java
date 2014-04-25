@@ -64,7 +64,7 @@ public class FraudwithFuzzyARL2 {
 			
 	};
 	*/
-	Object[][] tabel = new Object[25][];
+	
 	Object[][] tabel2 = new Object[100][];
 	String[] tabelName = {"Tabel Fraud"};
 	public String[][] simpan;
@@ -72,7 +72,6 @@ public class FraudwithFuzzyARL2 {
 	public String[] columnsName2 = {"SkipSL","SkipSM","SkipSH","SkipDL","SkipDM","SkipDH","TminL","TminM","TminH","TmaxL","TmaxM","TmaxH","wResourceL","wResourceM","wResourceH","wDutySecL","wDutySecM","wDutySecH","wDutyDecL","wDutyDecM","wDutyDecH","wDutyComL","wDutyComM","wDutyComH","wPatternL","wPatternM","wPatternH","wDecisionL","wDecisionM","wDecisionH","Fraud"};
 	public String[] aturan = {"Aturan","Support","Confidence"};
 	public Object[][] tableFuzzy ;
-	public DefaultTableModel tableModel = new DefaultTableModel(tabel,columnsName);
 	public DefaultTableModel tableModel2 = new DefaultTableModel(tabel2,aturan);
 	public CountImportance CI = new CountImportance();
 	public CountARL2 CA = new CountARL2();
@@ -110,6 +109,8 @@ public class FraudwithFuzzyARL2 {
 		
 		tableContent = new Object[fraud.frauds.size()][columnsName.length];
 		
+		Object[][] tabel = new Object[fraud.frauds.size()][];
+		DefaultTableModel tableModel = new DefaultTableModel(tabel,columnsName);
 		for(int i=0;i<fraud.frauds.size();i++)
 		{
 			tableContent[i][0]= fraud.frauds.get(i).getSkipSeq();
@@ -208,8 +209,8 @@ public class FraudwithFuzzyARL2 {
 			if(count==1)
 			{
 				CA.countSupport(tableFuzzy,columnsName2);
-				Object[][] tabel = new Object[1][];
-				DefaultTableModel tableModels = new DefaultTableModel(tabel,columnsName2);
+				Object[][] tabels = new Object[1][];
+				DefaultTableModel tableModels = new DefaultTableModel(tabels,columnsName2);
 				for(int j=0;j<tableModels.getColumnCount();j++)
 				{
 					tableModels.setValueAt(CA.tableSupport[j], 0, j);
@@ -232,8 +233,8 @@ public class FraudwithFuzzyARL2 {
 			}
 			else if(count==2)
 			{
-				Object[][] tabel = new Object[1][];
-				DefaultTableModel tableModels = new DefaultTableModel(tabel,CA.columnsNameS2);
+				Object[][] tabels = new Object[1][];
+				DefaultTableModel tableModels = new DefaultTableModel(tabels,CA.columnsNameS2);
 				for(int j=0;j<tableModels.getColumnCount();j++)
 				{
 					tableModels.setValueAt(CA.tableSupport2[j], 0, j);
@@ -264,8 +265,8 @@ public class FraudwithFuzzyARL2 {
 			}
 			else if(count==3)
 			{
-				Object[][] tabel = new Object[1][];
-				DefaultTableModel tableModels = new DefaultTableModel(tabel,CA.columnsNameS3);
+				Object[][] tabels = new Object[1][];
+				DefaultTableModel tableModels = new DefaultTableModel(tabels,CA.columnsNameS3);
 				for(int j=0;j<tableModels.getColumnCount();j++)
 				{
 					tableModels.setValueAt(CA.tableSupport3[j], 0, j);
@@ -297,8 +298,8 @@ public class FraudwithFuzzyARL2 {
 			
 			else if(count==4)
 			{
-				Object[][] tabel = new Object[1][];
-				DefaultTableModel tableModels = new DefaultTableModel(tabel,CA.columnsNameS4);
+				Object[][] tabels = new Object[1][];
+				DefaultTableModel tableModels = new DefaultTableModel(tabels,CA.columnsNameS4);
 				for(int j=0;j<tableModels.getColumnCount();j++)
 				{
 					tableModels.setValueAt(CA.tableSupport4[j], 0, j);
@@ -329,8 +330,8 @@ public class FraudwithFuzzyARL2 {
 			}
 			else if(count==5)
 			{
-				Object[][] tabel = new Object[1][];
-				DefaultTableModel tableModels = new DefaultTableModel(tabel,CA.columnsNameS5);
+				Object[][] tabels = new Object[1][];
+				DefaultTableModel tableModels = new DefaultTableModel(tabels,CA.columnsNameS5);
 				for(int j=0;j<tableModels.getColumnCount();j++)
 				{
 					tableModels.setValueAt(CA.tableSupport5[j], 0, j);

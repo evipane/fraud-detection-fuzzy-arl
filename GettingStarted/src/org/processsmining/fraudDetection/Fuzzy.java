@@ -11,10 +11,7 @@ public class Fuzzy {
 	private CountPercentage cp = new CountPercentage();
 	public String[] columnsName2 = {"SkipSL","SkipSM","SkipSH","SkipDL","SkipDM","SkipDH","TminL","TminM","TminH","TmaxL","TmaxM","TmaxH","wResourceL","wResourceM","wResourceH","wDutySecL","wDutySecM","wDutySecH","wDutyDecL","wDutyDecM","wDutyDecH","wDutyComL","wDutyComM","wDutyComH","wPatternL","wPatternM","wPatternH","wDecisionL","wDecisionM","wDecisionH","Fraud"};
 	//fungsi fuzzy keanggotaan min
-	Object[][] tabel2 = new Object[25][];
-	Object[][] tabel3 = new Object[25][];
-	//public DefaultTableModel tableModelPercent = new DefaultTableModel(tabel2,ffa.columnsName);
-	public DefaultTableModel tableModelFuzzy = new DefaultTableModel(tabel2,columnsName2);
+	
 	
 	public int dummyLength=0;
 	
@@ -187,6 +184,11 @@ public class Fuzzy {
 				
 			}
 		}
+		
+		Object[][] tabel2 = new Object[tableFuzzy.length][];
+		Object[][] tabel3 = new Object[tableFuzzy.length][];
+		//public DefaultTableModel tableModelPercent = new DefaultTableModel(tabel2,ffa.columnsName);
+		DefaultTableModel tableModelFuzzy = new DefaultTableModel(tabel2,columnsName2);
 		//isi tabel fuzzy ke tabel model
 		for(int i=0;i<tableFuzzy.length;i++)
 		{
