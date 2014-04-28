@@ -93,22 +93,28 @@ public class CheckWrongDecision {
 		
 		boolean flag = false;
 		
+		for(int i=0; i < fraud1.frauds.size(); i++)
+	    {
+	    	fraud1.frauds.get(i).setwDecision(fraud1.frauds.get(i).getSkipDec()); 
+	    }
+		
 		for(String Case: keys){
 		       System.out.println("Case " + Case + " Count " + countMapDec.get(Case).intValue());
 		       //Check apakah ada case yang sudah terdeteksi fraud sebelumnya
 		       for(int i=0; i < fraud1.frauds.size(); i++)
 		       {
-		    	   System.out.println("One");
+		    	   //System.out.println("One");
 		    	   if(Case.equals(fraud1.frauds.get(i).getCase()))
 		    	   {
 		    		   fraud1.frauds.get(i).setwDecision(countMapDec.get(Case).intValue() + fraud1.frauds.get(i).getSkipDec());
 		    		   flag = true;
+		    		   System.out.println("Skip Dec: " + fraud1.frauds.get(i).getSkipDec() + "Wrong Dec: " + countMapDec.get(Case).intValue());
 		    		   break;
 		    	   }
 		       }
 		       if(flag == false)
 		       {
-		    	  System.out.println("Two");
+		    	  //System.out.println("Two");
 		    	  fraud Fraud = new fraud(Case, 0, 0, 0, 0, 0, 0, 0, 0, 0, countMapDec.get(Case).intValue(), 0);
 		    	  fraud1.frauds.add(Fraud);
 		       }
