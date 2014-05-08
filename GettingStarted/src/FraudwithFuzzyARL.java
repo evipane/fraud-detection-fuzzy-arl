@@ -46,7 +46,7 @@ public class FraudwithFuzzyARL {
 	
 	
 	@Plugin(
-			name="Fraud Detection with Fuzzy Association Rule Learning Plugin",
+			name="Fraud Detection with Fuzzy Association Rule Learning Plugin versi Lawas",
 			parameterLabels = {},
 			returnLabels ={"Fraud Results"},
 			returnTypes = {JPanel.class},
