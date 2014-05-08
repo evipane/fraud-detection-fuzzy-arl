@@ -355,7 +355,16 @@ public class ReadPNML {
 					decision.setPredicate(eElement.getElementsByTagName("predicate").item(0).getTextContent());
 					decision.setTypeAttribyte(eElement.getElementsByTagName("type").item(0).getTextContent());
 					decision.setValue(eElement.getElementsByTagName("value").item(0).getTextContent());
+					decision.setNextAttribute(eElement.getElementsByTagName("nextAttribute").item(0).getTextContent());
 					decisions.add(decision);
+					/*System.out.println("Rule: " + temp + 1);
+					System.out.println("FT: " + decision.getFirstTransition());
+					System.out.println("NT: " + decision.getNextTransition());
+					System.out.println("A: " + decision.getAttribute());
+					System.out.println("P: " + decision.getPredicate());
+					System.out.println("TA: " + decision.getTypeAttribyte());
+					System.out.println("V: " + decision.getValue());
+					System.out.println("NA: " + decision.getNextAttribute());*/
 				}
 			}
 		}

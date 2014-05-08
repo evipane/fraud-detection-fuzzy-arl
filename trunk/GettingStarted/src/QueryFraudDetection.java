@@ -14,7 +14,7 @@ import com.hp.hpl.jena.util.FileManager;
 
 public class QueryFraudDetection {
 	
-	public void checkDecision(String firstTransition, String nextTransition, String attribute, String typeAttribute, String predicate, String Value, List<String> frauds, String owlPath)
+	public void checkDecision(String firstTransition, String nextTransition, String attribute, String typeAttribute, String predicate, String Value, String nextAttribute, List<String> frauds, String owlPath)
 	{
 		OntModel model = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM_MICRO_RULE_INF);
 		String inputFileName = owlPath;
@@ -26,28 +26,59 @@ public class QueryFraudDetection {
 		model.read(in, null);
 		
 		String revPredicate = reversePredicate(predicate);
-		
+
+		System.out.println("firstTransition: " + firstTransition);
 		System.out.println("attribute: " + attribute);
 		System.out.println("revPredicate: " + revPredicate);
 		System.out.println("Value: " + Value);
 		System.out.println("nextTransition: " + nextTransition);
+		System.out.println("nextAttribute: " + nextAttribute);
 		
-		String queryString = "PREFIX bc: <http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#>" +
-				"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-				"PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
-				"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>" +
-				"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-				"SELECT ?x ?y ?c ?z ?a" +
-				"WHERE { ?x bc:has_event ?y." + 
-				"?y bc:has_"+ attribute +" ?c." +
-				"FILTER(?c "+ revPredicate + "\""+ Value +"\")." +
-				"?y bc:has_event_id ?z." +
-				"?x bc:has_event ?y1." +
-				"?y1 bc:has_event_id ?z1." +
-				"?y1 bc:has_activity ?a." +
-				"FILTER(?z1 = ?z+1)." +
-				"FILTER(?a = \""+ nextTransition +"\")}" +
-				"ORDER BY(?z)";
+		String queryString;
+		
+		if(nextAttribute != "")
+		{
+			System.out.println("nextAttribute ada");
+			String[] Val = Value.split(" ");
+			System.out.println(Val[0] + " " + Val[1]);
+			queryString = "PREFIX bc: <http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#>" +
+						"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+						"PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+						"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>" +
+						"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
+						"SELECT ?x ?y ?c ?a" +
+						"WHERE { ?x bc:has_event ?y." +
+						"?y bc:has_activity ?b." +
+						"?y bc:has_"+ attribute +" ?c." +
+						"FILTER(?b= \""+ firstTransition +"\")" +
+						"FILTER(?c "+ revPredicate + "\""+ Val[1] +"\")." +
+						"?x bc:has_event ?y1." +
+						"?y1 bc:has_"+ nextAttribute +" ?a." +
+						"FILTER(?a != \""+ Val[0] +"\")" +
+						"}";
+		}
+		
+		else {
+			System.out.println("nextAttribute tidak ada");
+			queryString = "PREFIX bc: <http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#>" +
+					"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+					"PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+					"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>" +
+					"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
+					"SELECT ?x ?y ?c ?z ?a" +
+					"WHERE { ?x bc:has_event ?y." + 
+					"?y bc:has_activity ?b." +
+					"?y bc:has_"+ attribute +" ?c." +
+					"FILTER(?b = \""+ firstTransition +"\")" +
+					"FILTER(?c "+ revPredicate + "\""+ Value +"\")." +
+					"?y bc:has_event_id ?z." +
+					"?x bc:has_event ?y1." +
+					"?y1 bc:has_event_id ?z1." +
+					"?y1 bc:has_activity ?a." +
+					"FILTER(?z1 = ?z+1)." +
+					"FILTER(?a != \""+ nextTransition +"\")}" +
+					"ORDER BY(?z)";
+		}
 		
 		/*String queryString = "PREFIX bc: <http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#>" +
 			"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
@@ -108,23 +139,23 @@ public class QueryFraudDetection {
 	{
 		if(Predicate.equals("="))
 		{
-			return "!=";
+			return "=";
 		}
 		else if(Predicate.equals("more than"))
 		{
-			return "<=";
+			return ">";
 		}
 		else if(Predicate.equals("less than"))
 		{
-			return ">=";
+			return "<";
 		}
 		else if(Predicate.equals("more than equals"))
 		{
-			return "<";
+			return ">=";
 		}
 		else if(Predicate.equals("less than equals"))
 		{
-			return ">";
+			return "=<";
 		}
 		return Predicate;
 	}

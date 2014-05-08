@@ -19,7 +19,7 @@ import org.processmining.pnml.controller.ReadPNML;
 
 
 public class CheckWrongDecision {
-	public String[] columname = {"First Acitivity","Next Activity","Attribute","Type","Predicate","Value"};
+	public String[] columname = {"First Acitivity","Next Activity","Attribute","Type","Predicate","Value","Next Attribute"};
 	public Object[][] tableTransition;
 	
 	public DefaultTableModel tableModelTransition2 ;
@@ -52,6 +52,7 @@ public class CheckWrongDecision {
 			tableTransition[i][3] = pnml.decisions.get(i).getTypeAttribyte();
 			tableTransition[i][4] = pnml.decisions.get(i).getPredicate();
 			tableTransition[i][5] = pnml.decisions.get(i).getValue();
+			tableTransition[i][6] = pnml.decisions.get(i).getNextAttribute();
 		}
 		
 		tableModelTransition2 = new DefaultTableModel(table,columname);
@@ -72,7 +73,7 @@ public class CheckWrongDecision {
 		context.showConfiguration("Tabel Transisi",panel);
 		for(int i = 0; i < pnml.decisions.size(); i++)
 		{
-			wrongDec.checkDecision(pnml.decisions.get(i).getFirstTransition(), pnml.decisions.get(i).getNextTransition(), pnml.decisions.get(i).getAttribute(), pnml.decisions.get(i).getTypeAttribyte(), pnml.decisions.get(i).getPredicate(), pnml.decisions.get(i).getValue(), caseFrauds, owlFiles.getPath());
+			wrongDec.checkDecision(pnml.decisions.get(i).getFirstTransition(), pnml.decisions.get(i).getNextTransition(), pnml.decisions.get(i).getAttribute(), pnml.decisions.get(i).getTypeAttribyte(), pnml.decisions.get(i).getPredicate(), pnml.decisions.get(i).getValue(), pnml.decisions.get(i).getNextAttribute(), caseFrauds, owlFiles.getPath());
 		}
 		
 		//Mapping untuk banyaknya wrong decision dalam sebuah case

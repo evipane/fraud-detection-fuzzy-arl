@@ -8,6 +8,7 @@ public class Decision {
 	private String ruleDecision;
 	private String value;
 	private String predicate;
+	private String nextAttribute;
 	
 	public void setNextTransition(String nextTransition) {
 		this.nextTransition = nextTransition;
@@ -50,5 +51,11 @@ public class Decision {
 	}
 	public String getPredicate() {
 		return predicate;
+	}
+	public void setNextAttribute(String nextAttribute) {
+		this.nextAttribute = nextAttribute;
+	}
+	public String getNextAttribute() {
+		return nextAttribute;
 	}
 }
