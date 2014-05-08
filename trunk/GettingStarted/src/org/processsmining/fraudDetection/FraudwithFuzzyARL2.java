@@ -1,6 +1,8 @@
 package org.processsmining.fraudDetection;
 
 import java.awt.Dimension;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -11,10 +13,12 @@ import org.processmining.contexts.uitopia.annotations.UITopiaVariant;
 import org.processmining.framework.plugin.annotations.Plugin;
 import org.processmining.framework.util.ui.widgets.ProMTable;
 import org.processmining.fraud.model.InsertFraudData;
+import org.processmining.pnml.controller.ReadPNML;
 
 public class FraudwithFuzzyARL2 {
 	
-	public String[] columnsName = {"SkipS","SkipD","Tmin","Tmax","wResource","wDutySec","wDutyDec","wDutyCom","wPattern","wDecision","Fraud"};
+	public String[] columnsName = {"SkipS","SkipD","Tmin","Tmax","wResource","wDutySec","wDutyDec","wDutyCom","wPattern","wDecision","Fraud","Case",};
+	public String[] columname = {"Transition","Role","Resource","Time"};
 	public Object[][] tableContent;
 	/*public Object[][] tableContent = {
 			{new Double(2), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0), new Double(0),new Double(0.25)},
@@ -64,7 +68,9 @@ public class FraudwithFuzzyARL2 {
 			
 	};
 	*/
-	
+	public List<String> DecTransitions = new ArrayList<String>();
+	public List<String> SeqTransitions = new ArrayList<String>();
+	public Object[][] tableTransition2;
 	Object[][] tabel2 = new Object[100][];
 	String[] tabelName = {"Tabel Fraud"};
 	public String[][] simpan;
@@ -77,14 +83,16 @@ public class FraudwithFuzzyARL2 {
 	public CountARL2 CA = new CountARL2();
 	public Double[] param;
 	public AssociationRule ARL = new AssociationRule();
-	
+	int seq ;
+	int dec ;
+	int total ;
 	public int jumlahRole=0;
 	//JTable tabel = new JTable(tableContent,columnsName);
 	
 	
 	
 	@Plugin(
-			name="Fraud Detection with Fuzzy Association Rule Learning Plugin versi 2",
+			name="Fraud Detection with Fuzzy Association Rule Learning Plugin",
 			parameterLabels = {},
 			returnLabels ={"Fraud Results"},
 			returnTypes = {AssociationRule.class},
@@ -97,7 +105,7 @@ public class FraudwithFuzzyARL2 {
 			)
 	
 	//UI untuk menampilkan tabel fraud
-	public AssociationRule FraudTabel(final UIPluginContext context,InsertFraudData fraud)
+	public AssociationRule FraudTabel(final UIPluginContext context,InsertFraudData fraud, ReadPNML pnml)
 	{
 		JPanel panel = new JPanel();
 		JPanel panel2 = new JPanel();
@@ -106,13 +114,20 @@ public class FraudwithFuzzyARL2 {
 		JPanel panel5 = new JPanel();
 		JPanel panel6 = new JPanel();
 		JPanel panel7 = new JPanel();
-		
+		tableTransition2 = new Object[pnml.transitions.size()][columname.length];
 		tableContent = new Object[fraud.frauds.size()][columnsName.length];
+		
+		readSeqDec(pnml);
+		
+		seq = SeqTransitions.size();
+		dec = DecTransitions.size();
+		total = seq+dec;
 		
 		Object[][] tabel = new Object[fraud.frauds.size()][];
 		DefaultTableModel tableModel = new DefaultTableModel(tabel,columnsName);
 		for(int i=0;i<fraud.frauds.size();i++)
 		{
+			tableContent[i][11]= fraud.frauds.get(i).getCase();
 			tableContent[i][0]= fraud.frauds.get(i).getSkipSeq();
 			tableContent[i][1]= fraud.frauds.get(i).getSkipDec();
 			tableContent[i][2]= fraud.frauds.get(i).getTmin();
@@ -172,7 +187,7 @@ public class FraudwithFuzzyARL2 {
 		
 		for(int i=0;i<tableContent.length;i++)
 		{
-			tableContent[i][columnsName.length-1] = CI.fraud[i];
+			tableContent[i][columnsName.length-2] = CI.fraud[i];
 		}
 
 		for(int i=0;i<tableContent.length;i++)
@@ -395,9 +410,63 @@ public class FraudwithFuzzyARL2 {
 	public void countFraudMADM()
 	{
 		CI.countWeight(jumlahPakar[0], simpan);
-		CI.countProb(tableContent, columnsName);
+		CI.countProb(tableContent, columnsName,seq,dec,total);
 		CI.membership();
 		CI.countFraud();
+	}
+	
+	public void readSeqDec(ReadPNML pnml)
+	{
+		int count=0;
+		int temps;
+		boolean flags=false;
+		
+		for(int i=0;i<pnml.transitions.size();i++)
+		{
+			flags=false;
+			if(tableTransition2.length==0)
+			{
+				tableTransition2[count][0] = pnml.transitions.get(i).getName();
+				tableTransition2[count][1] = 1;
+				count++;
+			}
+			else
+			{
+				for(int j=0;j<tableTransition2.length;j++)
+				{
+					if(pnml.transitions.get(i).getName().equals(tableTransition2[j][0]))
+					{
+						System.out.println("masuk sini");
+						temps = (Integer) tableTransition2[j][1];
+						tableTransition2[j][1]=temps+1;
+						flags=true;
+					}
+				}
+			}
+			if(flags==false)
+			{
+				tableTransition2[count][0] = pnml.transitions.get(i).getName();
+				tableTransition2[count][1] = 1;
+				count++;
+			}
+		}
+		for(int i=0;i<count;i++)
+		{
+			String temp1 = (String)tableTransition2[i][0];
+			String[] str = temp1.split(" ");
+			if((Integer)tableTransition2[i][1]>1 && str[1].equals("Complete"))
+			{
+				DecTransitions.add(str[0].toString());
+				System.out.println("Decision: "+str[0]);
+			}
+			else if((Integer)tableTransition2[i][1]<2 && str[1].equals("Complete"))
+			{
+				SeqTransitions.add(str[0].toString());
+				System.out.println("Sequence: "+str[0]);
+			}
+		}
+		
+		System.out.println("Seq: "+SeqTransitions.size()+" -- Dec: "+DecTransitions.size());
 	}
 
 }

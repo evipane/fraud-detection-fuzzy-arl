@@ -315,12 +315,12 @@ public double getA() {
 			tableImportance[i][2] = tempC/pakar;
 			tableImportance[i][3] = tempD/pakar;
 		}
-		/*
+		
 		for(int i=0;i<tableImportance.length;i++)
 		{
 			System.out.println("lower: "+tableImportance[i][0]+" -- middle1: "+tableImportance[i][1]+" -- middle2: "+tableImportance[i][2]+" -- upper: "+tableImportance[i][3]);
 		}
-		*/
+		
 	}
 	
 	public void countWeight3(int index, Object[] member)
@@ -461,7 +461,7 @@ public double getA() {
 		
 	}
 	
-	public void countProb(Object[][] data, String[] columname)
+	public void countProb(Object[][] data, String[] columname, int seq,int dec, int total)
 	{
 		tablePercent = new Object[data.length][columname.length-1];
 		
@@ -475,7 +475,7 @@ public double getA() {
 				String str2 = columname[j];
 				double d = Double.valueOf(str).doubleValue();
 				
-				double percen = cp.countProb(d, str2);
+				double percen = cp.countProb(d, str2,seq,dec,total);
 				
 				tablePercent[i][j] =new Double(percen);
 			}
