@@ -61,8 +61,10 @@ public class CountARL2 {
 					String temp = str[0];
 					tableARL[jumlahRole][0] = columnsNameS2[i];
 					index=searchIndex(columName1, temp);
+					System.out.println("index: "+temp);
 					tableARL[jumlahRole][1] = tableSupport2[i];
 					tableARL[jumlahRole][2] = (Double)tableSupport2[i]/(Double)tableSupport[index];
+					System.out.println("item 2:"+tableSupport2[i]+" -- item 1: "+tableSupport[index]+" -- Conf: "+tableARL[jumlahRole][2]);
 					System.out.println("Aturan: "+tableARL[jumlahRole][0]+" -- Supp: "+tableARL[jumlahRole][1]+" -- Conf: "+tableARL[jumlahRole][2]);
 					jumlahRole++;
 					
@@ -87,9 +89,10 @@ public class CountARL2 {
 					String temp = str[0]+str[1];
 					tableARL[jumlahRole][0] = columnsNameS3[i];
 					index1=searchIndex(columnsNameS, temp);
-					//System.out.println("index: "+index1);
+					System.out.println("index: "+temp);
 					tableARL[jumlahRole][1] = tableSupport3[i];
 					tableARL[jumlahRole][2] = (Double)tableSupport3[i]/(Double)tableSupport2[index1];
+					System.out.println("item 3:"+tableSupport3[i]+" -- item 2: "+tableSupport2[index1]+" -- Conf: "+tableARL[jumlahRole][2]);
 					System.out.println("Aturan: "+tableARL[jumlahRole][0]+" -- Supp: "+tableARL[jumlahRole][1]+" -- Conf: "+tableARL[jumlahRole][2]);
 					jumlahRole++;
 					
@@ -112,9 +115,10 @@ public class CountARL2 {
 					String temp = str[0]+str[1]+str[2];
 					tableARL[jumlahRole][0] = columnsNameS4[i];
 					index1=searchIndex(columnsNameS, temp);
-					//System.out.println("index: "+index1);
+					System.out.println("index: "+temp);
 					tableARL[jumlahRole][1] = tableSupport4[i];
 					tableARL[jumlahRole][2] = (Double)tableSupport4[i]/(Double)tableSupport3[index1];
+					System.out.println("item 4:"+tableSupport4[i]+" -- item 3: "+tableSupport3[index1]+" -- Conf: "+tableARL[jumlahRole][2]);
 					System.out.println("Aturan: "+tableARL[jumlahRole][0]+" -- Supp: "+tableARL[jumlahRole][1]+" -- Conf: "+tableARL[jumlahRole][2]);
 					jumlahRole++;
 					
@@ -136,9 +140,10 @@ public class CountARL2 {
 					String temp = str[0]+str[1]+str[2]+str[3];
 					tableARL[jumlahRole][0] = columnsNameS5[i];
 					index1=searchIndex(columnsNameS, temp);
-					//System.out.println("index: "+index1);
+					System.out.println("index: "+temp);
 					tableARL[jumlahRole][1] = tableSupport5[i];
 					tableARL[jumlahRole][2] = (Double)tableSupport5[i]/(Double)tableSupport4[index1];
+					System.out.println("item 5:"+tableSupport5[i]+" -- item 4: "+tableSupport4[index1]+" -- Conf: "+tableARL[jumlahRole][2]);
 					System.out.println("Aturan: "+tableARL[jumlahRole][0]+" -- Supp: "+tableARL[jumlahRole][1]+" -- Conf: "+tableARL[jumlahRole][2]);
 					jumlahRole++;
 					
@@ -324,7 +329,7 @@ public class CountARL2 {
 	public void setColumnName4(String[] name1, String[] name2)
 	{
 		int result=1;
-		System.out.println("MASUK KE SINI!");
+		System.out.println("MASUK KE SINI 5!");
 		for(int i=0;i<name1.length;i++)
 		{
 			for(int j=i+1;j<name2.length;j++)
@@ -346,9 +351,9 @@ public class CountARL2 {
 			{
 				String[] str = name1[i].split("-");
 				String[] str1 = name2[j].split("-");
-				if(str[0].equals(str1[0])&&str[2].equals(str1[2]))
+				if(str[0].equals(str1[0])&&str[1].equals(str1[1])&&str[3].equals(str1[3]))
 				{
-					columnsNameS5[count]=str[0]+"-"+str[1]+"-"+str1[2]+"-"+str1[2]+"-"+str1[3];
+					columnsNameS5[count]=str[0]+"-"+str[1]+"-"+str[2]+"-"+str1[2]+"-"+str1[3];
 					System.out.println(columnsNameS5[count]);
 					count++;
 				}
@@ -374,7 +379,10 @@ public class CountARL2 {
 				int b = searchIndex(columnName, str[1]);
 				int c = searchIndex(columnName, str[2]);
 				//System.out.println(a);
+				System.out.println("item1: "+tableFuzzy[k][a]+" -- item2: "+tableFuzzy[k][b]+" -- item3: "+tableFuzzy[k][c]);
+				System.out.println(Math.min((Math.min((Double)tableFuzzy[k][a],(Double)tableFuzzy[k][b])),(Double)tableFuzzy[k][c]));
 				supp+=Math.min((Math.min((Double)tableFuzzy[k][a],(Double)tableFuzzy[k][b])),(Double)tableFuzzy[k][c]);
+				
 			}
 			//System.out.println("supp: "+supp);
 			tableSupport3[i]=supp/tableFuzzy.length;
@@ -398,6 +406,8 @@ public class CountARL2 {
 				int c = searchIndex(columnName, str[2]);
 				int d = searchIndex(columnName, str[3]);
 				//System.out.println(a);
+				System.out.println("item1: "+tableFuzzy[k][a]+" -- item2: "+tableFuzzy[k][b]+" -- item3: "+tableFuzzy[k][c]+" -- item4: "+tableFuzzy[k][d]);
+				System.out.println(Math.min(Math.min((Math.min((Double)tableFuzzy[k][a],(Double)tableFuzzy[k][b])),(Double)tableFuzzy[k][c]),(Double)tableFuzzy[k][d]));
 				supp+=Math.min(Math.min((Math.min((Double)tableFuzzy[k][a],(Double)tableFuzzy[k][b])),(Double)tableFuzzy[k][c]),(Double)tableFuzzy[k][d]);
 			}
 			//System.out.println("supp: "+supp);
@@ -423,6 +433,8 @@ public class CountARL2 {
 				int d = searchIndex(columnName, str[3]);
 				int e = searchIndex(columnName, str[4]);
 				//System.out.println(a);
+				System.out.println("item1: "+tableFuzzy[k][a]+" -- item2: "+tableFuzzy[k][b]+" -- item3: "+tableFuzzy[k][c]+" -- item4: "+tableFuzzy[k][d]+" -- item5: "+tableFuzzy[k][e]);
+				System.out.println(Math.min(Math.min(Math.min((Math.min((Double)tableFuzzy[k][a],(Double)tableFuzzy[k][b])),(Double)tableFuzzy[k][c]),(Double)tableFuzzy[k][d]),(Double)tableFuzzy[k][e]));
 				supp+=Math.min(Math.min(Math.min((Math.min((Double)tableFuzzy[k][a],(Double)tableFuzzy[k][b])),(Double)tableFuzzy[k][c]),(Double)tableFuzzy[k][d]),(Double)tableFuzzy[k][e]);
 			}
 			//System.out.println("supp: "+supp);

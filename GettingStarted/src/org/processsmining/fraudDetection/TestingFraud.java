@@ -27,13 +27,14 @@ public class TestingFraud {
 	public Object[][] tabel2;
 	public Object[][] aturan;
 	public Object[][] terpilih;
+	public Object[][] bobot;
 	public String[] rule = {"Aturan","Support","Confidence","Jumlah Kombinasi","Bobot Fraud"};
 	public Object[][] tableFuzzy ;
 	public List<String> DecTransitions = new ArrayList<String>();
 	public List<String> SeqTransitions = new ArrayList<String>();
 	public Object[][] tableTransition2;
 	public String[] columnsName2 = {"SkipSL","SkipSM","SkipSH","SkipDL","SkipDM","SkipDH","TminL","TminM","TminH","TmaxL","TmaxM","TmaxH","wResourceL","wResourceM","wResourceH","wDutySecL","wDutySecM","wDutySecH","wDutyDecL","wDutyDecM","wDutyDecH","wDutyComL","wDutyComM","wDutyComH","wPatternL","wPatternM","wPatternH","wDecisionL","wDecisionM","wDecisionH","Fraud"};
-	public String[] columnsName3 = {"Case","Confidence (%)","Bobot Fraud (%)"};
+	public String[] columnsName3 = {"Case","Aturan","Confidence","Bobot Fraud","Kelas Fraud"};
 	int seq ;
 	int dec ;
 	int total ;
@@ -105,11 +106,11 @@ public class TestingFraud {
 		Ptabel.setAutoResizeMode(0);
 		panel1.add(Ptabel);
 		
-		context.showConfiguration("Tabel Fraud",panel1);
+		context.showConfiguration("Tabel Pelanggaran"+ "",panel1);
 		
 		tableFuzzy = new Object[tableContents.length][columnsName2.length];
 		
-		InteractionResult result2 = context.showConfiguration("Fuzzy Table", new Fuzzy().FuzzyTabel(tableContents,columnsName,tableFuzzy));
+		InteractionResult result2 = context.showConfiguration("Tabel Fuzzy", new Fuzzy().FuzzyTabel(tableContents,columnsName,tableFuzzy));
 		if (result2.equals(InteractionResult.CANCEL)) {
 			context.getFutureResult(0).cancel(true);
 		}
@@ -159,8 +160,9 @@ public class TestingFraud {
 			}
 		}
 		aturan = new Object[ARL.jumlahRoles][rule.length];
-		Detect = new String[tableContents2.length][10];
+		Detect = new String[tableContents2.length][200];
 		terpilih = new Object[tableContents2.length][4];
+		bobot = new Object[tableContents2.length][2];
 		for(int i=0;i<tableContents2.length;i++)
 		{
 			int index=0;
@@ -199,14 +201,15 @@ public class TestingFraud {
 					aturan[jumlah][4]=CI.fraud[i];
 					jumlah++;
 				}
-				else if(count==0)
+				else if(count<arl.length)
 				{
-					aturan[jumlah][0]=ARL.tableARL[j][0];
-					aturan[jumlah][1]=ARL.tableARL[j][1];
-					aturan[jumlah][2]=ARL.tableARL[j][2];
-					aturan[jumlah][3]=count;
+					aturan[jumlah][0]="Tidak Ada";
+					aturan[jumlah][1]=0.0;
+					aturan[jumlah][2]=0.0;
+					aturan[jumlah][3]=0;
 					aturan[jumlah][4]=CI.fraud[i];
 					jumlah++;
+					System.out.println("Masuk sini -- jumlah: "+jumlah);
 				}
 				
 			}
@@ -221,32 +224,36 @@ public class TestingFraud {
 					indeks=n;
 					terpilih[i][0] = aturan[n][0];
 					terpilih[i][1] = aturan[n][1];
-					terpilih[i][2] = (Double)aturan[n][2]*100;
-					terpilih[i][3] = (Double)aturan[n][4]*100;
+					terpilih[i][2] = aturan[n][2];
+					terpilih[i][3] = aturan[n][4];
 				}
 				else if((Integer)aturan[n][3]==save)
 				{
-					if((Double)aturan[indeks][2]<(Double)aturan[n][2])
+					System.out.println("Masuk sini22 -- save: "+save);
+					if((Double)aturan[indeks][2]<(Double)aturan[n][2] || (Double)aturan[indeks][2]==(Double)aturan[n][2] )
 					{
 						indeks=n;
 						terpilih[i][0] = aturan[n][0];
 						terpilih[i][1] = aturan[n][1];
-						terpilih[i][2] = (Double)aturan[n][2]*100;
-						terpilih[i][3] = (Double)aturan[n][4]*100;
+						terpilih[i][2] = aturan[n][2];
+						terpilih[i][3] = aturan[n][4];
 					}
 				}
+				
 			}
 			System.out.println("Terpilih: "+terpilih[i][0]);
 		}
-		
+		grouping();
 		tabel2 = new Object[tableContents2.length][];
 		DefaultTableModel tableModel2 = new DefaultTableModel(tabel2,columnsName3);
 		
 		for(int i=0;i<tableContents.length;i++)
 		{
 			tableModel2.setValueAt(tableContents[i][11], i, 0);
-			tableModel2.setValueAt(terpilih[i][2], i, 1);
-			tableModel2.setValueAt(terpilih[i][3], i, 2);
+			tableModel2.setValueAt(terpilih[i][0], i, 1);
+			tableModel2.setValueAt(terpilih[i][2], i, 2);
+			tableModel2.setValueAt(terpilih[i][3], i, 3);
+			tableModel2.setValueAt(bobot[i][1], i, 4);
 		}
 		
 		ProMTable Ptabel2 = new ProMTable(tableModel2);
@@ -254,10 +261,135 @@ public class TestingFraud {
 		Ptabel2.setAutoResizeMode(0);
 		panel2.add(Ptabel2);
 		context.showConfiguration("Hasil Deteksi Fraud",panel2);
+		
 		return panel1;
 		
 	}
 	
+	public void grouping()
+	{
+		for(int i=0;i<tableContents.length;i++)
+		{
+			if((Double)terpilih[i][2]>0)
+			{
+				bobot[i][0]=terpilih[i][2];
+			}
+			else
+			{
+				bobot[i][0]=terpilih[i][3];
+			}
+		}
+		
+		for(int i=0;i<tableContents.length;i++)
+		{
+			bobot[i][1]=member((Double)bobot[i][0]);
+		}
+	}
+	
+	public String member(Double bobotoh)
+	{
+		double not = notFraud(bobotoh);
+		double semi = semiFraud(bobotoh,0.1,0.2,0.3,0.4);
+		double fraud = semiFraud(bobotoh,0.3,0.4,0.6,0.7);
+		double high = highFraud(bobotoh);
+		double temp=0;
+		String anggota="";
+		if(not>temp)
+		{
+			anggota="Tidak Fraud";
+			temp=not;
+		}
+		else if(semi>temp)
+		{
+			anggota="Semi Fraud";
+			temp=semi;
+		}
+		else if(fraud>temp)
+		{
+			anggota="Fraud";
+			temp=fraud;
+		}
+		else if(high>temp)
+		{
+			anggota="Yakin Fraud";
+			temp=high;
+		}
+		return anggota;
+	}
+	
+	public double highFraud(double bebet)
+	{
+		double a=0.6;
+		double b=0.7;
+		double result=0;
+		if(bebet<a || bebet==a)
+		{
+			result=0;
+		}
+		else if(bebet>a && bebet<b)
+		{
+			result = (bebet-a)/(b-a);
+		}
+		else if(bebet>b || bebet==b)
+		{
+			result=1;
+		}
+		
+		return result;
+	}
+	
+	public double semiFraud(double bebet,double a1,double b1, double c1, double d1)
+	{
+		double a=a1;
+		double b=b1;
+		double c=c1;
+		double d=d1;
+		double result=0;
+		
+		if(bebet<a || bebet==a)
+		{
+			result=0;
+		}
+		else if(bebet>a && bebet<b)
+		{
+			result = (bebet-a)/(b-a);
+		}
+		else if(bebet>b && bebet<c || bebet==b ||bebet==c)
+		{
+			result = 1;
+		}
+		else if(bebet>c && bebet<d)
+		{
+			result = (d-bebet)/(d-c);
+		}
+		else if(bebet>d || bebet==d)
+		{
+			result=0;
+		}
+		
+		return result;
+	}
+	
+	public double notFraud(double bebet)
+	{
+		double a=0.1;
+		double b=0.2;
+		double result=0;
+		if(bebet<a || bebet==a)
+		{
+			result=1;
+		}
+		else if(bebet>a && bebet<b)
+		{
+			result = (b-bebet)/(b-a);
+		}
+		else if(bebet>b || bebet==b)
+		{
+			result=0;
+		}
+		
+		return result;
+	}
 	public void readSeqDec(ReadPNML pnml)
 	{
 		int count=0;
