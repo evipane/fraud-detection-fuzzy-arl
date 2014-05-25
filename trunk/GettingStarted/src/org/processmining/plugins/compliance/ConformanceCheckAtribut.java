@@ -77,7 +77,7 @@ public class ConformanceCheckAtribut {
 		
 		//System.out.println("JumlahCase: "+jumlahCase);
 		
-		checkTime(fraud1);
+		checkConformance(fraud1);
 		fraudData.insert(frauds);
 		return fraudData;
 	}
@@ -351,7 +351,7 @@ public class ConformanceCheckAtribut {
 		}
 	}
 	//fungsi conformance
-	public void checkTime(InsertFraudData fraud1)
+	public void checkConformance(InsertFraudData fraud1)
 	{
 		int counter=0;
 		boolean flag=false;

@@ -71,14 +71,14 @@ public class FraudwithFuzzyARL2 {
 	public List<String> DecTransitions = new ArrayList<String>();
 	public List<String> SeqTransitions = new ArrayList<String>();
 	public Object[][] tableTransition2;
-	Object[][] tabel2 = new Object[100][];
+	
 	String[] tabelName = {"Tabel Fraud"};
 	public String[][] simpan;
 	public Integer[] jumlahPakar;
 	public String[] columnsName2 = {"SkipSL","SkipSM","SkipSH","SkipDL","SkipDM","SkipDH","TminL","TminM","TminH","TmaxL","TmaxM","TmaxH","wResourceL","wResourceM","wResourceH","wDutySecL","wDutySecM","wDutySecH","wDutyDecL","wDutyDecM","wDutyDecH","wDutyComL","wDutyComM","wDutyComH","wPatternL","wPatternM","wPatternH","wDecisionL","wDecisionM","wDecisionH","Fraud"};
 	public String[] aturan = {"Aturan","Support","Confidence"};
 	public Object[][] tableFuzzy ;
-	public DefaultTableModel tableModel2 = new DefaultTableModel(tabel2,aturan);
+	public DefaultTableModel tableModel2;
 	public CountImportance CI = new CountImportance();
 	public CountARL2 CA = new CountARL2();
 	public Double[] param;
@@ -156,14 +156,14 @@ public class FraudwithFuzzyARL2 {
 		Ptabel.setAutoResizeMode(0);
 		panel.add(Ptabel);
 		
-		context.showConfiguration("Tabel Fraud",panel);
+		context.showConfiguration("Tabel Data Pelanggaran",panel);
 		
 		jumlahPakar = new Integer[1];
 		jumlahPakar[0]=0;
 		
 		InteractionResult result1 = context.showConfiguration("Input Jumlah Pakar", new countFraud().InputJumlahPakar(jumlahPakar));
 		if (result1.equals(InteractionResult.CANCEL)) {
-			context.getFutureResult(0).cancel(true);
+			context.getFutureResult(0).cancel(false);
 		}
 		
 		simpan = new String[jumlahPakar[0]][10];
@@ -174,7 +174,7 @@ public class FraudwithFuzzyARL2 {
 			System.out.println("Masuk lah");
 			InteractionResult result7 = context.showConfiguration("Input Kepentingan Pakar "+(i+1), new countFraud().InputKepentingan(simpan[i]));
 			if (result7.equals(InteractionResult.CANCEL)) {
-				context.getFutureResult(0).cancel(true);
+				context.getFutureResult(0).cancel(false);
 			}
 		}
 		
@@ -203,13 +203,13 @@ public class FraudwithFuzzyARL2 {
 		Ptabel2.setAutoResizeMode(0);
 		panel.add(Ptabel2);
 		
-		context.showConfiguration("Tabel Fraud Baru",panel);
+		context.showConfiguration("Tabel Bobot Fraud",panel);
 		
 		tableFuzzy = new Object[tableContent.length][columnsName2.length];
 		
-		InteractionResult result2 = context.showConfiguration("Fuzzy Table", new Fuzzy().FuzzyTabel(tableContent,columnsName,tableFuzzy));
+		InteractionResult result2 = context.showConfiguration("Tabel Fuzzy", new Fuzzy().FuzzyTabel(tableContent,columnsName,tableFuzzy));
 		if (result2.equals(InteractionResult.CANCEL)) {
-			context.getFutureResult(0).cancel(true);
+			context.getFutureResult(0).cancel(false);
 		}
 		
 		param = new Double[1];
@@ -217,7 +217,7 @@ public class FraudwithFuzzyARL2 {
 		boolean flag=true;
 		int count=1;
 		System.out.println("fuzzy: "+tableFuzzy[0][0]);
-		ARL.tableARL = new Object[100][aturan.length];
+		ARL.tableARL = new Object[500][aturan.length];
 		
 		while(flag==true)
 		{
@@ -239,7 +239,7 @@ public class FraudwithFuzzyARL2 {
 				
 				InteractionResult result3 = context.showConfiguration("Threshold 1-itemset", new ARLParameter2().ARLParam(param));
 				if (result3.equals(InteractionResult.CANCEL)) {
-					context.getFutureResult(0).cancel(true);
+					context.getFutureResult(0).cancel(false);
 				}
 				
 				System.out.println("Param: "+param[0]);
@@ -265,7 +265,7 @@ public class FraudwithFuzzyARL2 {
 				{
 					InteractionResult result3 = context.showConfiguration("Threshold 2-itemsets", new ARLParameter2().ARLParam(param));
 					if (result3.equals(InteractionResult.CANCEL)) {
-						context.getFutureResult(0).cancel(true);
+						context.getFutureResult(0).cancel(false);
 					}
 					
 					System.out.println("Param: "+param[0]);
@@ -297,7 +297,7 @@ public class FraudwithFuzzyARL2 {
 				{
 					InteractionResult result3 = context.showConfiguration("Threshold 3-itemsets", new ARLParameter2().ARLParam(param));
 					if (result3.equals(InteractionResult.CANCEL)) {
-						context.getFutureResult(0).cancel(true);
+						context.getFutureResult(0).cancel(false);
 					}
 					
 					
@@ -330,7 +330,7 @@ public class FraudwithFuzzyARL2 {
 				{
 					InteractionResult result3 = context.showConfiguration("Threshold 4-itemsets", new ARLParameter2().ARLParam(param));
 					if (result3.equals(InteractionResult.CANCEL)) {
-						context.getFutureResult(0).cancel(true);
+						context.getFutureResult(0).cancel(false);
 					}
 					
 					
@@ -362,12 +362,13 @@ public class FraudwithFuzzyARL2 {
 				{
 					InteractionResult result3 = context.showConfiguration("Threshold 5-itemsets", new ARLParameter2().ARLParam(param));
 					if (result3.equals(InteractionResult.CANCEL)) {
-						context.getFutureResult(0).cancel(true);
+						context.getFutureResult(0).cancel(false);
 					}
 					
 					
 					jumlahRole=CA.selection(param[0],columnsName2,tableFuzzy,ARL.tableARL,jumlahRole,count);
 					count++;
+					flag=false;
 				}
 				else
 				{
@@ -375,6 +376,7 @@ public class FraudwithFuzzyARL2 {
 				}
 				
 			}
+			
 		}
 		ARL.jumlahRoles=jumlahRole;
 		System.out.println("jumlah role: "+jumlahRole);
@@ -383,7 +385,8 @@ public class FraudwithFuzzyARL2 {
 			System.out.println("Aturan: "+ARL.tableARL[i][0]+" -- Supp: "+ARL.tableARL[i][1]+" -- Conf: "+ARL.tableARL[i][2]);
 		}
 		
-		
+		Object[][] tabel2 = new Object[ARL.tableARL.length][];
+		tableModel2 = new DefaultTableModel(tabel2,aturan);
 		for(int i=0;i<ARL.tableARL.length;i++)
 		{
 			for(int j=0;j<tableModel2.getColumnCount();j++)
