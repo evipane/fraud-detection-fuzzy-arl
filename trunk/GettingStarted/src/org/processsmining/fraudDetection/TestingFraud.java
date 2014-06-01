@@ -161,7 +161,7 @@ public class TestingFraud {
 		}
 		aturan = new Object[ARL.jumlahRoles][rule.length];
 		Detect = new String[tableContents2.length][200];
-		terpilih = new Object[tableContents2.length][4];
+		terpilih = new Object[tableContents2.length][5];
 		bobot = new Object[tableContents2.length][2];
 		for(int i=0;i<tableContents2.length;i++)
 		{
@@ -226,6 +226,7 @@ public class TestingFraud {
 					terpilih[i][1] = aturan[n][1];
 					terpilih[i][2] = aturan[n][2];
 					terpilih[i][3] = aturan[n][4];
+					terpilih[i][4] = aturan[n][3];
 				}
 				else if((Integer)aturan[n][3]==save)
 				{
@@ -237,6 +238,7 @@ public class TestingFraud {
 						terpilih[i][1] = aturan[n][1];
 						terpilih[i][2] = aturan[n][2];
 						terpilih[i][3] = aturan[n][4];
+						terpilih[i][4] = aturan[n][3];
 					}
 				}
 				
@@ -270,7 +272,25 @@ public class TestingFraud {
 	{
 		for(int i=0;i<tableContents.length;i++)
 		{
-			if((Double)terpilih[i][2]>0)
+			String[] arl = ((String)terpilih[i][0]).split("-");
+			if(arl.length==2)
+			{
+				if(terpilih[i][0].equals("SkipSL-Fraud") ||terpilih[i][0].equals("SkipDL-Fraud") ||terpilih[i][0].equals("TminL-Fraud") ||terpilih[i][0].equals("TmaxL-Fraud") ||terpilih[i][0].equals("wResourceL-Fraud") ||terpilih[i][0].equals("wDutySecL-Fraud") ||terpilih[i][0].equals("wDutyDecL-Fraud") ||terpilih[i][0].equals("wDutyComL-Fraud") ||terpilih[i][0].equals("wPatternL-Fraud")||terpilih[i][0].equals("wDecisionL-Fraud"))
+				{
+					bobot[i][0]=0.0;
+				}
+				
+				else if((Double)terpilih[i][2]>0)
+				{
+					bobot[i][0]=terpilih[i][2];
+				}
+				else
+				{
+					bobot[i][0]=terpilih[i][3];
+				}
+				
+			}
+			else if((Double)terpilih[i][2]>0)
 			{
 				bobot[i][0]=terpilih[i][2];
 			}
