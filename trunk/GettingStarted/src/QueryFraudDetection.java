@@ -1,4 +1,5 @@
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.List;
 
 import com.hp.hpl.jena.ontology.OntModel;
@@ -34,14 +35,43 @@ public class QueryFraudDetection {
 		System.out.println("nextTransition: " + nextTransition);
 		System.out.println("nextAttribute: " + nextAttribute);
 		
-		String queryString;
+		String queryString = "";
 		
-		if(nextAttribute != "")
+		if(nextAttribute != "" && nextTransition == "")
 		{
-			System.out.println("nextAttribute ada");
-			String[] Val = Value.split(" ");
-			System.out.println(Val[0] + " " + Val[1]);
-			queryString = "PREFIX bc: <http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#>" +
+			String[] Atr = attribute.split(" ");
+			List<String> wordList = Arrays.asList(Atr);
+			
+			if(wordList.size() > 1)
+			{
+				System.out.println("Banyak Atribut: " + wordList.size());
+				for(String e : wordList)
+					System.out.println(e);
+				
+				queryString = "PREFIX bc: <http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#>" +
+				"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+				"PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+				"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>" +
+				"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
+				"SELECT ?x ?y0 ?c ?a" +
+				"WHERE { ";
+				
+				for(int i = 0; i < wordList.size(); i++)
+				{
+					queryString += 	"?x bc:has_event ?y" + i + "." +
+						"?y" + i + " bc:has_activity ?b" + i + "." +
+						"?y" + i + " bc:has_"+ Atr[i] + " ?c" + i + ".";
+				}
+				
+				queryString += "FILTER(?c0 != ?c1 || ?c2 > ?c3)" + 
+							"FILTER(?c4 != \""+ Value +"\")}";
+			}
+			
+			else 
+			{
+				String[] Val = Value.split(" ");
+				System.out.println(Val[0] + " " + Val[1]);
+				queryString = "PREFIX bc: <http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#>" +
 						"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
 						"PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
 						"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>" +
@@ -56,9 +86,10 @@ public class QueryFraudDetection {
 						"?y1 bc:has_"+ nextAttribute +" ?a." +
 						"FILTER(?a != \""+ Val[0] +"\")" +
 						"}";
+			}
 		}
 		
-		else {
+		else if(nextAttribute == ""){
 			System.out.println("nextAttribute tidak ada");
 			queryString = "PREFIX bc: <http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#>" +
 					"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
@@ -80,18 +111,29 @@ public class QueryFraudDetection {
 					"ORDER BY(?z)";
 		}
 		
-		/*String queryString = "PREFIX bc: <http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#>" +
-			"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-			"PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
-			"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>" +
-			"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-			"SELECT ?x ?y ?z ?d ?e" +
-			"WHERE { ?x bc:has_event ?y." +
-			"?y bc:has_activity ?z." +
-			"?y bc:has_duration ?d." +
-			"?y bc:done_by ?e." +
-			"FILTER(?z = \"check_completeness\")." +
-			"FILTER(?d < 30)}";*/
+		else if(nextTransition != "" && nextAttribute != ""){
+			System.out.println("nextAttribute dan nextTransition ada");
+			queryString = "PREFIX bc: <http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#>" +
+						"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+						"PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+						"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>" +
+						"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
+						"SELECT ?x ?y ?c ?a" +
+						"WHERE { ?x bc:has_event ?y." +
+						"?y bc:has_activity ?b." +
+						"?y bc:has_event_id ?z." +
+						"?y bc:has_"+ attribute +" ?c." +
+						"FILTER(?b= \""+ firstTransition +"\")" +
+						"?x bc:has_event ?y0." +
+						"?y0 bc:has_"+ nextAttribute +" ?d." +
+						"FILTER (?d "+ revPredicate +" ?c)" +
+						"?x bc:has_event ?y1." +
+						"?y1 bc:has_event_id ?z1." +
+						"?y1 bc:has_activity ?a." +
+						"FILTER(?z1 = ?z+1)." +
+						"FILTER(?a != \""+ nextTransition +"\")" +
+						"}";
+		}
 		
 		Query query = QueryFactory.create(queryString);
 		QueryExecution qe = QueryExecutionFactory.create(query, model);
@@ -106,33 +148,7 @@ public class QueryFraudDetection {
 		}
 		//ResultSetFormatter.out(System.out, results, query);
 		qe.close();
-		
-		/*FileManager.get().addLocatorClassLoader(Main.class.getClassLoader());
-		Model model = FileManager.get().loadModel("example.owl");
-		String queryString = "PREFIX bc: <http://www.semanticweb.org/naufal/ontologies/2014/1/untitled-ontology-128#>" +
-				"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-				"PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
-				"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>" +
-				"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
-				"SELECT ?x ?y ?z ?d" +
-				"WHERE { ?x bc:has_event ?y." +
-				"?y bc:has_activity ?z." +
-				"?y bc:has_duration ?d." +
-				"FILTER(?z = \"check_completeness\")." +
-				"FILTER(?d < 30)}" +
-				"}";
-		Query query = QueryFactory.create(queryString);
-		QueryExecution qexec = QueryExecutionFactory.create(query, model);
-		try{
-			ResultSet results = qexec.execSelect();
-			while( results.hasNext()){
-				QuerySolution soln = results.nextSolution();
-				Literal name = soln.getLiteral("x");
-				System.out.println(name);
-			}
-		} finally {
-			qexec.close();
-		}*/
+	
 	}
 	
 	public String reversePredicate(String Predicate)
@@ -155,7 +171,11 @@ public class QueryFraudDetection {
 		}
 		else if(Predicate.equals("less than equals"))
 		{
-			return "=<";
+			return "<=";
+		}
+		else if(Predicate.equals("not equals"))
+		{
+			return "!=";
 		}
 		return Predicate;
 	}
