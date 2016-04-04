@@ -1,0 +1,1 @@
+Project ini merupakan plugin ProM yang menggunakan IDE Eclipse untuk mendeteksi fraud pada proses dengan metode fuzzy association rule
